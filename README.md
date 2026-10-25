@@ -2,7 +2,7 @@
 
 RAG assistant for AI research papers (arXiv cs.CL): automated daily digest with summaries and a chat that cites its sources. Hybrid retrieval (BM25 + embeddings), date filtering, LLM-as-judge evaluation, and BYOK.
 
-**Status:** under construction (milestone 4 of 8: chat with citations).
+**Status:** under construction (milestone 5 of 8: public deploy).
 
 ## The problem
 
@@ -92,6 +92,7 @@ If the LLM call fails or hits its quota, the digest is still published with titl
 | Secret | `HF_TOKEN` | Hugging Face token with write access |
 | Secret | `GROQ_API_KEY` | Groq API key |
 | Variable | `HF_DATASET_REPO` | `your-hf-user/arxiv-cs-cl-papers` (created on first run) |
+| Variable | `HF_SPACE_REPO` | `your-hf-user/ai-papers-assistant` (created on first deploy) |
 
 ## Chat with citations (BYOK)
 
@@ -113,6 +114,14 @@ never written to disk, logged, or included in error messages.
 
 Known limitation: comparative questions ("which papers compare X with Y?") get one retrieval pass,
 so they only work when both sides show up in the same top results. That is what Phase B addresses.
+
+## Deploy (Hugging Face Space)
+
+The **deploy space** workflow pushes the app to a Docker Space every time `main` changes (or on
+demand from the Actions tab). The image bakes in CPU torch and the embedding model, so a cold start
+only has to download the Dataset and rebuild the in-memory index. The app re-checks the Dataset every
+hour, so the new daily digest shows up without a redeploy. Space metadata lives in
+[`space/README.md`](space/README.md).
 
 ## Roadmap
 
