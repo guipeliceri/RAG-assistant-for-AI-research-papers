@@ -2,7 +2,7 @@
 
 RAG assistant for AI research papers (arXiv cs.CL): automated daily digest with summaries and a chat that cites its sources. Hybrid retrieval (BM25 + embeddings), date filtering, LLM-as-judge evaluation, and BYOK.
 
-**Status:** under construction (milestone 1 of 8).
+**Status:** under construction (milestone 2 of 8).
 
 ## The problem
 
@@ -43,6 +43,19 @@ pip install -r requirements.txt
 cp .env.example .env   # fill in your own tokens
 pytest
 ```
+
+## Ingestion
+
+```bash
+PYTHONPATH=src python -m rag_papers.ingest --days 30
+```
+
+Fetches every `cs.CL` paper created or revised in the last N days into `data/papers.parquet`.
+It is idempotent: the key is the arXiv ID without version, a revision updates the existing
+row (newest content, all versions kept in `versions`), and `listing_date` stays the day v1
+was announced, so revisions never re-enter a digest. See [docs/decisions.md](docs/decisions.md)
+for how the listing date is computed. On GitHub, the **ingest** workflow (Actions tab →
+*Run workflow*) runs it against the real API and uploads the Parquet file.
 
 ## Roadmap
 

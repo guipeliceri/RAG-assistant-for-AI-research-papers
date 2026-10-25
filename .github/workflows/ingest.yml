@@ -1,0 +1,36 @@
+name: ingest
+
+# Manual run for now. Milestone 3 turns this into the daily job.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Days to look back
+        default: "30"
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Ingest twice to check idempotency
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m rag_papers.ingest --days "${{ inputs.days }}"
+          python -m rag_papers.ingest --days 1
+          python - <<'PY'
+          import pandas as pd
+          df = pd.read_parquet("data/papers.parquet")
+          assert df["arxiv_id"].is_unique, "duplicate arXiv IDs"
+          print(f"{len(df)} papers, {df['listing_date'].nunique()} listing days")
+          print(df["listing_date"].value_counts().sort_index().to_string())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: papers
+          path: data/papers.parquet
