@@ -2,7 +2,7 @@
 
 RAG assistant for AI research papers (arXiv cs.CL): automated daily digest with summaries and a chat that cites its sources. Hybrid retrieval (BM25 + embeddings), date filtering, LLM-as-judge evaluation, and BYOK.
 
-**Status:** under construction (milestone 5 of 8: public deploy).
+**Status:** under construction (milestone 6 of 8: evaluation).
 
 ## The problem
 
@@ -122,6 +122,33 @@ demand from the Actions tab). The image bakes in CPU torch and the embedding mod
 only has to download the Dataset and rebuild the in-memory index. The app re-checks the Dataset every
 hour, so the new daily digest shows up without a redeploy. Space metadata lives in
 [`space/README.md`](space/README.md).
+
+## Evaluation
+
+<!-- metrics:start -->
+| Metric | Value | Based on |
+| :--- | :--- | :--- |
+| Digest precision@5 (mean, target ≥ 0.80) | n/a | 0 days |
+| Judge vs human accuracy | n/a | 0 labelled papers |
+| Judge vs human Cohen's κ | n/a | |
+| Chat answers failing validation | n/a | 0 fixed questions |
+<!-- metrics:end -->
+
+*The table is refreshed by the daily workflow.*
+
+- **Digest relevance.** An LLM judge (`openai/gpt-oss-120b`, a different model from the
+  summariser) labels each digest paper relevant or not to the profile, using an explicit rubric
+  ([`judge.py`](src/rag_papers/judge.py)), and precision@5 is averaged over days.
+- **Is the judge trustworthy?** It is calibrated against 30 papers labelled by hand in
+  [`eval/golden.csv`](eval/golden.csv): we report accuracy, Cohen's κ, and the disagreements in
+  both directions, because a judge that always agrees could hide a shared bias. The 30 papers are
+  sampled by the **golden template** workflow: 10 most similar to the profile, 10 from the middle,
+  10 random, shuffled.
+- **Faithfulness.** 15 fixed questions go through the chat; we report the share of answers that
+  fail the deterministic checks (unretrieved citation, number not in the sources, no citations).
+
+If precision@5 lands below 0.80, that is documented as a failure analysis (what changed in the
+profile, the embedding or the filter, and the effect), not hidden.
 
 ## Roadmap
 
