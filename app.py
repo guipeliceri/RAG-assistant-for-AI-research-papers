@@ -68,7 +68,9 @@ def chat_tab() -> None:
         st.text_input("API key", type="password", key="api_key", help=f"Get one at {provider.key_url}")
         st.caption("🔒 Your key stays in this session only. It is never stored or logged.")
         today = date.today()
-        start, end = st.date_input("Papers listed between", value=(today - timedelta(days=7), today))
+        picked = st.date_input("Papers listed between", value=(today - timedelta(days=7), today))
+        # While the user is mid-selection the widget returns a single date.
+        start, end = (picked[0], picked[-1]) if isinstance(picked, (list, tuple)) and picked else (None, None)
 
     st.session_state.setdefault("questions", 0)
     question = st.chat_input("e.g. What came out this week about agents?")
