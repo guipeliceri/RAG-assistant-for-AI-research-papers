@@ -3,37 +3,47 @@
     streamlit run app.py
 """
 
-import json
 from datetime import date, timedelta
 from pathlib import Path
 
 import streamlit as st
 
-from rag_papers import store
+from rag_papers import data
 from rag_papers.chat import ask
 from rag_papers.embeddings import SentenceTransformerEmbedder
-from rag_papers.ingest import DEFAULT_PATH
 from rag_papers.llm import PROVIDERS, LLMError, OpenAICompatibleLLM
 from rag_papers.retrieval import Index
 
-DIGEST_DIR = Path("digests")
 MAX_QUESTIONS_PER_SESSION = 20
+# The daily job updates the Dataset once a day; re-check it every hour.
+REFRESH_SECONDS = 3600
 
 st.set_page_config(page_title="AI papers assistant", page_icon="📚", layout="wide")
 
 
-@st.cache_resource(show_spinner="Loading papers and building the search index...")
-def load_index() -> Index:
-    return Index(store.load(DEFAULT_PATH), SentenceTransformerEmbedder())
+@st.cache_resource(show_spinner=False)
+def embedder() -> SentenceTransformerEmbedder:
+    return SentenceTransformerEmbedder()
 
 
-def latest_digest() -> dict | None:
-    files = sorted(DIGEST_DIR.glob("*.json"))
-    return json.loads(files[-1].read_text()) if files else None
+@st.cache_resource(ttl=REFRESH_SECONDS, show_spinner=False)
+def files() -> tuple[Path, Path]:
+    return data.fetch()
+
+
+@st.cache_resource(ttl=REFRESH_SECONDS, show_spinner=False)
+def load_index(papers_path: Path) -> Index:
+    return Index(data.load_papers(papers_path), embedder())
+
+
+def get_index() -> Index:
+    with st.spinner("Waking up: loading papers and building the search index (about a minute after a cold start)..."):
+        return load_index(files()[0])
 
 
 def digest_tab() -> None:
-    digest = latest_digest()
+    with st.spinner("Loading today's digest..."):
+        digest = data.latest_digest(files()[1])
     if digest is None:
         st.info("No digest has been published yet.")
         return
@@ -77,7 +87,7 @@ def chat_tab() -> None:
     with st.chat_message("assistant"):
         try:
             with st.spinner("Searching and answering..."):
-                answer = ask(question, load_index(), llm, start, end)
+                answer = ask(question, get_index(), llm, start, end)
         except LLMError as exc:
             st.error(f"{exc}. Check your key, model name and free-tier quota.")
             return
