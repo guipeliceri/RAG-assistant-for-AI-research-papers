@@ -35,3 +35,22 @@ def test_from_env(monkeypatch):
     monkeypatch.setenv("GROQ_API_KEY", "k")
     monkeypatch.setenv("LLM_MODEL", "some-model")
     assert llm.from_env().model == "some-model"
+
+
+def test_repr_hides_key():
+    assert "secret-key" not in repr(llm.GroqLLM("secret-key"))
+
+
+@pytest.mark.parametrize("provider", list(llm.PROVIDERS))
+def test_every_provider_parses_openai_format(monkeypatch, provider):
+    payload = {"choices": [{"message": {"content": "ok"}}]}
+    seen = {}
+
+    def fake_post(url, **kwargs):
+        seen["url"] = url
+        return FakeResponse(200, payload)
+
+    monkeypatch.setattr(requests, "post", fake_post)
+    client = llm.OpenAICompatibleLLM(llm.PROVIDERS[provider], "k")
+    assert client.complete("s", "u") == "ok"
+    assert seen["url"] == llm.PROVIDERS[provider].url
