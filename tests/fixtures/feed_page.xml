@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <title type="html">ArXiv Query: search_query=cat:cs.CL</title>
+  <opensearch:totalResults>3</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2410.00002v2</id>
+    <updated>2024-10-08T12:00:00Z</updated>
+    <published>2024-10-01T15:30:00Z</published>
+    <title>Hybrid Retrieval
+      for RAG</title>
+    <summary>  We combine BM25 and dense retrieval.
+    It works.  </summary>
+    <author><name>Ada Lovelace</name></author>
+    <author><name>Alan Turing</name></author>
+    <arxiv:primary_category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2410.00001v1</id>
+    <updated>2024-10-07T10:00:00Z</updated>
+    <published>2024-10-07T10:00:00Z</published>
+    <title>Agents That Plan</title>
+    <summary>An agent paper.</summary>
+    <author><name>Grace Hopper</name></author>
+    <arxiv:primary_category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2409.99999v1</id>
+    <updated>2024-09-01T10:00:00Z</updated>
+    <published>2024-09-01T10:00:00Z</published>
+    <title>Too Old</title>
+    <summary>Outside the window.</summary>
+    <author><name>Nobody</name></author>
+    <arxiv:primary_category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>
