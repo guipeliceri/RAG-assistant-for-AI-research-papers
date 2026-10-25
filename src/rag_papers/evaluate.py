@@ -208,8 +208,11 @@ def main() -> None:
             from rag_papers.llm import from_env
             from rag_papers.retrieval import Index
 
+            chat_llm = from_env()
+            if chat_llm is None:
+                raise SystemExit("GROQ_API_KEY is not set: cannot run the faithfulness questions")
             index = Index(data.load_papers(args.path), SentenceTransformerEmbedder())
-            metrics["faithfulness"] = faithfulness(index, from_env())
+            metrics["faithfulness"] = faithfulness(index, chat_llm)
     finally:
         _save_json(JUDGMENTS, cache)
     metrics["judge_model"] = llm.model

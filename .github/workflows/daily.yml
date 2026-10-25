@@ -54,10 +54,13 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
-          test -f eval/golden.csv && python -m rag_papers.evaluate calibrate
-          python -m rag_papers.evaluate digests
-          python -m rag_papers.evaluate faithfulness
+          status=0
+          if [ -f eval/golden.csv ]; then python -m rag_papers.evaluate calibrate || status=1; fi
+          python -m rag_papers.evaluate digests || status=1
+          python -m rag_papers.evaluate faithfulness || status=1
+          # Refresh the table with whatever succeeded, then report any failure.
           python -m rag_papers.evaluate readme
+          exit $status
       - name: Commit digest and metrics
         # Also keeps the repo active, so GitHub does not disable the schedule after 60 days.
         run: |
