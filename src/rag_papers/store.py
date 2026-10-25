@@ -17,6 +17,8 @@ COLUMNS = [
     "updated",
     "listing_date",
     "url",
+    # Filled by rag_papers.embed; cleared when a newer version changes the text.
+    "embedding",
 ]
 
 
@@ -36,7 +38,8 @@ def upsert(df: pd.DataFrame, records: list[dict]) -> pd.DataFrame:
 
     The newest version wins for the content fields, every version seen is kept
     in `versions`, and `published`/`listing_date` stay those of v1 so a revision
-    never makes a paper look new.
+    never makes a paper look new. A re-fetch of the same version keeps its
+    embedding; a newer version drops it so the new text gets re-embedded.
     """
     rows = {row["arxiv_id"]: row for row in df.to_dict("records")}
     for record in records:
@@ -49,9 +52,12 @@ def upsert(df: pd.DataFrame, records: list[dict]) -> pd.DataFrame:
             merged = dict(record)
             merged["published"] = current["published"]
             merged["listing_date"] = current["listing_date"]
+            if record["version"] == current["version"]:
+                merged["embedding"] = current.get("embedding")
         else:
             merged = dict(current)
         merged["versions"] = versions
         rows[record["arxiv_id"]] = merged
     out = pd.DataFrame(list(rows.values()), columns=COLUMNS)
+    out["embedding"] = out["embedding"].astype(object)
     return out.sort_values("arxiv_id", ignore_index=True)

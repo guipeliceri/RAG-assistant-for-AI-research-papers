@@ -2,7 +2,7 @@
 
 RAG assistant for AI research papers (arXiv cs.CL): automated daily digest with summaries and a chat that cites its sources. Hybrid retrieval (BM25 + embeddings), date filtering, LLM-as-judge evaluation, and BYOK.
 
-**Status:** under construction (milestone 1 of 8: ingestion).
+**Status:** under construction (milestone 2 of 8: retrieval).
 
 ## The problem
 
@@ -56,6 +56,20 @@ row (newest content, all versions kept in `versions`), and `listing_date` stays 
 was announced, so revisions never re-enter a digest. See [docs/decisions.md](docs/decisions.md)
 for how the listing date is computed. On GitHub, the **ingest** workflow (Actions tab →
 *Run workflow*) runs it against the real API and uploads the Parquet file.
+
+## Retrieval
+
+```bash
+PYTHONPATH=src python -m rag_papers.embed            # embeds papers that have no embedding yet
+PYTHONPATH=src python scripts/inspect_queries.py     # 10 test queries, vector vs keyword vs hybrid
+```
+
+Embeddings come from `BAAI/bge-small-en-v1.5` on CPU, L2-normalised, over `title. abstract`, and
+are stored in the Parquet file. `rag_papers.retrieval.Index` loads them into an in-memory Chroma
+collection, builds a BM25 index next to it, and `Index.search(query, start, end, k)` fuses both
+rankings with reciprocal rank fusion. The date range is applied before ranking, on the listing date.
+The BM25 tokenizer keeps names like `gpt-4o` or `llama-3.1` whole, which is where hybrid beats
+pure vector search.
 
 ## Roadmap
 

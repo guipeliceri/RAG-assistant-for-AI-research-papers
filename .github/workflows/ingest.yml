@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      # CPU-only torch avoids downloading the CUDA build.
+      - run: pip install torch --index-url https://download.pytorch.org/whl/cpu
       - run: pip install -r requirements.txt
       - name: Ingest twice to check idempotency
         env:
@@ -30,6 +32,14 @@ jobs:
           print(f"{len(df)} papers, {df['listing_date'].nunique()} listing days")
           print(df["listing_date"].value_counts().sort_index().to_string())
           PY
+      - name: Embed
+        env:
+          PYTHONPATH: src
+        run: python -m rag_papers.embed
+      - name: Inspect test queries
+        env:
+          PYTHONPATH: src
+        run: python scripts/inspect_queries.py
       - uses: actions/upload-artifact@v4
         with:
           name: papers
