@@ -2,7 +2,7 @@
 
 RAG assistant for AI research papers (arXiv cs.CL): automated daily digest with summaries and a chat that cites its sources. Hybrid retrieval (BM25 + embeddings), date filtering, LLM-as-judge evaluation, and BYOK.
 
-**Status:** under construction (milestone 2 of 8: retrieval).
+**Status:** under construction (milestone 3 of 8: daily digest).
 
 ## The problem
 
@@ -70,6 +70,28 @@ collection, builds a BM25 index next to it, and `Index.search(query, start, end,
 rankings with reciprocal rank fusion. The date range is applied before ranking, on the listing date.
 The BM25 tokenizer keeps names like `gpt-4o` or `llama-3.1` whole, which is where hybrid beats
 pure vector search.
+
+## Daily digest
+
+The **daily digest** workflow runs every day at 01:30 UTC, after arXiv's evening announcement:
+
+1. pull `papers.parquet` from the Hugging Face Dataset (the source of truth; the runner keeps nothing),
+2. ingest (30-day backfill on the very first run, then the last 3 days),
+3. embed the new papers,
+4. rank the papers first listed on the latest listing day by similarity to [`profile.md`](profile.md)
+   and summarise the top 5 from their abstracts only,
+5. push the store and digests back to the Dataset and commit `digests/YYYY-MM-DD.json` here.
+
+If the LLM call fails or hits its quota, the digest is still published with titles and links, and
+`summary` is `null`. If the job itself fails, it opens an issue in this repository.
+
+**Setup** (Settings → Secrets and variables → Actions):
+
+| Kind | Name | Value |
+| :--- | :--- | :--- |
+| Secret | `HF_TOKEN` | Hugging Face token with write access |
+| Secret | `GROQ_API_KEY` | Groq API key |
+| Variable | `HF_DATASET_REPO` | `your-hf-user/arxiv-cs-cl-papers` (created on first run) |
 
 ## Roadmap
 
