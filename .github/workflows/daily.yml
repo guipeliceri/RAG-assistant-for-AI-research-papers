@@ -1,0 +1,80 @@
+name: daily digest
+
+on:
+  # 01:30 UTC is after arXiv's 20:00 ET announcement in both EDT and EST.
+  schedule:
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+env:
+  PYTHONPATH: src
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  HF_DATASET_REPO: ${{ vars.HF_DATASET_REPO }}
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      # CPU-only torch avoids downloading the CUDA build.
+      - run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements.txt
+      - name: Check configuration
+        run: |
+          test -n "$HF_TOKEN" || { echo "::error::secret HF_TOKEN is not set"; exit 1; }
+          test -n "$HF_DATASET_REPO" || { echo "::error::variable HF_DATASET_REPO is not set"; exit 1; }
+      - name: Pull store from the Hub
+        id: pull
+        run: python -m rag_papers.hub pull
+      - name: Ingest
+        # First run backfills 30 days; afterwards 3 days covers weekends and late runs.
+        run: python -m rag_papers.ingest --days ${{ steps.pull.outputs.found == 'true' && '3' || '30' }}
+      - name: Embed new papers
+        run: python -m rag_papers.embed
+      - name: Build digest
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python -m rag_papers.digest
+      - name: Push store and digests to the Hub
+        run: python -m rag_papers.hub push
+      - name: Evaluate
+        # Metrics must never block the digest, so this step may fail on its own.
+        continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          status=0
+          if [ -f eval/golden.csv ]; then python -m rag_papers.evaluate calibrate || status=1; fi
+          python -m rag_papers.evaluate digests || status=1
+          python -m rag_papers.evaluate faithfulness || status=1
+          # Refresh the table with whatever succeeded, then report any failure.
+          python -m rag_papers.evaluate readme
+          exit $status
+      - name: Commit digest and metrics
+        # Also keeps the repo active, so GitHub does not disable the schedule after 60 days.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add digests/ eval/ README.md
+          git diff --cached --quiet || git commit -m "Digest $(date -u +%F)"
+          git pull --rebase --quiet
+          git push
+      - name: Open an issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Daily digest failed ($(date -u +%F))" \
+            --body "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

@@ -87,3 +87,12 @@ def test_fetch_paginates(make_client, feed_page):
 
     assert [r["arxiv_id"] for r in records] == ["2410.00002", "2410.00001"]
     assert [call["start"] for call in client.session.calls] == [0, 1]
+
+
+def test_same_version_keeps_embedding_newer_version_drops_it(tmp_path):
+    df = store.upsert(store.load(tmp_path / "papers.parquet"), [_record()])
+    df.at[0, "embedding"] = [0.1, 0.2]
+    df = store.upsert(df, [_record()])
+    assert list(df.iloc[0]["embedding"]) == [0.1, 0.2]
+    df = store.upsert(df, [_record(version=2, title="v2 title")])
+    assert not isinstance(df.iloc[0]["embedding"], list)
