@@ -10,7 +10,7 @@ from pathlib import Path
 import pandas as pd
 
 from rag_papers import store
-from rag_papers.embeddings import Embedder, SentenceTransformerEmbedder, document_text
+from rag_papers.embeddings import Embedder, OnnxEmbedder, document_text
 from rag_papers.ingest import DEFAULT_PATH
 
 # Small batches keep peak memory low on an 8 GB machine.
@@ -41,7 +41,7 @@ def main() -> None:
     parser.add_argument("--path", type=Path, default=DEFAULT_PATH)
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
-    df, count = embed_missing(store.load(args.path), SentenceTransformerEmbedder())
+    df, count = embed_missing(store.load(args.path), OnnxEmbedder())
     store.save(df, args.path)
     logging.info("computed %d embeddings, store has %d papers", count, len(df))
 

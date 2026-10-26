@@ -1,6 +1,7 @@
 """Where the app reads papers and digests from.
 
-On the Space, `HF_DATASET_REPO` is set and everything comes from the Dataset
+On Streamlit Community Cloud, `HF_DATASET_REPO` is set (as a root-level secret, which Streamlit
+exposes as an environment variable) and everything comes from the Dataset
 (the daily job writes there). Locally, the files in the working directory are used.
 """
 
