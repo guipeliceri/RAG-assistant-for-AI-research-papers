@@ -35,3 +35,13 @@ To fit the free tier's memory, `sentence-transformers` and torch were replaced b
 official ONNX export (`onnx/model.onnx` in `BAAI/bge-small-en-v1.5`) run with ONNX Runtime: same
 weights, same CLS pooling and normalisation, so vectors already stored stay comparable and nothing
 is re-embedded. `onnxruntime` and `tokenizers` were already installed as `chromadb` dependencies.
+
+## 5. "Most voted" uses Hugging Face Daily Papers upvotes
+
+Requested after the MVP: a list of the most popular papers for a period chosen by the user, the same
+for everyone. arXiv exposes no views or ratings, and no other open source publishes view counts, so
+the signal is the upvote count on Hugging Face Daily Papers. It is added as its own tab next to the
+profile digest instead of replacing it, so the profile digest and its evaluation (Milestone 6) stay
+as they are. Popularity needs no relevance judge: the vote count is the measurement. Caveats: Daily
+Papers covers only papers someone submitted (a few dozen a day, all areas of AI), and votes favour
+well-known labs.

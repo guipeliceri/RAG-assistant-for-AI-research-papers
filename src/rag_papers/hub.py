@@ -14,27 +14,34 @@ from huggingface_hub.errors import EntryNotFoundError, RepositoryNotFoundError
 
 from rag_papers.digest import DIGEST_DIR
 from rag_papers.ingest import DEFAULT_PATH
+from rag_papers.popular import DEFAULT_PATH as POPULAR_PATH
 
 PAPERS_IN_REPO = "papers.parquet"
+POPULAR_IN_REPO = "popular.parquet"
 
 
 def repo_id() -> str:
     return os.environ["HF_DATASET_REPO"]
 
 
-def pull(path: Path = DEFAULT_PATH) -> bool:
-    """Download the store. Returns False if the dataset or file does not exist yet."""
+def pull_file(name: str, path: Path) -> bool:
+    """Download one file of the Dataset. Returns False if the dataset or file does not exist yet."""
     try:
-        downloaded = hf_hub_download(repo_id(), PAPERS_IN_REPO, repo_type="dataset")
+        downloaded = hf_hub_download(repo_id(), name, repo_type="dataset")
     except (RepositoryNotFoundError, EntryNotFoundError):
-        logging.info("no store on the Hub yet")
+        logging.info("no %s on the Hub yet", name)
         return False
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(Path(downloaded).read_bytes())
     return True
 
 
-def push(path: Path = DEFAULT_PATH) -> None:
+def pull(path: Path = DEFAULT_PATH, popular_path: Path = POPULAR_PATH) -> tuple[bool, bool]:
+    """Download the paper store and the most-voted store."""
+    return pull_file(PAPERS_IN_REPO, path), pull_file(POPULAR_IN_REPO, popular_path)
+
+
+def push(path: Path = DEFAULT_PATH, popular_path: Path = POPULAR_PATH) -> None:
     api = HfApi()
     api.create_repo(repo_id(), repo_type="dataset", exist_ok=True)
     api.upload_file(
@@ -44,6 +51,14 @@ def push(path: Path = DEFAULT_PATH) -> None:
         repo_type="dataset",
         commit_message="Update papers",
     )
+    if popular_path.exists():
+        api.upload_file(
+            path_or_fileobj=str(popular_path),
+            path_in_repo=POPULAR_IN_REPO,
+            repo_id=repo_id(),
+            repo_type="dataset",
+            commit_message="Update most-voted papers",
+        )
     if DIGEST_DIR.exists():
         api.upload_folder(
             folder_path=str(DIGEST_DIR),
@@ -61,11 +76,12 @@ def main() -> None:
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     if args.action == "pull":
-        found = pull()
+        found, popular_found = pull()
         # Tell the workflow whether this is the first run (backfill needed).
         if "GITHUB_OUTPUT" in os.environ:
             with open(os.environ["GITHUB_OUTPUT"], "a") as out:
                 out.write(f"found={'true' if found else 'false'}\n")
+                out.write(f"popular_found={'true' if popular_found else 'false'}\n")
     else:
         push()
 

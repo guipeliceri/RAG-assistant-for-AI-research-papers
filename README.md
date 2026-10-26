@@ -11,8 +11,9 @@ Dozens of new AI papers land on arXiv every day. Nobody can read them all, and a
 ## What it does
 
 1. **Automatic daily digest.** A GitHub Actions job fetches the new `cs.CL` papers, picks the ones closest to an interest profile (embedding similarity, no LLM involved) and writes a short summary of each.
-2. **Chat with citations.** Ask a question and every claim in the answer cites the arXiv ID it came from. You bring your own API key, which lives only in your session.
-3. **Honest evaluation.** Digest quality is measured as precision@5 by an LLM judge that is calibrated against hand-labelled papers, and the judge-vs-human agreement is reported too.
+2. **Most voted papers.** For any period you pick, the AI papers with the most community upvotes on Hugging Face Daily Papers (every area of AI, for every user, no profile involved).
+3. **Chat with citations.** Ask a question and every claim in the answer cites the arXiv ID it came from. You bring your own API key, which lives only in your session.
+4. **Honest evaluation.** Digest quality is measured as precision@5 by an LLM judge that is calibrated against hand-labelled papers, and the judge-vs-human agreement is reported too.
 
 ## Architecture (draft)
 
@@ -20,9 +21,11 @@ Dozens of new AI papers land on arXiv every day. Nobody can read them all, and a
 flowchart LR
     A[arXiv API] -->|daily ingestion| B[papers.parquet]
     B -->|embeddings| C[(HF Dataset)]
+    H[HF Daily Papers] -->|upvotes| G[popular.parquet] --> C
     C --> D[Daily digest]
     C --> E[Streamlit app: in-memory Chroma + BM25]
     E --> F[Chat with citations]
+    E --> I[Most voted, by period]
 ```
 
 ## Repository layout
@@ -92,6 +95,16 @@ If the LLM call fails or hits its quota, the digest is still published with titl
 | Secret | `HF_TOKEN` | Hugging Face token with write access |
 | Secret | `GROQ_API_KEY` | Groq API key |
 | Variable | `HF_DATASET_REPO` | `your-hf-user/arxiv-cs-cl-papers` (created on first run) |
+
+## Most voted papers
+
+arXiv publishes no view or rating counts, so popularity comes from
+[Hugging Face Daily Papers](https://huggingface.co/papers), where the community submits and upvotes
+a few dozen AI papers a day. The daily workflow re-fetches the last 30 days on every run (votes keep
+growing for days; the first run backfills 180 days) into `popular.parquet` on the Dataset. In the
+app's **Most voted** tab anyone can pick a period and how many papers to show; papers are ranked by
+upvotes, ties broken by comments. This list covers all of AI, is the same for every user, and does
+not use the interest profile. Coverage is limited to what the community features on Daily Papers.
 
 ## Chat with citations (BYOK)
 

@@ -1,4 +1,4 @@
-"""Streamlit app: today's digest (no key needed) and a chat that cites its sources.
+"""Streamlit app: today's digest and the most-voted papers (no key needed), and a chat that cites its sources.
 
     streamlit run app.py
 """
@@ -13,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 import streamlit as st  # noqa: E402
 
 from rag_papers import data  # noqa: E402
+from rag_papers import popular  # noqa: E402
 from rag_papers.chat import ask  # noqa: E402
 from rag_papers.embeddings import OnnxEmbedder  # noqa: E402
 from rag_papers.llm import PROVIDERS, LLMError, OpenAICompatibleLLM  # noqa: E402
@@ -31,7 +32,7 @@ def embedder() -> OnnxEmbedder:
 
 
 @st.cache_resource(ttl=REFRESH_SECONDS, show_spinner=False)
-def files() -> tuple[Path, Path]:
+def files() -> tuple[Path, Path, Path]:
     return data.fetch()
 
 
@@ -60,6 +61,40 @@ def digest_tab() -> None:
         st.markdown(f"#### [{paper['title']}]({paper['url']})")
         st.caption(", ".join(paper["authors"][:6]) + (" et al." if len(paper["authors"]) > 6 else ""))
         st.write(paper["summary"] or "_Summary unavailable today. Open the paper for the abstract._")
+
+
+def most_voted_tab() -> None:
+    with st.spinner("Loading votes..."):
+        df = data.load_popular(files()[2])
+    st.subheader("Most voted AI papers")
+    st.caption(
+        "Community upvotes on [Hugging Face Daily Papers](https://huggingface.co/papers), for every area "
+        "of AI (not only cs.CL). arXiv itself publishes no view or rating counts. Votes are updated daily."
+    )
+    if df.empty:
+        st.info("No votes collected yet. They appear after the next daily run.")
+        return
+    today = date.today()
+    left, right = st.columns([3, 1])
+    picked = left.date_input("Featured between", value=(today - timedelta(days=7), today), key="voted_range")
+    n = right.number_input("How many", min_value=5, max_value=50, value=10, step=5)
+    # While the user is mid-selection the widget returns a single date.
+    start, end = (picked[0], picked[-1]) if isinstance(picked, (list, tuple)) and picked else (None, None)
+    ranked = popular.top(df, start, end, int(n))
+    if ranked.empty:
+        st.info("No voted papers in this period.")
+        return
+    for rank, (_, paper) in enumerate(ranked.iterrows(), start=1):
+        st.markdown(f"#### {rank}. [{paper['title']}]({paper['url']})")
+        authors = list(paper["authors"])
+        byline = ", ".join(authors[:6]) + (" et al." if len(authors) > 6 else "")
+        org = f" · {paper['organization']}" if paper["organization"] else ""
+        st.caption(
+            f"▲ {paper['upvotes']} votes · 💬 {paper['comments']} · featured {paper['daily_date']}{org} · "
+            f"[discussion]({paper['hf_url']})  \n{byline}"
+        )
+        if paper["summary"]:
+            st.write(paper["summary"])
 
 
 def chat_tab() -> None:
@@ -114,8 +149,10 @@ def chat_tab() -> None:
                 st.markdown(f"- [{s['arxiv_id']}]({s['url']}) {s['title']} ({s['listing_date']})")
 
 
-digest, chat = st.tabs(["Today's digest", "Chat"])
+digest, voted, chat = st.tabs(["Today's digest", "Most voted", "Chat"])
 with digest:
     digest_tab()
+with voted:
+    most_voted_tab()
 with chat:
     chat_tab()

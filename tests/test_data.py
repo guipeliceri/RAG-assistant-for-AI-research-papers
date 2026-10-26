@@ -7,7 +7,7 @@ from rag_papers import data, store
 
 def test_local_mode_without_dataset(monkeypatch):
     monkeypatch.delenv("HF_DATASET_REPO", raising=False)
-    assert data.fetch() == (data.DEFAULT_PATH, data.LOCAL_DIGESTS)
+    assert data.fetch() == (data.DEFAULT_PATH, data.LOCAL_DIGESTS, data.POPULAR_PATH)
 
 
 def test_load_papers_skips_rows_without_embedding(tmp_path):
