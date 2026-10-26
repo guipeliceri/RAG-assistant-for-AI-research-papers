@@ -128,9 +128,9 @@ hour, so the new daily digest shows up without a redeploy. Space metadata lives 
 <!-- metrics:start -->
 | Metric | Value | Based on |
 | :--- | :--- | :--- |
-| Digest precision@5 (mean, target ≥ 0.80) | n/a | 0 days |
+| Digest precision@5 (mean, target ≥ 0.80) | 0.80 | 1 days |
 | Judge vs human accuracy | n/a | 0 labelled papers |
-| Judge vs human Cohen's κ | n/a | |
+| Judge vs human Cohen's κ | n/a |  |
 | Chat answers failing validation | n/a | 0 fixed questions |
 <!-- metrics:end -->
 

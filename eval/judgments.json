@@ -1,0 +1,22 @@
+{
+  "2610.31821": {
+    "relevant": true,
+    "reason": "Focuses on dense vs. sparse retrieval evaluation, directly matching retrieval interests."
+  },
+  "2610.32411": {
+    "relevant": true,
+    "reason": "The paper focuses on retrieval heads for locating evidence and improving document retrieval, directly addressing retrieval mechanisms relevant to RAG."
+  },
+  "2610.32213": {
+    "relevant": false,
+    "reason": "Focuses on attention head dimensions rather than retrieval methods or RAG systems."
+  },
+  "2610.32122": {
+    "relevant": true,
+    "reason": "Focuses on text embeddings and their impact on retrieval metrics, proposing improvements relevant to dense retrieval and RAG evaluation."
+  },
+  "2610.32474": {
+    "relevant": true,
+    "reason": "Introduces a reasoning-enhanced multimodal embedding method aimed at improving retrieval performance, directly relating to embeddings for retrieval."
+  }
+}

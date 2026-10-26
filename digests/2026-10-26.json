@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-26",
+  "generated_at": "2026-10-26T01:26:30+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "candidates": 72,
+  "papers": [
+    {
+      "arxiv_id": "2610.31821",
+      "title": "What the Query Remembers: Query Abstraction Governs Lexical and Dense Retrieval of Classical Arabic Poetry",
+      "authors": [
+        "Omar Farouk Zouak",
+        "Selma Mani",
+        "Larbi Said Chikh",
+        "Raid Abderrezak Ouahioune"
+      ],
+      "url": "https://arxiv.org/abs/2610.31821",
+      "similarity": 0.7246,
+      "summary": "The paper studies how the amount of remembered wording in a user query influences the performance of lexical (BM25) versus dense retrieval models on Classical Arabic poetry. It benchmarks nine dense encoders and BM25 over two corpora, three indexing modes, and two evaluation protocols, finding that for tip‑of‑the‑tongue queries BM25 outperforms all dense encoders (Recall@5 0.746 vs 0.717), while for abstract queries BM25 falls to eighth place (0.392 vs 0.748); adding a remembered half‑verse raises BM25 by 38 points, showing that query composition largely determines the ranking. The study also shows that lexical containment predicts BM25 behavior, embedding proximity predicts dense encoders, and that the two standard evaluation protocols can give materially different pictures, as confirmed by blind human annotators and open‑weights judges."
+    },
+    {
+      "arxiv_id": "2610.32411",
+      "title": "A Broader Look into MLLM's Retrieval Heads",
+      "authors": [
+        "Jia Wang",
+        "Yuqing Li",
+        "Jiangnan Li",
+        "Zheng Lin",
+        "Mo Yu"
+      ],
+      "url": "https://arxiv.org/abs/2610.32411",
+      "similarity": 0.7114,
+      "summary": "The paper studies whether the retrieval‑head mechanism that helps multimodal large language models locate evidence also works when a new audio‑visual modality is added. By creating paired inputs where the same answer is spoken or shown on screen, the authors show that across 18 language, vision‑language, and omni‑modal checkpoints the retrieval heads stay sparse, are largely shared across modalities, and that ablating them removes almost all audio‑visual retrieval while also hurting document understanding, spatial perception, and visual mathematics, even though the shared heads are fewer than 2 % of all heads. Training these heads with a ranking objective raises the page Recall@1 of Qwen3‑VL‑8B on MMDocIR by 6.03 points and improves document retrieval for three model families, demonstrating that functional attention heads can both reveal model behavior and be optimized to enhance performance."
+    },
+    {
+      "arxiv_id": "2610.32213",
+      "title": "Head Dimension Matters in Language Models for Long-Context Retrieval",
+      "authors": [
+        "Seiya Tokui",
+        "Shoichiro Yamaguchi",
+        "Sosuke Kobayashi"
+      ],
+      "url": "https://arxiv.org/abs/2610.32213",
+      "similarity": 0.7008,
+      "summary": "The paper studies how the size of each attention head in transformer language models influences their ability to retrieve information from long contexts. By varying head dimension while keeping overall model size constant, the authors find that wider heads do not change pretraining loss or short‑context performance but significantly boost long‑context retrieval accuracy. Ablation experiments further show that this improvement persists even when attention projection weights are frozen, indicating that wider heads help both attention updates and the adaptation of other model components such as embeddings and MLPs."
+    },
+    {
+      "arxiv_id": "2610.32122",
+      "title": "Semantically Rich, Metrically Affect-Blind: A Geometric Blind Spot in Modern Text Embedders",
+      "authors": [
+        "Mahdi Naser Moghadasi"
+      ],
+      "url": "https://arxiv.org/abs/2610.32122",
+      "similarity": 0.6812,
+      "summary": "The paper shows that modern text embeddings encode sentiment very well—linear probes recover sentence polarity with up to 91.3 % accuracy—yet the metric used for retrieval is almost blind to it, with cosine‑similarity margins only 0.003–0.064. To address this, the authors propose Sentiment‑Injected Sentence Embeddings (SISE), a tiny supervised‑contrastive head that, when added to frozen encoders, raises probe accuracy by up to 5.8 points, retrieval MAP by up to 26.0, and polarity margin by 7–61×, though it slightly hurts other downstream scores. They also release a CPU‑reproducible pipeline and a diagnostic tool, the Attribute Alignment Gap, to quantify this metric‑bias mismatch."
+    },
+    {
+      "arxiv_id": "2610.32474",
+      "title": "Beyond Post-Hoc Rewards: Privileged Reasoning Exploration for Multimodal Embeddings",
+      "authors": [
+        "Tianyu Yang",
+        "Yijun Tian",
+        "Lars Benedikt Kaesberg",
+        "Jan Philip Wahle",
+        "Bela Gipp",
+        "Terry Ruas",
+        "Daniel Kurzawe"
+      ],
+      "url": "https://arxiv.org/abs/2610.32474",
+      "similarity": 0.6687,
+      "summary": "PILOT treats the reasoning that augments multimodal inputs as a latent variable, creating two reasoning modes with a shared large‑language‑model: a prior that depends only on the input and a posterior that also uses training‑time relational evidence. By deriving an importance‑weighted variational objective, the framework lets the posterior’s broader exploration guide the prior during training, improving both modes under a shared inference‑compatible reward. On the 78‑task MMEB‑V2 benchmark, PILOT outperforms the baseline on all 12 task groups, raising overall scores by 3.2 and 3.3 points for 2B and 7B models respectively, with the biggest gains in visual‑document retrieval (+6.1 and +6.4 points)."
+    }
+  ]
+}

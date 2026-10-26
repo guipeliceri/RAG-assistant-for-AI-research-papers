@@ -1,0 +1,10 @@
+{
+  "digests": {
+    "per_day": {
+      "2026-10-26": 0.8
+    },
+    "mean_precision_at_5": 0.8,
+    "days": 1
+  },
+  "judge_model": "openai/gpt-oss-120b"
+}
