@@ -128,7 +128,9 @@ now requires a PRO plan for Docker Spaces, so the Space deploy was dropped (see
 Embeddings run through ONNX Runtime (no torch), so the app fits in the free tier's memory. On a cold
 start it downloads the model (~130 MB) and the Dataset, then rebuilds the in-memory index. The app
 re-checks the Dataset every hour, so the new daily digest shows up without a redeploy. Free apps
-sleep after a while without visits; the first visit wakes them up.
+sleep after some hours without visits, so the **keep app awake** workflow opens the app in a
+headless browser every 4 hours and clicks the wake-up button if it is asleep. Set the repository
+variable `STREAMLIT_APP_URL` if the app URL changes.
 
 ## Evaluation
 
