@@ -138,7 +138,7 @@ sleep after a while without visits; the first visit wakes them up.
 | Digest precision@5 (mean, target ≥ 0.80) | 0.80 | 1 days |
 | Judge vs human accuracy | n/a | 0 labelled papers |
 | Judge vs human Cohen's κ | n/a |  |
-| Chat answers failing validation | n/a | 0 fixed questions |
+| Chat answers failing validation | 0% | 2 fixed questions |
 <!-- metrics:end -->
 
 *The table is refreshed by the daily workflow.*
