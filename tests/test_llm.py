@@ -54,3 +54,15 @@ def test_every_provider_parses_openai_format(monkeypatch, provider):
     client = llm.OpenAICompatibleLLM(llm.PROVIDERS[provider], "k")
     assert client.complete("s", "u") == "ok"
     assert seen["url"] == llm.PROVIDERS[provider].url
+
+
+def test_pasted_key_whitespace_is_stripped(monkeypatch):
+    seen = {}
+
+    def post(*a, headers=None, **k):
+        seen.update(headers)
+        return FakeResponse(200, {"choices": [{"message": {"content": "ok"}}]})
+
+    monkeypatch.setattr(requests, "post", post)
+    llm.GroqLLM("  gsk_abc\n").complete("s", "u")
+    assert seen["Authorization"] == "Bearer gsk_abc"

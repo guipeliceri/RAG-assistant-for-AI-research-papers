@@ -57,7 +57,8 @@ DEFAULT_MODEL = PROVIDERS["groq"].default_model
 class OpenAICompatibleLLM:
     def __init__(self, provider: Provider, api_key: str, model: str | None = None, timeout: float = 60):
         self.provider = provider
-        self._api_key = api_key
+        # Pasted keys often carry a stray space or newline, which the provider rejects with 401.
+        self._api_key = api_key.strip()
         self.model = model or provider.default_model
         self.timeout = timeout
 
