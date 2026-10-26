@@ -95,3 +95,19 @@ def test_hybrid_finds_exact_model_name_that_vector_misses():
     hybrid_top = index.search("Mixtral-8x7B", k=1, mode="hybrid")[0]["arxiv_id"]
     assert vector_top != "2410.00003"
     assert hybrid_top == "2410.00003"
+
+
+class Float32Embedder(HashingEmbedder):
+    """Returns float32 vectors, like the ONNX embedder; chromadb rejects lists of np.float32."""
+
+    def encode_documents(self, texts):
+        return super().encode_documents(texts).astype(np.float32)
+
+    def encode_query(self, text):
+        return super().encode_query(text).astype(np.float32)
+
+
+def test_float32_embeddings_work_end_to_end():
+    embedder = Float32Embedder()
+    hits = Index(make_df(embedder), embedder).search("hybrid retrieval", mode="vector", k=2)
+    assert hits[0]["arxiv_id"] == "2410.00001"
