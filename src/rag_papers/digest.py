@@ -17,7 +17,7 @@ import pandas as pd
 from rag_papers import llm as llm_module
 from rag_papers import store
 from rag_papers.dates import latest_listing_date
-from rag_papers.embeddings import Embedder, SentenceTransformerEmbedder
+from rag_papers.embeddings import Embedder, OnnxEmbedder
 from rag_papers.ingest import DEFAULT_PATH
 
 DIGEST_SIZE = 5
@@ -103,7 +103,7 @@ def main() -> None:
     llm = llm_module.from_env()
     if llm is None:
         logging.warning("GROQ_API_KEY not set: digest will have titles and links only")
-    digest = build(store.load(args.path), day, PROFILE_PATH.read_text(), SentenceTransformerEmbedder(), llm)
+    digest = build(store.load(args.path), day, PROFILE_PATH.read_text(), OnnxEmbedder(), llm)
     path = write(digest)
     summarised = sum(p["summary"] is not None for p in digest["papers"])
     logging.info("wrote %s: %d papers, %d summarised", path, len(digest["papers"]), summarised)

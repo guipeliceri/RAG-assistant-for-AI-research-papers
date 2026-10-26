@@ -21,7 +21,7 @@ flowchart LR
     A[arXiv API] -->|daily ingestion| B[papers.parquet]
     B -->|embeddings| C[(HF Dataset)]
     C --> D[Daily digest]
-    C --> E[Space: in-memory Chroma + BM25]
+    C --> E[Streamlit app: in-memory Chroma + BM25]
     E --> F[Chat with citations]
 ```
 
@@ -92,7 +92,6 @@ If the LLM call fails or hits its quota, the digest is still published with titl
 | Secret | `HF_TOKEN` | Hugging Face token with write access |
 | Secret | `GROQ_API_KEY` | Groq API key |
 | Variable | `HF_DATASET_REPO` | `your-hf-user/arxiv-cs-cl-papers` (created on first run) |
-| Variable | `HF_SPACE_REPO` | `your-hf-user/ai-papers-assistant` (created on first deploy) |
 
 ## Chat with citations (BYOK)
 
@@ -115,13 +114,21 @@ never written to disk, logged, or included in error messages.
 Known limitation: comparative questions ("which papers compare X with Y?") get one retrieval pass,
 so they only work when both sides show up in the same top results. That is what Phase B addresses.
 
-## Deploy (Hugging Face Space)
+## Deploy (Streamlit Community Cloud)
 
-The **deploy space** workflow pushes the app to a Docker Space every time `main` changes (or on
-demand from the Actions tab). The image bakes in CPU torch and the embedding model, so a cold start
-only has to download the Dataset and rebuild the in-memory index. The app re-checks the Dataset every
-hour, so the new daily digest shows up without a redeploy. Space metadata lives in
-[`space/README.md`](space/README.md).
+The app runs for free on [Streamlit Community Cloud](https://share.streamlit.io). Hugging Face
+now requires a PRO plan for Docker Spaces, so the Space deploy was dropped (see
+[decision 4](docs/decisions.md)). One-time setup:
+
+1. Sign in at share.streamlit.io with the GitHub account that owns this repo.
+2. **Create app** → this repo, branch `main`, main file `app.py`. Under **Advanced settings**, pick
+   Python 3.11 and add the secret `HF_DATASET_REPO = "your-hf-user/arxiv-cs-cl-papers"`.
+3. Deploy. Every push to `main` redeploys automatically.
+
+Embeddings run through ONNX Runtime (no torch), so the app fits in the free tier's memory. On a cold
+start it downloads the model (~130 MB) and the Dataset, then rebuilds the in-memory index. The app
+re-checks the Dataset every hour, so the new daily digest shows up without a redeploy. Free apps
+sleep after a while without visits; the first visit wakes them up.
 
 ## Evaluation
 

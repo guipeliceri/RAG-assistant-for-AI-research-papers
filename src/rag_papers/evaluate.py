@@ -184,12 +184,12 @@ def main() -> None:
     df = store.load(args.path)
 
     if args.action == "golden-template":
-        from rag_papers.embeddings import SentenceTransformerEmbedder
+        from rag_papers.embeddings import OnnxEmbedder
 
         if GOLDEN.exists():
             raise SystemExit(f"{GOLDEN} already exists; delete it first to resample")
         embedded = data.load_papers(args.path)
-        template = golden_template(embedded, SentenceTransformerEmbedder().encode_query(profile))
+        template = golden_template(embedded, OnnxEmbedder().encode_query(profile))
         GOLDEN.parent.mkdir(parents=True, exist_ok=True)
         template.to_csv(GOLDEN, index=False)
         logging.info("wrote %s: fill the relevant column with 1 or 0", GOLDEN)
@@ -204,14 +204,14 @@ def main() -> None:
             digests = [json.loads(p.read_text()) for p in sorted(DIGEST_DIR.glob("*.json"))]
             metrics["digests"] = evaluate_digests(df, digests, profile, llm, cache)
         elif args.action == "faithfulness":
-            from rag_papers.embeddings import SentenceTransformerEmbedder
+            from rag_papers.embeddings import OnnxEmbedder
             from rag_papers.llm import from_env
             from rag_papers.retrieval import Index
 
             chat_llm = from_env()
             if chat_llm is None:
                 raise SystemExit("GROQ_API_KEY is not set: cannot run the faithfulness questions")
-            index = Index(data.load_papers(args.path), SentenceTransformerEmbedder())
+            index = Index(data.load_papers(args.path), OnnxEmbedder())
             metrics["faithfulness"] = faithfulness(index, chat_llm)
     finally:
         _save_json(JUDGMENTS, cache)

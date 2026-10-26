@@ -10,7 +10,7 @@ Friday after the cutoff only appears in Tuesday's listing (later around holidays
 the digest for day D contains the papers first announced on D. Revisions (v2+) update the
 stored record but never enter a digest.
 
-## 2. Hugging Face Space runs Streamlit through the Docker SDK
+## 2. Hugging Face Space runs Streamlit through the Docker SDK (superseded by 4)
 
 Streamlit is no longer a built-in Space SDK
 ([docs](https://huggingface.co/docs/hub/spaces-sdks-streamlit)). The Space is created with
@@ -18,8 +18,20 @@ the Docker SDK and the Streamlit template. Nothing else in the plan changes.
 
 ## 3. Embedding model and fusion
 
-`BAAI/bge-small-en-v1.5` (384 dimensions) on CPU, with `sentence-transformers` and `chromadb`
+`BAAI/bge-small-en-v1.5` (384 dimensions) on CPU, with `chromadb`
 pinned in `requirements.txt` so stored embeddings stay comparable across runs. Vectors are
 L2-normalised and queries get bge's retrieval instruction prefix. Dense and BM25 rankings (top 50
 each) are fused with reciprocal rank fusion, k = 60. Changing the model means re-embedding the
 whole store.
+
+## 4. App hosted on Streamlit Community Cloud, embeddings through ONNX Runtime
+
+Since July 2026 Hugging Face requires a PRO plan to host Docker and Gradio Spaces on the free
+`cpu-basic` hardware (the first deploy failed with HTTP 402; static Spaces are still free). The app
+moved to Streamlit Community Cloud, which is free and deploys from GitHub. The Dataset on Hugging
+Face is unchanged and stays the source of truth.
+
+To fit the free tier's memory, `sentence-transformers` and torch were replaced by the model's
+official ONNX export (`onnx/model.onnx` in `BAAI/bge-small-en-v1.5`) run with ONNX Runtime: same
+weights, same CLS pooling and normalisation, so vectors already stored stay comparable and nothing
+is re-embedded. `onnxruntime` and `tokenizers` were already installed as `chromadb` dependencies.

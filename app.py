@@ -3,16 +3,20 @@
     streamlit run app.py
 """
 
+import sys
 from datetime import date, timedelta
 from pathlib import Path
 
-import streamlit as st
+# Streamlit Community Cloud runs `streamlit run app.py` from the repo root without PYTHONPATH.
+sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from rag_papers import data
-from rag_papers.chat import ask
-from rag_papers.embeddings import SentenceTransformerEmbedder
-from rag_papers.llm import PROVIDERS, LLMError, OpenAICompatibleLLM
-from rag_papers.retrieval import Index
+import streamlit as st  # noqa: E402
+
+from rag_papers import data  # noqa: E402
+from rag_papers.chat import ask  # noqa: E402
+from rag_papers.embeddings import OnnxEmbedder  # noqa: E402
+from rag_papers.llm import PROVIDERS, LLMError, OpenAICompatibleLLM  # noqa: E402
+from rag_papers.retrieval import Index  # noqa: E402
 
 MAX_QUESTIONS_PER_SESSION = 20
 # The daily job updates the Dataset once a day; re-check it every hour.
@@ -22,8 +26,8 @@ st.set_page_config(page_title="AI papers assistant", page_icon="📚", layout="w
 
 
 @st.cache_resource(show_spinner=False)
-def embedder() -> SentenceTransformerEmbedder:
-    return SentenceTransformerEmbedder()
+def embedder() -> OnnxEmbedder:
+    return OnnxEmbedder()
 
 
 @st.cache_resource(ttl=REFRESH_SECONDS, show_spinner=False)

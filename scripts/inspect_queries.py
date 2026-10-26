@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 from rag_papers import store
-from rag_papers.embeddings import SentenceTransformerEmbedder
+from rag_papers.embeddings import OnnxEmbedder
 from rag_papers.retrieval import Index
 
 # Mix of topical questions and exact terms (model names, acronyms) where
@@ -29,7 +29,7 @@ QUERIES = [
 def main() -> None:
     path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("data/papers.parquet")
     df = store.load(path)
-    index = Index(df, SentenceTransformerEmbedder())
+    index = Index(df, OnnxEmbedder())
     for query in QUERIES:
         print(f"\n## {query}")
         for mode in ("vector", "keyword", "hybrid"):
