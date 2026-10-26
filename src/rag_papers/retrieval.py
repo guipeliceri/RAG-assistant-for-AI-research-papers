@@ -48,7 +48,7 @@ class Index:
             batch = slice(start, start + CHROMA_BATCH)
             self.collection.add(
                 ids=self.ids[batch],
-                embeddings=[list(e) for e in self.df["embedding"].iloc[batch]],
+                embeddings=[np.asarray(e, dtype=np.float32) for e in self.df["embedding"].iloc[batch]],
                 metadatas=[{"listing_ordinal": int(o)} for o in self.ordinals[batch]],
             )
 
@@ -63,7 +63,7 @@ class Index:
             return []
         lo, hi = int(self.ordinals[mask].min()), int(self.ordinals[mask].max())
         result = self.collection.query(
-            query_embeddings=[list(self.embedder.encode_query(query))],
+            query_embeddings=[np.asarray(self.embedder.encode_query(query), dtype=np.float32)],
             n_results=min(n, allowed),
             where={"$and": [{"listing_ordinal": {"$gte": lo}}, {"listing_ordinal": {"$lte": hi}}]},
         )
