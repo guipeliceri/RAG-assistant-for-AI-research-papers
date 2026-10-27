@@ -57,6 +57,9 @@ class Index:
         hi = end.toordinal() if end else np.inf
         return (self.ordinals >= lo) & (self.ordinals <= hi)
 
+    def has_papers(self, start: date | None = None, end: date | None = None) -> bool:
+        return bool(self._in_range(start, end).any())
+
     def vector_search(self, query: str, mask: np.ndarray, n: int) -> list[str]:
         allowed = int(mask.sum())
         if allowed == 0:

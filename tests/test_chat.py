@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from rag_papers.chat import ask
+from rag_papers.chat import REWRITE_SYSTEM, ask, search_query
 from rag_papers.llm import LLMError
 from rag_papers.retrieval import Index
 from rag_papers.validate import citations, validate
@@ -18,6 +18,8 @@ class ScriptedLLM:
         self.prompt = None
 
     def complete(self, system, user):
+        if system == REWRITE_SYSTEM:
+            return user  # the questions in these tests are already English keywords
         self.prompt = user
         return self.reply
 
@@ -98,3 +100,28 @@ def test_ask_propagates_provider_errors(index):
 
     with pytest.raises(LLMError):
         ask("agents", index, Broken())
+
+
+def test_question_is_rewritten_before_retrieval(index):
+    class Translating(ScriptedLLM):
+        def complete(self, system, user):
+            if system == REWRITE_SYSTEM:
+                return '"hybrid retrieval"\n'
+            return super().complete(system, user)
+
+    answer = ask("quais os estudos sobre busca híbrida?", index, Translating("x [2410.00001]."), k=1)
+    assert answer.search_query == "hybrid retrieval"
+    assert answer.sources[0]["arxiv_id"] == "2410.00001"
+
+
+def test_rewrite_falls_back_to_the_question():
+    class Broken:
+        def complete(self, system, user):
+            raise LLMError("quota exceeded (HTTP 429)")
+
+    class Rambling:
+        def complete(self, system, user):
+            return "x" * 1000
+
+    assert search_query("agents", Broken()) == "agents"
+    assert search_query("agents", Rambling()) == "agents"
