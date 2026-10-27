@@ -13,6 +13,20 @@ on every claim, checked automatically.
 **Live app:** [https://ai-research-papers-guipeliceri.streamlit.app](https://ai-research-papers-guipeliceri.streamlit.app/). It runs entirely on free tiers, and no key is needed
 for the digest or the most-voted list.
 
+## Demo
+
+**Daily digest.** The top papers of the day for the interest profile, each with a short summary.
+
+![Daily digest](docs/media/digest.gif)
+
+**Most voted.** Pick a period and how many papers to show.
+
+![Most voted papers](docs/media/most-voted.gif)
+
+**Chat.** A question in Portuguese, an answer with citations, and the retrieved papers it did not use.
+
+![Chat with citations](docs/media/chat.gif)
+
 ## Why
 
 Dozens of new language-model papers appear on arXiv every day. Nobody can read them all, and a
