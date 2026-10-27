@@ -38,8 +38,12 @@ def load_papers(path: Path) -> pd.DataFrame:
 
 
 def latest_digest(directory: Path) -> dict | None:
-    files = sorted(directory.glob("*.json"))
-    return json.loads(files[-1].read_text()) if files else None
+    for path in sorted(directory.glob("*.json"), reverse=True):
+        digest = json.loads(path.read_text())
+        # Skip empty digests written before arXiv had published the day's listing.
+        if digest.get("papers"):
+            return digest
+    return None
 
 
 def load_popular(path: Path) -> pd.DataFrame:

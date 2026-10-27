@@ -97,13 +97,19 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
     day = args.day or latest_listing_date(datetime.now(timezone.utc))
-    if (DIGEST_DIR / f"{day}.json").exists() and not args.force:
+    existing = DIGEST_DIR / f"{day}.json"
+    # An empty digest from an earlier run (arXiv not updated yet) is rebuilt.
+    if existing.exists() and json.loads(existing.read_text())["papers"] and not args.force:
         logging.info("digest for %s already exists, nothing to do", day)
         return
     llm = llm_module.from_env()
     if llm is None:
         logging.warning("GROQ_API_KEY not set: digest will have titles and links only")
     digest = build(store.load(args.path), day, PROFILE_PATH.read_text(), OnnxEmbedder(), llm)
+    if not digest["papers"]:
+        # The arXiv API can lag the 20:00 ET announcement; a later run will build it.
+        logging.warning("no papers listed on %s yet; not writing a digest", day)
+        return
     path = write(digest)
     summarised = sum(p["summary"] is not None for p in digest["papers"])
     logging.info("wrote %s: %d papers, %d summarised", path, len(digest["papers"]), summarised)

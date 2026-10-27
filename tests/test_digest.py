@@ -92,3 +92,27 @@ def test_write_json(tmp_path):
     path = digest.write(result, tmp_path)
     assert path.name == "2024-10-08.json"
     assert json.loads(path.read_text())["papers"][0]["arxiv_id"] == "2410.00000"
+
+
+def run_main(tmp_path, monkeypatch, df, *args):
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(digest, "DIGEST_DIR", tmp_path / "digests")
+    monkeypatch.setattr(digest, "PROFILE_PATH", tmp_path / "profile.md")
+    (tmp_path / "profile.md").write_text("profile")
+    monkeypatch.setattr(digest.store, "load", lambda path: df)
+    monkeypatch.setattr(digest, "OnnxEmbedder", AxisEmbedder)
+    monkeypatch.setattr(digest.llm_module, "from_env", lambda: None)
+    monkeypatch.setattr("sys.argv", ["digest", "--day", DAY.isoformat(), *args])
+    digest.main()
+    return tmp_path / "digests" / f"{DAY}.json"
+
+
+def test_main_does_not_write_an_empty_digest(tmp_path, monkeypatch):
+    assert not run_main(tmp_path, monkeypatch, DF[DF["listing_date"] != DAY]).exists()
+
+
+def test_main_rebuilds_an_earlier_empty_digest(tmp_path, monkeypatch):
+    (tmp_path / "digests").mkdir()
+    (tmp_path / "digests" / f"{DAY}.json").write_text(json.dumps({"date": DAY.isoformat(), "papers": []}))
+    path = run_main(tmp_path, monkeypatch, DF)
+    assert len(json.loads(path.read_text())["papers"]) == 5
