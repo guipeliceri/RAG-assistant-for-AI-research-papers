@@ -45,3 +45,12 @@ profile digest instead of replacing it, so the profile digest and its evaluation
 as they are. Popularity needs no relevance judge: the vote count is the measurement. Caveats: Daily
 Papers covers only papers someone submitted (a few dozen a day, all areas of AI), and votes favour
 well-known labs.
+
+## 6. Digest profile changed to "advances in current frontier models"
+
+On 2026-10-27 the profile in `profile.md` moved from RAG and information retrieval to advances in
+current frontier models (releases, architectures, scaling, post-training, reasoning, multimodal,
+efficiency, capability benchmarks). Each digest now records a `profile_id` (a hash of the profile
+text) and `profile_name`. Judge verdicts are cached per profile, and precision@5 only counts digests
+built with the current profile, so the earlier RAG digests are left out of the metric instead of being
+judged against interests they were not picked for.
