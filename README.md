@@ -150,7 +150,7 @@ variable `STREAMLIT_APP_URL` if the app URL changes.
 <!-- metrics:start -->
 | Metric | Value | Based on |
 | :--- | :--- | :--- |
-| Digest precision@5 (mean, target ≥ 0.80) | 0.80 | 1 days |
+| Digest precision@5 (mean, target ≥ 0.80) | 0.60 | 2 days |
 | Judge vs human accuracy | n/a | 0 labelled papers |
 | Judge vs human Cohen's κ | n/a |  |
 | Chat answers failing validation | 0% | 2 fixed questions |

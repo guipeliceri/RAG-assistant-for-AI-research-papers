@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T01:04:35+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "candidates": 56,
+  "papers": [
+    {
+      "arxiv_id": "2610.33849",
+      "title": "Ranking Is Not Deciding: Benchmark Shortcuts and Operating-Point Collapse in Query-Time RAG Poisoning Defenses",
+      "authors": [
+        "Pushkal Kumar",
+        "Arvin Sahaym"
+      ],
+      "url": "https://arxiv.org/abs/2610.33849",
+      "similarity": 0.7179,
+      "summary": "The paper examines query‑time filters that screen retrieved documents before they reach a generator, showing that their near‑perfect detection on benchmarks is largely driven by construction cues in the poison set rather than the filters’ content analysis. By defining two label‑free statistics—containment (how often the target question appears verbatim) and length overlap—to profile poison sets, the authors demonstrate that removing a single cue (e.g., the target question prefix) can drop RAGuard’s AUROC from 0.953 to 0.758 and raise its miss rate from 0.191 to 0.763, while similar manipulations raise miss rates for other defenses from 0.000 to 0.827 or 0.986. Across four corpora, four attack families, and ten per‑document defenses, the ranking of documents remains intact but the decision to filter is highly vulnerable, leading the authors to conclude that no defense is currently robust and that detection results must be reported with the poison set’s construction profile and false‑positive rate."
+    },
+    {
+      "arxiv_id": "2610.33776",
+      "title": "TriageRAG: Failure-Aware Self-Training for Adapting Retrieval-Augmented Language Models to Specialized Domains",
+      "authors": [
+        "Samarth Varshney",
+        "Ritu Yadav"
+      ],
+      "url": "https://arxiv.org/abs/2610.33776",
+      "similarity": 0.6987,
+      "summary": "TriageRAG is a failure‑aware self‑training method that adapts retrieval‑augmented language models to specialized domains when only unlabeled text is available.  \nIt probes each self‑generated question both with and without retrieved context, classifies the outcome into four categories (known, solved, context‑failure, retrieval‑failure), and routes each category to a specific training signal—including a parametric route that teaches the reader to answer when retrieval misses.  \nExperiments on 11 datasets across three domains with a Qwen3‑4B backbone and on CS‑Bench with Qwen3‑8B show that TriageRAG outperforms a budget‑matched SimRAG by 1.2–6.4 points and is the only method that recovers the closed‑book level whenever retrieval hurts the base model, with an ablation revealing that round‑trip filtering removes contexts lacking evidence and causes the reader to over‑trust noisy retrieval."
+    },
+    {
+      "arxiv_id": "2610.33694",
+      "title": "Embedding-Based Educational Taxonomies",
+      "authors": [
+        "Kia Karbasi",
+        "Kaveh Karbasi",
+        "Gregory Pottie"
+      ],
+      "url": "https://arxiv.org/abs/2610.33694",
+      "similarity": 0.6752,
+      "summary": "The paper shows how to build educational taxonomies automatically by clustering semantic embeddings of math questions. It compares these embedding‑based taxonomies with existing Common Core State Standards taxonomies in two ASSISTments datasets and tests them in a Deep Knowledge Tracing model. The new taxonomies match much of the human‑designed structure but also reveal alternative groupings, and using them improves knowledge‑tracing accuracy by about 3‑5 AUC percentage points."
+    },
+    {
+      "arxiv_id": "2610.33441",
+      "title": "Quantifying Meaning with SCAPE-T: Semantic Complexity from Encoder-Only Transformer Attention",
+      "authors": [
+        "Maxim Khovansky",
+        "Lev Mukhanov"
+      ],
+      "url": "https://arxiv.org/abs/2610.33441",
+      "similarity": 0.6645,
+      "summary": "SCAPE‑T is an attention‑derived metric that estimates semantic complexity by combining three submetrics—inverse‑weighted self‑focus, CLS focus, and inter‑head redundancy—using layer‑weighted aggregation. The authors train and calibrate it on philosophical prose versus MCTest stories, then evaluate it on children’s stories versus technical Wikipedia articles, measuring pairwise accuracy. SCAPE‑T achieves a pairwise accuracy of 78.5 % (95 % CI: 76.1–80.4, N = 10 k comparisons), outperforming readability, syntactic/lexical, and LLM‑derived baselines by 12.7 percentage points under word‑length control, and also leads on a short‑term abstractness dataset, showing it isolates conceptual structure from lexical/syntactic confounds and generalises across two held‑out domains."
+    },
+    {
+      "arxiv_id": "2610.33950",
+      "title": "What Makes a Question Curious? Measuring Model Curiosity in Human-LLM Interactions",
+      "authors": [
+        "Angana Borah",
+        "Rachana Ramchandar",
+        "Inderjeet Nair",
+        "Rada Mihalcea"
+      ],
+      "url": "https://arxiv.org/abs/2610.33950",
+      "similarity": 0.6559,
+      "summary": "The paper studies how large language models can act as curious partners in conversation by asking questions that uncover knowledge gaps and assumptions. Using a theory‑grounded taxonomy, the authors analyze four conversation datasets and find that curiosity‑oriented questions are rare—only 17‑28% of all questions—but tend to lead to more exploratory and epistemically rich user responses, with patterns that differ across datasets. A human evaluation shows that model curiosity can encourage exploration, especially in advice, creative, and research settings."
+    }
+  ]
+}

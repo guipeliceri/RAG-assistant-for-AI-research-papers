@@ -18,5 +18,25 @@
   "2610.32474": {
     "relevant": true,
     "reason": "Introduces a reasoning-enhanced multimodal embedding method aimed at improving retrieval performance, directly relating to embeddings for retrieval."
+  },
+  "2610.33849": {
+    "relevant": true,
+    "reason": "The paper studies evaluation of query-time retrieval filters in RAG, directly addressing RAG system assessment."
+  },
+  "2610.33776": {
+    "relevant": true,
+    "reason": "The paper proposes a new method for improving retrieval-augmented generation by analyzing and addressing retrieval and reader failures."
+  },
+  "2610.33694": {
+    "relevant": false,
+    "reason": "Focuses on embedding-based taxonomy construction for education, not on retrieval or RAG topics."
+  },
+  "2610.33441": {
+    "relevant": false,
+    "reason": "The paper focuses on semantic complexity estimation, not on retrieval or RAG topics."
+  },
+  "2610.33950": {
+    "relevant": false,
+    "reason": "The paper focuses on model curiosity and question-asking, not on retrieval-augmented generation or related IR topics."
   }
 }
