@@ -15,6 +15,7 @@ import json
 import logging
 import os
 import re
+import time
 from pathlib import Path
 
 import numpy as np
@@ -32,6 +33,12 @@ JUDGMENTS = EVAL_DIR / "judgments.json"
 METRICS = EVAL_DIR / "metrics.json"
 README = Path("README.md")
 GOLDEN_SIZE = 30
+# Groq free tier rate-limits bursts; each question costs two calls (rewrite + answer).
+QUESTION_PAUSE = 3.0
+RATE_LIMIT_WAIT = 60.0
+RATE_LIMIT_RETRIES = 2
+
+log = logging.getLogger(__name__)
 
 FAITHFULNESS_QUESTIONS = [
     "What came out recently about retrieval-augmented generation?",
@@ -126,14 +133,28 @@ def evaluate_digests(df: pd.DataFrame, digests: list[dict], profile: str, llm: L
     }
 
 
-def faithfulness(index, llm: LLM) -> dict:
+def _ask_with_retry(question, index, llm):
     from rag_papers.chat import ask
 
-    invalid, failed = [], 0
-    for question in FAITHFULNESS_QUESTIONS:
+    for attempt in range(RATE_LIMIT_RETRIES + 1):
         try:
-            answer = ask(question, index, llm)
-        except LLMError:
+            return ask(question, index, llm)
+        except LLMError as e:
+            if "429" not in str(e) or attempt == RATE_LIMIT_RETRIES:
+                raise
+            log.warning("rate limited, waiting %.0fs before retrying: %s", RATE_LIMIT_WAIT, question)
+            time.sleep(RATE_LIMIT_WAIT)
+
+
+def faithfulness(index, llm: LLM) -> dict:
+    invalid, failed = [], 0
+    for i, question in enumerate(FAITHFULNESS_QUESTIONS):
+        if i:
+            time.sleep(QUESTION_PAUSE)
+        try:
+            answer = _ask_with_retry(question, index, llm)
+        except LLMError as e:
+            log.warning("faithfulness question failed (%s): %s", e, question)
             failed += 1
             continue
         if answer.sources and not answer.validation.ok:

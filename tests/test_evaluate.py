@@ -117,3 +117,36 @@ def test_update_readme_replaces_only_the_block(tmp_path):
     evaluate.update_readme({"digests": {"mean_precision_at_5": 0.8, "days": 3}}, readme)
     text = readme.read_text()
     assert "old" not in text and "0.80" in text and text.startswith("intro") and text.endswith("outro\n")
+
+
+class FakeAnswer:
+    sources = ["s"]
+
+    class validation:
+        ok = True
+
+
+def test_faithfulness_retries_rate_limits_and_counts_other_failures(monkeypatch):
+    from rag_papers import chat
+
+    monkeypatch.setattr(evaluate, "QUESTION_PAUSE", 0)
+    monkeypatch.setattr(evaluate, "RATE_LIMIT_WAIT", 0)
+    monkeypatch.setattr(evaluate, "FAITHFULNESS_QUESTIONS", ["limited once", "broken", "limited always"])
+    calls = {}
+
+    def ask(question, index, llm):
+        calls[question] = calls.get(question, 0) + 1
+        if question == "limited once" and calls[question] == 1:
+            raise LLMError("Groq quota exceeded (HTTP 429)")
+        if question == "broken":
+            raise LLMError("Groq returned HTTP 500")
+        if question == "limited always":
+            raise LLMError("Groq quota exceeded (HTTP 429)")
+        return FakeAnswer()
+
+    monkeypatch.setattr(chat, "ask", ask)
+    result = evaluate.faithfulness(None, None)
+
+    assert result["answered"] == 1
+    assert result["invalid_rate"] == 0
+    assert calls == {"limited once": 2, "broken": 1, "limited always": evaluate.RATE_LIMIT_RETRIES + 1}
