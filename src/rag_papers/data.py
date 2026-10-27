@@ -13,21 +13,22 @@ import pandas as pd
 
 from rag_papers import store
 from rag_papers.ingest import DEFAULT_PATH
+from rag_papers.popular import COLUMNS as POPULAR_COLUMNS
+from rag_papers.popular import DEFAULT_PATH as POPULAR_PATH
 
 LOCAL_DIGESTS = Path("digests")
 
 
-def fetch() -> tuple[Path, Path]:
-    """Return (papers.parquet path, digests directory), downloading them if needed."""
+def fetch() -> tuple[Path, Path, Path]:
+    """Return (papers.parquet, digests directory, popular.parquet), downloading them if needed."""
     repo = os.environ.get("HF_DATASET_REPO")
     if not repo:
-        return DEFAULT_PATH, LOCAL_DIGESTS
+        return DEFAULT_PATH, LOCAL_DIGESTS, POPULAR_PATH
     from huggingface_hub import snapshot_download
 
-    root = Path(
-        snapshot_download(repo, repo_type="dataset", allow_patterns=["papers.parquet", "digests/*.json"])
-    )
-    return root / "papers.parquet", root / "digests"
+    patterns = ["papers.parquet", "popular.parquet", "digests/*.json"]
+    root = Path(snapshot_download(repo, repo_type="dataset", allow_patterns=patterns))
+    return root / "papers.parquet", root / "digests", root / "popular.parquet"
 
 
 def load_papers(path: Path) -> pd.DataFrame:
@@ -39,3 +40,7 @@ def load_papers(path: Path) -> pd.DataFrame:
 def latest_digest(directory: Path) -> dict | None:
     files = sorted(directory.glob("*.json"))
     return json.loads(files[-1].read_text()) if files else None
+
+
+def load_popular(path: Path) -> pd.DataFrame:
+    return pd.read_parquet(path) if path.exists() else pd.DataFrame(columns=POPULAR_COLUMNS)

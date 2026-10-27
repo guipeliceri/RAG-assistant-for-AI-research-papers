@@ -44,6 +44,12 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python -m rag_papers.digest
+      - name: Collect most-voted papers
+        id: popular
+        # Votes must never block the digest; a failure is reported at the end of the job.
+        continue-on-error: true
+        # First run backfills 180 days; afterwards the last 30 are re-fetched because votes keep growing.
+        run: python -m rag_papers.popular --days ${{ steps.pull.outputs.popular_found == 'true' && '30' || '180' }}
       - name: Push store and digests to the Hub
         run: python -m rag_papers.hub push
       - name: Evaluate
@@ -68,6 +74,11 @@ jobs:
           git diff --cached --quiet || git commit -m "Digest $(date -u +%F)"
           git pull --rebase --quiet
           git push
+      - name: Report most-voted failure
+        if: steps.popular.outcome == 'failure'
+        run: |
+          echo "::error::collecting most-voted papers failed; the digest was published without new votes"
+          exit 1
       - name: Open an issue on failure
         if: failure()
         env:
