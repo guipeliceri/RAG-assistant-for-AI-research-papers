@@ -66,6 +66,10 @@ def fetch_day(day: date, session=None, now: datetime | None = None) -> list[dict
     for attempt in range(1, RETRIES + 1):
         try:
             response = session.get(API_URL, params={"date": day.isoformat()}, timeout=30)
+            if response.status_code == 400:
+                # The API answers 400 for a date whose list does not exist yet (e.g. today, early UTC).
+                logging.info("daily papers %s: no list yet", day)
+                return []
             response.raise_for_status()
             return [parse(item, now, day) for item in response.json() if item.get("paper", {}).get("id")]
         except (requests.RequestException, ValueError) as exc:
@@ -101,16 +105,24 @@ def top(df: pd.DataFrame, start: date | None, end: date | None, n: int = 10) -> 
 def run(path: Path, days: int, today: date | None = None, session=None, delay: float = REQUEST_DELAY) -> int:
     today = today or datetime.now(timezone.utc).date()
     df = store.load(path) if path.exists() else pd.DataFrame(columns=COLUMNS)
-    total = 0
+    total, failed = 0, []
     for offset in range(days, -1, -1):
         day = today - timedelta(days=offset)
-        records = fetch_day(day, session)
+        try:
+            records = fetch_day(day, session)
+        except (requests.RequestException, ValueError) as exc:
+            # One bad day must not throw away the others; it is retried on the next run.
+            logging.warning("daily papers %s skipped: %s", day, exc)
+            failed.append(day)
+            continue
         df = update(df, records)
         total += len(records)
         if delay:
             time.sleep(delay)
     store.save(df, path)
     logging.info("popular: %d entries fetched over %d days, %d papers stored", total, days + 1, len(df))
+    if failed and len(failed) == days + 1:
+        raise RuntimeError("every Daily Papers request failed")
     return total
 
 

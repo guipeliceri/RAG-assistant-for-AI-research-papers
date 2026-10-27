@@ -27,7 +27,7 @@ def item(arxiv_id, upvotes, day, comments=0, **paper):
 class FakeResponse:
     def __init__(self, payload, status=200):
         self.payload = payload
-        self.status = status
+        self.status = self.status_code = status
 
     def raise_for_status(self):
         if self.status >= 400:
@@ -98,3 +98,26 @@ def test_fetch_day_retries_then_raises(monkeypatch):
     assert [r["arxiv_id"] for r in popular.fetch_day(date(2026, 10, 22), ok, NOW)] == ["a"]
     with pytest.raises(requests.HTTPError):
         popular.fetch_day(date(2026, 10, 22), FakeSession({}, fail_first=popular.RETRIES), NOW)
+
+
+def test_400_means_no_list_yet():
+    class BadRequest(FakeSession):
+        def get(self, url, params=None, timeout=None):
+            return FakeResponse(None, 400)
+
+    assert popular.fetch_day(date(2026, 10, 27), BadRequest({}), NOW) == []
+
+
+def test_run_keeps_other_days_when_one_fails(tmp_path, monkeypatch):
+    monkeypatch.setattr(popular.time, "sleep", lambda s: None)
+
+    class OneDayDown(FakeSession):
+        def get(self, url, params=None, timeout=None):
+            if params["date"] == "2026-10-25":
+                return FakeResponse(None, 503)
+            return super().get(url, params, timeout)
+
+    session = OneDayDown({"2026-10-26": [item("b", 2, "2026-10-26")]})
+    path = tmp_path / "popular.parquet"
+    assert popular.run(path, days=1, today=date(2026, 10, 26), session=session, delay=0) == 1
+    assert list(pd.read_parquet(path)["arxiv_id"]) == ["b"]

@@ -26,5 +26,7 @@ def test_load_papers_skips_rows_without_embedding(tmp_path):
 def test_latest_digest(tmp_path):
     assert data.latest_digest(tmp_path) is None
     for day in ["2024-10-07", "2024-10-08"]:
-        (tmp_path / f"{day}.json").write_text(json.dumps({"date": day}))
+        (tmp_path / f"{day}.json").write_text(json.dumps({"date": day, "papers": [{"arxiv_id": "x"}]}))
+    assert data.latest_digest(tmp_path)["date"] == "2024-10-08"
+    (tmp_path / "2024-10-09.json").write_text(json.dumps({"date": "2024-10-09", "papers": []}))
     assert data.latest_digest(tmp_path)["date"] == "2024-10-08"
