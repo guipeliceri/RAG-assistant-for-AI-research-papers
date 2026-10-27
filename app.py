@@ -18,6 +18,7 @@ from rag_papers.chat import ask  # noqa: E402
 from rag_papers.embeddings import OnnxEmbedder  # noqa: E402
 from rag_papers.llm import PROVIDERS, LLMError, OpenAICompatibleLLM  # noqa: E402
 from rag_papers.retrieval import Index  # noqa: E402
+from rag_papers.validate import citations  # noqa: E402
 
 MAX_QUESTIONS_PER_SESSION = 20
 # The daily job updates the Dataset once a day; re-check it every hour.
@@ -144,9 +145,17 @@ def chat_tab() -> None:
                 problems.append("numbers not found in the sources: " + ", ".join(v.unsupported_numbers))
             st.warning("⚠️ Check this answer: " + "; ".join(problems))
         if answer.sources:
-            st.markdown("**Sources**")
-            for s in answer.sources:
-                st.markdown(f"- [{s['arxiv_id']}]({s['url']}) {s['title']} ({s['listing_date']})")
+            cited = set(citations(answer.text))
+            used = [s for s in answer.sources if s["arxiv_id"] in cited]
+            unused = [s for s in answer.sources if s["arxiv_id"] not in cited]
+            if used:
+                st.markdown("**Sources**")
+                for s in used:
+                    st.markdown(f"- [{s['arxiv_id']}]({s['url']}) {s['title']} ({s['listing_date']})")
+            with st.expander(f"Also retrieved but not used ({len(unused)})"):
+                st.caption(f"Searched for: *{answer.search_query}*")
+                for s in unused:
+                    st.markdown(f"- [{s['arxiv_id']}]({s['url']}) {s['title']} ({s['listing_date']})")
 
 
 digest, voted, chat = st.tabs(["Today's digest", "Most voted", "Chat"])

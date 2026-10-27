@@ -112,14 +112,17 @@ not use the interest profile. Coverage is limited to what the community features
 PYTHONPATH=src streamlit run app.py
 ```
 
-Two tabs: **Today's digest** (no key needed) and **Chat**. The chat runs hybrid retrieval over the
-chosen date range, sends only the retrieved abstracts to the LLM, and requires a `[arxiv_id]`
+Three tabs: **Today's digest** and **Most voted** (no key needed) and **Chat**. The papers and the
+embedding model are English, so the chat first asks the LLM to turn the question (in any language)
+into a short English search query, then runs hybrid retrieval over the chosen date range, sends only the retrieved abstracts to the LLM, and requires a `[arxiv_id]`
 citation on every factual sentence. Each answer is then checked without any LLM:
 
 - every cited ID must be one of the retrieved papers;
 - every number in the answer must appear in a retrieved abstract (or in the question).
 
-If a check fails, the answer is shown with a warning that says what failed, and the sources are
+The answer comes back in the language of the question. Only the papers it cites are listed as
+sources; the other retrieved papers are folded away under "Also retrieved but not used". If a check
+fails, the answer is shown with a warning that says what failed, and the sources are
 always listed under it. You pick the provider (Groq, OpenRouter or Gemini, all through their
 OpenAI-compatible endpoints) and paste your own key. It lives in the Streamlit session only: it is
 never written to disk, logged, or included in error messages.
