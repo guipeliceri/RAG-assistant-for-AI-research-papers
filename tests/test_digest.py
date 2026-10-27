@@ -116,3 +116,11 @@ def test_main_rebuilds_an_earlier_empty_digest(tmp_path, monkeypatch):
     (tmp_path / "digests" / f"{DAY}.json").write_text(json.dumps({"date": DAY.isoformat(), "papers": []}))
     path = run_main(tmp_path, monkeypatch, DF)
     assert len(json.loads(path.read_text())["papers"]) == 5
+
+
+def test_build_records_the_profile():
+    profile = "# Interest profile\n\nAdvances in frontier models: scaling, reasoning."
+    result = digest.build(DF, DAY, profile, AxisEmbedder(), None)
+    assert result["profile_name"] == "Advances in frontier models"
+    assert result["profile_id"] == digest.profile_id(profile + "\n")
+    assert result["profile_id"] != digest.profile_id("something else")

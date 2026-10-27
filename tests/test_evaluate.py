@@ -92,11 +92,20 @@ def test_calibrate_uses_only_labelled_rows_and_caches():
     assert result["accuracy"] == pytest.approx(0.667, abs=1e-3)  # judge says 2410.00002 is relevant
     evaluate.calibrate(df, golden, "profile", llm, cache)
     assert llm.calls == 3
+    # A new profile needs new verdicts.
+    evaluate.calibrate(df, golden, "another profile", llm, cache)
+    assert llm.calls == 6
 
 
 def test_evaluate_digests_precision():
     df = papers(10)
-    digests = [{"date": "2024-10-08", "papers": [{"arxiv_id": f"2410.{i:05d}", "title": ""} for i in range(5)]}]
+    picks = [{"arxiv_id": f"2410.{i:05d}", "title": ""} for i in range(5)]
+    digests = [
+        {"date": "2024-10-08", "profile_id": evaluate.profile_id("profile"), "papers": picks},
+        # Built with another profile (or before profiles were recorded): not comparable.
+        {"date": "2024-10-09", "profile_id": evaluate.profile_id("old profile"), "papers": picks},
+        {"date": "2024-10-10", "papers": picks},
+    ]
     result = evaluate.evaluate_digests(df, digests, "profile", KeywordJudge(), {})
     assert result["per_day"] == {"2024-10-08": 0.6}
     assert result["mean_precision_at_5"] == 0.6

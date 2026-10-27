@@ -56,7 +56,8 @@ def digest_tab() -> None:
     st.subheader(f"Digest for {digest['date']}")
     st.caption(
         f"Top {len(digest['papers'])} of {digest['candidates']} new cs.CL papers, "
-        "ranked by similarity to the profile *RAG and information retrieval*."
+        # Digests from before the profile was recorded used the original RAG profile.
+        f"ranked by similarity to the profile *{digest.get('profile_name', 'RAG and information retrieval')}*."
     )
     for paper in digest["papers"]:
         st.markdown(f"#### [{paper['title']}]({paper['url']})")

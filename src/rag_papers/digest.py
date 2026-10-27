@@ -6,6 +6,7 @@ Selection is embedding similarity only; the LLM never decides what goes in.
 """
 
 import argparse
+import hashlib
 import json
 import logging
 from datetime import date, datetime, timezone
@@ -30,6 +31,20 @@ Rules:
 - Never invent numbers. Only repeat a number if it appears in the abstract.
 - If the abstract does not say something (e.g. results, data, or what is compared), write "not stated in the abstract" instead of guessing.
 - Two or three sentences, plain English: what the paper does, how, and the main result."""
+
+
+def profile_id(profile: str) -> str:
+    """Short fingerprint of the profile text, so metrics only compare digests built from the same profile."""
+    return hashlib.sha256(profile.strip().encode()).hexdigest()[:12]
+
+
+def profile_name(profile: str) -> str:
+    """The profile's headline: the first body line up to its colon."""
+    for line in profile.splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            return line.split(":")[0].strip()
+    return "profile"
 
 
 def select(df: pd.DataFrame, day: date, profile_vector: np.ndarray, n: int = DIGEST_SIZE) -> pd.DataFrame:
@@ -76,6 +91,8 @@ def build(
         "date": day.isoformat(),
         "generated_at": (now or datetime.now(timezone.utc)).isoformat(timespec="seconds"),
         "summary_model": llm.model if llm else None,
+        "profile_id": profile_id(profile),
+        "profile_name": profile_name(profile),
         "candidates": int((df["listing_date"] == day).sum()),
         "papers": papers,
     }

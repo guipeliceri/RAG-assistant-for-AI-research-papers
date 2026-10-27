@@ -21,7 +21,7 @@ import numpy as np
 import pandas as pd
 
 from rag_papers import data, store
-from rag_papers.digest import DIGEST_DIR, PROFILE_PATH
+from rag_papers.digest import DIGEST_DIR, PROFILE_PATH, profile_id
 from rag_papers.ingest import DEFAULT_PATH
 from rag_papers.judge import JUDGE_MODEL, agreement, judge, precision_at_k
 from rag_papers.llm import GroqLLM, LLM, LLMError
@@ -86,9 +86,11 @@ def golden_template(df: pd.DataFrame, profile_vector: np.ndarray, seed: int = 0)
 
 
 def judged(paper_id: str, title: str, abstract: str, profile: str, llm: LLM, cache: dict) -> bool:
-    if paper_id not in cache:
-        cache[paper_id] = judge(title, abstract, profile, llm)
-    return cache[paper_id]["relevant"]
+    # A verdict only holds for the profile it was given, so the cache is keyed by both.
+    key = f"{profile_id(profile)}:{paper_id}"
+    if key not in cache:
+        cache[key] = judge(title, abstract, profile, llm)
+    return cache[key]["relevant"]
 
 
 def calibrate(df: pd.DataFrame, golden: pd.DataFrame, profile: str, llm: LLM, cache: dict) -> dict:
@@ -105,7 +107,11 @@ def calibrate(df: pd.DataFrame, golden: pd.DataFrame, profile: str, llm: LLM, ca
 def evaluate_digests(df: pd.DataFrame, digests: list[dict], profile: str, llm: LLM, cache: dict) -> dict:
     papers = df.set_index("arxiv_id")
     per_day = {}
+    current = profile_id(profile)
     for digest in digests:
+        # Digests picked with an earlier profile would be judged against the wrong interests.
+        if digest.get("profile_id") != current:
+            continue
         labels = []
         for p in digest["papers"]:
             abstract = papers.at[p["arxiv_id"], "abstract"] if p["arxiv_id"] in papers.index else ""
