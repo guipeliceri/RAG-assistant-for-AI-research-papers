@@ -82,5 +82,49 @@
   "acf8a49d322d:2609.19553": {
     "relevant": false,
     "reason": "The paper surveys model fusion, which is not a core topic in the specified frontier model advances and training methods."
+  },
+  "acf8a49d322d:2610.18881": {
+    "relevant": false,
+    "reason": "The paper focuses on applying fine-tuned LLMs to regulated voice-agent tasks, not on frontier model architectures, scaling, or core training methods."
+  },
+  "acf8a49d322d:2509.09009": {
+    "relevant": true,
+    "reason": "Introduces benchmark baselines and scaling analyses for language models, directly addressing model comparison, training recipes, and scaling laws."
+  },
+  "acf8a49d322d:2504.08192": {
+    "relevant": false,
+    "reason": "Focuses on unlearning methods, not on frontier model architectures, scaling, training, or efficiency benchmarks covered in the profile"
+  },
+  "acf8a49d322d:2610.27301": {
+    "relevant": true,
+    "reason": "Focuses on context compaction for long-context handling, a key topic in the profile."
+  },
+  "acf8a49d322d:2610.10304": {
+    "relevant": true,
+    "reason": "Introduces a latent prompt compression method to improve efficiency and study its impact on LLM performance and reasoning, aligning with the profile's focus on efficiency and long-context handling."
+  },
+  "acf8a49d322d:2605.30018": {
+    "relevant": true,
+    "reason": "Introduces a new intrinsic evaluation framework for LLM capabilities, aligning with interest in benchmarks measuring model limits."
+  },
+  "acf8a49d322d:2610.09111": {
+    "relevant": false,
+    "reason": "The paper studies inference nondeterminism in text classifiers, not advances or benchmarks of frontier language model architectures or scaling."
+  },
+  "acf8a49d322d:2607.11889": {
+    "relevant": true,
+    "reason": "Focuses on scaling up decoder-only transformers and training data pipelines, directly relevant to frontier model advances and scaling laws."
+  },
+  "acf8a49d322d:2610.10114": {
+    "relevant": true,
+    "reason": "Focuses on hybrid attention architectures for improving long-context efficiency, matching the profile's interest in long-context models and architectural advances."
+  },
+  "acf8a49d322d:2608.27402": {
+    "relevant": false,
+    "reason": "The paper studies moral knowledge probing in LLMs, not a frontier model advance, architecture, training method, or benchmark."
+  },
+  "acf8a49d322d:2610.14958": {
+    "relevant": false,
+    "reason": "The paper focuses on activation steering memory, which is not covered by the listed frontier model topics."
   }
 }
