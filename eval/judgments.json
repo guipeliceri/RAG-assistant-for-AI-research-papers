@@ -38,5 +38,49 @@
   "2610.33950": {
     "relevant": false,
     "reason": "The paper focuses on model curiosity and question-asking, not on retrieval-augmented generation or related IR topics."
+  },
+  "acf8a49d322d:2501.09223": {
+    "relevant": false,
+    "reason": "The work is a foundational book, not a new method, system, or benchmark on frontier model advances."
+  },
+  "acf8a49d322d:2610.09587": {
+    "relevant": true,
+    "reason": "Introduces a new distillation method to improve reasoning in smaller LLMs, directly matching the profile's focus on reasoning, distillation, and efficient model training."
+  },
+  "acf8a49d322d:2610.10622": {
+    "relevant": true,
+    "reason": "Introduces a benchmark evaluating LLM capabilities, fitting the profile's interest in capability benchmarks"
+  },
+  "acf8a49d322d:2608.05741": {
+    "relevant": false,
+    "reason": "The paper focuses on detecting LLM-generated text, not on model architectures, training methods, or capability benchmarks."
+  },
+  "acf8a49d322d:2610.05076": {
+    "relevant": false,
+    "reason": "Focuses on test-time training dynamics, not on frontier model architectures, scaling, or listed post-training methods"
+  },
+  "acf8a49d322d:2609.38490": {
+    "relevant": false,
+    "reason": "Focuses on a domain-specific memory system for clinical LLM agents, not on frontier model architectures, training, or benchmarking."
+  },
+  "acf8a49d322d:2606.15396": {
+    "relevant": true,
+    "reason": "Introduces a safety benchmark and uses model‑aware preference optimization, fitting the profile's focus on post‑training methods and capability evaluation."
+  },
+  "acf8a49d322d:2602.22647": {
+    "relevant": true,
+    "reason": "Introduces a fast inference technique (vectorized constrained decoding) for LLMs, aligning with efficiency and inference acceleration interests."
+  },
+  "acf8a49d322d:2511.16221": {
+    "relevant": true,
+    "reason": "Introduces a multimodal benchmark and analysis of MLLM capabilities, directly aligning with the profile's focus on multimodal models and capability benchmarks."
+  },
+  "acf8a49d322d:2605.23328": {
+    "relevant": false,
+    "reason": "Focuses on sign language emotion recognition and visual modeling, not on frontier language model advances or related benchmarks."
+  },
+  "acf8a49d322d:2609.19553": {
+    "relevant": false,
+    "reason": "The paper surveys model fusion, which is not a core topic in the specified frontier model advances and training methods."
   }
 }
