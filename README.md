@@ -95,9 +95,9 @@ flowchart LR
 | Metric | Value | Based on |
 | :--- | :--- | :--- |
 | Digest precision@5 (mean, target ≥ 0.80) | n/a | 0 days |
-| Judge vs human accuracy | n/a | 0 labelled papers |
-| Judge vs human Cohen's κ | n/a |  |
-| Chat answers failing validation | 0% | 15 fixed questions |
+| Judge vs human accuracy | 53% | 30 labelled papers |
+| Judge vs human Cohen's κ | 0.07 |  |
+| Chat answers failing validation | 13% | 15 fixed questions |
 <!-- metrics:end -->
 
 *The table is refreshed by the daily workflow.*

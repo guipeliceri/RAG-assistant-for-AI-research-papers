@@ -126,5 +126,49 @@
   "acf8a49d322d:2610.14958": {
     "relevant": false,
     "reason": "The paper focuses on activation steering memory, which is not covered by the listed frontier model topics."
+  },
+  "acf8a49d322d:2610.11978": {
+    "relevant": true,
+    "reason": "Evaluates and benchmarks LLM capabilities, directly matching the profile's focus on capability benchmarks"
+  },
+  "acf8a49d322d:2610.19848": {
+    "relevant": true,
+    "reason": "Introduces a new benchmark for evaluating LLM knowledge, aligning with interest in capability measurement benchmarks."
+  },
+  "acf8a49d322d:2608.19893": {
+    "relevant": true,
+    "reason": "Introduces a new evaluation protocol for long-generation behavior of base LLMs, aligning with the profile's interest in long-context analysis and benchmarking."
+  },
+  "acf8a49d322d:2608.06578": {
+    "relevant": true,
+    "reason": "Analyzes and benchmarks behavior and internal mechanisms of frontier language models, fitting the profile's focus on capabilities and limits."
+  },
+  "acf8a49d322d:2609.35426": {
+    "relevant": true,
+    "reason": "Introduces a new RL-based post-training method to improve LLM reasoning, matching the profile's focus on RL for reasoning and post-training techniques."
+  },
+  "acf8a49d322d:2609.09476": {
+    "relevant": false,
+    "reason": "The paper focuses on small, domain-specific language model deployment and a niche benchmark, not on frontier LLM advances, scaling laws, or general efficiency benchmarks."
+  },
+  "acf8a49d322d:2606.05405": {
+    "relevant": true,
+    "reason": "Introduces a new benchmark evaluating AI agents on real-world, economically valuable tasks, aligning with interest in capability benchmarks."
+  },
+  "acf8a49d322d:2610.25549": {
+    "relevant": false,
+    "reason": "The paper focuses on quantum modules for emotion classification, not on frontier LLM architectures, scaling, or related benchmarks."
+  },
+  "acf8a49d322d:2610.37465": {
+    "relevant": false,
+    "reason": "Focuses on documentation transparency rather than model advances or technical methods"
+  },
+  "acf8a49d322d:2610.36990": {
+    "relevant": true,
+    "reason": "Focuses on multilingual evaluation benchmarks, directly addressing measurement of model capabilities."
+  },
+  "acf8a49d322d:2610.36811": {
+    "relevant": true,
+    "reason": "Introduces a novel state-aware post-training knowledge improvement method for large language models, aligning with the profile's focus on post-training techniques and LLM capabilities."
   }
 }

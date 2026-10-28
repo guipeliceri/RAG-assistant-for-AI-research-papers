@@ -8,7 +8,17 @@
   "faithfulness": {
     "questions": 15,
     "answered": 15,
-    "invalid_rate": 0.0,
-    "invalid_questions": []
+    "invalid_rate": 0.133,
+    "invalid_questions": [
+      "Are there new benchmarks for long-context question answering?",
+      "What is new in query rewriting or query expansion?"
+    ]
+  },
+  "calibration": {
+    "n": 30,
+    "accuracy": 0.533,
+    "cohen_kappa": 0.067,
+    "judge_says_relevant_human_not": 8,
+    "human_says_relevant_judge_not": 6
   }
 }
