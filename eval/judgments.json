@@ -170,5 +170,13 @@
   "acf8a49d322d:2610.36811": {
     "relevant": true,
     "reason": "Introduces a novel state-aware post-training knowledge improvement method for large language models, aligning with the profile's focus on post-training techniques and LLM capabilities."
+  },
+  "acf8a49d322d:2610.36109": {
+    "relevant": true,
+    "reason": "Introduces a benchmark/evaluation framework for test-time model updates, fitting the profile's interest in benchmarks measuring model capabilities."
+  },
+  "acf8a49d322d:2610.36668": {
+    "relevant": true,
+    "reason": "Introduces a quantitative benchmark to evaluate frontier LLM behavior, fitting the profile's interest in capability measurement."
   }
 }
