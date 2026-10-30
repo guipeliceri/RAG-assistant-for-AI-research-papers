@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-30",
+  "generated_at": "2026-10-30T07:25:32+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 98,
+  "papers": [
+    {
+      "arxiv_id": "2610.39006",
+      "title": "Blind Spots: Where Small Language Models Fall Behind Frontier Models on Terminal Tasks",
+      "authors": [
+        "Ashima Suvarna",
+        "Ruta Desai",
+        "Ahmed Elgohary"
+      ],
+      "url": "https://arxiv.org/abs/2610.39006",
+      "similarity": 0.7331,
+      "summary": "The paper investigates why small language models (SLMs) fall behind frontier models (FMs) on terminal tasks by breaking the performance gap into three dimensions: solvability, verification, and confidence. Using two standard terminal benchmarks, the authors show that repeated sampling narrows but does not eliminate the solvability gap, while a persistent verification gap remains; FMs recover more of the gap between random and oracle selection and are better calibrated than SLMs. These findings suggest that the SLM‑FM gap is multidimensional, involving not only solution generation but also the ability to recognize and anticipate successful solutions."
+    },
+    {
+      "arxiv_id": "2610.38788",
+      "title": "Gold vs.~Translation: Are We Measuring Language, Knowledge, or Locality in Translated Benchmarks?",
+      "authors": [
+        "Klaudia-Doris Thellmann",
+        "Bernhard Stadler",
+        "Dan Saattrup Nielsen",
+        "Michael Färber",
+        "Jens Lehmann"
+      ],
+      "url": "https://arxiv.org/abs/2610.38788",
+      "similarity": 0.731,
+      "summary": "The study compares DeepL‑translated MMLU benchmarks to six native tests in seven language pairings across five Nordic and Baltic languages, evaluating 29 models on each pairing. It tests whether the translated scores add predictive value for native performance beyond model size and language proficiency, finding that proxy validity differs widely: four pairings show robust effects, two are marginal, and one is null. The strongest incremental value appears for curriculum‑overlap tests such as Skolprov (ΔR² = .128, 95 % CI [.038,.253]), while translated MMLU adds no significant value for Sweden‑specific factual knowledge in SwedishFacts (p = .242), suggesting translated benchmarks work best when their content overlaps with the native target."
+    },
+    {
+      "arxiv_id": "2610.39854",
+      "title": "Attention, Dynamic Wave and Hybrid Sequence Mixers in Language Models",
+      "authors": [
+        "Dmytro Babarytskyi",
+        "Oleksandr Babarytskyi"
+      ],
+      "url": "https://arxiv.org/abs/2610.39854",
+      "similarity": 0.72,
+      "summary": "The paper introduces a Dynamic Wave recurrent layer that uses input‑dependent exponential damping and cosine phase modulation, and compares it with a standard Transformer and a hybrid Wave‑Attention stack on the TinyStories dataset. Across three 10.94 M‑parameter models, the hybrid configuration achieves the lowest perplexity (5.95) compared to the Transformer (6.93) and Pure Wave (7.26). In terms of efficiency, Pure Wave saves peak VRAM against an unfused attention baseline but not against a fused kernel, and the hybrid stack inherits the higher cost of its more expensive mixer, showing that reported gains depend heavily on the specific attention implementation."
+    },
+    {
+      "arxiv_id": "2610.39590",
+      "title": "Red-Teaming Large Language Models in Low-Resource African Languages: A Case Study of Yoruba and Nigerian Pidgin",
+      "authors": [
+        "Paula Chikaodinaka Anyanwu",
+        "Valdini Douglace Lemofouet",
+        "Blessing Ngozi Uzor",
+        "Ifeoluwa Dorcas Awotunde",
+        "Danielle Blanche Kapsa",
+        "Tassallah Abdullahi",
+        "Clemencia Siro",
+        "Idris Abdulmumin",
+        "Seid Muhie Yimam",
+        "Shamsuddeen Hassan Muhammad"
+      ],
+      "url": "https://arxiv.org/abs/2610.39590",
+      "similarity": 0.7098,
+      "summary": "This paper evaluates six state‑of‑the‑art large language models on 400 adversarial prompts in Yoruba and Nigerian Pidgin, scoring responses with native‑speaker annotators and measuring reliability with Cohen’s κ. The results show that many models reject few Yoruba prompts not because they are safer but because they fail to understand them, and attack success rates rise in the Nigerian languages—GPT‑4o Mini’s cross‑lingual safety gap is +0.23 in Yoruba—while harmful content appears in 0.50 of Pidgin responses and 0.63 of English ones, with cultural stereotypes being hardest to detect (ASR = 0.44). The study concludes that safety alignment tuned for English does not transfer to low‑resource African languages, underscoring the need for language‑specific safety evaluations."
+    },
+    {
+      "arxiv_id": "2610.40655",
+      "title": "Elucidating the Design Space of LM Data Attribution",
+      "authors": [
+        "Steven Yu",
+        "Sheng-Yu Wang",
+        "Kimia Hamidieh",
+        "Antonio Torralba",
+        "David Bau"
+      ],
+      "url": "https://arxiv.org/abs/2610.40655",
+      "similarity": 0.7094,
+      "summary": "The paper introduces a new benchmark, Controlled Attribution Benchmark (CATT), that fine‑tunes language models on entirely fictitious knowledge to provide unambiguous ground truth for data attribution. Using CATT, the authors systematically vary dataset properties such as document redundancy and lexical distractors, showing that these factors consistently degrade attribution performance and that standard methods dilute causal evidence by averaging token scores across whole documents. By replacing cross‑entropy loss gradients with negative log‑odds gradients and aggregating only the top token scores, they improve ground‑truth recall by 35 to 72 percentage points on CATT and boost counterfactual retraining performance on FTRACE‑TREX by up to 4.9×."
+    }
+  ]
+}

@@ -178,5 +178,25 @@
   "acf8a49d322d:2610.36668": {
     "relevant": true,
     "reason": "Introduces a quantitative benchmark to evaluate frontier LLM behavior, fitting the profile's interest in capability measurement."
+  },
+  "acf8a49d322d:2610.39006": {
+    "relevant": true,
+    "reason": "Analyzes and benchmarks frontier model capabilities on terminal tasks, aligning with interest in capability benchmarks."
+  },
+  "acf8a49d322d:2610.38788": {
+    "relevant": true,
+    "reason": "The paper studies how translated benchmarks assess LLM capabilities, directly addressing benchmark evaluation of state-of-the-art models."
+  },
+  "acf8a49d322d:2610.39854": {
+    "relevant": true,
+    "reason": "Introduces a new sequence-mixing architecture and evaluates its efficiency for long-context language models, aligning with the profile's focus on architectures and fast inference."
+  },
+  "acf8a49d322d:2610.39590": {
+    "relevant": true,
+    "reason": "Introduces a safety benchmark for LLMs in low‑resource African languages."
+  },
+  "acf8a49d322d:2610.40655": {
+    "relevant": false,
+    "reason": "Focuses on data attribution evaluation, not on model architectures, training methods, or capability benchmarks of frontier models."
   }
 }
