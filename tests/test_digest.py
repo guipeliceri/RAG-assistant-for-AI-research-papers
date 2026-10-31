@@ -94,7 +94,7 @@ def test_write_json(tmp_path):
     assert json.loads(path.read_text())["papers"][0]["arxiv_id"] == "2410.00000"
 
 
-def run_main(tmp_path, monkeypatch, df, *args):
+def run_main(tmp_path, monkeypatch, df, *args, day_arg=True):
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(digest, "DIGEST_DIR", tmp_path / "digests")
     monkeypatch.setattr(digest, "PROFILE_PATH", tmp_path / "profile.md")
@@ -102,7 +102,8 @@ def run_main(tmp_path, monkeypatch, df, *args):
     monkeypatch.setattr(digest.store, "load", lambda path: df)
     monkeypatch.setattr(digest, "OnnxEmbedder", AxisEmbedder)
     monkeypatch.setattr(digest.llm_module, "from_env", lambda: None)
-    monkeypatch.setattr("sys.argv", ["digest", "--day", DAY.isoformat(), *args])
+    day_args = ["--day", DAY.isoformat()] if day_arg else []
+    monkeypatch.setattr("sys.argv", ["digest", *day_args, *args])
     digest.main()
     return tmp_path / "digests" / f"{DAY}.json"
 
@@ -124,3 +125,17 @@ def test_build_records_the_profile():
     assert result["profile_name"] == "Advances in frontier models"
     assert result["profile_id"] == digest.profile_id(profile + "\n")
     assert result["profile_id"] != digest.profile_id("something else")
+
+
+def test_main_without_day_backfills_a_missed_listing(tmp_path, monkeypatch):
+    # The run for DAY found the listing still empty; the next run builds it after its own day.
+    later = date(2024, 10, 9)
+    monkeypatch.setattr(digest, "recent_listing_dates", lambda now: [later, DAY, date(2024, 10, 7)])
+    (tmp_path / "digests").mkdir()
+    (tmp_path / "digests" / "2024-10-07.json").write_text(json.dumps({"date": "2024-10-07", "papers": [{"x": 1}]}))
+    df = pd.concat([DF, pd.DataFrame([paper("2410.10000", later, [1, 0])])], ignore_index=True)
+    path = run_main(tmp_path, monkeypatch, df, day_arg=False)
+    assert len(json.loads(path.read_text())["papers"]) == 5
+    assert (tmp_path / "digests" / f"{later}.json").exists()
+    # An existing digest is left alone.
+    assert json.loads((tmp_path / "digests" / "2024-10-07.json").read_text())["papers"] == [{"x": 1}]

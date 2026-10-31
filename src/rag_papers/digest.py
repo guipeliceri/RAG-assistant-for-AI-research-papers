@@ -2,6 +2,10 @@
 
     python -m rag_papers.digest [--day YYYY-MM-DD]
 
+Without --day, the latest listing is built, plus any of the two before it that
+has no digest yet (the arXiv API can lag the announcement, so a run may find a
+listing still empty).
+
 Selection is embedding similarity only; the LLM never decides what goes in.
 """
 
@@ -17,7 +21,7 @@ import pandas as pd
 
 from rag_papers import llm as llm_module
 from rag_papers import store
-from rag_papers.dates import latest_listing_date
+from rag_papers.dates import recent_listing_dates
 from rag_papers.embeddings import Embedder, OnnxEmbedder
 from rag_papers.ingest import DEFAULT_PATH
 
@@ -113,24 +117,30 @@ def main() -> None:
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    day = args.day or latest_listing_date(datetime.now(timezone.utc))
-    existing = DIGEST_DIR / f"{day}.json"
-    # An empty digest from an earlier run (arXiv not updated yet) is rebuilt.
-    if existing.exists() and json.loads(existing.read_text())["papers"] and not args.force:
-        logging.info("digest for %s already exists, nothing to do", day)
-        return
-    llm = llm_module.from_env()
-    if llm is None:
-        logging.warning("GROQ_API_KEY not set: digest will have titles and links only")
-    digest = build(store.load(args.path), day, PROFILE_PATH.read_text(), OnnxEmbedder(), llm)
-    if not digest["papers"]:
-        # The arXiv API can lag the 20:00 ET announcement; a later run will build it.
-        logging.warning("no papers listed on %s yet; not writing a digest", day)
-        return
-    path = write(digest)
-    summarised = sum(p["summary"] is not None for p in digest["papers"])
-    logging.info("wrote %s: %d papers, %d summarised", path, len(digest["papers"]), summarised)
-
+    days = [args.day] if args.day else recent_listing_dates(datetime.now(timezone.utc))
+    df = None
+    embedder = None
+    llm = None
+    for day in days:
+        existing = DIGEST_DIR / f"{day}.json"
+        # An empty digest from an earlier run (arXiv not updated yet) is rebuilt.
+        if existing.exists() and json.loads(existing.read_text())["papers"] and not args.force:
+            logging.info("digest for %s already exists, nothing to do", day)
+            continue
+        if df is None:
+            df = store.load(args.path)
+            embedder = OnnxEmbedder()
+            llm = llm_module.from_env()
+            if llm is None:
+                logging.warning("GROQ_API_KEY not set: digest will have titles and links only")
+        digest = build(df, day, PROFILE_PATH.read_text(), embedder, llm)
+        if not digest["papers"]:
+            # The arXiv API can lag the 20:00 ET announcement; a later run will build it.
+            logging.warning("no papers listed on %s yet; not writing a digest", day)
+            continue
+        path = write(digest)
+        summarised = sum(p["summary"] is not None for p in digest["papers"])
+        logging.info("wrote %s: %d papers, %d summarised", path, len(digest["papers"]), summarised)
 
 if __name__ == "__main__":
     main()
