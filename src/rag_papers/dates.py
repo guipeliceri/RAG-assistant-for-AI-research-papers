@@ -46,3 +46,14 @@ def latest_listing_date(now: datetime) -> date:
     while day.weekday() in (4, 5):  # no announcement on Friday or Saturday evening
         day -= timedelta(days=1)
     return day + timedelta(days=1)
+
+
+def recent_listing_dates(now: datetime, n: int = 3) -> list[date]:
+    """The `n` most recent listings already announced at `now`, newest first."""
+    days = [latest_listing_date(now)]
+    while len(days) < n:
+        day = days[-1] - timedelta(days=1)
+        while day.weekday() >= 5:
+            day -= timedelta(days=1)
+        days.append(day)
+    return days

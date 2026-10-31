@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 import pytest
 
-from rag_papers.dates import ET, latest_listing_date, listing_date
+from rag_papers.dates import ET, latest_listing_date, recent_listing_dates, listing_date
 
 
 def et(*args):
@@ -50,3 +50,8 @@ def test_listing_date_across_dst_change():
 )
 def test_latest_listing_date(now, expected):
     assert latest_listing_date(now) == expected
+
+
+def test_recent_listing_dates_skip_weekends():
+    # Tuesday morning: Tue listing was announced Monday evening.
+    assert recent_listing_dates(et(2024, 10, 8, 3, 0)) == [date(2024, 10, 8), date(2024, 10, 7), date(2024, 10, 4)]
