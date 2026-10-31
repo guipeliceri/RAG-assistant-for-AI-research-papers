@@ -198,5 +198,25 @@
   "acf8a49d322d:2610.40655": {
     "relevant": false,
     "reason": "Focuses on data attribution evaluation, not on model architectures, training methods, or capability benchmarks of frontier models."
+  },
+  "acf8a49d322d:2610.37903": {
+    "relevant": true,
+    "reason": "Introduces new LLM architecture (Mamba-2 + MoE), scaling/training details, and efficiency analysis matching the profile"
+  },
+  "acf8a49d322d:2610.38433": {
+    "relevant": true,
+    "reason": "Investigates scaling laws of chain-of-thought reliance and post‑training effects, directly matching the profile topics."
+  },
+  "acf8a49d322d:2610.38448": {
+    "relevant": true,
+    "reason": "Provides a benchmark evaluating generative LLM capabilities on medical QA, aligning with interest in model capability benchmarks."
+  },
+  "acf8a49d322d:2610.38249": {
+    "relevant": false,
+    "reason": "The paper focuses on a domain-specific LLM application rather than advancing model architectures, training methods, or benchmarks of frontier models."
+  },
+  "acf8a49d322d:2610.38422": {
+    "relevant": true,
+    "reason": "The paper studies training recipes and efficiency trade‑offs for a transformer‑based architecture, directly aligning with the profile's focus on scaling, training methods, and model efficiency."
   }
 }

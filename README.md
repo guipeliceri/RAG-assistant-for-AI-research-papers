@@ -94,7 +94,7 @@ flowchart LR
 <!-- metrics:start -->
 | Metric | Value | Based on |
 | :--- | :--- | :--- |
-| Digest precision@5 (mean, target ≥ 0.80) | 0.80 | 2 days |
+| Digest precision@5 (mean, target ≥ 0.80) | 0.80 | 3 days |
 | Judge vs human accuracy | 53% | 30 labelled papers |
 | Judge vs human Cohen's κ | 0.07 |  |
 | Chat answers failing validation | 20% | 15 fixed questions |

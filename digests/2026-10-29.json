@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-29",
+  "generated_at": "2026-10-31T20:15:56+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 59,
+  "papers": [
+    {
+      "arxiv_id": "2610.37903",
+      "title": "Think Twice: The Metis-1.6 Technical Report",
+      "authors": [
+        "Giulianno Vollmer"
+      ],
+      "url": "https://arxiv.org/abs/2610.37903",
+      "similarity": 0.7389,
+      "summary": "The report presents Metis‑1.6, a pair of language models (Praxis 2.94 B and Logos 10.23 B) built by a single researcher that use a hybrid Mamba‑2 and attention mixture‑of‑experts stack applied twice per token. They were trained on 1.02 T tokens (804.76 B pretraining, 18 B context extension, 200 B fine‑tuning) and, while not designed to beat frontier models, Logos scores 52.93 on 40 benchmarks—seventh among 17 models and close to Qwen3‑4B—using only a twelfth of the median training data and fewer active parameters per token, placing it on the Pareto frontier. The paper also details failures such as a non‑running optimizer, AdamW‑trained attention, an n‑gram memory that disabled itself, fine‑tuning choices that hurt capability, and a length‑reward bug that was fixed with a one‑line clamp, and it outlines 10 B‑token ablations for the upcoming Metis‑1.7 MoRE architecture."
+    },
+    {
+      "arxiv_id": "2610.38433",
+      "title": "Does Chain-of-Thought Reliance Follow a Scaling Law?Larger Models Follow Their Steps More, Independent of Post-Training",
+      "authors": [
+        "Esther Xin"
+      ],
+      "url": "https://arxiv.org/abs/2610.38433",
+      "similarity": 0.7221,
+      "summary": "This study tests whether large language models actually depend on their chain‑of‑thought (CoT) reasoning by editing a step in a synthetic box‑swap task and observing whether the final answer changes. Across 25 open‑weight models ranging from 0.6 B to 14 B parameters, the authors find that reliance on CoT rises with size—saturating near 100 % for the largest Qwen3 models—and that this reliance tracks overall capability rather than post‑training. The work shows that even the largest models do not solve the task internally; without written steps, capable models perform at chance on problems with four or more swaps, indicating that CoT monitoring is useful only when the model’s reasoning is load‑bearing."
+    },
+    {
+      "arxiv_id": "2610.38448",
+      "title": "Benchmarking decision models against generative large language models on medical multiple-choice questions",
+      "authors": [
+        "Oscar Freyer",
+        "Daniel Glauert",
+        "Moritz Hofmann",
+        "Max Ostermann",
+        "Stephen Gilbert",
+        "Jakob Nikolas Kather"
+      ],
+      "url": "https://arxiv.org/abs/2610.38448",
+      "similarity": 0.7117,
+      "summary": "The study compared 13 decision‑making models with 15 generative large‑language‑model configurations on 1,273 four‑option medical questions. Decision models achieved 67.71 %–89.08 % accuracy, while generative models reached 78.32 %–96.86 % accuracy; Mercury Decide was the cheapest (USD 0.0069 per 1,000 questions) and Clef Omni was the fastest (0.291 s median request time). The authors conclude that, although decision models have lower peak accuracy, they offer resource advantages and that choosing a model for medical workflows must balance accuracy, probability quality, repeatability, and resource costs."
+    },
+    {
+      "arxiv_id": "2610.38249",
+      "title": "Keepace.ai: A Technical Report on a Large Language Model for Sports and Health",
+      "authors": [
+        "Keepace. ai Team",
+        "Bowen Wu",
+        "Heng Wang",
+        "Jufeng Mi",
+        "Kang Liu",
+        "Kun Li",
+        "Ling Man",
+        "Long He",
+        "Suli Fan",
+        "Xiaosen Jiang",
+        "Yi Wang",
+        "Ying He",
+        "Yu Tang",
+        "Yunhan Li",
+        "Zifang Liu"
+      ],
+      "url": "https://arxiv.org/abs/2610.38249",
+      "similarity": 0.7107,
+      "summary": "The report introduces Keepace.ai, a domain‑specialized large language model built on Qwen3.5‑27B that has been post‑trained on curated sports‑and‑health data and is tuned for Chinese‑language exercise guidance. It covers three tasks—workout plan generation, sports‑and‑health knowledge QA, and personal sports data analysis—and employs a safety‑first evaluation framework designed with domain experts. In internal rubric‑based tests, Keepace.ai outperforms its base model and larger general‑purpose baselines, showing the greatest gains in exercise safety, boundary compliance, structured output completeness, and scientific accuracy."
+    },
+    {
+      "arxiv_id": "2610.38422",
+      "title": "Deeper Backpropagation or More Updates? Training Looped Language Models Across Budgets",
+      "authors": [
+        "Jiarun Shen",
+        "Xiao Li"
+      ],
+      "url": "https://arxiv.org/abs/2610.38422",
+      "similarity": 0.7099,
+      "summary": "The paper investigates how the size of the backward window—how many repeated transformer layers keep gradients during back‑propagation—affects training looped language models under different computational budgets. It trains two window sizes on identical data, then compares full training recipes that take roughly the same time at each budget to isolate per‑token efficiency. The results show that shorter windows lose much of their advantage as budgets grow, and the window that performs best can change depending on the available budget."
+    }
+  ]
+}

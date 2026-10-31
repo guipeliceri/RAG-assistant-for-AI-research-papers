@@ -2,10 +2,11 @@
   "digests": {
     "per_day": {
       "2026-10-28": 0.8,
+      "2026-10-29": 0.8,
       "2026-10-30": 0.8
     },
     "mean_precision_at_5": 0.8,
-    "days": 2
+    "days": 3
   },
   "judge_model": "openai/gpt-oss-120b",
   "faithfulness": {
