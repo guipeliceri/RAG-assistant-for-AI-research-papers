@@ -14,9 +14,9 @@
     "answered": 15,
     "invalid_rate": 0.2,
     "invalid_questions": [
-      "What came out recently about retrieval-augmented generation?",
-      "How are RAG systems being evaluated?",
-      "What came out about LLM agents that use tools?"
+      "What is new in hybrid search combining sparse and dense retrieval?",
+      "What is new in retrieval for code?",
+      "Which papers use knowledge graphs together with retrieval?"
     ]
   },
   "calibration": {
