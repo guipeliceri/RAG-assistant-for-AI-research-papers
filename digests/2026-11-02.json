@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-02",
+  "generated_at": "2026-11-02T07:52:04+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 47,
+  "papers": [
+    {
+      "arxiv_id": "2610.42112",
+      "title": "Subquadratic Attention with a Hierarchical Tree-Structured Indexer",
+      "authors": [
+        "Leon Lufkin",
+        "Cutter Dawes",
+        "Alexander Speicher",
+        "Kamesh Krishnamurthy",
+        "Tomás Figliolia",
+        "Beren Millidge"
+      ],
+      "url": "https://arxiv.org/abs/2610.42112",
+      "similarity": 0.723,
+      "summary": "The paper introduces Zyphra Hierarchical Attention (ZHA), a sparse‑attention method that builds a tree of recursively compressed key summaries over the KV cache. Queries traverse this tree from the top down, and by increasing the tree depth the routing and attention cost grows sublinearly with sequence length, giving overall subquadratic scaling. Experiments show that ZHA can be added to pretrained models with a short KL‑distillation stage over a few billion tokens, preserves performance on long‑context retrieval, reasoning, math, and coding tasks, remains robust up to 6‑level trees, and outperforms competing methods beyond 1 million‑token contexts while enabling context windows of hundreds of millions or billions of tokens."
+    },
+    {
+      "arxiv_id": "2610.41704",
+      "title": "GraphNIAH: A Benchmark for Long-Context Reasoning over Real-World Graphs",
+      "authors": [
+        "Minh-Nam Tran",
+        "Abulhair Saparov"
+      ],
+      "url": "https://arxiv.org/abs/2610.41704",
+      "similarity": 0.715,
+      "summary": "GraphNIAH is a new benchmark that automatically builds long‑context question‑answer examples from real citation graphs of scientific papers published after a model’s knowledge cutoff, avoiding synthetic data, manual annotation, and benchmark contamination. The authors evaluate eight large language models from the GPT‑5.6, Gemini‑3, and Qwen3.5 families and find that accuracy drops sharply as the required reasoning path length increases: at depths of 16 and 32 the GPT‑5.6 and Qwen3.5 models perform no better than random guessing, mostly answering NO, while only four of the eight models solve a counting example correctly and performance worsens with larger subgraphs."
+    },
+    {
+      "arxiv_id": "2610.42084",
+      "title": "RangeSWA: Training-Free Length Extrapolation for Continuous Diffusion Language Models",
+      "authors": [
+        "Guangfu Guo",
+        "Xiaoqian Lu",
+        "Linsey Pang",
+        "Weiran Yao",
+        "Haolin Chen",
+        "Long Cheng",
+        "Kunpeng Liu"
+      ],
+      "url": "https://arxiv.org/abs/2610.42084",
+      "similarity": 0.7087,
+      "summary": "The paper introduces RangeSWA, a training‑free method that lets continuous diffusion language models generate longer text than they were trained on. It does this by combining local sliding‑window attention, remote block summaries, dynamic content retrieval, positional remapping, conditioning attention correction, and denoising‑stage‑adaptive window scheduling to keep local details intact and reduce degradation. Experiments on several continuous diffusion models show that RangeSWA lowers generative perplexity and reduces text repetition rates in long‑text generation."
+    },
+    {
+      "arxiv_id": "2610.42149",
+      "title": "Latent Reasoning in Continuous Space for Unified Multimodal Models",
+      "authors": [
+        "Byungwoo Jeon",
+        "Yoonwoo Jeong",
+        "Hyunseok Lee",
+        "Minsu Cho",
+        "Jinwoo Shin"
+      ],
+      "url": "https://arxiv.org/abs/2610.42149",
+      "similarity": 0.7041,
+      "summary": "The paper introduces LARC, a framework that moves reasoning from discrete tokens to continuous hidden states to better match image generation’s continuous space. It trains models in two stages: a curriculum supervised fine‑tuning that gradually shifts token‑level reasoning to latent reasoning, followed by an information‑gain reinforcement learning stage that refines this latent reasoning without ground‑truth supervision. Experiments on text‑to‑image benchmarks show that LARC improves generation quality, prompt adherence, and compositional fidelity, achieving state‑of‑the‑art results on GenEval with a 7%p gain over BAGEL and demonstrating clear test‑time scaling advantages."
+    },
+    {
+      "arxiv_id": "2610.42066",
+      "title": "The Knowledge Layer Model (KLM): Evidence-Visible AI Output, Routing Diagnostics, and Negative Results",
+      "authors": [
+        "Omer Asim Ozturk",
+        "Cihan Aydiner"
+      ],
+      "url": "https://arxiv.org/abs/2610.42066",
+      "similarity": 0.6915,
+      "summary": "The paper introduces the Knowledge Layer Model (KLM), an open, implementation‑neutral specification for recording AI inference that includes versioned epistemic assessments, evidence relations, and explicit unknowns, and it presents SEDIM as a reference implementation of this model. It reports a range of internal experiments: a historical routing benchmark achieved 137/150 correct classifications (91.3%) across 15 classes, a native‑model weight‑path test produced 0/15 successful answers, diagnostics yielded an AUC of 0.008 for silent‑versus‑contradicted examples, and a repaired packing scheme restored gold‑containing text in all 221/221 cases (after losing it in 118/221 cases); Python and TypeScript verifiers agreed on six checks per synthetic fixture, though a separate production disclosure was not accepted. The authors note that evidence visibility does not guarantee correctness, causal reliance, security, or regulatory compliance, and that independent replication and a complete public audit package remain future work."
+    }
+  ]
+}

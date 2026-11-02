@@ -218,5 +218,25 @@
   "acf8a49d322d:2610.38422": {
     "relevant": true,
     "reason": "The paper studies training recipes and efficiency trade‑offs for a transformer‑based architecture, directly aligning with the profile's focus on scaling, training methods, and model efficiency."
+  },
+  "acf8a49d322d:2610.42112": {
+    "relevant": true,
+    "reason": "Introduces a subquadratic attention method to improve long-context efficiency in LLMs, directly aligning with the profile's focus on scaling, efficiency, and long-context capabilities."
+  },
+  "acf8a49d322d:2610.41704": {
+    "relevant": true,
+    "reason": "Introduces a long-context reasoning benchmark evaluating LLM capabilities, matching the profile's focus on reasoning and benchmarks."
+  },
+  "acf8a49d322d:2610.42084": {
+    "relevant": true,
+    "reason": "Introduces a training-free method to improve long-context generation in diffusion language models, aligning with long-context and efficiency interests."
+  },
+  "acf8a49d322d:2610.42149": {
+    "relevant": true,
+    "reason": "The paper introduces a novel reasoning framework for unified multimodal models using curriculum fine‑tuning and reinforcement learning, directly aligning with the profile's interest in multimodal models, chain‑of‑thought reasoning, and RL‑based post‑training methods."
+  },
+  "acf8a49d322d:2610.42066": {
+    "relevant": false,
+    "reason": "Focuses on inference record specifications and diagnostics, not on model architectures, training, or capability benchmarks."
   }
 }
