@@ -4,20 +4,18 @@
       "2026-10-28": 0.8,
       "2026-10-29": 0.8,
       "2026-10-30": 0.8,
-      "2026-11-02": 0.8
+      "2026-11-02": 0.8,
+      "2026-11-03": 1.0
     },
-    "mean_precision_at_5": 0.8,
-    "days": 4
+    "mean_precision_at_5": 0.84,
+    "days": 5
   },
   "judge_model": "openai/gpt-oss-120b",
   "faithfulness": {
     "questions": 15,
     "answered": 15,
-    "invalid_rate": 0.133,
-    "invalid_questions": [
-      "What came out recently about retrieval-augmented generation?",
-      "What is new in retrieval for code?"
-    ]
+    "invalid_rate": 0.0,
+    "invalid_questions": []
   },
   "calibration": {
     "n": 30,

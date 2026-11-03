@@ -238,5 +238,25 @@
   "acf8a49d322d:2610.42066": {
     "relevant": false,
     "reason": "Focuses on inference record specifications and diagnostics, not on model architectures, training, or capability benchmarks."
+  },
+  "acf8a49d322d:2611.02432": {
+    "relevant": true,
+    "reason": "Introduces a new analysis method for language model benchmarks, aligning with the profile's focus on benchmark evaluation of state-of-the-art models."
+  },
+  "acf8a49d322d:2611.02353": {
+    "relevant": true,
+    "reason": "Introduces a benchmark evaluating LLM capabilities and efficiency on text-to-visualisation tasks."
+  },
+  "acf8a49d322d:2611.01133": {
+    "relevant": true,
+    "reason": "Focuses on LLM pruning and its impact on reasoning and sampling efficiency, aligning with the profile's efficiency and reasoning interests."
+  },
+  "acf8a49d322d:2611.02270": {
+    "relevant": true,
+    "reason": "Introduces a new method for scaling law prediction, directly matching the profile's focus on scaling laws and model performance forecasting."
+  },
+  "acf8a49d322d:2611.02334": {
+    "relevant": true,
+    "reason": "The paper presents a benchmark evaluation of LLM capabilities, fitting the profile's interest in capability measurement."
   }
 }

@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-03",
+  "generated_at": "2026-11-03T08:09:02+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 199,
+  "papers": [
+    {
+      "arxiv_id": "2611.02432",
+      "title": "Diagnosing Model--Item Interactions in Language Model Benchmarks with LSIRM",
+      "authors": [
+        "Jinwen Luo",
+        "Han Jiang",
+        "Ziang Xiao",
+        "Susu Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.02432",
+      "similarity": 0.7293,
+      "summary": "The paper shows how the latent space item response model (LSIRM) can uncover hidden differences between language models that have similar overall benchmark scores. By applying LSIRM to 1,348 models on 5,761 BBH items and comparing scoring methods across BBH, GPQA, MMLU‑Pro, and MuSR, the authors map model performance onto item properties and identify patterns such as nearby items sharing the same correct answer. They estimate each model’s tendency to perform better or worse on items with particular correct answers, and find that removing this answer‑category contribution can shift two models’ rankings by hundreds of places, revealing that overall accuracy masks important model‑item interactions."
+    },
+    {
+      "arxiv_id": "2611.02353",
+      "title": "VisCodeBench: a new benchmark dataset for Text-to-Vis reflecting real-world practice",
+      "authors": [
+        "Hy Nguyen",
+        "Thomas James Elton",
+        "Ella Wilson",
+        "Andrew Reeson",
+        "Cecile Paris",
+        "Josiah Poon",
+        "Jonathan K. Kummerfeld"
+      ],
+      "url": "https://arxiv.org/abs/2611.02353",
+      "similarity": 0.7272,
+      "summary": "The paper introduces VisCodeBench, a new end‑to‑end benchmark for generating visualisations from natural‑language requests, containing 2,672 samples across educational, scientific, and general‑audience domains. It evaluates three visualisation systems—Codex, Claude Code, and LIDA—paired with various LLMs on seven metrics that cover execution, chart content, and visual quality. The main finding is that while basic execution is almost solved, no system can reliably reproduce the reference data, with the best data‑similarity score only 0.81 (dropping to 0.69 on the hardest subset), and even the strongest models still require 39–78 seconds to produce results."
+    },
+    {
+      "arxiv_id": "2611.01133",
+      "title": "Rethinking LLM Pruning via Test-Time Scaling",
+      "authors": [
+        "Mingyang Song",
+        "Mao Zheng"
+      ],
+      "url": "https://arxiv.org/abs/2611.01133",
+      "similarity": 0.7267,
+      "summary": "The paper investigates how structured pruning of large language models affects their performance on mathematical and coding benchmarks, measuring success with pass@k metrics at matched sampling budgets. It shows that even after heavy pruning, some models can match or exceed the original model’s reasoning coverage and solve problems the original model missed, yet they often need many more sampling attempts and generate longer token sequences to find correct answers. The authors conclude that pruning should be evaluated both by the range of problems a model can still solve and by the sampling cost required to obtain correct solutions."
+    },
+    {
+      "arxiv_id": "2611.02270",
+      "title": "Hinted Scaling Laws",
+      "authors": [
+        "Suze van Adrichem",
+        "Luke Bailey",
+        "Rohith Kuditipudi",
+        "Christine Ye",
+        "Neil Band",
+        "Ahmed Ahmed",
+        "John Duchi",
+        "Percy Liang",
+        "Tatsunori Hashimoto"
+      ],
+      "url": "https://arxiv.org/abs/2611.02270",
+      "similarity": 0.7152,
+      "summary": "The paper introduces hinted scaling laws, which use privileged information to turn a benchmark into a continuum of easier versions so that even small models score above zero, enabling smooth extrapolation of accuracy trends. On the Delphi pretraining ladder, a hinted scaling law fit on models trained with at most \\(10^{20}\\) FLOPs predicts the GSM8K accuracy of a \\(10^{23}\\) FLOP model (25.9 %) within 3 percentage points, while a standard scaling law under‑forecasts it by 13 percentage points. Across multiple model families, hinted scaling laws reduce the median forecasting error on GSM8K, AIME and HLE from 21 percentage points to 4.3, and a single hinted rollout per problem ranks nearly indistinguishable models as accurately as five unhinted rollouts."
+    },
+    {
+      "arxiv_id": "2611.02334",
+      "title": "Does a Norwegian further-trained model give more outdated legal values than its base model? A preregistered paired comparison of Borealis 2 and Gemma 4",
+      "authors": [
+        "Eirik Botten Nicolaysen"
+      ],
+      "url": "https://arxiv.org/abs/2611.02334",
+      "similarity": 0.7151,
+      "summary": "The study compares how often two released language models—Borealis 2, which was further trained from Gemma 4, and Gemma 4 itself—provide outdated numeric values from Norwegian statutes and regulations. Using the closed norregel benchmark, the authors found that on 411 of 503 primary items both models gave interpretable answers, with Borealis 2 being outdated on 10 items and Gemma 4 on 11 (d = –0.2 percentage points, 95 % cluster bootstrap interval [–2.7, +2.5], exact one‑sided McNemar p = 0.668), a difference that falls within the preregistered smallest effect of interest of ±10 percentage points. The only secondary measure that differed after Holm correction was the share of answers giving a value that took effect after the question date, which Gemma 4 gave more often."
+    }
+  ]
+}
