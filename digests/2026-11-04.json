@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-04",
+  "generated_at": "2026-11-04T07:41:28+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 78,
+  "papers": [
+    {
+      "arxiv_id": "2611.04031",
+      "title": "Language Model Augmented Decision Transformer for Multi-Task Offline Reinforcement Learning",
+      "authors": [
+        "Xinbo Zhao",
+        "Yuhang Liu",
+        "Xin Zhang",
+        "Lei Le",
+        "Zhaohan Xi",
+        "Yu Yang",
+        "Yingxue Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.04031",
+      "similarity": 0.7284,
+      "summary": "The paper introduces LaMA‑DT, a single large language model that first augments offline reinforcement‑learning data by generating task‑aligned trajectories guided by natural‑language task descriptions, and then fine‑tunes the same model as a language‑conditioned Decision Transformer. It uses supervised generation, alignment objectives, and a scoring‑and‑filtering step to keep only high‑quality augmented trajectories. Experiments on Meta‑World and MuJoCo multi‑task benchmarks show that LaMA‑DT consistently outperforms competitive baselines, especially when data are scarce, demonstrating that language‑guided augmentation improves cross‑task generalization."
+    },
+    {
+      "arxiv_id": "2611.05181",
+      "title": "What Does the Model See? Representation Validity in Multimodal LLM-Based Video Analysis",
+      "authors": [
+        "Christian Pipal",
+        "Eva-Maria Vogel",
+        "Morgan Wack"
+      ],
+      "url": "https://arxiv.org/abs/2611.05181",
+      "similarity": 0.7209,
+      "summary": "The study investigates how different input representations—text, audio, video, or combinations—affect the performance of multimodal large‑language models (MLLMs) in video analysis. Using six open‑weight MLLMs and three human‑annotated video datasets, the authors compare classification accuracy across seven news‑related constructs, finding that no single representation consistently outperforms the others; native video yields macro‑F1 scores of .70–.77 while extracted text ranges from .52 to .80, and combining modalities rarely improves results. Even the best‑performing representation reproduces human‑coded regression coefficients only in 17 of 42 cases, and 45% of prevalence estimates differ from human benchmarks by more than ten percentage points, underscoring the need for careful validation of input representations."
+    },
+    {
+      "arxiv_id": "2611.04632",
+      "title": "Self-Privileged Fine-Tuning",
+      "authors": [
+        "Yangrong Hu",
+        "Xueyu Zhou",
+        "Yue Wu",
+        "Jian Huang"
+      ],
+      "url": "https://arxiv.org/abs/2611.04632",
+      "similarity": 0.7196,
+      "summary": "The paper investigates how token‑level weighting schemes influence supervised fine‑tuning of language models, finding that dynamic weighting sharpens the target distribution while static weighting relies on a frozen prior. It proposes Self‑Privileged Fine‑Tuning (SPFT), which uses a frozen copy of the initial model conditioned on privileged information as a prior and reweights tokens according to their informativeness for the ground‑truth outcome. Experiments on mathematical reasoning and code generation show that SPFT outperforms standard supervised fine‑tuning and other baselines."
+    },
+    {
+      "arxiv_id": "2611.04834",
+      "title": "Feeling of Knowing in Large Language Models",
+      "authors": [
+        "Zichuan Fu",
+        "Xian Wu",
+        "Jingtong Gao",
+        "Wenlin Zhang",
+        "Jiaxuan Li",
+        "Binhao Wang",
+        "Yimin Deng",
+        "Guojing Li",
+        "Xiaopeng Li",
+        "Derong Xu",
+        "Yefeng Zheng",
+        "Xiangyu Zhao"
+      ],
+      "url": "https://arxiv.org/abs/2611.04834",
+      "similarity": 0.7188,
+      "summary": "The paper introduces a method to keep large language models’ judgments of answerability in sync with their updated knowledge by adding a functional feeling of knowing (FoK) module. It trains a knowledge channel to update what the model can answer and a FoK channel to judge the current knowledge state, using three stages: on‑policy supervised fine‑tuning, knowledge‑delta FoK training, and FoK‑guided policy optimization. Experiments on factual QA, cross‑dataset tests, and sequential updates show that aligning FoK improves judgment quality while preserving performance on MMLU and ARC‑Easy."
+    },
+    {
+      "arxiv_id": "2611.03985",
+      "title": "Thinking Fast, Trading Late: System One Decision Models vs the Market",
+      "authors": [
+        "Amir Dehkordi",
+        "Alireza Kargarzadeh",
+        "Nariman Khaledian",
+        "Navid Parvini",
+        "Sid Ghatak",
+        "Arman Khaledian"
+      ],
+      "url": "https://arxiv.org/abs/2611.03985",
+      "similarity": 0.7145,
+      "summary": "The paper introduces OLIVIA, a protocol that tests whether large language models can predict stock returns from news without look‑ahead bias, using point‑in‑time inputs, masked company identities, and a pre‑registered analysis plan. Applying OLIVIA to an open‑weights model fine‑tuned on 2024‑2025 data and three commercial models, the fine‑tuned model shows modest predictive power on validation quarters (IC 0.055 and 0.065) but drops to 0.020 on a blinded 2026 test, while commercial models only predict the overnight move to the open (IC 0.074–0.077) and fail to beat costs or produce a positive Sharpe ratio. The study finds that commercial models can identify masked companies 62–74 % of the time versus a 28 % baseline, yet the market appears to price news before traders can act."
+    }
+  ]
+}

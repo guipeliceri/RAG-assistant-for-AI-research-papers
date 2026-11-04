@@ -258,5 +258,25 @@
   "acf8a49d322d:2611.02334": {
     "relevant": true,
     "reason": "The paper presents a benchmark evaluation of LLM capabilities, fitting the profile's interest in capability measurement."
+  },
+  "acf8a49d322d:2611.04031": {
+    "relevant": false,
+    "reason": "The paper focuses on offline RL methods using an LLM as a tool, not on advancing LLM architectures or training techniques."
+  },
+  "acf8a49d322d:2611.05181": {
+    "relevant": true,
+    "reason": "Provides a benchmark analysis of multimodal LLMs on video tasks, directly evaluating model capabilities and input representations."
+  },
+  "acf8a49d322d:2611.04632": {
+    "relevant": true,
+    "reason": "Introduces a novel fine-tuning method for LLMs, directly addressing post‑training techniques and reasoning tasks."
+  },
+  "acf8a49d322d:2611.04834": {
+    "relevant": true,
+    "reason": "Introduces new post‑training training methods to align LLM answerability judgments, fitting the profile's focus on post‑training techniques and benchmarks."
+  },
+  "acf8a49d322d:2611.03985": {
+    "relevant": false,
+    "reason": "Focuses on financial application of LLMs rather than model advances or benchmarks."
   }
 }
