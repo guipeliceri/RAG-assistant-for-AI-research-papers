@@ -6,10 +6,11 @@
       "2026-10-30": 0.8,
       "2026-11-02": 0.8,
       "2026-11-03": 1.0,
-      "2026-11-04": 0.6
+      "2026-11-04": 0.6,
+      "2026-11-05": 0.8
     },
     "mean_precision_at_5": 0.8,
-    "days": 6
+    "days": 7
   },
   "judge_model": "openai/gpt-oss-120b",
   "faithfulness": {
@@ -18,7 +19,7 @@
     "invalid_rate": 0.133,
     "invalid_questions": [
       "Are there new benchmarks for long-context question answering?",
-      "Which papers use knowledge graphs together with retrieval?"
+      "Which papers report results on BEIR or MS MARCO?"
     ]
   },
   "calibration": {

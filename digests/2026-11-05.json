@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-05",
+  "generated_at": "2026-11-05T08:04:03+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 80,
+  "papers": [
+    {
+      "arxiv_id": "2611.06238",
+      "title": "Zuse: A Decision Model for European Languages",
+      "authors": [
+        "Umair Mehmood Imam"
+      ],
+      "url": "https://arxiv.org/abs/2611.06238",
+      "similarity": 0.7229,
+      "summary": "The paper introduces Zuse, a family of decision models (4B, 9B, and 27B) that add a low‑rank adapter and a pointer head to frozen open‑weight bases and are trained to output probabilities for a fixed set of options in 27 European languages. On a held‑out European benchmark of 11 sources, 9 task groups, and 27 languages, the largest 27B model achieves 87.5 % accuracy with a pooled expected calibration error of 0.016 (0.035 weighted per source) and the authors analyze how miscalibration, automation potential, and cross‑language transfer depend on task, model size, and base model. The study also notes that Zuse falls behind Jev and Kev on English public suites and highlights two pitfalls in multi‑source training data construction."
+    },
+    {
+      "arxiv_id": "2611.06639",
+      "title": "Replicability, Reproducibility, and Robustness in Political and Social Science Research with Large Language Models",
+      "authors": [
+        "Joan C. Timoneda",
+        "Sebastián Vallejo Vera"
+      ],
+      "url": "https://arxiv.org/abs/2611.06639",
+      "similarity": 0.7097,
+      "summary": "The chapter tackles the reproducibility problem in research that uses large language models, noting that their probabilistic outputs vary across models and versions and can change downstream statistical results. It proposes a probabilistic standard based on the distribution of results, introduces a standardized prompt script and an error‑structure analysis, and shows that measurement choice can even reverse the sign of regression coefficients on three datasets. The main contribution is a stacked ensemble of open‑weight models that improves precision in the correction step while retaining estimate validity."
+    },
+    {
+      "arxiv_id": "2611.06324",
+      "title": "Mass Producing Training Data with Surprising Side Effects",
+      "authors": [
+        "Yaowen Ye",
+        "Jacob Steinhardt",
+        "Sarah Schwettmann",
+        "Cassidy Laidlaw"
+      ],
+      "url": "https://arxiv.org/abs/2611.06324",
+      "similarity": 0.7065,
+      "summary": "The paper presents a method for automatically discovering training datasets that cause unexpected side effects in language models. By using LLM judges to score data on three criteria—whether it elicits a target behavior, reads like ordinary post‑training data, and surprises human auditors—the authors search for high‑scoring sets with evolution, reinforcement learning, and subliminal learning, then re‑score and filter them. The resulting pipeline produces 6,575 datasets across eight different side‑effect behaviors, and the authors find that their automated metrics align with human judgments while frontier models predict side effects better than humans."
+    },
+    {
+      "arxiv_id": "2611.05927",
+      "title": "Modality-Aware Expert Pruning for MoE-Based Multimodal Large Language Models",
+      "authors": [
+        "Donggeun Kim"
+      ],
+      "url": "https://arxiv.org/abs/2611.05927",
+      "similarity": 0.7061,
+      "summary": "The paper introduces MAEP, a training‑free method that prunes experts in multimodal large language models by separately measuring their importance for vision and language tokens. It uses a Delta‑H Output metric to quantify the change in MoE output when an expert is removed and relies on low‑attention vision tokens as a stable pruning signal, while preserving experts important for text. Experiments on three MoE‑based MLLMs show that MAEP reduces the BF16 expert weight footprint by about 27 GB (≈47 % of total memory) and outperforms modality‑agnostic baselines on most multimodal benchmarks while staying competitive on text‑only tasks."
+    },
+    {
+      "arxiv_id": "2611.06001",
+      "title": "How Far Can You Steer? Behavior-Capability Frontiers in Contrastive Activation Addition",
+      "authors": [
+        "Deepanshu Raj"
+      ],
+      "url": "https://arxiv.org/abs/2611.06001",
+      "similarity": 0.7052,
+      "summary": "The paper studies Contrastive Activation Addition (CAA), a method that steers language‑model behavior by adding activation vectors derived from contrasting examples, and introduces a “behavior‑capability frontier” that selects interventions maximizing behavioral gain while limiting capability loss. Across four instruction‑tuned models and seven behaviors, the authors evaluate the frontier under 1%, 3%, and 5% capability‑loss budgets, finding that validation‑selected behavioral effects generalize strongly (ρ = 0.945) and that joint behavior‑capability survival rises from 37.5 % at the 1 % budget to 72.7 % at 3 %, with little extra gain at 5 %. The results show that CAA’s effectiveness depends on learned behavior directions, that representational geometry only modestly predicts cross‑behavior transfer, and that even interventions meeting protected benchmarks can still degrade untested capabilities, indicating that activation steering is a constrained, model‑dependent tool rather than a universal control knob."
+    }
+  ]
+}

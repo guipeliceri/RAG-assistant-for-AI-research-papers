@@ -278,5 +278,25 @@
   "acf8a49d322d:2611.03985": {
     "relevant": false,
     "reason": "Focuses on financial application of LLMs rather than model advances or benchmarks."
+  },
+  "acf8a49d322d:2611.06238": {
+    "relevant": true,
+    "reason": "Introduces new multilingual decision models, scaling analysis, and a benchmark suite aligned with frontier model evaluation."
+  },
+  "acf8a49d322d:2611.06639": {
+    "relevant": false,
+    "reason": "Focuses on reproducibility methods in social science using LLMs, not on model architectures, scaling, or benchmark advances."
+  },
+  "acf8a49d322d:2611.06324": {
+    "relevant": true,
+    "reason": "Introduces a benchmark and data generation method to study training data side effects on LLM behavior, fitting the profile's focus on benchmarks and data recipes."
+  },
+  "acf8a49d322d:2611.05927": {
+    "relevant": true,
+    "reason": "Introduces a new MoE-based multimodal LLM pruning method, directly addressing architecture and efficiency topics in the profile."
+  },
+  "acf8a49d322d:2611.06001": {
+    "relevant": true,
+    "reason": "Introduces a post‑training activation steering method and analyzes behavior‑capability tradeoffs, aligning with interests in model interventions and capability benchmarks."
   }
 }
