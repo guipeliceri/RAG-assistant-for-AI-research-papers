@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-06",
+  "generated_at": "2026-11-06T08:08:10+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 89,
+  "papers": [
+    {
+      "arxiv_id": "2611.08216",
+      "title": "ProQuant: Progressive Quantization-aware Training for Edge MLLMs",
+      "authors": [
+        "Yufei Xue",
+        "Yushi Huang",
+        "Jiawei Shao",
+        "Pingcheng Dong",
+        "Yonghao Tan",
+        "Shiyao Li",
+        "Kwang-Ting Cheng",
+        "Jun Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.08216",
+      "similarity": 0.7176,
+      "summary": "ProQuant is a quantization‑aware training framework designed to keep multi‑modal large language models (MLLMs) functional on low‑bit edge devices. It first uses a self‑relabeling scheme to match the fine‑tuning data distribution to the pre‑training data, then applies a progressive block activation strategy that prioritizes multimodal understanding and a vision‑sensitive factor to identify critical layers. Experiments on 2B–8B models show ProQuant outperforms existing methods, giving the W4A8 Qwen3‑VL‑2B‑Instruct a 6.6 % accuracy boost while staying within about 1 % of full‑precision performance."
+    },
+    {
+      "arxiv_id": "2611.07988",
+      "title": "Compression Through a Context Lens: Evaluating Adaptation, Quantization, and Distillation in Arabic Legal LLMs",
+      "authors": [
+        "Md. Rafiul Biswas",
+        "George Mikros",
+        "Wajdi Zaghouani"
+      ],
+      "url": "https://arxiv.org/abs/2611.07988",
+      "similarity": 0.7116,
+      "summary": "The paper studies how compressing Arabic legal language models affects their performance on a Saudi Arabic legal benchmark (ArabLegalEval) when evaluated with and without external context. It applies three compression techniques—domain adaptation, 4‑bit quantization, and knowledge distillation—to FANAR‑9B, JAIS‑8B, and Qwen2.5‑7B, measuring changes in accuracy and memory usage. The key findings are that removing context can drop accuracy by up to 27 percentage points, 4‑bit quantization reduces memory by 64‑71 % with only minor accuracy shifts (‑3.2 to +1.6 percentage points), and a distilled Qwen2.5‑7B student achieves 76.6 % no‑context accuracy versus 77.2 % for its teacher, showing that no‑context evaluation provides a useful complement to context‑supported testing."
+    },
+    {
+      "arxiv_id": "2611.07735",
+      "title": "Evaluating Token Probabilities as Confidence Estimators in Human Behavior Simulations: A Case Study in Luxembourgish Next Like Prediction",
+      "authors": [
+        "Nils Schwager",
+        "Simon Münker",
+        "Alistair Plum",
+        "Achim Rettinger"
+      ],
+      "url": "https://arxiv.org/abs/2611.07735",
+      "similarity": 0.7099,
+      "summary": "The paper investigates whether the token probabilities produced by open‑weight large language models can serve as confidence estimates when simulating how users of the Luxembourgish news site RTL.lu rate comments, a task called Next Like Prediction. The authors evaluate the 3B and 8B versions of the open‑weight model Ministral 3 using only in‑context learning, compare their accuracy and calibration to a simple statistical baseline, and study how scaling the model size and extending the behavioral history affect these metrics. They find that the models are overconfident, the baseline outperforms them in both accuracy and calibration, scaling from 3B to 8B improves accuracy but degrades calibration, and that task‑specific supervised fine‑tuning reduces Expected Calibration Error from 0.2 to 0.006 while raising accuracy from 0.536 to 0.758, showing that confidence estimation should be evaluated alongside accuracy."
+    },
+    {
+      "arxiv_id": "2611.08315",
+      "title": "Benchmarking Large Language Models on Heterogeneous Cognitive and Biomedical Knowledge Graphs: The Role of Graph Grounding in Multi-Hop Reasoning and Hallucination Mitigation",
+      "authors": [
+        "Ali Sarabadani",
+        "Kheirolah Rahsepar Fard",
+        "Tahereh Jeirani"
+      ],
+      "url": "https://arxiv.org/abs/2611.08315",
+      "similarity": 0.7091,
+      "summary": "The study benchmarks five large language models (GPT‑5.1, Gemini 2.0 Pro, Llama 3, Qwen, and BioGPT) on five heterogeneous knowledge graphs (DrugBank, NeuroSynth, Cognitive Atlas, Brain Map, and GDPKG) using a multitier query dataset that tests multi‑hop reasoning and factual accuracy under both graph‑grounded and graph‑agnostic conditions. Results show that general‑purpose models, especially GPT‑5.1 and Gemini 2.0 Pro, outperform domain‑specific models on multi‑hop and high‑level reasoning tasks, though performance declines with increasing query complexity, and that grounding the models in the knowledge graph consistently reduces hallucination rates; inter‑annotator agreement was substantial (Cohen’s κ = 0.781, Fleiss’ κ = 0.77). The authors conclude that combining broad language‑model capabilities with structured domain knowledge is valuable, and they provide practical guidance for selecting LLM‑KG integration strategies and discuss hybrid neurosymbolic architectures for personalized medicine, cognitive disorder diagnosis, and explainable AI."
+    },
+    {
+      "arxiv_id": "2611.08133",
+      "title": "Beyond K/V Caches: Cross-Model State Handoff in Hybrid Linear-Attention LLMs",
+      "authors": [
+        "Jiacheng Cai",
+        "Tao Zhang",
+        "Siqi Liang",
+        "Yun Dai",
+        "Ziqian Zeng"
+      ],
+      "url": "https://arxiv.org/abs/2611.08133",
+      "similarity": 0.7087,
+      "summary": "The paper tackles the challenge of transferring state between different language models during long conversations, where each model switch normally forces the new model to re‑prefill the entire context. It proposes Hybrid State Transfer (HST), which handles full‑attention key/value caches, recurrent states, and convolution histories by using structured REC maps, preserving convolution history order, and calibrating adapters with the frozen target’s outputs. Across five benchmarks, HST achieves mean task retentions of 89.88 % for Qwen3.5 4B→27B and 94.11 % for 9B→27B, and delivers handoff speedups of 21.66× and 21.91× on synthetic 16K inputs."
+    }
+  ]
+}

@@ -298,5 +298,25 @@
   "acf8a49d322d:2611.06001": {
     "relevant": true,
     "reason": "Introduces a post‑training activation steering method and analyzes behavior‑capability tradeoffs, aligning with interests in model interventions and capability benchmarks."
+  },
+  "acf8a49d322d:2611.08216": {
+    "relevant": true,
+    "reason": "Focus on quantization-aware training for multimodal LLMs, addressing efficiency and low-bit deployment, which matches the profile's interest in quantization and efficient inference."
+  },
+  "acf8a49d322d:2611.07988": {
+    "relevant": true,
+    "reason": "Focus on quantization and distillation of LLMs aligns with efficiency and compression topics in the profile"
+  },
+  "acf8a49d322d:2611.07735": {
+    "relevant": true,
+    "reason": "Introduces a benchmark evaluating LLM confidence calibration, aligning with interest in capability measurement of frontier models"
+  },
+  "acf8a49d322d:2611.08315": {
+    "relevant": true,
+    "reason": "Introduces a benchmark assessing LLM reasoning and hallucination mitigation, matching interest in capability benchmarks and reasoning analysis."
+  },
+  "acf8a49d322d:2611.08133": {
+    "relevant": true,
+    "reason": "Introduces efficient cross-model state transfer for hybrid linear-attention LLMs, aligning with interests in advanced architectures, long-context handling, and fast inference."
   }
 }
