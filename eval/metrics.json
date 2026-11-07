@@ -17,10 +17,9 @@
   "faithfulness": {
     "questions": 15,
     "answered": 15,
-    "invalid_rate": 0.133,
+    "invalid_rate": 0.067,
     "invalid_questions": [
-      "What is new in hybrid search combining sparse and dense retrieval?",
-      "What came out about LLM agents that use tools?"
+      "What is new in retrieval for code?"
     ]
   },
   "calibration": {
