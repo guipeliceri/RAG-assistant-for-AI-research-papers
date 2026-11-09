@@ -318,5 +318,25 @@
   "acf8a49d322d:2611.08133": {
     "relevant": true,
     "reason": "Introduces efficient cross-model state transfer for hybrid linear-attention LLMs, aligning with interests in advanced architectures, long-context handling, and fast inference."
+  },
+  "acf8a49d322d:2611.09207": {
+    "relevant": true,
+    "reason": "Introduces a system for scalable, efficient RL training of reasoning language models, matching interests in RL for reasoning and frontier model scaling."
+  },
+  "acf8a49d322d:2611.09147": {
+    "relevant": true,
+    "reason": "Introduces a new benchmark suite for evaluating language model compliance, fitting the profile's interest in capability/limit benchmarks."
+  },
+  "acf8a49d322d:2611.09223": {
+    "relevant": true,
+    "reason": "Introduces a new benchmark for evaluating LLM capabilities, aligning with the profile's focus on capability measurement."
+  },
+  "acf8a49d322d:2611.09506": {
+    "relevant": false,
+    "reason": "Focuses on applying existing LLMs to a specific low-resource task rather than advancing model architectures, training methods, or broad capability benchmarks."
+  },
+  "acf8a49d322d:2611.09709": {
+    "relevant": true,
+    "reason": "Introduces a training-free method to speed up LLM prefill, addressing fast inference efficiency for large language models."
   }
 }

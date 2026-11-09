@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-09",
+  "generated_at": "2026-11-09T08:16:24+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 35,
+  "papers": [
+    {
+      "arxiv_id": "2611.09207",
+      "title": "RPEG: Training Reasoning Language Models Scalably and Cost-Effectively",
+      "authors": [
+        "Maciej Besta",
+        "Leonard Schmidt",
+        "Pierre Pang",
+        "Patrik Okanovic",
+        "Robert Gerstenberger",
+        "Torsten Hoefler"
+      ],
+      "url": "https://arxiv.org/abs/2611.09207",
+      "similarity": 0.7083,
+      "summary": "The paper introduces RPEG, a data‑centric graph representation that jointly optimizes the structure and execution of Reasoning Language Model (RLM) training pipelines. By exposing choices such as bounded asynchrony, actor‑critic sharing, and enabling optimizations like stage fusion, fine‑grained scheduling, and multi‑dimensional model parallelism, RPEG is paired with a comprehensive performance model that captures compute, communication, memory, and hierarchical hardware effects. In experiments on up to 256 GH200 GPUs, the RPEG‑based runtime achieves up to 2× higher performance than ReaL, reduces step latency by up to 2.48× compared to verl, and boosts hardware utilization by up to 30%."
+    },
+    {
+      "arxiv_id": "2611.09147",
+      "title": "BMMS: Policy-Conditioned Measurement of Behavioral Compliance in Language Models",
+      "authors": [
+        "Anthony Rhodes",
+        "Gadi Singer"
+      ],
+      "url": "https://arxiv.org/abs/2611.09147",
+      "similarity": 0.7052,
+      "summary": "BMMS is a new suite that measures how well a language model follows a given policy by taking a policy corpus as input and producing a compliance profile, including scores such as the Compliance Attainment Score and Compliance Robustness Margin. The method relies on an admission test based on attribution to ensure dimensions are only introduced when a published test is passed. In experiments on 1,003 obligations from eleven documents, the admission test achieves 94.4 % precision on vendor specifications and 50.0 % on analytical guidance, with extraction fidelity of 94.6 %; when applied to OpenAI’s Model Spec, GPT‑4o fails 70.7 % of hard constraints while the two Claude models fail 0.0 % and 9.1 %."
+    },
+    {
+      "arxiv_id": "2611.09223",
+      "title": "KLEAR: Knowledge-Matched LLM Evaluation in Korean across Application Requirements via Controlled Benchmark Transformation",
+      "authors": [
+        "Seoyeon Kim",
+        "Jeonghyun Kang",
+        "Hamin Koo",
+        "Barom Kang",
+        "Heondeuk Lee",
+        "Jaehyung Kim"
+      ],
+      "url": "https://arxiv.org/abs/2611.09223",
+      "similarity": 0.6972,
+      "summary": "The paper introduces KLEAR, a framework that builds Korean LLM benchmarks by keeping the required knowledge constant while systematically increasing the application demand of each question. KLEAR first extracts an explicit knowledge “anchor bundle” from each source question, uses it to generate harder application‑focused variants, and then refines these candidates through automated checks and human validation. Experiments show that the resulting knowledge‑matched sets largely meet the intended constraints and reveal that higher application demands expose LLM failures that persist even when the necessary knowledge is supplied."
+    },
+    {
+      "arxiv_id": "2611.09506",
+      "title": "On the Effectiveness and Limitations of Open-Weight LLMs for Low-Resource Offensive Language Detection in Danish",
+      "authors": [
+        "Elnur Adl Zarabi",
+        "Amit Kumar",
+        "Adi Singh",
+        "Sierra Nelson",
+        "Megan Stubbs-Richardson",
+        "Taoran Ji"
+      ],
+      "url": "https://arxiv.org/abs/2611.09506",
+      "similarity": 0.6949,
+      "summary": "The study evaluates open‑weight large language models (LLMs) for Danish offensive‑language detection, testing four model families (Llama, Mistral, Gemma, Qwen) across eleven prompting strategies and five design categories, and comparing them to three BERT‑family baselines that use masked‑language‑model prompting and supervised fine‑tuning. Even without task‑specific fine‑tuning, the LLMs beat all three fine‑tuned BERT models, and lightweight fine‑tuning yields further gains, but no single model or prompt category dominates; semantically grounded prompts transfer more robustly while format‑constrained patterns consistently fail to generalize. The best F1 score on a balanced test set is 0.84, yet class imbalance causes relative drops of 26.2 % and 16.7 % for models trained on skewed and balanced data respectively, underscoring that imbalance remains a critical open challenge."
+    },
+    {
+      "arxiv_id": "2611.09709",
+      "title": "RidgeFill: Training-Free Late-Layer Cache Fill for Faster Prefill",
+      "authors": [
+        "Dylan Johnston",
+        "Robert P. Smith"
+      ],
+      "url": "https://arxiv.org/abs/2611.09709",
+      "similarity": 0.6914,
+      "summary": "RidgeFill shortens the prefill phase of large language models by predicting the inputs of all upper layers from a split layer’s state, then writing those predictions into the cache so the upper layers need not be computed. The method is applied to models that were never trained for it, using a single calibration pass to fit a ridge‑regression map and running the full model only for the last few thousand tokens and every decoding step. On large models such as Qwen3.8‑27B and Qwen3.8‑Flash‑Next, RidgeFill achieves 1.25–1.60× faster first‑token times while incurring only a few‑point drop in RULER scores and a 2.65 % increase in perplexity on novel tokens."
+    }
+  ]
+}
