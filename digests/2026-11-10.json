@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-10",
+  "generated_at": "2026-11-10T08:35:11+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 148,
+  "papers": [
+    {
+      "arxiv_id": "2611.10577",
+      "title": "Global Context Guidance for Diffusion Large Language Models",
+      "authors": [
+        "Jeimin Jeon",
+        "Bumsub Ham"
+      ],
+      "url": "https://arxiv.org/abs/2611.10577",
+      "similarity": 0.7284,
+      "summary": "The paper investigates how diffusion large language models use contextual information during denoising and finds that they rely more on local context than on global context.  \nBased on this insight, the authors propose Global Context Guidance (GCG), a feature‑space guidance method that improves global‑context utilization without building an explicit weak model.  \nExperiments on LLaDA‑8B, Dream‑7B, and LLaDA‑1.5 across diverse benchmarks show that GCG consistently outperforms existing guidance methods while incurring much lower inference overhead."
+    },
+    {
+      "arxiv_id": "2611.11995",
+      "title": "Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization",
+      "authors": [
+        "Zhengyu Hu",
+        "Zheyuan Xiao",
+        "Yike Wang",
+        "Hamish Ivison",
+        "Haoyu Wang",
+        "Yige Yuan",
+        "Rulin Shao",
+        "Yuetai Li",
+        "Niqi Lyu",
+        "Yicheng Ding",
+        "Shu Yang",
+        "Zhichen Zeng",
+        "Banghua Zhu",
+        "Jiaxin Pei",
+        "Kaize Ding",
+        "Pradeep Dasigi",
+        "Dan Roth",
+        "Hannaneh Hajishirzi",
+        "Noah A. Smith",
+        "Teng Xiao",
+        "Radha Poovendran"
+      ],
+      "url": "https://arxiv.org/abs/2611.11995",
+      "similarity": 0.727,
+      "summary": "The paper introduces Infrathon, a benchmark of long‑horizon AI infrastructure optimization tasks, and evaluates six models over 150 runs with 24‑hour budgets, using more than 10,000 GPU‑hours. Results show that model rankings vary with evaluation horizon, 135 of 150 runs improve in the second half of their budgets, and agents can find solutions that beat human‑designed baselines—Claude Opus 5.5 raises the mean KV‑cache compression ratio from 6.82 % to 19.86 %. The study also identifies task violations, unreliable testing, and premature completion as barriers to sustained improvement, and offers resources for building long‑horizon tasks and evaluating frontier agents."
+    },
+    {
+      "arxiv_id": "2611.11725",
+      "title": "The Value of Not Knowing: How Fresh Eyes through Naive LLMs Fuel Creativity",
+      "authors": [
+        "David B. D'Ambrosio",
+        "Alon Albalak",
+        "Joel Lehman",
+        "Kenneth O. Stanley"
+      ],
+      "url": "https://arxiv.org/abs/2611.11725",
+      "similarity": 0.7229,
+      "summary": "The paper investigates whether making large language models intentionally ignorant of a topic can boost creativity. By training or forgetting specific knowledge, the authors create “naive” models that generate fresh, novel ideas, which are then refined by a stronger mentor model. In experiments with 1‑billion‑parameter and 7‑billion‑parameter models, the naive models consistently produce more novel and useful seed ideas than baseline models, and the mentor refinement further improves those ideas."
+    },
+    {
+      "arxiv_id": "2611.12791",
+      "title": "Large Language Models as a Universal Searcher for Open-World Automated Machine Learning",
+      "authors": [
+        "Yuxuan Hu",
+        "Jihao Liu",
+        "Weikang Shi",
+        "Xijie Huang",
+        "Linda Wei",
+        "Mingjie Zhan",
+        "Aojun Zhou",
+        "Rui Liu",
+        "Hongsheng Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.12791",
+      "similarity": 0.713,
+      "summary": "The paper introduces NCode, a universal numerical encoding that lets a large language model jointly search for model architecture, training hyperparameters, and data ratios without task‑specific fine‑tuning. Trained on optimization trajectories from a single vision task, the LLM‑based searcher reframes the problem as a ranking task, uses reinforcement learning to embed chain‑of‑thought reasoning, and demonstrates state‑of‑the‑art performance on image classification, segmentation, speaker verification, and text‑to‑image benchmarks. It scales to a billion‑parameter Diffusion Transformer, requiring 896 GPU‑days and achieving a GenEval score of 0.91, while its internal strategy shifts from early‑stage diversity exploration to late‑stage anchor exploitation, offering a scalable, generalizable, and interpretable AutoML approach."
+    },
+    {
+      "arxiv_id": "2611.12311",
+      "title": "MNN-Pocket-0.3B Technical Report",
+      "authors": [
+        "MNN Team"
+      ],
+      "url": "https://arxiv.org/abs/2611.12311",
+      "similarity": 0.7122,
+      "summary": "MNN‑Pocket‑0.3B is a 300‑million‑parameter dense language model built for efficient on‑device use, supporting up to 32 K‑token contexts and an INT4 footprint of 173 MB with a decoding speed of 466 tokens/s on an iPad Pro M5. The authors co‑design the architecture, data, training pipeline, and inference engine, using a four‑stage pre‑training on about 4.1 trillion Chinese and English tokens followed by instruction fine‑tuning, multi‑teacher distillation, and quantization‑aware training. The result is a frontier‑level model that outperforms similarly sized open‑source models and even some 0.5‑B‑parameter models on instruction‑following benchmarks, and the weights and deployment packages are released openly."
+    }
+  ]
+}

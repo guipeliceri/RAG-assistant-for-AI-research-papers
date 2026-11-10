@@ -338,5 +338,25 @@
   "acf8a49d322d:2611.09709": {
     "relevant": true,
     "reason": "Introduces a training-free method to speed up LLM prefill, addressing fast inference efficiency for large language models."
+  },
+  "acf8a49d322d:2611.10577": {
+    "relevant": true,
+    "reason": "Introduces a new diffusion LLM architecture and efficient global-context guidance, aligning with frontier model advances and inference efficiency."
+  },
+  "acf8a49d322d:2611.11995": {
+    "relevant": true,
+    "reason": "Introduces a benchmark evaluating long-horizon language agents and efficiency improvements, aligning with the profile's focus on benchmarks and model capabilities."
+  },
+  "acf8a49d322d:2611.11725": {
+    "relevant": true,
+    "reason": "Introduces a novel training recipe (naive LLMs) for large language models, aligning with interests in model methods and pretraining strategies."
+  },
+  "acf8a49d322d:2611.12791": {
+    "relevant": false,
+    "reason": "Focuses on LLM-driven AutoML rather than advancing LLM architectures, training, or evaluation methods."
+  },
+  "acf8a49d322d:2611.12311": {
+    "relevant": true,
+    "reason": "Introduces a new compact LLM with hardware-aware architecture, long context, instruction tuning, distillation, and quantization, matching the profile's focus on efficient frontier models."
   }
 }
