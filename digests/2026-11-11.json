@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-11",
+  "generated_at": "2026-11-11T07:56:42+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 92,
+  "papers": [
+    {
+      "arxiv_id": "2611.13855",
+      "title": "Beyond Passive Imitation: On-Policy Mid-Training Distillation for Language Models",
+      "authors": [
+        "Ruize Zheng",
+        "Xuyang Liu",
+        "Siyu Ren",
+        "Xiaobing Tu",
+        "Yinggui Wang",
+        "Jinkui Ren",
+        "Xiantao Zhang",
+        "Linfeng Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.13855",
+      "similarity": 0.7159,
+      "summary": "The paper introduces On‑Policy Mid‑Training Distillation (OPMD), a method that replaces the standard next‑token prediction objective in continual pre‑training with an active, query‑driven distillation that trains on the states the model actually visits. OPMD samples trajectories from the evolving student policy at selected anchor positions and applies dense token‑level reverse‑KL rewards from a frozen teacher, reducing the mismatch between training and generation. On the MATH‑500 and Minerva benchmarks, OPMD improves the Qwen student’s performance over its base and outperforms the NTP baseline, which degrades on both benchmarks, while adding no inference‑time overhead."
+    },
+    {
+      "arxiv_id": "2611.13560",
+      "title": "Are Dense Rewards Worth Their Tokens in GRPO?",
+      "authors": [
+        "Vikash Singh",
+        "Weicong Chen",
+        "Debargha Ganguly",
+        "Yanyan Zhang",
+        "Mohsen Hariri",
+        "Sreehari Sankar",
+        "Wang Yang",
+        "Chaoda Song",
+        "Alexander Nemecek",
+        "Osama Zafar",
+        "Yuting Shao",
+        "Kai Ye",
+        "Biyao Zhang",
+        "Xinpeng Li",
+        "Shouren Wang",
+        "Erman Ayday",
+        "Jing Ma",
+        "Sanmukh Rao Kuppannagari",
+        "Vipin Chaudhary"
+      ],
+      "url": "https://arxiv.org/abs/2611.13560",
+      "similarity": 0.7129,
+      "summary": "The paper introduces a matched‑compute protocol that gives every training intervention the same budget in generated tokens and GPU‑hours, and uses preregistered studies to evaluate dense‑reward methods versus standard GRPO. Across 1,668 runs on six models, the protocol shows that dense rewards such as a Monte‑Carlo step‑by‑step reward actually perform 14.3 percentage points worse than GRPO at equal tokens and 7.8 points worse at equal training time on Qwen2.5‑1.5B, and none of the four dense‑reward variants beat GRPO even with the same compute. In contrast, selecting prompts whose predicted success is near 50 % improves accuracy by 1.7 points on Qwen3‑0.6B and 0.8 on Qwen2.5‑1.5B, and a standard GRPO with twice the initial learning rate comes within half a point of these gains, leading the authors to argue that training interventions must be validated at matched compute."
+    },
+    {
+      "arxiv_id": "2611.13531",
+      "title": "Framing-Induced Vulnerability in Large Language Models: Evidence from Chinese News Headlines",
+      "authors": [
+        "Mo Zhou",
+        "Yiwei Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.13531",
+      "similarity": 0.7093,
+      "summary": "The study audits 63,926 Chinese news headlines and runs a controlled experiment on 30 real events, 30 synthetic events, and 29 natural headline pairs with four Chinese LLMs to see whether headline framing influences the models’ judgments. Changing only the frame shifts perceived misleadingness and event severity: emotionally intensified headlines raise severity by 0.65–0.88 points, while positively reframed headlines lower it by 0.34–0.52 points; providing the article body reduces this bias by 54–80 % (p < .01). A small human reference study shows the same direction, indicating that headline‑only LLM evaluation has a measurable robustness gap and that framing sensitivity should be included in reliability checks."
+    },
+    {
+      "arxiv_id": "2611.13975",
+      "title": "Understanding Mixture-of-Experts Language Models Beyond Expert Boundaries",
+      "authors": [
+        "Zhenhong Zhou",
+        "Mao Zheng",
+        "Mingyang Song",
+        "Qiankun Li",
+        "Kun Wang",
+        "Junfeng Fang"
+      ],
+      "url": "https://arxiv.org/abs/2611.13975",
+      "similarity": 0.7015,
+      "summary": "The paper investigates how Mixture‑of‑Experts language models organize computation at the neuron level, using a new metric called Routing‑Aware Magnitude Profiling (RAMP). It finds that domain‑specialized neuron sets overlap 58‑74 % within the same domain but only 15‑24 % across different domains, and that neuron importance shifts during pre‑training while remaining stable after fine‑tuning. Building on this, the authors propose RAMPr, a RAMP‑based pruning method that, at 75 % neuron retention, keeps 91‑98 % of the original performance, and at 50 % retention cuts GPU memory usage by 36‑43 % and boosts batched prefill throughput by 17‑39 %."
+    },
+    {
+      "arxiv_id": "2611.14079",
+      "title": "From Bias to Positionality: A critical grammar for Large Language Models",
+      "authors": [
+        "Dave Murray-Rust",
+        "Elisa Giaccardi",
+        "Federico Bomba",
+        "Maria Luce Lupetti"
+      ],
+      "url": "https://arxiv.org/abs/2611.14079",
+      "similarity": 0.7002,
+      "summary": "The paper argues that “bias” is too narrow for understanding large language models and proposes “positionality” – the located, articulated, and contestable stance from which a model speaks – as a better framework. It shows how a model’s positionality is layered across its corpus, tuning, prompts, and live interactions, and separates three factors: the creators’ position, the intended behavior, and the enacted behavior. The authors conclude that positionality can describe where models “speak from” and help clarify how they are made, read, and held accountable, even though the models themselves are not accountable speakers."
+    }
+  ]
+}

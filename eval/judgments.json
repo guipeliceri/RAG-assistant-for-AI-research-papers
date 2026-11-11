@@ -358,5 +358,25 @@
   "acf8a49d322d:2611.12311": {
     "relevant": true,
     "reason": "Introduces a new compact LLM with hardware-aware architecture, long context, instruction tuning, distillation, and quantization, matching the profile's focus on efficient frontier models."
+  },
+  "acf8a49d322d:2611.13855": {
+    "relevant": true,
+    "reason": "Introduces a novel on-policy distillation method for mid-training LLMs, directly addressing training recipes and efficiency in frontier models."
+  },
+  "acf8a49d322d:2611.13560": {
+    "relevant": true,
+    "reason": "Focuses on reinforcement learning methods for reasoning in language models, matching the profile's interest in RLHF and reasoning training techniques."
+  },
+  "acf8a49d322d:2611.13531": {
+    "relevant": false,
+    "reason": "Focuses on bias and robustness of LLMs rather than model architectures, training methods, or capability benchmarks."
+  },
+  "acf8a49d322d:2611.13975": {
+    "relevant": true,
+    "reason": "Focuses on Mixture-of-Experts LLM architecture and introduces neuron-level analysis and pruning for efficiency, directly matching the profile topics."
+  },
+  "acf8a49d322d:2611.14079": {
+    "relevant": false,
+    "reason": "Focuses on bias and positionality analysis rather than technical advances, methods, or benchmarks for frontier models"
   }
 }
