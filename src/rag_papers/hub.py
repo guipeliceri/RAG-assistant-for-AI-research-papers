@@ -15,9 +15,11 @@ from huggingface_hub.errors import EntryNotFoundError, RepositoryNotFoundError
 from rag_papers.digest import DIGEST_DIR
 from rag_papers.ingest import DEFAULT_PATH
 from rag_papers.popular import DEFAULT_PATH as POPULAR_PATH
+from rag_papers.popular import SNAPSHOTS_PATH
 
 PAPERS_IN_REPO = "papers.parquet"
 POPULAR_IN_REPO = "popular.parquet"
+SNAPSHOTS_IN_REPO = "popular_snapshots.parquet"
 
 
 def repo_id() -> str:
@@ -38,6 +40,8 @@ def pull_file(name: str, path: Path) -> bool:
 
 def pull(path: Path = DEFAULT_PATH, popular_path: Path = POPULAR_PATH) -> tuple[bool, bool]:
     """Download the paper store and the most-voted store."""
+    # Snapshots are append-only history; losing them would lose data no API can give back.
+    pull_file(SNAPSHOTS_IN_REPO, SNAPSHOTS_PATH)
     return pull_file(PAPERS_IN_REPO, path), pull_file(POPULAR_IN_REPO, popular_path)
 
 
@@ -58,6 +62,14 @@ def push(path: Path = DEFAULT_PATH, popular_path: Path = POPULAR_PATH) -> None:
             repo_id=repo_id(),
             repo_type="dataset",
             commit_message="Update most-voted papers",
+        )
+    if SNAPSHOTS_PATH.exists():
+        api.upload_file(
+            path_or_fileobj=str(SNAPSHOTS_PATH),
+            path_in_repo=SNAPSHOTS_IN_REPO,
+            repo_id=repo_id(),
+            repo_type="dataset",
+            commit_message="Append vote snapshots",
         )
     if DIGEST_DIR.exists():
         api.upload_folder(
