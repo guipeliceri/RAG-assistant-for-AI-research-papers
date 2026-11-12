@@ -13,19 +13,17 @@ on every claim, checked automatically.
 **Live app:** [https://ai-research-papers-guipeliceri.streamlit.app](https://ai-research-papers-guipeliceri.streamlit.app/). It runs entirely on free tiers, and no key is needed
 for the digest or the most-voted list.
 
-## Demo
+## The app
 
-**Daily digest.** The top papers of the day for the interest profile, each with a short summary.
+Three tabs, rebuilt in November 2026 (work in progress, tracked in the pull requests):
 
-![Daily digest](docs/media/digest.gif)
+| Tab | What it does |
+| :--- | :--- |
+| **Profiles** | Every new paper that matches an interest profile. Profiles are plain files in `profiles/` added by pull request. Until the classifier is ready, the tab shows the top 5 by similarity to [`profile.md`](profile.md). |
+| **Ask the papers** | Chat over the papers with your own key. Every factual sentence cites an arXiv ID and is checked before you see it. |
+| **Hype forecast** | An agent reads each new paper and bets on the week's most upvoted ones on Hugging Face Daily Papers, with a calibrated confidence. Until it ships, the tab shows the real ranking it will be scored against. |
 
-**Most voted.** Pick a period and how many papers to show.
-
-![Most voted papers](docs/media/most-voted.gif)
-
-**Chat.** A question in Portuguese, an answer with citations, and the retrieved papers it did not use.
-
-![Chat with citations](docs/media/chat.gif)
+Everything is refreshed once a day at 18:00 Brasília time, and each tab shows when.
 
 ## Why
 
@@ -39,7 +37,7 @@ measures how good it is at both jobs instead of assuming it.
 | | |
 | :--- | :--- |
 | **Daily digest** | Every night a GitHub Actions job fetches the new `cs.CL` papers, ranks them against [`profile.md`](profile.md) (currently *advances in current frontier models*) and writes a short summary of the top 5. |
-| **Most voted** | For any period you choose, the AI papers with the most upvotes on [Hugging Face Daily Papers](https://huggingface.co/papers). It is the same list for every user and covers all of AI. |
+| **Votes collected** | Every day the upvotes on [Hugging Face Daily Papers](https://huggingface.co/papers) are stored, with a dated snapshot of each fetch. They are the answer key for the hype forecast. |
 | **Chat with citations** | Ask in any language. Answers are grounded in the retrieved abstracts, every factual sentence cites an arXiv ID, and each answer is validated without an LLM before you see it. |
 | **Bring your own key** | The chat uses your own Groq, OpenRouter or Gemini key. It stays in your browser session and is never stored or logged. |
 | **Measured quality** | Digest precision@5 is scored by an LLM judge that is itself checked against hand-labelled papers, and chat faithfulness is checked on fixed questions. The results are published below and refreshed daily. |
@@ -174,8 +172,8 @@ Useful commands (run with `PYTHONPATH=src`):
 6. To calibrate the judge, run the **golden template** workflow, label the 30 rows of
    `eval/golden.csv` with 1 (relevant) or 0, and commit the file.
 
-From then on everything runs by itself. The digest runs at 01:30 UTC, after arXiv's evening
-announcement. A failed run opens an issue in the repository. Free Streamlit apps sleep after some
+From then on everything runs by itself. The daily job runs at 21:00 UTC (18:00 in Brasília) on
+the listing arXiv announced the evening before. A failed run opens an issue in the repository. Free Streamlit apps sleep after some
 hours without visits, so the **keep app awake** workflow visits the app every 4 hours and wakes it
 if needed.
 

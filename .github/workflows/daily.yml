@@ -1,9 +1,10 @@
 name: daily digest
 
 on:
-  # 01:30 UTC is after arXiv's 20:00 ET announcement in both EDT and EST.
+  # 21:00 UTC is 18:00 in Brasília (no daylight saving since 2019). It uses the listing arXiv
+  # announced the evening before (20:00 ET), so the app is one announcement behind until 18:00.
   schedule:
-    - cron: "30 1 * * *"
+    - cron: "0 21 * * *"
   workflow_dispatch:
 
 concurrency:
