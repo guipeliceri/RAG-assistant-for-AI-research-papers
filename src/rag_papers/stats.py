@@ -149,3 +149,63 @@ def calibration(outcomes: Sequence[bool], probabilities: Sequence[float], bins: 
         "ece": round(ece, 4) if len(y) else None,
         "table": table,
     }
+
+
+def _weighted_pr(t: np.ndarray, p: np.ndarray, w: np.ndarray) -> tuple[float, float]:
+    tp = float(np.sum(w * (t & p)))
+    fp = float(np.sum(w * (~t & p)))
+    fn = float(np.sum(w * (t & ~p)))
+    precision = tp / (tp + fp) if tp + fp else float("nan")
+    recall = tp / (tp + fn) if tp + fn else float("nan")
+    return precision, recall
+
+
+def weighted_report(
+    truth: Sequence[bool],
+    predicted: Sequence[bool],
+    weights: Sequence[float],
+    strata: Sequence[object],
+    resamples: int = 2000,
+    seed: int = 0,
+) -> dict:
+    """Precision and recall for a stratified sample, estimated for the whole population.
+
+    Label samples over-represent papers similar to the profile, so that enough positives get
+    labelled. Without weights, precision and recall would describe the sample, not the stream
+    of papers the app shows. Each item's weight is its stratum size over the items sampled from
+    that stratum. Intervals come from a bootstrap that resamples within each stratum, the way
+    the sample was drawn.
+    """
+    t = np.asarray(truth, dtype=bool)
+    p = np.asarray(predicted, dtype=bool)
+    w = np.asarray(weights, dtype=float)
+    s = np.asarray(strata)
+    if not (len(t) == len(p) == len(w) == len(s)):
+        raise ValueError("truth, predicted, weights and strata must have the same length")
+    precision, recall = _weighted_pr(t, p, w) if len(t) else (float("nan"), float("nan"))
+    groups = [np.flatnonzero(s == g) for g in np.unique(s)] if len(s) else []
+    rng = np.random.default_rng(seed)
+    boot_p, boot_r = [], []
+    for _ in range(resamples if len(t) else 0):
+        idx = np.concatenate([rng.choice(g, len(g), replace=True) for g in groups])
+        bp, br = _weighted_pr(t[idx], p[idx], w[idx])
+        if not math.isnan(bp):
+            boot_p.append(bp)
+        if not math.isnan(br):
+            boot_r.append(br)
+
+    def summary(value: float, boot: list[float]) -> dict:
+        ci = np.percentile(boot, [2.5, 97.5]) if boot else None
+        return {
+            "value": None if math.isnan(value) else round(value, 3),
+            "ci95": [round(float(x), 3) for x in ci] if ci is not None else None,
+        }
+
+    return {
+        "n": len(t),
+        "positives_labelled": int(t.sum()),
+        "precision": summary(precision, boot_p),
+        "recall": summary(recall, boot_r),
+        # Estimated share of relevant papers in the whole stream.
+        "base_rate": round(float(np.sum(w * t) / np.sum(w)), 3) if len(t) else None,
+    }

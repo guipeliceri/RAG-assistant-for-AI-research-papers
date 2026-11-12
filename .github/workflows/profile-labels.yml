@@ -1,0 +1,64 @@
+name: profile labels
+
+# Draws the stratified sample of papers to label for a profile, and runs its evaluation.
+# "test" is the published number: run it only when a version is final.
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "sample, dev, tune, lock or test"
+        required: true
+        default: sample
+        type: choice
+        options: [sample, dev, tune, lock, test]
+      profile:
+        description: "profile slug"
+        required: true
+        default: frontier-models
+      note:
+        description: "for lock: why the test set is frozen now"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+env:
+  PYTHONPATH: src
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  HF_DATASET_REPO: ${{ vars.HF_DATASET_REPO }}
+  GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+  # Inputs go through the environment, never pasted into the shell script.
+  ACTION: ${{ inputs.action }}
+  PROFILE: ${{ inputs.profile }}
+  NOTE: ${{ inputs.note }}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python -m rag_papers.hub pull
+      - name: Sample
+        if: inputs.action == 'sample'
+        # The 30 papers already used to diagnose the judge are left out; they can only ever be dev data.
+        run: python -m rag_papers.labeling sample "$PROFILE" --n 200 --days 30 --exclude eval/golden.csv
+      - name: Evaluate
+        if: inputs.action != 'sample'
+        run: python -m rag_papers.profile_eval "$ACTION" "$PROFILE" --note "$NOTE"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add eval/
+          git diff --cached --quiet || git commit -m "Profile $PROFILE: $ACTION"
+          git pull --rebase --quiet
+          git push

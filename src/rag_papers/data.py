@@ -26,7 +26,7 @@ def fetch() -> tuple[Path, Path, Path]:
         return DEFAULT_PATH, LOCAL_DIGESTS, POPULAR_PATH
     from huggingface_hub import snapshot_download
 
-    patterns = ["papers.parquet", "popular.parquet", "digests/*.json"]
+    patterns = ["papers.parquet", "popular.parquet", "digests/*.json", "digests/profiles/*/*.json"]
     root = Path(snapshot_download(repo, repo_type="dataset", allow_patterns=patterns))
     return root / "papers.parquet", root / "digests", root / "popular.parquet"
 
@@ -48,3 +48,21 @@ def latest_digest(directory: Path) -> dict | None:
 
 def load_popular(path: Path) -> pd.DataFrame:
     return pd.read_parquet(path) if path.exists() else pd.DataFrame(columns=POPULAR_COLUMNS)
+
+
+PROFILE_EVAL_DIR = Path("eval/profiles")
+
+
+def profile_results(digests: Path, slug: str) -> dict[str, dict]:
+    """The classifier's daily results for a profile, newest first, keyed by listing date."""
+    out = {}
+    for path in sorted((digests / "profiles" / slug).glob("*.json"), reverse=True):
+        result = json.loads(path.read_text())
+        if result.get("candidates"):
+            out[result["date"]] = result
+    return out
+
+
+def profile_metrics(slug: str, directory: Path = PROFILE_EVAL_DIR) -> dict:
+    path = directory / slug / "metrics.json"
+    return json.loads(path.read_text()) if path.exists() else {}

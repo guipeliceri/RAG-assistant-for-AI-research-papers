@@ -78,3 +78,35 @@ def test_hype_tab_without_data(in_tmp):
     at = streamlit_testing.AppTest.from_file(APP).run()
     assert not at.exception
     assert any("No votes collected yet" in i.value for i in at.info)
+
+
+def test_profiles_tab_lists_every_match(in_tmp):
+    from rag_papers import profiles
+
+    profile = profiles.load(Path(APP).parent / "profiles" / "frontier-models.md")
+    folder = in_tmp / "digests" / "profiles" / profile.slug
+    folder.mkdir(parents=True)
+    result = {
+        "profile": profile.slug,
+        "profile_name": profile.name,
+        "profile_fingerprint": profile.fingerprint,
+        "model": "m",
+        "date": "2024-10-08",
+        "generated_at": "2024-10-08T21:05:00+00:00",
+        "candidates": 90,
+        "classified": 60,
+        "errors": 0,
+        "papers": [
+            {"arxiv_id": f"2410.0000{i}", "title": f"Match {i}", "authors": ["A"], "url": "u",
+             "categories": ["cs.CL"], "reason": "about scaling"}
+            for i in range(7)
+        ],
+    }
+    (folder / "2024-10-08.json").write_text(json.dumps(result))
+    at = streamlit_testing.AppTest.from_file(APP).run()
+    assert not at.exception
+    page = html_blocks(at)
+    assert all(f"Match {i}" in page for i in range(7))
+    assert "08/10/2024 at 18:05 (Brasília time)" in page
+    assert "legacy ranking" not in page
+    assert any("7 of 90 new papers match" in c.value for c in at.caption)

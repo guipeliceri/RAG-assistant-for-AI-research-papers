@@ -8,12 +8,14 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 # Streamlit Community Cloud runs `streamlit run app.py` from the repo root without PYTHONPATH.
-sys.path.insert(0, str(Path(__file__).parent / "src"))
+ROOT = Path(__file__).parent
+sys.path.insert(0, str(ROOT / "src"))
 
 import streamlit as st  # noqa: E402
 
 from rag_papers import data  # noqa: E402
 from rag_papers import popular  # noqa: E402
+from rag_papers import profiles as profile_files  # noqa: E402
 from rag_papers.chat import ask  # noqa: E402
 from rag_papers.embeddings import OnnxEmbedder  # noqa: E402
 from rag_papers.llm import PROVIDERS, LLMError, OpenAICompatibleLLM  # noqa: E402
@@ -50,13 +52,75 @@ def get_index() -> Index:
 
 
 def profiles_tab() -> None:
+    available = profile_files.load_all(ROOT / "profiles")
+    if not available:
+        st.info("No profiles yet. Add one by pull request in profiles/.")
+        return
+    left, right = st.columns([3, 2])
+    profile = left.selectbox("Profile", available, format_func=lambda p: p.name, key="profile")
+    results = data.profile_results(files()[1], profile.slug)
+    if not results:
+        legacy_digest()
+        return
+    day = right.selectbox("Listing", list(results), key="profile_day")
+    result = results[day]
+    current = result["profile_fingerprint"] == profile.fingerprint
+    st.markdown(theme.stamp(_parse_time(result.get("generated_at"))), unsafe_allow_html=True)
+    metrics_panel(profile)
+    note = "" if current else " These results come from an earlier version of the profile."
+    st.caption(
+        f"{len(result['papers'])} of {result['candidates']} new papers match. "
+        f"{result['classified']} were read by the classifier ({result['model']}); the rest are outside "
+        f"the profile's categories ({', '.join(profile.categories)}) or far from its description.{note}"
+    )
+    if result.get("errors"):
+        st.warning(f"{result['errors']} papers could not be classified today and are retried on the next run.")
+    for paper in result["papers"]:
+        st.markdown(
+            theme.card(
+                paper["title"],
+                paper["url"],
+                meta=f"{theme.byline(paper['authors'])} · {paper['arxiv_id']}",
+                body=paper.get("reason") or "",
+                tags=theme.chips(paper.get("categories", [])),
+            ),
+            unsafe_allow_html=True,
+        )
+
+
+def metrics_panel(profile) -> None:
+    """Test metrics when they exist for this exact profile version; otherwise say it is not evaluated."""
+    metrics = data.profile_metrics(profile.slug, ROOT / "eval" / "profiles")
+    test = metrics.get("test")
+    if not test or test.get("profile_fingerprint") != profile.fingerprint:
+        dev = metrics.get("dev")
+        label = "dev labels only" if dev and dev.get("profile_fingerprint") == profile.fingerprint else "not evaluated"
+        st.markdown(theme.chips([label], "warn"), unsafe_allow_html=True)
+        return
+    c = test["classifier"]
+
+    def tile(name, block):
+        value = "n/a" if block["value"] is None else f"{block['value']:.2f}"
+        ci = f"95% CI {block['ci95'][0]:.2f} to {block['ci95'][1]:.2f}" if block["ci95"] else ""
+        return theme.metric(name, value, ci)
+
+    base = test["always_yes"]["precision"]["value"]
+    st.markdown(
+        '<div class="metric-row">'
+        + tile("Recall", c["recall"])
+        + tile("Precision", c["precision"])
+        + theme.metric("Labelled test papers", str(c["n"]), f"share relevant {base:.2f}" if base is not None else "")
+        + "</div>",
+        unsafe_allow_html=True,
+    )
+
+
+def legacy_digest() -> None:
     with st.spinner("Loading today's papers..."):
         digest = data.latest_digest(files()[1])
     if digest is None:
         st.info("No papers have been selected yet.")
         return
-    name = digest.get("profile_name", "RAG and information retrieval")
-    st.markdown(f"### {theme.e(name)}", unsafe_allow_html=True)
     st.markdown(
         theme.stamp(_parse_time(digest.get("generated_at")))
         + theme.chips(["legacy ranking: top 5 by similarity", "not yet evaluated as a classifier"], "warn"),
@@ -64,7 +128,7 @@ def profiles_tab() -> None:
     )
     st.caption(
         f"Listing of {digest['date']}: top {len(digest['papers'])} of {digest['candidates']} new cs.CL papers. "
-        "Profiles that return every matching paper, with measured precision and recall, are being built."
+        "The classifier that returns every matching paper has not run for this profile yet."
     )
     for paper in digest["papers"]:
         st.markdown(
