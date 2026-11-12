@@ -154,3 +154,26 @@ def test_chat_shows_quality_tiles_and_cards(in_tmp, monkeypatch):
     # A technology that is not in the abstract never reaches the card.
     assert ">BM25<" in page and "Transformers" not in page
     assert "Ada" in page
+
+
+def test_hype_tab_shows_forecast(in_tmp):
+    folder = in_tmp / "digests" / "hype"
+    folder.mkdir(parents=True)
+    forecast = {
+        "week": "2026-11-09", "as_of": "2026-11-12", "model": "m", "papers": 400, "calibrated": False,
+        "outside_probability": None, "generated_at": "2026-11-12T21:04:00+00:00",
+        "shortlist": [
+            {"arxiv_id": "2611.00001", "title": "Big <new> model", "authors": ["Ada"], "url": "u", "abstract": "a",
+             "listing_date": "2026-11-10", "raw": 0.31, "probability": 0.31, "reason": "Open weights, strong results.",
+             "source": "arXiv HTML v1", "affiliations": "A Lab",
+             "signals": {"n_authors": 1, "author_record": 2, "code_link": True, "trend": 0.6},
+             "stage_a": {"novelty": 5, "result": 5, "openness": 5, "reach": 5, "appeal": 4}},
+        ],
+    }
+    (folder / "2026-11-09.json").write_text(json.dumps(forecast))
+    at = streamlit_testing.AppTest.from_file(APP).run()
+    assert not at.exception
+    page = html_blocks(at)
+    assert "Most likely to be hyped" in page and "Big &lt;new&gt; model" in page
+    assert "31% chance of top 3" in page and "not calibrated yet" in page
+    assert "12/11/2026 at 18:04 (Brasília time)" in page

@@ -111,6 +111,18 @@ flowchart LR
 - **Faithfulness.** 15 fixed questions go through the chat, and the share of answers that fail the
   deterministic checks is reported.
 
+### Profiles, chat and hype (November 2026 redesign)
+
+- **Profiles**: population-weighted precision and recall on 200 blind human labels, split into dev
+  and a locked test set, with 95% intervals and two baselines. Details in [`docs/profiles.md`](docs/profiles.md).
+- **Chat**: every answer shows the share of sentences with a citation, citation and number checks,
+  and an optional sentence-by-sentence check against the cited abstracts. Paper cards drop any
+  technology that is not in the abstract.
+- **Hype forecast**: scored on closed weeks, each forecast as of its Monday with only public
+  information (v1 text, past weeks' votes). Calibration is fitted on earlier weeks only. Reported
+  next to a no-LLM author-record rule and the random expectation. See
+  [`hype.py`](src/rag_papers/hype.py) for the definitions.
+
 If precision@5 ends up below 0.80, that goes in a failure analysis (what changed in the profile,
 the embedding or the filter, and the effect), not hidden.
 
@@ -188,7 +200,7 @@ if needed.
 | `eval/` | Golden set, judge cache, metrics |
 | `scripts/` | Retrieval inspection, keep-awake |
 | `docs/decisions.md` | Design decisions and the corrections made to the original plan |
-| `.github/workflows/` | Daily digest, ingest, golden template, keep-awake, tests |
+| `.github/workflows/` | Daily job, profile check, profile labels, hype backtest, golden template, keep-awake, tests |
 
 ## Limitations
 

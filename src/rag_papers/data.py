@@ -26,7 +26,7 @@ def fetch() -> tuple[Path, Path, Path]:
         return DEFAULT_PATH, LOCAL_DIGESTS, POPULAR_PATH
     from huggingface_hub import snapshot_download
 
-    patterns = ["papers.parquet", "popular.parquet", "digests/*.json", "digests/profiles/*/*.json"]
+    patterns = ["papers.parquet", "popular.parquet", "digests/*.json", "digests/profiles/*/*.json", "digests/hype/*.json"]
     root = Path(snapshot_download(repo, repo_type="dataset", allow_patterns=patterns))
     return root / "papers.parquet", root / "digests", root / "popular.parquet"
 
@@ -65,4 +65,14 @@ def profile_results(digests: Path, slug: str) -> dict[str, dict]:
 
 def profile_metrics(slug: str, directory: Path = PROFILE_EVAL_DIR) -> dict:
     path = directory / slug / "metrics.json"
+    return json.loads(path.read_text()) if path.exists() else {}
+
+
+def latest_hype(digests: Path) -> dict | None:
+    paths = sorted((digests / "hype").glob("*.json"), reverse=True)
+    return json.loads(paths[0].read_text()) if paths else None
+
+
+def hype_backtest(directory: Path) -> dict:
+    path = directory / "backtest.json"
     return json.loads(path.read_text()) if path.exists() else {}

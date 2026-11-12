@@ -156,19 +156,91 @@ def _parse_time(value) -> datetime | None:
 
 
 def hype_tab() -> None:
-    with st.spinner("Loading votes..."):
-        df = data.load_popular(files()[2])
+    forecast = data.latest_hype(files()[1])
     st.markdown("### Hype forecast")
     st.caption(
-        "The forecast is being built: an agent will read each new paper and bet on the week's most hyped ones, "
-        "with a calibrated confidence. Until then this tab shows the answer key it will be scored against: "
-        "the week's most upvoted papers on Hugging Face Daily Papers."
+        "Which of this week's new papers will be the most upvoted on Hugging Face Daily Papers. "
+        "An agent reads every abstract, then the introduction and conclusion of the 30 most promising, "
+        "and gives each a probability of ending in the week's top 3. It never sees this week's votes."
     )
-    if df.empty:
+    if forecast is None:
         st.markdown(theme.stamp(None), unsafe_allow_html=True)
+        st.info("The first forecast appears after the next daily run (18:00 Brasília).")
+    else:
+        hype_forecast(forecast)
+    hype_scorecard(data.hype_backtest(ROOT / "eval" / "hype"))
+    answer_key_panel()
+
+
+def hype_forecast(forecast: dict) -> None:
+    st.markdown(theme.stamp(_parse_time(forecast.get("generated_at"))), unsafe_allow_html=True)
+    calibrated = forecast.get("calibrated")
+    st.markdown(
+        theme.chips(
+            ["calibrated on past weeks" if calibrated else "raw model confidence, not calibrated yet"],
+            "ok" if calibrated else "warn",
+        ),
+        unsafe_allow_html=True,
+    )
+    st.caption(f"Week of {forecast['week']}: {forecast['papers']} papers listed so far, {len(forecast['shortlist'])} read in full.")
+    for rank, p in enumerate(forecast["shortlist"][:10], start=1):
+        s = p["signals"]
+        tags = theme.chips(
+            [
+                f"{p['probability']:.0%} chance of top 3",
+                f"authors in past top 3: {s['author_record']}",
+                "code link" if s["code_link"] else "",
+                f"read: {p['source']}",
+            ]
+        )
+        meta = theme.byline(p["authors"]) + (f" · {p['affiliations']}" if p.get("affiliations") else "")
+        st.markdown(
+            theme.card(
+                p["title"],
+                p["url"],
+                rank="Most likely to be hyped" if rank == 1 else f"#{rank}",
+                meta=meta,
+                body=p["reason"],
+                tags=tags,
+            ),
+            unsafe_allow_html=True,
+        )
+    if forecast.get("outside_probability") is not None:
+        st.caption(f"Every paper outside this list: about {forecast['outside_probability']:.1%} each, from past weeks.")
+
+
+def hype_scorecard(backtest: dict) -> None:
+    summary = backtest.get("summary")
+    st.markdown("#### Track record")
+    if not summary or not summary.get("weeks_scored"):
+        st.markdown(theme.chips(["not evaluated yet"], "warn"), unsafe_allow_html=True)
+        st.caption("Scored on closed weeks once enough have passed. Each week is forecast with only what was public then.")
+        return
+    pick = summary["pick_in_top3"]
+    base = summary["baselines"]
+    cal = summary.get("calibration") or {}
+    ci = f"95% CI {pick['ci95'][0]:.0%} to {pick['ci95'][1]:.0%}" if pick.get("ci95") else ""
+    st.markdown(
+        '<div class="metric-row">'
+        + theme.metric("Top pick ended in the top 3", f"{pick['value']:.0%}", ci)
+        + theme.metric("Top-3 overlap per week", f"{summary['mean_top3_overlap']:.2f}", f"random: {base['random_expected_top3_overlap']:.2f}")
+        + theme.metric("Best-authors rule overlap", f"{base['author_record_mean_top3_overlap']:.2f}", "no LLM")
+        + theme.metric("Brier score", f"{cal.get('brier', 0):.4f}", f"always base rate: {cal.get('brier_baseline', 0):.4f}")
+        + "</div>",
+        unsafe_allow_html=True,
+    )
+    st.caption(f"{summary['weeks_scored']} weeks scored after {summary['weeks_used_only_for_calibration']} weeks used only for calibration.")
+
+
+def answer_key_panel() -> None:
+    with st.spinner("Loading votes..."):
+        df = data.load_popular(files()[2])
+    st.markdown("#### This week's real ranking so far")
+    st.caption("The answer key the forecast is scored against, once the week's votes settle (7 days after each paper is featured).")
+    if df.empty:
         st.info("No votes collected yet. They appear after the next daily run.")
         return
-    st.markdown(theme.stamp(_parse_time(pd_max(df["fetched_at"]))), unsafe_allow_html=True)
+    st.markdown(theme.stamp(_parse_time(pd_max(df["fetched_at"])), "Votes updated"), unsafe_allow_html=True)
     today = date.today()
     monday = today - timedelta(days=today.weekday())
     ranked = popular.top(df, monday, today, 5)
