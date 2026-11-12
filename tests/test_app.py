@@ -110,3 +110,47 @@ def test_profiles_tab_lists_every_match(in_tmp):
     assert "08/10/2024 at 18:05 (Brasília time)" in page
     assert "legacy ranking" not in page
     assert any("7 of 90 new papers match" in c.value for c in at.caption)
+
+
+def test_chat_shows_quality_tiles_and_cards(in_tmp, monkeypatch):
+    from datetime import date as d
+
+    import pandas as pd
+
+    from rag_papers import chat, embeddings, grounding, llm
+    from rag_papers.embed import embed_missing
+
+    from test_retrieval import HashingEmbedder
+
+    rows = [
+        {"arxiv_id": "2410.00001", "title": "Hybrid retrieval for RAG", "authors": ["Ada"],
+         "abstract": "We fuse BM25 and dense retrieval and gain 12.5% on BEIR.", "categories": ["cs.CL"],
+         "listing_date": d.today(), "url": "https://arxiv.org/abs/2410.00001", "embedding": None},
+    ]
+    df, _ = embed_missing(pd.DataFrame(rows), HashingEmbedder())
+    (in_tmp / "data").mkdir()
+    df.to_parquet(in_tmp / "data" / "papers.parquet", index=False)
+    monkeypatch.setattr(embeddings, "OnnxEmbedder", HashingEmbedder)
+
+    def fake_complete(self, system, user):
+        if system == chat.REWRITE_SYSTEM:
+            return "hybrid retrieval"
+        if system == chat.SYSTEM:
+            return "Hybrid search fuses BM25 with dense retrieval [2410.00001]. It gains 12.5% on BEIR [2410.00001]."
+        if system == grounding.JUDGE_SYSTEM:
+            return '[{"n": 1, "supported": true}, {"n": 2, "supported": true}]'
+        return ('[{"arxiv_id": "2410.00001", "summary": "Search is hard. They fuse two retrievers. '
+                'They gain 12.5%.", "technologies": ["BM25", "Transformers"]}]')
+
+    monkeypatch.setattr(llm.OpenAICompatibleLLM, "complete", fake_complete)
+    at = streamlit_testing.AppTest.from_file(APP, default_timeout=30).run()
+    at.text_input(key="api_key").set_value("k").run()
+    at.chat_input[0].set_value("anything on hybrid search?").run()
+    assert not at.exception
+    page = html_blocks(at)
+    assert "Sentences with a citation" in page and "100%" in page
+    assert "Sentences supported" in page
+    assert "They fuse two retrievers." in page
+    # A technology that is not in the abstract never reaches the card.
+    assert ">BM25<" in page and "Transformers" not in page
+    assert "Ada" in page

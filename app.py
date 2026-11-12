@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 import streamlit as st  # noqa: E402
 
+from rag_papers import cards, grounding  # noqa: E402
 from rag_papers import data  # noqa: E402
 from rag_papers import popular  # noqa: E402
 from rag_papers import profiles as profile_files  # noqa: E402
@@ -24,6 +25,7 @@ from rag_papers.ui import theme  # noqa: E402
 from rag_papers.validate import citations  # noqa: E402
 
 MAX_QUESTIONS_PER_SESSION = 20
+MAX_CARDS = 6
 # The daily job updates the Dataset once a day; re-check it every hour.
 REFRESH_SECONDS = 3600
 
@@ -201,6 +203,8 @@ def chat_tab() -> None:
         # Kept only in this browser session's state: never written to disk or logged.
         st.text_input("API key", type="password", key="api_key", help=f"Get one at {provider.key_url}")
         st.caption("🔒 Your key stays in this session only. It is never stored or logged.")
+        st.toggle("Check each sentence (1 extra request)", value=True, key="check_sentences")
+        st.toggle("Paper cards with summaries (1 extra request)", value=True, key="make_cards")
         today = date.today()
         picked = st.date_input("Papers listed between", value=(today - timedelta(days=7), today))
         # While the user is mid-selection the widget returns a single date.
@@ -228,29 +232,108 @@ def chat_tab() -> None:
             st.error(f"{exc}. Check your key, model name and free-tier quota.")
             return
         st.markdown(answer.text)
-        v = answer.validation
-        if answer.sources and not v.ok:
-            problems = []
-            if not v.has_citations:
-                problems.append("no citations")
-            if v.invalid_citations:
-                problems.append("cites papers that were not retrieved: " + ", ".join(v.invalid_citations))
-            if v.unsupported_numbers:
-                problems.append("numbers not found in the sources: " + ", ".join(v.unsupported_numbers))
-            st.warning("⚠️ Check this answer: " + "; ".join(problems))
-        if answer.sources:
-            cited = set(citations(answer.text))
-            used = [s for s in answer.sources if s["arxiv_id"] in cited]
-            unused = [s for s in answer.sources if s["arxiv_id"] not in cited]
-            if used:
-                st.markdown("**Sources**")
-                for s in used:
-                    meta = f"{s['arxiv_id']} · listed {s['listing_date']}"
-                    st.markdown(theme.card(s["title"], s["url"], meta=meta), unsafe_allow_html=True)
-            with st.expander(f"Also retrieved but not used ({len(unused)})"):
-                st.caption(f"Searched for: *{answer.search_query}*")
-                for s in unused:
-                    st.markdown(f"- [{s['arxiv_id']}]({s['url']}) {s['title']} ({s['listing_date']})")
+        if not answer.sources:
+            return
+        index = get_index()
+        abstracts = {h["arxiv_id"]: index.df.at[h["arxiv_id"], "abstract"] for h in answer.sources}
+        quality = grounding.measure(answer.text, answer.validation)
+        if st.session_state.get("check_sentences", True):
+            try:
+                with st.spinner("Checking each sentence against its sources..."):
+                    grounding.judge(quality, abstracts, llm)
+            except LLMError as exc:
+                st.caption(f"Sentence check unavailable: {exc}")
+        answer_quality(quality)
+
+        cited = citations(answer.text)
+        ordered = [s for c in cited for s in answer.sources if s["arxiv_id"] == c]
+        ordered += [s for s in answer.sources if s["arxiv_id"] not in cited]
+        shown = ordered[:MAX_CARDS]
+        made = {}
+        if st.session_state.get("make_cards", True):
+            try:
+                with st.spinner("Writing the paper cards..."):
+                    made = cards.make_cards(
+                        [{"arxiv_id": s["arxiv_id"], "title": s["title"], "abstract": abstracts[s["arxiv_id"]]} for s in shown],
+                        llm,
+                    )
+            except LLMError as exc:
+                st.caption(f"Paper summaries unavailable: {exc}")
+        code = code_links()
+        st.markdown("#### Related papers")
+        st.caption(f"Searched for: *{answer.search_query}*. Cited papers first.")
+        for s in shown:
+            pid = s["arxiv_id"]
+            card = made.get(pid)
+            tags = theme.chips(["cited in the answer"] if pid in cited else [], "ok")
+            if card:
+                tags += theme.chips(card.technologies)
+                if card.unsupported_numbers:
+                    tags += theme.chips(["summary has a number not in the abstract: " + ", ".join(card.unsupported_numbers)], "warn")
+            if pid in code:
+                tags += f'<a class="chip" href="{theme.e(code[pid])}" target="_blank" rel="noopener">code</a>'
+            authors = index.df.at[pid, "authors"] if "authors" in index.df.columns else []
+            st.markdown(
+                theme.card(
+                    s["title"],
+                    s["url"],
+                    meta=f"{theme.byline(authors)} · {pid} · listed {s['listing_date']}",
+                    body=card.summary if card and card.summary else abstracts[pid][:400] + "...",
+                    tags=tags,
+                ),
+                unsafe_allow_html=True,
+            )
+
+
+def answer_quality(quality) -> None:
+    v = quality.validation
+    coverage = quality.citation_coverage
+    supported = quality.supported_share
+    tiles = [
+        theme.metric(
+            "Sentences with a citation",
+            "n/a" if coverage is None else f"{coverage:.0%}",
+            f"{quality.cited_sentences} of {quality.sentences}",
+        ),
+        theme.metric(
+            "Citations valid",
+            "yes" if not v.invalid_citations and v.has_citations else "no",
+            "all cited papers were retrieved" if not v.invalid_citations else ", ".join(v.invalid_citations),
+        ),
+        theme.metric(
+            "Numbers in sources",
+            "yes" if not v.unsupported_numbers else "no",
+            "" if not v.unsupported_numbers else "not found: " + ", ".join(v.unsupported_numbers),
+        ),
+    ]
+    if quality.judged:
+        judged = [c for c in quality.checks if c.supported is not None]
+        tiles.append(
+            theme.metric(
+                "Sentences supported",
+                "n/a" if supported is None else f"{supported:.0%}",
+                f"{sum(c.supported for c in judged)} of {len(judged)}, checked by the same model",
+            )
+        )
+    st.markdown('<div class="metric-row">' + "".join(tiles) + "</div>", unsafe_allow_html=True)
+    if not v.ok or (supported is not None and supported < 1):
+        st.warning("Check this answer: some of it is not backed by the papers. Details below.")
+    if quality.judged:
+        with st.expander("Sentence by sentence"):
+            for c in quality.checks:
+                mark = {True: "✅", False: "❌", None: "➖"}[c.supported]
+                note = f" ({c.why})" if c.why else ("" if c.cited else " (no citation)")
+                st.markdown(f"{mark} {c.sentence}{note}")
+
+
+@st.cache_resource(ttl=REFRESH_SECONDS, show_spinner=False)
+def code_links() -> dict[str, str]:
+    """GitHub links that Hugging Face Daily Papers lists for a paper, when there is one."""
+    df = data.load_popular(files()[2])
+    if df.empty or "github_repo" not in df.columns:
+        return {}
+    rows = df[df["github_repo"].notna() & (df["github_repo"].astype(str).str.startswith("https://"))]
+    return dict(zip(rows["arxiv_id"], rows["github_repo"]))
 
 
 st.markdown(
