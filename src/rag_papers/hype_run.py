@@ -114,7 +114,8 @@ def forecast(
     b_cache = cache.setdefault("stage_b", {})
     rows = []
     for _, row in shortlist.iterrows():
-        key = f"{llm.model}:{monday}:{row['arxiv_id']}:{len(papers)}"
+        # One stage B reading per paper per week: the free tier's daily token budget is the limit.
+        key = f"{llm.model}:{monday}:{row['arxiv_id']}"
         if key not in b_cache:
             if pause:
                 time.sleep(pause)
