@@ -99,8 +99,14 @@ def forecast(
     cache: dict,
     fetch_text,
     pause: float = 0.0,
+    week_size: int | None = None,
 ) -> dict:
-    """Raw forecast for the week starting `monday`, using only what was public on `as_of`."""
+    """Raw forecast for the week starting `monday`, using only what was public on `as_of`.
+
+    `week_size` is how many papers the whole week will have, which sets the base rate the agent
+    is told. Mid-week, fewer papers are listed so far; the scored forecast is the one made after
+    Friday's listing, when the week is complete.
+    """
     import time
 
     papers = hype.week_papers(df, monday, as_of)
@@ -120,7 +126,7 @@ def forecast(
             if pause:
                 time.sleep(pause)
             text = fetch_text(row["arxiv_id"])
-            result = hype.stage_b(row, row, text, len(papers), llm)
+            result = hype.stage_b(row, row, text, week_size or len(papers), llm)
             b_cache[key] = {**result, "source": text.source, "affiliations": text.affiliations}
         rows.append(
             {
@@ -149,6 +155,7 @@ def forecast(
         "as_of": as_of.isoformat(),
         "model": llm.model,
         "papers": int(len(papers)),
+        "complete": as_of >= monday + timedelta(days=4),
         "all_ids": list(papers["arxiv_id"]),
         "shortlist": rows,
     }
@@ -254,7 +261,10 @@ def main() -> None:
     try:
         if args.action == "forecast":
             monday = hype.week_of(today)
-            result = forecast(df, popular, monday, today, embedder, llm, cache, fulltext.fetch, REQUEST_PAUSE)
+            sizes = [len(hype.week_papers(df, monday - timedelta(days=7 * i))) for i in range(1, 5)]
+            sizes = [n for n in sizes if n]
+            size = int(np.median(sizes)) if sizes else None
+            result = forecast(df, popular, monday, today, embedder, llm, cache, fulltext.fetch, REQUEST_PAUSE, size)
             result = apply_calibration(result, _load_json(EVAL_DIR / "calibration.json", None))
             result["generated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
             result.pop("all_ids")

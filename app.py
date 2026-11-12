@@ -182,7 +182,11 @@ def hype_forecast(forecast: dict) -> None:
         ),
         unsafe_allow_html=True,
     )
-    st.caption(f"Week of {forecast['week']}: {forecast['papers']} papers listed so far, {len(forecast['shortlist'])} read in full.")
+    status = "complete week" if forecast.get("complete") else "provisional until Friday's listing is in"
+    st.caption(
+        f"Week of {forecast['week']}: {forecast['papers']} papers listed so far ({status}), "
+        f"{len(forecast['shortlist'])} read in full."
+    )
     for rank, p in enumerate(forecast["shortlist"][:10], start=1):
         s = p["signals"]
         tags = theme.chips(
