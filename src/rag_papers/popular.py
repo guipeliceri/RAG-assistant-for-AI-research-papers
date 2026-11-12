@@ -20,6 +20,20 @@ from rag_papers import store
 
 API_URL = "https://huggingface.co/api/daily_papers"
 DEFAULT_PATH = Path("data/popular.parquet")
+# Append-only log of what the votes looked like at each fetch. `popular.parquet` keeps only the
+# latest count, which is fine for the most-voted list but useless for forecasting: a model
+# trained on final counts would see the future. Snapshots record what was known, and when.
+SNAPSHOTS_PATH = Path("data/popular_snapshots.parquet")
+SNAPSHOT_COLUMNS = [
+    "arxiv_id",
+    "daily_date",
+    "fetched_at",
+    "upvotes",
+    "comments",
+    "github_repo",
+    "organization",
+    "ai_keywords",
+]
 REQUEST_DELAY = 1.0
 RETRIES = 3
 
@@ -57,6 +71,8 @@ def parse(item: dict, fetched_at: datetime, day: date | None = None) -> dict:
         "url": f"https://arxiv.org/abs/{arxiv_id}",
         "hf_url": f"https://huggingface.co/papers/{arxiv_id}",
         "fetched_at": fetched_at,
+        # Only stored in the snapshots; may be missing from the API.
+        "ai_keywords": [str(k) for k in (paper.get("ai_keywords") or [])],
     }
 
 
@@ -84,9 +100,17 @@ def update(df: pd.DataFrame, records: list[dict]) -> pd.DataFrame:
     """One row per paper; the latest fetch wins, so vote counts only move forward in time."""
     if not records:
         return df
-    new = pd.DataFrame(records, columns=COLUMNS)
+    new = pd.DataFrame(records).reindex(columns=COLUMNS)
     merged = pd.concat([df, new], ignore_index=True) if len(df) else new
     return merged.drop_duplicates("arxiv_id", keep="last").reset_index(drop=True)
+
+
+def snapshot(snapshots: pd.DataFrame, records: list[dict]) -> pd.DataFrame:
+    """Append the point-in-time vote counts of this fetch. Never rewrites earlier rows."""
+    if not records:
+        return snapshots
+    new = pd.DataFrame(records).reindex(columns=SNAPSHOT_COLUMNS)
+    return pd.concat([snapshots, new], ignore_index=True) if len(snapshots) else new
 
 
 def top(df: pd.DataFrame, start: date | None, end: date | None, n: int = 10) -> pd.DataFrame:
@@ -102,9 +126,21 @@ def top(df: pd.DataFrame, start: date | None, end: date | None, n: int = 10) -> 
     return df[mask].sort_values(["upvotes", "comments"], ascending=False).head(n)
 
 
-def run(path: Path, days: int, today: date | None = None, session=None, delay: float = REQUEST_DELAY) -> int:
+def run(
+    path: Path,
+    days: int,
+    today: date | None = None,
+    session=None,
+    delay: float = REQUEST_DELAY,
+    snapshots_path: Path | None = SNAPSHOTS_PATH,
+) -> int:
     today = today or datetime.now(timezone.utc).date()
     df = store.load(path) if path.exists() else pd.DataFrame(columns=COLUMNS)
+    snaps = (
+        pd.read_parquet(snapshots_path)
+        if snapshots_path and snapshots_path.exists()
+        else pd.DataFrame(columns=SNAPSHOT_COLUMNS)
+    )
     total, failed = 0, []
     for offset in range(days, -1, -1):
         day = today - timedelta(days=offset)
@@ -116,10 +152,13 @@ def run(path: Path, days: int, today: date | None = None, session=None, delay: f
             failed.append(day)
             continue
         df = update(df, records)
+        snaps = snapshot(snaps, records)
         total += len(records)
         if delay:
             time.sleep(delay)
     store.save(df, path)
+    if snapshots_path:
+        store.save(snaps, snapshots_path)
     logging.info("popular: %d entries fetched over %d days, %d papers stored", total, days + 1, len(df))
     if failed and len(failed) == days + 1:
         raise RuntimeError("every Daily Papers request failed")

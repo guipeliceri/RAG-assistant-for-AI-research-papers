@@ -86,10 +86,23 @@ def test_top_filters_by_period_and_sorts_by_votes():
 def test_run_refetches_recent_days_and_saves(tmp_path):
     session = FakeSession({"2026-10-25": [item("a", 7, "2026-10-25")], "2026-10-26": [item("b", 2, "2026-10-26")]})
     path = tmp_path / "popular.parquet"
-    assert popular.run(path, days=2, today=date(2026, 10, 26), session=session, delay=0) == 2
+    snaps = tmp_path / "snapshots.parquet"
+    assert popular.run(path, days=2, today=date(2026, 10, 26), session=session, delay=0, snapshots_path=snaps) == 2
     assert session.calls == ["2026-10-24", "2026-10-25", "2026-10-26"]
     saved = pd.read_parquet(path)
     assert set(saved["arxiv_id"]) == {"a", "b"}
+    assert set(pd.read_parquet(snaps)["arxiv_id"]) == {"a", "b"}
+
+
+def test_snapshots_keep_every_fetch_while_store_keeps_latest(tmp_path):
+    path, snaps = tmp_path / "popular.parquet", tmp_path / "snapshots.parquet"
+    for votes in (3, 9):
+        session = FakeSession({"2026-10-26": [item("a", votes, "2026-10-26", ai_keywords=["LLM"])]})
+        popular.run(path, days=0, today=date(2026, 10, 26), session=session, delay=0, snapshots_path=snaps)
+    assert list(pd.read_parquet(path)["upvotes"]) == [9]
+    history = pd.read_parquet(snaps)
+    assert list(history["upvotes"]) == [3, 9]
+    assert list(history["ai_keywords"].iloc[0]) == ["LLM"]
 
 
 def test_fetch_day_retries_then_raises(monkeypatch):
@@ -119,5 +132,5 @@ def test_run_keeps_other_days_when_one_fails(tmp_path, monkeypatch):
 
     session = OneDayDown({"2026-10-26": [item("b", 2, "2026-10-26")]})
     path = tmp_path / "popular.parquet"
-    assert popular.run(path, days=1, today=date(2026, 10, 26), session=session, delay=0) == 1
+    assert popular.run(path, days=1, today=date(2026, 10, 26), session=session, delay=0, snapshots_path=None) == 1
     assert list(pd.read_parquet(path)["arxiv_id"]) == ["b"]
