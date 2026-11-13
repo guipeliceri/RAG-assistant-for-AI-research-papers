@@ -1,0 +1,58 @@
+name: hype backtest
+
+# Scores the hype forecast on closed weeks and fits the calibration the live forecast uses.
+# Resumable: model answers are cached in eval/hype/cache.json, so a run stopped by the free-tier
+# quota continues where it stopped on the next run.
+on:
+  workflow_dispatch:
+    inputs:
+      weeks:
+        description: "closed weeks to score (the first 6 only fit the calibration)"
+        default: "16"
+      backfill_days:
+        description: "first fetch this many days of arXiv papers (0 to skip)"
+        default: "0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+env:
+  PYTHONPATH: src
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  HF_DATASET_REPO: ${{ vars.HF_DATASET_REPO }}
+  GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+  WEEKS: ${{ inputs.weeks }}
+  BACKFILL_DAYS: ${{ inputs.backfill_days }}
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python -m rag_papers.hub pull
+      - name: Backfill papers
+        if: inputs.backfill_days != '0'
+        run: |
+          python -m rag_papers.ingest --days "$BACKFILL_DAYS"
+          python -m rag_papers.embed
+          python -m rag_papers.hub push
+      - name: Backtest
+        run: python -m rag_papers.hype_run backtest --weeks "$WEEKS"
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add eval/hype/
+          git diff --cached --quiet || git commit -m "Hype backtest"
+          git pull --rebase --quiet
+          git push

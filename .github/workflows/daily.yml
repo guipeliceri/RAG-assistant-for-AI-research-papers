@@ -58,6 +58,13 @@ jobs:
         continue-on-error: true
         # First run backfills 180 days; afterwards the last 30 are re-fetched because votes keep growing.
         run: python -m rag_papers.popular --days ${{ steps.pull.outputs.popular_found == 'true' && '30' || '180' }}
+      - name: Hype forecast
+        id: hype
+        # Uses the vote store, so it runs after the votes are collected; never blocks the digest.
+        continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python -m rag_papers.hype_run forecast
       - name: Push store and digests to the Hub
         run: python -m rag_papers.hub push
       - name: Evaluate
@@ -86,6 +93,11 @@ jobs:
         if: steps.classify.outcome == 'failure'
         run: |
           echo "::error::some profile papers got no verdict; they are retried on the next run"
+          exit 1
+      - name: Report hype failure
+        if: steps.hype.outcome == 'failure'
+        run: |
+          echo "::error::the hype forecast failed; the app keeps the previous one"
           exit 1
       - name: Report most-voted failure
         if: steps.popular.outcome == 'failure'

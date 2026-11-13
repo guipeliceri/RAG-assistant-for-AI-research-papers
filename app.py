@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 import streamlit as st  # noqa: E402
 
+from rag_papers import cards, grounding  # noqa: E402
 from rag_papers import data  # noqa: E402
 from rag_papers import popular  # noqa: E402
 from rag_papers import profiles as profile_files  # noqa: E402
@@ -24,6 +25,7 @@ from rag_papers.ui import theme  # noqa: E402
 from rag_papers.validate import citations  # noqa: E402
 
 MAX_QUESTIONS_PER_SESSION = 20
+MAX_CARDS = 6
 # The daily job updates the Dataset once a day; re-check it every hour.
 REFRESH_SECONDS = 3600
 
@@ -154,19 +156,95 @@ def _parse_time(value) -> datetime | None:
 
 
 def hype_tab() -> None:
-    with st.spinner("Loading votes..."):
-        df = data.load_popular(files()[2])
+    forecast = data.latest_hype(files()[1])
     st.markdown("### Hype forecast")
     st.caption(
-        "The forecast is being built: an agent will read each new paper and bet on the week's most hyped ones, "
-        "with a calibrated confidence. Until then this tab shows the answer key it will be scored against: "
-        "the week's most upvoted papers on Hugging Face Daily Papers."
+        "Which of this week's new papers will be the most upvoted on Hugging Face Daily Papers. "
+        "An agent reads every abstract, then the introduction and conclusion of the 30 most promising, "
+        "and gives each a probability of ending in the week's top 3. It never sees this week's votes."
     )
-    if df.empty:
+    if forecast is None:
         st.markdown(theme.stamp(None), unsafe_allow_html=True)
+        st.info("The first forecast appears after the next daily run (18:00 Brasília).")
+    else:
+        hype_forecast(forecast)
+    hype_scorecard(data.hype_backtest(ROOT / "eval" / "hype"))
+    answer_key_panel()
+
+
+def hype_forecast(forecast: dict) -> None:
+    st.markdown(theme.stamp(_parse_time(forecast.get("generated_at"))), unsafe_allow_html=True)
+    calibrated = forecast.get("calibrated")
+    st.markdown(
+        theme.chips(
+            ["calibrated on past weeks" if calibrated else "raw model confidence, not calibrated yet"],
+            "ok" if calibrated else "warn",
+        ),
+        unsafe_allow_html=True,
+    )
+    status = "complete week" if forecast.get("complete") else "provisional until Friday's listing is in"
+    st.caption(
+        f"Week of {forecast['week']}: {forecast['papers']} papers listed so far ({status}), "
+        f"{len(forecast['shortlist'])} read in full."
+    )
+    for rank, p in enumerate(forecast["shortlist"][:10], start=1):
+        s = p["signals"]
+        tags = theme.chips(
+            [
+                f"{p['probability']:.0%} chance of top 3",
+                f"authors in past top 3: {s['author_record']}",
+                "code link" if s["code_link"] else "",
+                f"read: {p['source']}",
+            ]
+        )
+        meta = theme.byline(p["authors"]) + (f" · {p['affiliations']}" if p.get("affiliations") else "")
+        st.markdown(
+            theme.card(
+                p["title"],
+                p["url"],
+                rank="Most likely to be hyped" if rank == 1 else f"#{rank}",
+                meta=meta,
+                body=p["reason"],
+                tags=tags,
+            ),
+            unsafe_allow_html=True,
+        )
+    if forecast.get("outside_probability") is not None:
+        st.caption(f"Every paper outside this list: about {forecast['outside_probability']:.1%} each, from past weeks.")
+
+
+def hype_scorecard(backtest: dict) -> None:
+    summary = backtest.get("summary")
+    st.markdown("#### Track record")
+    if not summary or not summary.get("weeks_scored"):
+        st.markdown(theme.chips(["not evaluated yet"], "warn"), unsafe_allow_html=True)
+        st.caption("Scored on closed weeks once enough have passed. Each week is forecast with only what was public then.")
+        return
+    pick = summary["pick_in_top3"]
+    base = summary["baselines"]
+    cal = summary.get("calibration") or {}
+    ci = f"95% CI {pick['ci95'][0]:.0%} to {pick['ci95'][1]:.0%}" if pick.get("ci95") else ""
+    st.markdown(
+        '<div class="metric-row">'
+        + theme.metric("Top pick ended in the top 3", f"{pick['value']:.0%}", ci)
+        + theme.metric("Top-3 overlap per week", f"{summary['mean_top3_overlap']:.2f}", f"random: {base['random_expected_top3_overlap']:.2f}")
+        + theme.metric("Best-authors rule overlap", f"{base['author_record_mean_top3_overlap']:.2f}", "no LLM")
+        + theme.metric("Brier score", f"{cal.get('brier', 0):.4f}", f"always base rate: {cal.get('brier_baseline', 0):.4f}")
+        + "</div>",
+        unsafe_allow_html=True,
+    )
+    st.caption(f"{summary['weeks_scored']} weeks scored after {summary['weeks_used_only_for_calibration']} weeks used only for calibration.")
+
+
+def answer_key_panel() -> None:
+    with st.spinner("Loading votes..."):
+        df = data.load_popular(files()[2])
+    st.markdown("#### This week's real ranking so far")
+    st.caption("The answer key the forecast is scored against, once the week's votes settle (7 days after each paper is featured).")
+    if df.empty:
         st.info("No votes collected yet. They appear after the next daily run.")
         return
-    st.markdown(theme.stamp(_parse_time(pd_max(df["fetched_at"]))), unsafe_allow_html=True)
+    st.markdown(theme.stamp(_parse_time(pd_max(df["fetched_at"])), "Votes updated"), unsafe_allow_html=True)
     today = date.today()
     monday = today - timedelta(days=today.weekday())
     ranked = popular.top(df, monday, today, 5)
@@ -201,6 +279,8 @@ def chat_tab() -> None:
         # Kept only in this browser session's state: never written to disk or logged.
         st.text_input("API key", type="password", key="api_key", help=f"Get one at {provider.key_url}")
         st.caption("🔒 Your key stays in this session only. It is never stored or logged.")
+        st.toggle("Check each sentence (1 extra request)", value=True, key="check_sentences")
+        st.toggle("Paper cards with summaries (1 extra request)", value=True, key="make_cards")
         today = date.today()
         picked = st.date_input("Papers listed between", value=(today - timedelta(days=7), today))
         # While the user is mid-selection the widget returns a single date.
@@ -228,29 +308,108 @@ def chat_tab() -> None:
             st.error(f"{exc}. Check your key, model name and free-tier quota.")
             return
         st.markdown(answer.text)
-        v = answer.validation
-        if answer.sources and not v.ok:
-            problems = []
-            if not v.has_citations:
-                problems.append("no citations")
-            if v.invalid_citations:
-                problems.append("cites papers that were not retrieved: " + ", ".join(v.invalid_citations))
-            if v.unsupported_numbers:
-                problems.append("numbers not found in the sources: " + ", ".join(v.unsupported_numbers))
-            st.warning("⚠️ Check this answer: " + "; ".join(problems))
-        if answer.sources:
-            cited = set(citations(answer.text))
-            used = [s for s in answer.sources if s["arxiv_id"] in cited]
-            unused = [s for s in answer.sources if s["arxiv_id"] not in cited]
-            if used:
-                st.markdown("**Sources**")
-                for s in used:
-                    meta = f"{s['arxiv_id']} · listed {s['listing_date']}"
-                    st.markdown(theme.card(s["title"], s["url"], meta=meta), unsafe_allow_html=True)
-            with st.expander(f"Also retrieved but not used ({len(unused)})"):
-                st.caption(f"Searched for: *{answer.search_query}*")
-                for s in unused:
-                    st.markdown(f"- [{s['arxiv_id']}]({s['url']}) {s['title']} ({s['listing_date']})")
+        if not answer.sources:
+            return
+        index = get_index()
+        abstracts = {h["arxiv_id"]: index.df.at[h["arxiv_id"], "abstract"] for h in answer.sources}
+        quality = grounding.measure(answer.text, answer.validation)
+        if st.session_state.get("check_sentences", True):
+            try:
+                with st.spinner("Checking each sentence against its sources..."):
+                    grounding.judge(quality, abstracts, llm)
+            except LLMError as exc:
+                st.caption(f"Sentence check unavailable: {exc}")
+        answer_quality(quality)
+
+        cited = citations(answer.text)
+        ordered = [s for c in cited for s in answer.sources if s["arxiv_id"] == c]
+        ordered += [s for s in answer.sources if s["arxiv_id"] not in cited]
+        shown = ordered[:MAX_CARDS]
+        made = {}
+        if st.session_state.get("make_cards", True):
+            try:
+                with st.spinner("Writing the paper cards..."):
+                    made = cards.make_cards(
+                        [{"arxiv_id": s["arxiv_id"], "title": s["title"], "abstract": abstracts[s["arxiv_id"]]} for s in shown],
+                        llm,
+                    )
+            except LLMError as exc:
+                st.caption(f"Paper summaries unavailable: {exc}")
+        code = code_links()
+        st.markdown("#### Related papers")
+        st.caption(f"Searched for: *{answer.search_query}*. Cited papers first.")
+        for s in shown:
+            pid = s["arxiv_id"]
+            card = made.get(pid)
+            tags = theme.chips(["cited in the answer"] if pid in cited else [], "ok")
+            if card:
+                tags += theme.chips(card.technologies)
+                if card.unsupported_numbers:
+                    tags += theme.chips(["summary has a number not in the abstract: " + ", ".join(card.unsupported_numbers)], "warn")
+            if pid in code:
+                tags += f'<a class="chip" href="{theme.e(code[pid])}" target="_blank" rel="noopener">code</a>'
+            authors = index.df.at[pid, "authors"] if "authors" in index.df.columns else []
+            st.markdown(
+                theme.card(
+                    s["title"],
+                    s["url"],
+                    meta=f"{theme.byline(authors)} · {pid} · listed {s['listing_date']}",
+                    body=card.summary if card and card.summary else abstracts[pid][:400] + "...",
+                    tags=tags,
+                ),
+                unsafe_allow_html=True,
+            )
+
+
+def answer_quality(quality) -> None:
+    v = quality.validation
+    coverage = quality.citation_coverage
+    supported = quality.supported_share
+    tiles = [
+        theme.metric(
+            "Sentences with a citation",
+            "n/a" if coverage is None else f"{coverage:.0%}",
+            f"{quality.cited_sentences} of {quality.sentences}",
+        ),
+        theme.metric(
+            "Citations valid",
+            "yes" if not v.invalid_citations and v.has_citations else "no",
+            "all cited papers were retrieved" if not v.invalid_citations else ", ".join(v.invalid_citations),
+        ),
+        theme.metric(
+            "Numbers in sources",
+            "yes" if not v.unsupported_numbers else "no",
+            "" if not v.unsupported_numbers else "not found: " + ", ".join(v.unsupported_numbers),
+        ),
+    ]
+    if quality.judged:
+        judged = [c for c in quality.checks if c.supported is not None]
+        tiles.append(
+            theme.metric(
+                "Sentences supported",
+                "n/a" if supported is None else f"{supported:.0%}",
+                f"{sum(c.supported for c in judged)} of {len(judged)}, checked by the same model",
+            )
+        )
+    st.markdown('<div class="metric-row">' + "".join(tiles) + "</div>", unsafe_allow_html=True)
+    if not v.ok or (supported is not None and supported < 1):
+        st.warning("Check this answer: some of it is not backed by the papers. Details below.")
+    if quality.judged:
+        with st.expander("Sentence by sentence"):
+            for c in quality.checks:
+                mark = {True: "✅", False: "❌", None: "➖"}[c.supported]
+                note = f" ({c.why})" if c.why else ("" if c.cited else " (no citation)")
+                st.markdown(f"{mark} {c.sentence}{note}")
+
+
+@st.cache_resource(ttl=REFRESH_SECONDS, show_spinner=False)
+def code_links() -> dict[str, str]:
+    """GitHub links that Hugging Face Daily Papers lists for a paper, when there is one."""
+    df = data.load_popular(files()[2])
+    if df.empty or "github_repo" not in df.columns:
+        return {}
+    rows = df[df["github_repo"].notna() & (df["github_repo"].astype(str).str.startswith("https://"))]
+    return dict(zip(rows["arxiv_id"], rows["github_repo"]))
 
 
 st.markdown(
