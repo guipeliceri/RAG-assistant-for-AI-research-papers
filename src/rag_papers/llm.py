@@ -101,9 +101,9 @@ class GroqLLM(OpenAICompatibleLLM):
         super().__init__(PROVIDERS["groq"], api_key, model, timeout)
 
 
-def from_env() -> LLM | None:
+def from_env(model: str | None = None) -> LLM | None:
     """The job's own provider, configured from environment variables."""
     key = os.environ.get("GROQ_API_KEY")
     if not key:
         return None
-    return GroqLLM(key, model=os.environ.get("LLM_MODEL", DEFAULT_MODEL))
+    return GroqLLM(key, model=model or os.environ.get("LLM_MODEL", DEFAULT_MODEL))

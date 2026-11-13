@@ -83,3 +83,30 @@ def test_ledger_counts_runs(tmp_path):
     splits.record_test_run("demo", "v1", {"f1": 0.8}, ledger)
     assert splits.record_test_run("demo", "v2", {"f1": 0.9}, ledger) == 2
     assert splits.test_runs("other", ledger) == 0
+
+
+def test_weighted_report_corrects_oversampled_stratum():
+    # Population: stratum "high" has 10 papers, all relevant, all predicted yes;
+    # stratum "low" has 990 papers with 10 relevant ones that the classifier misses.
+    # The sample takes 10 from each stratum, and happens to catch 1 of the missed ones.
+    truth = [True] * 10 + [True] + [False] * 9
+    pred = [True] * 10 + [False] * 10
+    weights = [1.0] * 10 + [99.0] * 10
+    strata = ["high"] * 10 + ["low"] * 10
+    unweighted = stats.binary_report(truth, pred)
+    weighted = stats.weighted_report(truth, pred, weights, strata)
+    assert unweighted["recall"]["value"] == pytest.approx(0.909, abs=1e-3)
+    # The missed paper stands for 99 papers in the stream, so true recall is much lower.
+    assert weighted["recall"]["value"] == pytest.approx(10 / 109, abs=1e-3)
+    assert weighted["precision"]["value"] == 1.0
+    low, high = weighted["recall"]["ci95"]
+    assert low <= weighted["recall"]["value"] <= high
+
+
+def test_weighted_report_equals_plain_with_unit_weights():
+    truth = [True, True, False, False, True]
+    pred = [True, False, True, False, True]
+    w = stats.weighted_report(truth, pred, [1] * 5, ["a"] * 5)
+    b = stats.binary_report(truth, pred)
+    assert w["precision"]["value"] == b["precision"]["value"]
+    assert w["recall"]["value"] == b["recall"]["value"]

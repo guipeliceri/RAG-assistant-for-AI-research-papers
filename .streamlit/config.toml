@@ -1,0 +1,10 @@
+[theme]
+base = "dark"
+primaryColor = "#7C9CFF"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#161B26"
+textColor = "#E6E9F2"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"

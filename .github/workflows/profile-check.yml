@@ -1,0 +1,35 @@
+name: profile check
+
+# A profile pull request may only add or change files in profiles/, and every profile must parse.
+# This is a guard for reviewers, not a security boundary: the owner still reviews before merging.
+on:
+  pull_request:
+    paths:
+      - "profiles/**"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pyyaml
+      - name: Only profiles/ changed
+        # Pull requests from forks are the contributions this check is for.
+        if: github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          outside=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD | grep -v '^profiles/' || true)
+          if [ -n "$outside" ]; then
+            echo "::error::A profile pull request may only change files in profiles/. Also changed:"
+            echo "$outside"
+            exit 1
+          fi
+      - name: Profiles parse
+        run: PYTHONPATH=src python -m rag_papers.profiles validate
