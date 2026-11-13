@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "2026-11-13T08:19:59+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 65,
+  "papers": [
+    {
+      "arxiv_id": "2611.15267",
+      "title": "A Closer Look at Language Model Introspection: Probing Information and Reporting",
+      "authors": [
+        "Dustin Rubin",
+        "Vincenzo Timmel",
+        "Xufeng He",
+        "Aritra Saha",
+        "JooMan Kim",
+        "Vijay Madisetti"
+      ],
+      "url": "https://arxiv.org/abs/2611.15267",
+      "similarity": 0.7162,
+      "summary": "The paper trains a simple linear classifier to detect which sentence in a prompt has been perturbed by looking at a language model’s activations, and then compares the classifier’s predictions with the model’s own zero‑shot answers. In experiments on OLMo 3 32B with an injection four times the typical activation norm at layer 0 and a probe readout at layer 24, the supervised probe reaches 98.3 % accuracy after 8.4 billion training tokens, while the model’s zero‑shot answer stays at chance (11.1 %). Even at the released base checkpoint the probe attains 99.1 % accuracy versus 89.6 % for the model, and the location signal is decodable in randomly initialized networks, suggesting that easy localization does not guarantee broader introspection."
+    },
+    {
+      "arxiv_id": "2611.14828",
+      "title": "LLMs and the Homogenization of Teaching",
+      "authors": [
+        "Mei Tan",
+        "Hyunji Nam",
+        "Hari Subramonyam",
+        "Dorottya Demszky"
+      ],
+      "url": "https://arxiv.org/abs/2611.14828",
+      "similarity": 0.7084,
+      "summary": "The paper investigates how large language models produce diverse content for two educational tasks—math items and essay feedback—by comparing model outputs to human‑authored references using lexical, semantic, and domain‑grounded metrics. It tests direct prompting, two diversity‑prompting methods, and post‑training, finding that directly prompted models are markedly less diverse (78 % higher lexical similarity and 51 % higher semantic similarity) and offer a narrower range of instructional forms, while diversity prompting and post‑training mainly add surface variation without expanding the instructional repertoire. The authors conclude that models inherit and amplify the most normative routines of human instruction, and that overcoming mode collapse in education will require richer instructional data and investment in teachers’ creative capacity and professional judgment."
+    },
+    {
+      "arxiv_id": "2611.15735",
+      "title": "Where Is Uncertainty Observed? A Mechanistic Understanding of Uncertainty Quantification in LLMs",
+      "authors": [
+        "Xiaoyu Liang",
+        "Virginia Ceccatelli",
+        "Aliai Eusebi",
+        "Tobias Braun",
+        "Nils Loose",
+        "Carlo Malagnino",
+        "Lorenzo Cavallaro"
+      ],
+      "url": "https://arxiv.org/abs/2611.15735",
+      "similarity": 0.7068,
+      "summary": null
+    },
+    {
+      "arxiv_id": "2611.14861",
+      "title": "Is Jev a Good Multilingual Judge?",
+      "authors": [
+        "Wei Liu",
+        "Yi Fan",
+        "Xiyan Fu"
+      ],
+      "url": "https://arxiv.org/abs/2611.14861",
+      "similarity": 0.7045,
+      "summary": null
+    },
+    {
+      "arxiv_id": "2611.15172",
+      "title": "Where Language-Model Vocabulary Rose on Stack Exchange",
+      "authors": [
+        "Fengming Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.15172",
+      "similarity": 0.701,
+      "summary": null
+    }
+  ]
+}

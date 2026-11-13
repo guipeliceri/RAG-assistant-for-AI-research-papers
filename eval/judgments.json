@@ -378,5 +378,45 @@
   "acf8a49d322d:2611.14079": {
     "relevant": false,
     "reason": "Focuses on bias and positionality analysis rather than technical advances, methods, or benchmarks for frontier models"
+  },
+  "acf8a49d322d:2611.15267": {
+    "relevant": false,
+    "reason": "Focuses on model introspection and probing rather than frontier model advances or benchmarks."
+  },
+  "acf8a49d322d:2611.14828": {
+    "relevant": false,
+    "reason": "Focuses on educational impact and diversity analysis rather than model advances, architectures, or benchmarks."
+  },
+  "acf8a49d322d:2611.15735": {
+    "relevant": false,
+    "reason": "Focuses on uncertainty quantification and interpretability rather than model architectures, scaling, training methods, or capability benchmarks."
+  },
+  "acf8a49d322d:2611.14861": {
+    "relevant": true,
+    "reason": "Introduces a multilingual evaluation benchmark for LLM judges, fitting the profile's interest in benchmarks measuring model capabilities."
+  },
+  "acf8a49d322d:2611.15172": {
+    "relevant": false,
+    "reason": "The paper studies vocabulary changes on Stack Exchange after ChatGPT usage, not model architectures, training methods, or benchmarks."
+  },
+  "acf8a49d322d:2611.17332": {
+    "relevant": true,
+    "reason": "Introduces a platform to record, review, and benchmark LLM architecture ideas, directly addressing architecture advances and scaling‑law evaluation."
+  },
+  "acf8a49d322d:2611.16956": {
+    "relevant": true,
+    "reason": "Introduces a new multilingual MoE language model with scaling, efficiency, and benchmark results, matching the profile topics."
+  },
+  "acf8a49d322d:2611.16260": {
+    "relevant": false,
+    "reason": "Focuses on speech-to-text transfer and fine-tuning, not on large language model advances or related benchmarks."
+  },
+  "acf8a49d322d:2611.16895": {
+    "relevant": true,
+    "reason": "Focuses on post-training preference optimization methods and cost-efficiency, directly matching the profile's interest in RLHF and preference tuning."
+  },
+  "acf8a49d322d:2611.16228": {
+    "relevant": true,
+    "reason": "Focuses on RL fine-tuning of a large MoE model and its impact on benchmark performance, matching post-training and benchmark interests."
   }
 }
