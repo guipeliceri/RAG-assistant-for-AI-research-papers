@@ -41,10 +41,14 @@ jobs:
       - run: python -m rag_papers.hub pull
       - name: Backfill papers
         if: inputs.backfill_days != '0'
+        # Saves after each week, and pushes what it got even if arXiv stops answering,
+        # so the next run continues from there.
         run: |
-          python -m rag_papers.ingest --days "$BACKFILL_DAYS"
+          status=0
+          python -m rag_papers.ingest --backfill "$BACKFILL_DAYS" || status=$?
           python -m rag_papers.embed
           python -m rag_papers.hub push
+          exit $status
       - name: Backtest
         run: python -m rag_papers.hype_run backtest --weeks "$WEEKS"
       - name: Commit
@@ -52,6 +56,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p eval/hype
           git add eval/hype/
           git diff --cached --quiet || git commit -m "Hype backtest"
           git pull --rebase --quiet

@@ -1,4 +1,4 @@
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 import pandas as pd
 
@@ -96,3 +96,54 @@ def test_same_version_keeps_embedding_newer_version_drops_it(tmp_path):
     assert list(df.iloc[0]["embedding"]) == [0.1, 0.2]
     df = store.upsert(df, [_record(version=2, title="v2 title")])
     assert not isinstance(df.iloc[0]["embedding"], list)
+
+
+def test_rate_limit_waits_long():
+    import requests
+
+    from rag_papers import arxiv_client
+
+    client = arxiv_client.ArxivClient(delay=0)
+    response = requests.Response()
+    response.status_code = 429
+    error = requests.HTTPError(response=response)
+    assert client._backoff(error, 0) == arxiv_client.RATE_LIMIT_WAIT
+    assert client._backoff(error, 5) == arxiv_client.MAX_WAIT
+    response.headers["Retry-After"] = "45"
+    assert client._backoff(error, 0) == 45
+    assert client._backoff(requests.ConnectionError(), 2) == 0
+
+
+def test_backfill_goes_back_in_windows_and_resumes(tmp_path):
+    path = tmp_path / "papers.parquet"
+    now = datetime(2024, 10, 30, tzinfo=timezone.utc)
+    store.save(store.upsert(store.load(path), [_record("2410.00009", updated="2024-10-25")]), path)
+
+    class Client:
+        def __init__(self):
+            self.windows = []
+
+        def fetch_updated_since(self, category, since, until=None):
+            self.windows.append((since, until))
+            if since.day == 11:
+                return [_record("2410.00005", updated="2024-10-15")]
+            return []
+
+    client = Client()
+    ingest.backfill(path, days=20, client=client, now=now)
+    # Only the range older than the store's oldest update is fetched, newest week first.
+    assert [w[1].date() for w in client.windows] == [date(2024, 10, 25), date(2024, 10, 18), date(2024, 10, 11)]
+    assert client.windows[-1][0] == now - timedelta(days=20)
+    assert set(store.load(path)["arxiv_id"]) == {"2410.00009", "2410.00005"}
+
+    again = Client()
+    ingest.backfill(path, days=20, client=again, now=now)
+    assert [w[1].date() for w in again.windows] == [date(2024, 10, 15)]
+
+
+def test_until_limits_query_and_skips_newer(make_client, feed_page):
+    client = make_client(feed_page)
+    until = datetime(2024, 10, 3, tzinfo=timezone.utc)
+    records = list(client.fetch_updated_since("cs.CL", SINCE, until=until))
+    assert all(r["updated"] < until for r in records)
+    assert "lastUpdatedDate:[202410010000 TO 202410030000]" in client.session.calls[0]["search_query"]
