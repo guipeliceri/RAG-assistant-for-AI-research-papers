@@ -16,7 +16,10 @@ API_URL = "https://export.arxiv.org/api/query"
 # arXiv asks for at most one request every 3 seconds.
 REQUEST_DELAY = 3.0
 PAGE_SIZE = 200
-MAX_RETRIES = 4
+MAX_RETRIES = 6
+# A 429 or 503 means arXiv wants us to slow down for a while, not for a few seconds.
+RATE_LIMIT_WAIT = 30.0
+MAX_WAIT = 300.0
 
 log = logging.getLogger(__name__)
 
@@ -67,13 +70,25 @@ class ArxivClient:
                 return feedparser.parse(response.text)
             except requests.RequestException as exc:
                 log.warning("arXiv request failed (attempt %d): %s", attempt + 1, exc)
-                time.sleep(self.delay * 2**attempt)
+                time.sleep(self._backoff(exc, attempt))
         raise RuntimeError("arXiv API unavailable after retries")
 
-    def _page(self, category: str, start: int) -> feedparser.FeedParserDict:
+    def _backoff(self, exc: requests.RequestException, attempt: int) -> float:
+        response = getattr(exc, "response", None)
+        if response is not None and response.status_code in (429, 503):
+            retry_after = response.headers.get("Retry-After", "")
+            if retry_after.isdigit():
+                return min(float(retry_after), MAX_WAIT)
+            return min(RATE_LIMIT_WAIT * 2**attempt, MAX_WAIT)
+        return self.delay * 2**attempt
+
+    def _page(self, category: str, start: int, until: datetime | None = None, since: datetime | None = None):
+        query = f"cat:{category}"
+        if until is not None and since is not None:
+            query += f" AND lastUpdatedDate:[{since:%Y%m%d%H%M} TO {until:%Y%m%d%H%M}]"
         return self._get(
             {
-                "search_query": f"cat:{category}",
+                "search_query": query,
                 "sortBy": "lastUpdatedDate",
                 "sortOrder": "descending",
                 "start": start,
@@ -81,23 +96,26 @@ class ArxivClient:
             }
         )
 
-    def fetch_updated_since(self, category: str, since: datetime) -> Iterator[dict]:
-        """Yield every paper in `category` created or revised at or after `since`.
+    def fetch_updated_since(self, category: str, since: datetime, until: datetime | None = None) -> Iterator[dict]:
+        """Yield every paper in `category` created or revised at or after `since` (and before `until`).
 
         Results come newest-update first, so paging stops at the first entry
-        older than `since`.
+        older than `since`. With `until`, the query itself is limited to that
+        range, which keeps paging shallow: arXiv rate-limits deep pages.
         """
         start = 0
         while True:
-            feed = self._page(category, start)
+            feed = self._page(category, start, until, since if until else None)
             if not feed.entries and start < int(feed.feed.get("opensearch_totalresults", 0)):
                 # The API sometimes returns an empty page mid-listing; retry once.
-                feed = self._page(category, start)
+                feed = self._page(category, start, until, since if until else None)
             if not feed.entries:
                 return
             for entry in feed.entries:
                 record = parse_entry(entry)
                 if record["updated"] < since:
                     return
+                if until is not None and record["updated"] >= until:
+                    continue
                 yield record
             start += len(feed.entries)
