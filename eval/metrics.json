@@ -22,10 +22,8 @@
   "faithfulness": {
     "questions": 15,
     "answered": 15,
-    "invalid_rate": 0.2,
+    "invalid_rate": 0.067,
     "invalid_questions": [
-      "What is new in hybrid search combining sparse and dense retrieval?",
-      "How are RAG systems being evaluated?",
       "Which papers use knowledge graphs together with retrieval?"
     ]
   },
