@@ -6,11 +6,31 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-11",
-  "generated_at": "2026-11-15T00:42:02+00:00",
+  "generated_at": "2026-11-16T00:35:12+00:00",
   "candidates": 92,
   "classified": 92,
-  "errors": 31,
+  "errors": 13,
   "papers": [
+    {
+      "arxiv_id": "2611.13855",
+      "title": "Beyond Passive Imitation: On-Policy Mid-Training Distillation for Language Models",
+      "authors": [
+        "Ruize Zheng",
+        "Xuyang Liu",
+        "Siyu Ren",
+        "Xiaobing Tu",
+        "Yinggui Wang",
+        "Jinkui Ren",
+        "Xiantao Zhang",
+        "Linfeng Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.13855",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new on-policy distillation training method for LLMs, relevant to frontier model training recipes and post‑training techniques."
+    },
     {
       "arxiv_id": "2611.13441",
       "title": "Inherited Weights: Measuring the Tokenization Premium and the Sovereignty Cost of Language Models for the Global South",
@@ -114,6 +134,45 @@
       "reason": "Introduces a multilingual benchmark to evaluate LLM capabilities, fitting the profile's interest in benchmarks measuring state-of-the-art models."
     },
     {
+      "arxiv_id": "2611.13607",
+      "title": "One Byte, One Token: Byteifying a 27B Hybrid-Attention LLM with Self-Generated Data",
+      "authors": [
+        "Liwei Zhang",
+        "ZhiMing Tong",
+        "Mochen Guan",
+        "Linzhe Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.13607",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a byte-level tokenization conversion and efficient post-training for a large LLM, directly relevant to frontier model advances and efficiency."
+    },
+    {
+      "arxiv_id": "2611.13596",
+      "title": "Towards Reliable VLM Judges: State-Conditional Invariance and Presentation-Aware Diagnostics",
+      "authors": [
+        "Qinan Zhang",
+        "Xinyu Wang",
+        "Qihang Jin",
+        "Tianyuan Wang",
+        "Hongbing Luo",
+        "Pengfei Li",
+        "Wenjun Lv",
+        "Yu Kang",
+        "Jian Di"
+      ],
+      "url": "https://arxiv.org/abs/2611.13596",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "reason": "Introduces a diagnostic benchmark for multimodal VLMs, aligning with multimodal models and capability measurement."
+    },
+    {
       "arxiv_id": "2611.13597",
       "title": "Compute the Interactions, Not the Attributes: What a Fact Layer Must Supply in the Chinese Sexagenary System",
       "authors": [
@@ -125,6 +184,34 @@
         "cs.CL"
       ],
       "reason": "Introduces a benchmark evaluating LLM reasoning and fact-layer interaction, measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.13140",
+      "title": "Agreeing on the Answer but Not the Reason: Measurement Limits of LLM Reasoning Failure Taxonomies",
+      "authors": [
+        "Madhu Sudhan Rao Beesetty"
+      ],
+      "url": "https://arxiv.org/abs/2611.13140",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Analyzes and critiques benchmarks measuring LLM reasoning failures, fitting the profile's interest in capability limits and evaluation."
+    },
+    {
+      "arxiv_id": "2611.13509",
+      "title": "Mobile AI Factory: Building Specialized Language Models for Your Mobile Device",
+      "authors": [
+        "Evan Li",
+        "Krishna Deshpande",
+        "Wen Cheng",
+        "Shyamnath Gollakota"
+      ],
+      "url": "https://arxiv.org/abs/2611.13509",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Focuses on quantization, fine-tuning, and efficient on-device inference, which aligns with the profile's interest in efficiency and model scaling."
     },
     {
       "arxiv_id": "2611.13339",
@@ -192,6 +279,21 @@
         "cs.CL"
       ],
       "reason": "Introduces a method to validate minimal-pair benchmarks, directly impacting how model capabilities are measured."
+    },
+    {
+      "arxiv_id": "2611.14413",
+      "title": "Bits or permutations? Spending a fixed inference budget on weight precision or on option-order averaging in small local language models",
+      "authors": [
+        "Mohammed Nayeem Khan",
+        "Logesh L",
+        "Aliyas Ahmad Misri"
+      ],
+      "url": "https://arxiv.org/abs/2611.14413",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Examines quantization and inference efficiency trade‑offs for language models, directly relevant to efficiency and benchmarking topics."
     },
     {
       "arxiv_id": "2611.14309",
@@ -379,6 +481,19 @@
       "reason": "The paper advances multimodal VLM capabilities and efficient fine‑tuning (LoRA) while presenting a benchmark for hallucination detection."
     },
     {
+      "arxiv_id": "2611.13270",
+      "title": "What drives the emergence of symbolic mechanisms in large language models?",
+      "authors": [
+        "Melody Zixuan Li",
+        "Taylor Webb"
+      ],
+      "url": "https://arxiv.org/abs/2611.13270",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Analyzes how data diversity drives emergent symbolic reasoning in transformer models, directly relevant to frontier model capabilities and scaling."
+    },
+    {
       "arxiv_id": "2611.13135",
       "title": "Which Successes Make Good References? Action-Sequence Alignment for Multi-Turn On-Policy Distillation",
       "authors": [
@@ -459,6 +574,25 @@
         "cs.CL"
       ],
       "reason": "Introduces a new training loss to improve speculative decoding, advancing fast inference efficiency for large language models."
+    },
+    {
+      "arxiv_id": "2611.13477",
+      "title": "Leveraging Psychophysical Attentional Distribution for Gaze-Augmented Reward Modeling",
+      "authors": [
+        "Chaeho Lee",
+        "Junyup Kim",
+        "Wansoo Kim",
+        "Young Min Jung",
+        "Sang Ho Lee"
+      ],
+      "url": "https://arxiv.org/abs/2611.13477",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.HC"
+      ],
+      "reason": "Introduces a novel gaze-based method to improve RLHF reward modeling, aligning with post‑training preference optimization."
     },
     {
       "arxiv_id": "2611.14252",
@@ -606,6 +740,21 @@
         "cs.SE"
       ],
       "reason": "Introduces new evaluation benchmarks for LLM-based agents, aligning with the profile's interest in measuring capabilities of frontier models."
+    },
+    {
+      "arxiv_id": "2611.13894",
+      "title": "Beyond Fluent Responses: Finding User Dissatisfaction in Human-AI Interactions",
+      "authors": [
+        "Yuka Saito",
+        "Ikumi Numaya",
+        "Jun Suzuki",
+        "Reina Akama"
+      ],
+      "url": "https://arxiv.org/abs/2611.13894",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new evaluation benchmark for detecting user dissatisfaction in LLM conversations, aligning with the profile's interest in capability measurement."
     },
     {
       "arxiv_id": "2611.13997",

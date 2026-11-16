@@ -6,11 +6,25 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-12",
-  "generated_at": "2026-11-15T00:37:08+00:00",
+  "generated_at": "2026-11-16T00:33:38+00:00",
   "candidates": 65,
   "classified": 65,
-  "errors": 26,
+  "errors": 13,
   "papers": [
+    {
+      "arxiv_id": "2611.14861",
+      "title": "Is Jev a Good Multilingual Judge?",
+      "authors": [
+        "Wei Liu",
+        "Yi Fan",
+        "Xiyan Fu"
+      ],
+      "url": "https://arxiv.org/abs/2611.14861",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a multilingual evaluation benchmark for LLM judges, aligning with the profile's interest in capability-measuring benchmarks."
+    },
     {
       "arxiv_id": "2611.15268",
       "title": "Knowledge in the Harness, Reliability in the Weights: Teacher-Free Co-Evolution of an LLM Agent",
@@ -428,6 +442,54 @@
       "reason": "Analyzes token commitment in a diffusion language model architecture, relevant to frontier model architectures."
     },
     {
+      "arxiv_id": "2611.15538",
+      "title": "Faithful in Steps: Improving Generalization and Citation in RAG via Query Decomposition",
+      "authors": [
+        "Yue Liu",
+        "Zhongying Ru",
+        "Shimin Di",
+        "Jipeng Zhang",
+        "Ruiyuan Zhang",
+        "Xiaofang Zhou"
+      ],
+      "url": "https://arxiv.org/abs/2611.15538",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new RAG framework with query decomposition to improve multi-hop reasoning and multimodal QA, aligning with frontier model advances and benchmarks."
+    },
+    {
+      "arxiv_id": "2611.15710",
+      "title": "Curiosity-0826-4B: Generative Medical Event Sequence Modeling Across Pediatric and Adult Populations",
+      "authors": [
+        "Mani Nagarathnam",
+        "Luke Benham",
+        "Paul Blazek",
+        "John Cashy",
+        "Kevin Chung",
+        "John Muenning",
+        "Hank Voeller",
+        "Shane Waxler",
+        "Davis White",
+        "Alison Callahan",
+        "Kevin Dysart",
+        "Andrew Loza",
+        "Michal A. Mankowski",
+        "Mattheus Ramsis",
+        "Nigam H. Shah",
+        "Karen K. Wong",
+        "Rahul Shah"
+      ],
+      "url": "https://arxiv.org/abs/2611.15710",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new 4.3B generative model with scaling‑law analysis, longer context, and pretraining recipe improvements, matching frontier model advances."
+    },
+    {
       "arxiv_id": "2611.14975",
       "title": "Aggregate Accuracy Hides Diagnosis-Specific Failure in Medical Vision-Language Models",
       "authors": [
@@ -457,6 +519,22 @@
         "cs.CL"
       ],
       "reason": "It investigates reinforcement‑learning reward design for model honesty, a post‑training RL technique relevant to the profile."
+    },
+    {
+      "arxiv_id": "2611.15809",
+      "title": "Fine-Grained Generative Hallucination Detection and Correction for Aerial Image Captioning",
+      "authors": [
+        "Debolena Basak",
+        "Somsubhra De",
+        "Maunendra Sankar Desarkar"
+      ],
+      "url": "https://arxiv.org/abs/2611.15809",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a detection/correction framework and benchmark for multimodal LLM hallucinations, aligning with multimodal model advances and capability evaluation."
     },
     {
       "arxiv_id": "2611.14794",
@@ -489,6 +567,20 @@
         "cs.CL"
       ],
       "reason": "Analyzes and benchmarks coding agent behavior, measuring capabilities and limits of frontier models."
+    },
+    {
+      "arxiv_id": "2611.14980",
+      "title": "CoLFA: Collaboration-Guided Lightweight Failure Attribution for LLM-Based Multi-Agent Systems",
+      "authors": [
+        "Yufei Luo",
+        "Yuchen Ling",
+        "Chunrong Fang"
+      ],
+      "url": "https://arxiv.org/abs/2611.14980",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Addresses long-context efficiency and evaluation of LLMs in multi-agent systems, aligning with frontier model advances."
     },
     {
       "arxiv_id": "2611.15521",

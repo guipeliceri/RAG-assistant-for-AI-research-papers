@@ -6,11 +6,245 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-13",
-  "generated_at": "2026-11-15T00:33:43+00:00",
+  "generated_at": "2026-11-16T00:32:20+00:00",
   "candidates": 69,
   "classified": 69,
-  "errors": 22,
+  "errors": 1,
   "papers": [
+    {
+      "arxiv_id": "2611.16956",
+      "title": "Lara Mini Base: Language Diversity as a Resource, Not a Trade-off",
+      "authors": [
+        "Translated",
+        "Maria Pia Adinolfi",
+        "Isabelle Andrieu",
+        "Grazia Fiorella Anfuso",
+        "Melania Annunziata",
+        "Daniele Antonini",
+        "Marta Arena",
+        "Luca Barone",
+        "Dana Barras Franco",
+        "Francesca Basiricò",
+        "Francesca Bee",
+        "Sofia Bertini",
+        "Nicola Bertoldi",
+        "Giorgio Biancini",
+        "Alessandra Bigi",
+        "Giulia Boccalini",
+        "Tommaso Bonomo",
+        "Enrico Boscardi",
+        "Sebastien Bratieres",
+        "Francesco Brigante",
+        "Giulia Brignola",
+        "Romolo Buondestino",
+        "Brenda Patricia Byrne",
+        "Giorgia Campora",
+        "Edoardo Cappelli",
+        "Veronica Carascosi",
+        "Francesca Carducci",
+        "Cody Carlson",
+        "Davide Caroselli",
+        "Ambra Cascio",
+        "Dario Cascio",
+        "Mauro Cassani",
+        "Andrea Castro",
+        "Alessandro Cattelan",
+        "Giulia Ceccacci",
+        "Paola Cellini",
+        "Giulia Chiriatti",
+        "Federico Cialini",
+        "Valentina Ciarlariello",
+        "Daniele Cocozza",
+        "Emanuela Coghe",
+        "Kathleen Compares",
+        "Marco Comunità",
+        "Davide Conti",
+        "Helen Rebecca Corfield",
+        "Michele Cortellessa",
+        "Anna Cracco",
+        "Aurora Cuppone",
+        "Arianna D'Andrea",
+        "Maurizio Davoli",
+        "Andrea De Angelis",
+        "Andrea De Blasi",
+        "Rebecca De Giorgi",
+        "Annalisa De Petra",
+        "Arianna De Pilla",
+        "Joris Demiraj",
+        "Elena Deufemia",
+        "Federica Di Antonio",
+        "Pierluigi Di Cianni",
+        "Vincenzo Di Cicco",
+        "Michela Di Clemente",
+        "Alan Di Francesco",
+        "Ylenia Di Gese",
+        "Federica Di Iulio",
+        "Claudia Di Lorenzo",
+        "Andrea Di Paola",
+        "Giulia Di Pilla",
+        "Jessica Dickson",
+        "Francesco Elefante",
+        "Ilaria Fabrizio",
+        "Alessandro Falappa",
+        "Viviana Fantozzi",
+        "Antonio Farina",
+        "Andrea Fernandez Tostado Ro. Diego Andrea",
+        "Andrea Ferrari",
+        "Sara Ferri",
+        "Simona Ferri",
+        "Fabio Fioramonti",
+        "Stefano Florio",
+        "Mariachiara Fornaro",
+        "Anna Maria Foti",
+        "Niccolò Fransoni",
+        "Alessandro Fusacchia",
+        "Emma Gamba",
+        "Francesco Gasperoni",
+        "Davide Gattini",
+        "Marta Giani",
+        "Claudia Giannetti",
+        "Valerio Giannini",
+        "Antonella Giudici",
+        "Mara Gramendola",
+        "Michele Grandinetti",
+        "Eleonora Graziani",
+        "L'Meese Hope Greaney",
+        "Dario Gubernari",
+        "Filomena Guglielmi",
+        "Jonathan Hammond",
+        "Stephen William Harris",
+        "Rowena Elizabeth Hogg",
+        "Marta Hontanon Del Olmo",
+        "Marco Ilari",
+        "Kenneth Larry Jackson",
+        "Sagar Joshi",
+        "Bartosz Alberto Karman",
+        "Iuliia Khimenko",
+        "Valerio Lanni",
+        "Giulio Leonardi",
+        "Veronica Levco",
+        "Matteo Licci",
+        "Alessio Ligios",
+        "Noemi Lomartire",
+        "Domenico Lupinetti",
+        "Jennifer Mirjam Maechtlen",
+        "Chiara Maggiori",
+        "Maria Luisa Malerba",
+        "Francesco Marconi",
+        "Domenico Marini",
+        "Francesca Marsili",
+        "Andrea Martinelli",
+        "James Mc Groary",
+        "Matteo Menicacci",
+        "Andrew Steven Miller",
+        "Marco Moauro",
+        "Giuliana Molon",
+        "Ilaria Mongelluzzi",
+        "Emiliano Morghen",
+        "Giovanni Moscati",
+        "Filippo Musmeci",
+        "Flavia Napoleoni",
+        "Nicola Giuseppe Ninni",
+        "Beatrice Ottoni",
+        "Federica Pagliani",
+        "Nicolò Palmiero",
+        "Daniele Palumbo",
+        "Chiara Pantani",
+        "Stefano Paolucci",
+        "Deborah Paritario",
+        "Michela Pascale",
+        "Thomas Passera",
+        "Daniele Patrioli",
+        "Chiara Patrizi",
+        "Silvia Patrizi",
+        "Giulia Pelos",
+        "Simone Giovanni Perone",
+        "Cristiano Perrone",
+        "Joshua Peterson",
+        "Katia Piredda",
+        "Francesca Piscitelli",
+        "Alessandra Posca",
+        "Lorenzo Pratesi",
+        "Francesca Prencipe",
+        "Daniela Proietto Cuco",
+        "Mattia Pupino Marangio",
+        "Disheng Qiu",
+        "Mirco Ramo",
+        "Federica Rapagnà",
+        "Waldo Luis Ribeiro",
+        "Federico Ricciuti",
+        "Alessia Ridoni",
+        "Eleonora Risi Valdettaro",
+        "Jon Matthew Ritzdorf",
+        "Serena Rivera",
+        "Federico Roma",
+        "Arianna Ruggiero",
+        "Eleonora Ruggiu",
+        "Mariafrancesca Sagliocco",
+        "Vanessa Salvi",
+        "Alessio Sampieri",
+        "Elena Santanelli",
+        "Roberto Sastre",
+        "Luca Scofano",
+        "Alessandro Sdei",
+        "Giuseppe Sebastiani",
+        "Claudia Nicole Siegenthaler",
+        "Monica Signoretti",
+        "Nicola Sobieski",
+        "Biancamaria Soellner",
+        "Valentina Stati",
+        "Michael Stevens",
+        "Arianna Stissi",
+        "Fabiana Stomaci",
+        "Leonardo Taddei",
+        "Christopher Thomas",
+        "Maurizio Tiberi",
+        "John Tinsley",
+        "Riccardo Tittarelli",
+        "Carla Tocco",
+        "Martina Totaro",
+        "Barbara Veronika Totzauer",
+        "Alessio Tranzocchi",
+        "Letizia Treossi",
+        "Mara Trombetti",
+        "Marco Trombetti",
+        "Andrea Valenzi",
+        "Kirti Vashee",
+        "Giulia Vestita",
+        "Teodosio Vezza",
+        "Giulia Vignola",
+        "Sara Virtuoso",
+        "Valentina Volpini",
+        "Francesca Vurro",
+        "Jolita Zaksauskaite",
+        "Giulia Zanarella",
+        "Paolo Zanotti",
+        "Francesca Zavettieri",
+        "Irene Zorzi"
+      ],
+      "url": "https://arxiv.org/abs/2611.16956",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new multilingual MoE language model with scaling, efficiency, and long-context advances."
+    },
+    {
+      "arxiv_id": "2611.17072",
+      "title": "Reasoning Supervision and Capability Retention in LoRA Domain Adaptation",
+      "authors": [
+        "Saleh Ashkboos",
+        "Dhruv Desai",
+        "Lavinia Ghita"
+      ],
+      "url": "https://arxiv.org/abs/2611.17072",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Focuses on LoRA fine-tuning with reasoning supervision and capability retention, directly relevant to post‑training and reasoning advances."
+    },
     {
       "arxiv_id": "2611.16882",
       "title": "Pretraining Data Statistics Shape the Phases of Learning Entity Comparison in Language Models",
@@ -26,6 +260,21 @@
         "cs.LG"
       ],
       "reason": "Analyzes how pretraining data statistics affect learning dynamics, directly relevant to pretraining data and recipes."
+    },
+    {
+      "arxiv_id": "2611.16375",
+      "title": "Recursive State-Augmented Language Models: Persistent Latent-State Adaptation of Pretrained Language Models",
+      "authors": [
+        "Omer Haq"
+      ],
+      "url": "https://arxiv.org/abs/2611.16375",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "reason": "Introduces a new architecture with persistent latent state to extend context length of pretrained LMs."
     },
     {
       "arxiv_id": "2611.16228",
@@ -44,6 +293,23 @@
         "cs.AI"
       ],
       "reason": "Focuses on reinforcement learning fine-tuning of a large MoE model and its impact on reasoning and instruction-following benchmarks."
+    },
+    {
+      "arxiv_id": "2611.16895",
+      "title": "Human or Synthetic? What a Fixed Budget Buys for Post-Training",
+      "authors": [
+        "Shourik Banerjee",
+        "Ethan Mendes",
+        "Mohit Raghavendra",
+        "Wei Xu",
+        "Alan Ritter"
+      ],
+      "url": "https://arxiv.org/abs/2611.16895",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Analyzes cost-effective post-training with human vs synthetic preference data, directly relevant to preference optimization and RLHF."
     },
     {
       "arxiv_id": "2611.16321",
@@ -78,6 +344,24 @@
       "reason": "Introduces a new evaluation protocol for detecting token-level failures, a benchmark measuring model capabilities and limits."
     },
     {
+      "arxiv_id": "2611.16425",
+      "title": "RMIT-ADM+S at TREC RAG 2026: Research Agents, Retriever Ablations, and Open-Weight Replication",
+      "authors": [
+        "Oleg Zendel",
+        "Kun Ran",
+        "Chenglong Ma",
+        "Nguyen Khoi Vo",
+        "Shuai Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.16425",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Analyzes open-weight LLM performance on the TREC RAG benchmark, providing insights into retrieval-augmented generation and model capabilities."
+    },
+    {
       "arxiv_id": "2611.15925",
       "title": "ShadowBench: Exposing Lexical Anchoring and the Illusion of Forgetting in Large Language Models",
       "authors": [
@@ -90,6 +374,36 @@
         "cs.LG"
       ],
       "reason": "Introduces a new benchmark evaluating LLM capabilities and limits, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.16399",
+      "title": "Saidzoda-Kazakh-EmbeddingGemma-300M: How Far One Epoch of Generated Questions Takes a Small Kazakh Embedder",
+      "authors": [
+        "Tohir Saidzoda",
+        "Madina Abdusalomzoda",
+        "Abubakr Abdullozoda",
+        "Amin Jalilov",
+        "Faroiz Bobokhon",
+        "Aibek Shokanuly"
+      ],
+      "url": "https://arxiv.org/abs/2611.16399",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "It proposes a fine‑tuning recipe for a language embedder and evaluates it on retrieval benchmarks, fitting the profile's interest in data recipes and capability measurements."
+    },
+    {
+      "arxiv_id": "2611.16843",
+      "title": "Shortcuts or Memorisation? Revisiting Data Corruption in Natural Language Understanding with Large Language Models",
+      "authors": [
+        "Aarne Talman",
+        "Stergios Chatzikyriakidis"
+      ],
+      "url": "https://arxiv.org/abs/2611.16843",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Analyzes LLM robustness on NLI benchmarks, informing limits of current models."
     },
     {
       "arxiv_id": "2611.16104",
@@ -161,6 +475,21 @@
         "cs.LG"
       ],
       "reason": "Introduces a new transformer conditioning architecture for NLI, fitting the profile's interest in transformer model advances."
+    },
+    {
+      "arxiv_id": "2611.17053",
+      "title": "Evaluating Pretrained Language Semantics for Structured EHR Prediction Tasks",
+      "authors": [
+        "Ashvin Gupta",
+        "Brendan Delaney",
+        "Alessandra Russo"
+      ],
+      "url": "https://arxiv.org/abs/2611.17053",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "It studies continued pretraining and fine‑tuning of a frontier LLM (Mistral) for domain tasks, evaluating its capabilities on benchmark EHR predictions."
     },
     {
       "arxiv_id": "2611.16477",
@@ -305,6 +634,20 @@
       "reason": "Introduces a data‑efficient safety alignment dataset, a post‑training technique relevant to instruction tuning and benchmarking of LLMs."
     },
     {
+      "arxiv_id": "2611.16694",
+      "title": "When Expert Disagreement Hurts: Prestige and Selectivity in LLM Decision Revision",
+      "authors": [
+        "Yupeng Tang",
+        "Mingfeng Lin"
+      ],
+      "url": "https://arxiv.org/abs/2611.16694",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark to evaluate LLM decision revision and accuracy under expert disagreement, measuring model capabilities."
+    },
+    {
       "arxiv_id": "2611.16816",
       "title": "Outcome-Mass Alignment: Controlling Length-Dependent Trajectory Influence in Multi-Turn LLM Agent Reinforcement Learning",
       "authors": [
@@ -375,6 +718,18 @@
         "cs.CL"
       ],
       "reason": "Introduces a new benchmark and memory framework for evaluating long-term dialogue capabilities, aligning with the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.16714",
+      "title": "Towards Green Text Generation: Memory-Based Speculative Decoding",
+      "authors": [
+        "Antal van den Bosch"
+      ],
+      "url": "https://arxiv.org/abs/2611.16714",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a fast, low‑energy speculative decoding method, advancing efficient inference for large language models."
     },
     {
       "arxiv_id": "2611.16662",
@@ -485,6 +840,22 @@
         "cs.CL"
       ],
       "reason": "Introduces a post‑training self‑correction method for LLM coding agents and evaluates it on benchmark suites."
+    },
+    {
+      "arxiv_id": "2611.16526",
+      "title": "Lost in Delegation: Studying the Effectiveness of Task Orchestration in Generative Search",
+      "authors": [
+        "Tamara Stojanovska",
+        "Elisabeth Kirsten",
+        "Leon Swazinna",
+        "Muhammad Bilal Zafar"
+      ],
+      "url": "https://arxiv.org/abs/2611.16526",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "It provides a benchmark analysis of LLM capabilities and limits in task delegation and orchestration."
     }
   ]
 }
