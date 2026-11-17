@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T03:17:50+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 35,
+  "papers": [
+    {
+      "arxiv_id": "2611.19419",
+      "title": "Do Pretraining Optimizer Gains Transfer to KL Distillation?",
+      "authors": [
+        "Lavinia Ghita",
+        "Dhruv Desai"
+      ],
+      "url": "https://arxiv.org/abs/2611.19419",
+      "similarity": 0.7122,
+      "summary": "The paper studies whether matrix‑structured optimizers that help language‑model pretraining also help KL distillation. It compares AdamW, diagonal AdaGrad, two Shampoo reductions, SOAP, and All‑2D Muon on four Qwen student‑teacher pairs using a forward‑KL objective and a fixed training budget. The results show that none of the matrix‑structured optimizers consistently outperforms the element‑wise baselines; AdamW gives the lowest validation KL, AdaGrad can be slightly faster at larger scale, and SOAP matches AdamW in KL but costs more training time, indicating that pretraining optimizer gains do not automatically transfer to KL distillation."
+    },
+    {
+      "arxiv_id": "2611.19439",
+      "title": "Do Rule-Based Tools Help LLMs Translate Endangered Uralic Languages in the Prompt or over MCP?",
+      "authors": [
+        "Iaroslav Chelombitko",
+        "Mika Hämäläinen"
+      ],
+      "url": "https://arxiv.org/abs/2611.19439",
+      "similarity": 0.705,
+      "summary": "The study tests whether rule‑based resources for four endangered Uralic languages can help large language models translate into English, comparing two ways of providing the resources: precomputed analyses in the prompt versus tools that the model can call via the Model Context Protocol. Manual evaluation of 816 sentences shows that including analyses in the prompt increases accepted translations from 13 to 43 out of 272, and using tool calls raises it to 55, mainly due to the bilingual dictionary; for Udmurt no improvement is seen because its dictionary lacks English entries. The authors also find that many open‑weight models cannot or do not use tool calls, and they release the dataset, model outputs, and tool‑call logs."
+    },
+    {
+      "arxiv_id": "2611.19220",
+      "title": "Revisiting What Makes a Good Context Subset: A Sparse Latent Basis Perspective",
+      "authors": [
+        "Cen-Jhih Li",
+        "Siddhant Chaudhary",
+        "Aditya Bhaskara"
+      ],
+      "url": "https://arxiv.org/abs/2611.19220",
+      "similarity": 0.7,
+      "summary": "The paper studies how to pick the best few‑shot demonstrations for large language models by treating the query as a proxy for the task‑relevant information that the demonstrations should provide. It introduces a sparse‑reconstruction method called Residual Explanation Search (RES) and compares it to other retrieval objectives across seven benchmarks and eight open‑weight LLMs. RES beats the commonly used MMR in 34 of 56 model‑dataset pairs—especially on sentiment tasks—while relevance‑based retrieval still excels on template‑heavy reasoning benchmarks and all retrieval methods lag behind zero‑shot on StrategyQA; the results also show that the best retrieval objective depends on the representation layer, with middle layers favoring similarity retrieval and last layers favoring residual‑ and diversity‑based selection."
+    },
+    {
+      "arxiv_id": "2611.19151",
+      "title": "MarineSparkLM-4B: A Lightweight Language Model for Marine and Offshore Engineering Built by Parameter-Efficient Adaptation",
+      "authors": [
+        "Cheng Siong Chin"
+      ],
+      "url": "https://arxiv.org/abs/2611.19151",
+      "similarity": 0.6983,
+      "summary": "The paper shows how to build a small, domain‑specific language model for marine and offshore engineering by adding two LoRA adapters to a 4‑billion‑parameter base model. One adapter is trained on next‑token prediction over a 61.6‑million‑token corpus of 7,069 deduplicated documents, while a second adapter is trained on 2,295 question‑answer pairs with loss focused on answer tokens. On a held‑out set of 20 prompts, the instruction adapter with retrieval scored 88 out of 120, but absolute accuracy remained low (14 of 40 without retrieval and 20 of 40 with it)."
+    },
+    {
+      "arxiv_id": "2611.19299",
+      "title": "Staged Semantic Distillation: Preserving Free-Form Semantics in a Low-Compute Non-LLM Surrogate of a Staged LLM Agent",
+      "authors": [
+        "Zhiyang Niu",
+        "Huayuan Shen",
+        "Chuanjie Li",
+        "Mengmeng Zhao",
+        "Jiajia Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.19299",
+      "similarity": 0.696,
+      "summary": "The paper introduces staged semantic distillation, a low‑compute method that preserves the free‑form semantics of staged LLM agents by training a non‑LLM student from a single recorded trace. It uses a frozen encoder to map each teacher output to a 1024‑dimensional vector, and the student is jointly supervised on stage‑tagged vectors with scheduled self‑history, producing a 13.2‑million‑parameter deterministic model that trains in 1,658 s on an 8‑GB GPU and makes decisions in 0.14 ms without any teacher or decoder calls. The surrogate closely matches the teacher (cosine 0.943), achieves 0.8347 balanced accuracy on teacher‑forced replay and 0.7783 on deployment, and a 20‑seed, 200,000‑decision sweep takes 12 min versus three hours for the teacher."
+    }
+  ]
+}

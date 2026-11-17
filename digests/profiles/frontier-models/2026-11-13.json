@@ -6,7 +6,7 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-13",
-  "generated_at": "2026-11-16T00:32:20+00:00",
+  "generated_at": "2026-11-17T03:19:49+00:00",
   "candidates": 69,
   "classified": 69,
   "errors": 1,
@@ -444,6 +444,21 @@
       "reason": "Introduces a new post-training data synthesis method for LLM agents, aligning with instruction tuning and RLHF advances."
     },
     {
+      "arxiv_id": "2611.17053",
+      "title": "Evaluating Pretrained Language Semantics for Structured EHR Prediction Tasks",
+      "authors": [
+        "Ashvin Gupta",
+        "Brendan Delaney",
+        "Alessandra Russo"
+      ],
+      "url": "https://arxiv.org/abs/2611.17053",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "It studies continued pretraining and fine‑tuning of a frontier LLM (Mistral) for domain tasks, evaluating its capabilities on benchmark EHR predictions."
+    },
+    {
       "arxiv_id": "2611.17320",
       "title": "Learning When Diffusion Language Models Should Regenerate",
       "authors": [
@@ -475,21 +490,6 @@
         "cs.LG"
       ],
       "reason": "Introduces a new transformer conditioning architecture for NLI, fitting the profile's interest in transformer model advances."
-    },
-    {
-      "arxiv_id": "2611.17053",
-      "title": "Evaluating Pretrained Language Semantics for Structured EHR Prediction Tasks",
-      "authors": [
-        "Ashvin Gupta",
-        "Brendan Delaney",
-        "Alessandra Russo"
-      ],
-      "url": "https://arxiv.org/abs/2611.17053",
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "reason": "It studies continued pretraining and fine‑tuning of a frontier LLM (Mistral) for domain tasks, evaluating its capabilities on benchmark EHR predictions."
     },
     {
       "arxiv_id": "2611.16477",

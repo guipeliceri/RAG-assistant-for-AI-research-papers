@@ -1,0 +1,330 @@
+{
+  "profile": "frontier-models",
+  "profile_name": "Advances in current frontier models",
+  "profile_fingerprint": "f0f03a6fcb04",
+  "model": "openai/gpt-oss-120b",
+  "borderline": "include",
+  "threshold": null,
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T03:19:46+00:00",
+  "candidates": 35,
+  "classified": 35,
+  "errors": 8,
+  "papers": [
+    {
+      "arxiv_id": "2611.19419",
+      "title": "Do Pretraining Optimizer Gains Transfer to KL Distillation?",
+      "authors": [
+        "Lavinia Ghita",
+        "Dhruv Desai"
+      ],
+      "url": "https://arxiv.org/abs/2611.19419",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Examines optimizer recipes and their impact on KL distillation, directly relevant to efficiency and pretraining techniques."
+    },
+    {
+      "arxiv_id": "2611.19439",
+      "title": "Do Rule-Based Tools Help LLMs Translate Endangered Uralic Languages in the Prompt or over MCP?",
+      "authors": [
+        "Iaroslav Chelombitko",
+        "Mika Hämäläinen"
+      ],
+      "url": "https://arxiv.org/abs/2611.19439",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "It evaluates how tool integration affects LLM translation performance, providing a capability benchmark relevant to frontier model analysis."
+    },
+    {
+      "arxiv_id": "2611.19151",
+      "title": "MarineSparkLM-4B: A Lightweight Language Model for Marine and Offshore Engineering Built by Parameter-Efficient Adaptation",
+      "authors": [
+        "Cheng Siong Chin"
+      ],
+      "url": "https://arxiv.org/abs/2611.19151",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "The paper studies parameter‑efficient adaptation (LoRA) of a language model, a post‑training efficiency technique relevant to frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.19299",
+      "title": "Staged Semantic Distillation: Preserving Free-Form Semantics in a Low-Compute Non-LLM Surrogate of a Staged LLM Agent",
+      "authors": [
+        "Zhiyang Niu",
+        "Huayuan Shen",
+        "Chuanjie Li",
+        "Mengmeng Zhao",
+        "Jiajia Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.19299",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "reason": "Introduces a novel low‑compute distillation method for LLM agents, directly addressing efficiency and model distillation."
+    },
+    {
+      "arxiv_id": "2611.19127",
+      "title": "Empowering Masked Diffusion Models to Self-Correct with Leave-One-Out Transformers",
+      "authors": [
+        "Sofian Zalouk",
+        "Vincent Counathe",
+        "Paul Jünger",
+        "Daniel Cao",
+        "Daniel Zlotnick",
+        "Kilian Q. Weinberger",
+        "Christopher De Sa"
+      ],
+      "url": "https://arxiv.org/abs/2611.19127",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel transformer architecture for diffusion language models, advancing model design and efficiency."
+    },
+    {
+      "arxiv_id": "2611.19499",
+      "title": "Do Probing and Steering Favor the Same Directions Within and Across Language Models?",
+      "authors": [
+        "Afshin Sadeghi",
+        "Daniel Becker"
+      ],
+      "url": "https://arxiv.org/abs/2611.19499",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "examines probing and steering in instruction-tuned LLMs, providing a benchmark of model capabilities"
+    },
+    {
+      "arxiv_id": "2611.19220",
+      "title": "Revisiting What Makes a Good Context Subset: A Sparse Latent Basis Perspective",
+      "authors": [
+        "Cen-Jhih Li",
+        "Siddhant Chaudhary",
+        "Aditya Bhaskara"
+      ],
+      "url": "https://arxiv.org/abs/2611.19220",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "reason": "Introduces a new method for context subset selection in LLM inference, directly relevant to long-context handling and benchmarking of state-of-the-art models."
+    },
+    {
+      "arxiv_id": "2611.19356",
+      "title": "A Comparative Evaluation of BERT-Based and LLM-Based Models for Indic Sentence Similarity",
+      "authors": [
+        "Aishwarya Gunjal",
+        "Kanchan Khemnar",
+        "Pawan Poojary",
+        "Pranav Kulkarni",
+        "Raviraj Joshi"
+      ],
+      "url": "https://arxiv.org/abs/2611.19356",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Provides a benchmark evaluation of LLM and BERT embeddings on multilingual STS, measuring capabilities of frontier models."
+    },
+    {
+      "arxiv_id": "2611.19202",
+      "title": "Omni-Workspace: Benchmarking Omni-Modal AI Assistants on Multimodal Workspace Tasks",
+      "authors": [
+        "Yuhao Wang",
+        "Yucheng Zhao",
+        "Yiran Zhong",
+        "Feida Zhu",
+        "Hongcheng Liu",
+        "Qichao Wang",
+        "Ming Ma",
+        "Yu Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.19202",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark and method for evaluating omni-modal AI assistants, aligning with multimodal/omni model advances and capability measurement."
+    },
+    {
+      "arxiv_id": "2611.19311",
+      "title": "Macro Control and Capability Evaluation of Black-Box World Models: A Two-Regime Framework for LLM-Agent Markets",
+      "authors": [
+        "Zhiyang Niu",
+        "Chuanjie Li",
+        "Huayuan Shen",
+        "Mengmeng Zhao",
+        "Jiajia Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.19311",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "reason": "Introduces a new evaluation framework for measuring LLM agent capabilities, fitting the benchmark focus."
+    },
+    {
+      "arxiv_id": "2611.19700",
+      "title": "Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both",
+      "authors": [
+        "Parsa Mirtaheri",
+        "Mohammadreza Armandpour",
+        "Keivan Alizadeh",
+        "Iman Mirzadeh",
+        "Parshin Shojaee",
+        "Aryo Lotfi",
+        "David Harrison",
+        "Mehrdad Farajtabar"
+      ],
+      "url": "https://arxiv.org/abs/2611.19700",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Examines test-time adaptation of LLM agents via in-context learning and reinforcement learning, directly relating to post‑training methods and capability benchmarking."
+    },
+    {
+      "arxiv_id": "2611.19273",
+      "title": "B-OPSD: On-Policy Self-Distillation with Self-Generated Problem Briefs",
+      "authors": [
+        "Zhi Xu",
+        "Yinqi Wu",
+        "Feng Zhang",
+        "Xiaotong Zhang",
+        "Hong Yu",
+        "Han Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.19273",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a self‑distillation training method for LLMs, aligning with post‑training and distillation advances."
+    },
+    {
+      "arxiv_id": "2611.19136",
+      "title": "Low-Latency LLM-Based Streaming Multi-Talker ASR with Verifiable Rewards",
+      "authors": [
+        "Jing Pan",
+        "Ruizhi Li",
+        "Ju Lin",
+        "Jing Zheng",
+        "Florian Metze"
+      ],
+      "url": "https://arxiv.org/abs/2611.19136",
+      "categories": [
+        "cs.CL",
+        "cs.SD"
+      ],
+      "reason": "Introduces RL-based post‑training for LLM‑based streaming ASR, addressing latency and speaker attribution, aligning with frontier model post‑training and efficiency interests"
+    },
+    {
+      "arxiv_id": "2611.19176",
+      "title": "A Bag of Concepts? Testing Role-Filler Binding in the Verbalizable Workspace",
+      "authors": [
+        "Reya Dawlah",
+        "Elizabeth McMillin",
+        "Michael Shihong Zhang",
+        "Badrish Ananth",
+        "Rishi Adi Ruia",
+        "Ane Zuñiga",
+        "Thomas Jiralerspong"
+      ],
+      "url": "https://arxiv.org/abs/2611.19176",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Analyzes and benchmarks role-filler binding capabilities of frontier language models, fitting the profile's interest in capability limits of state-of-the-art models."
+    },
+    {
+      "arxiv_id": "2611.19643",
+      "title": "SG-LegalClarify: A Large-Scale Benchmark for Legal Reasoning and Ambiguity Recognition in Singapore Law",
+      "authors": [
+        "Ziwei Gu",
+        "Michael S. Lee",
+        "Drew Rein",
+        "Yash Maurya",
+        "Vikneswaran Kumaran",
+        "Darshini Ramiah",
+        "Chenguang Wang",
+        "Udari Madhushani Sehwag"
+      ],
+      "url": "https://arxiv.org/abs/2611.19643",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new benchmark that evaluates LLM reasoning and ambiguity detection, fitting the profile's interest in capability-measuring benchmarks."
+    },
+    {
+      "arxiv_id": "2611.19393",
+      "title": "From Facts to Personas: Interpretable Role Unlearning in LLMs via Mixture-of-Experts",
+      "authors": [
+        "Ruihong Zeng",
+        "Puning Yang",
+        "Jinghui Zhang",
+        "Shen Gao",
+        "Xiangliang Zhang",
+        "Preslav Nakov",
+        "Xiuying Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.19393",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "reason": "Introduces a Mixture-of-Experts architecture for role unlearning in LLMs, aligning with frontier model architectures and post‑training techniques."
+    },
+    {
+      "arxiv_id": "2611.19179",
+      "title": "Isolating Perception for Multi-View Planning under Occlusion-Induced Partial Observability",
+      "authors": [
+        "Kevin Nguyen",
+        "Ceyhun Efe Kayan",
+        "Feng Liu",
+        "Li Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.19179",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "reason": "Introduces a multimodal VLM benchmark and a new perception-focused paradigm, aligning with multimodal models and capability measurement."
+    },
+    {
+      "arxiv_id": "2611.19525",
+      "title": "Objectify, Don't Delete: Complaint-Derived Evaluation of Ambient Clinical Notes",
+      "authors": [
+        "Nikita Gupta",
+        "Narayanan Unny Edakunni",
+        "Vikram Okaly",
+        "Suranjana Datta",
+        "Navya Penubadi",
+        "Karl Eric Swanson",
+        "Siddharth Sharma"
+      ],
+      "url": "https://arxiv.org/abs/2611.19525",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark (ACI-Defect) to evaluate LLM-generated clinical notes, fitting the profile's interest in capability benchmarks."
+    }
+  ]
+}

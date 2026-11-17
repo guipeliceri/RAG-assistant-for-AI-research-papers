@@ -418,5 +418,13 @@
   "acf8a49d322d:2611.16228": {
     "relevant": true,
     "reason": "Focuses on RL fine-tuning of a large MoE model and its impact on benchmark performance, matching post-training and benchmark interests."
+  },
+  "acf8a49d322d:2611.19419": {
+    "relevant": true,
+    "reason": "Evaluates optimizer recipes for language model pretraining and their impact on KL distillation, directly addressing efficiency and training methods in frontier models."
+  },
+  "acf8a49d322d:2611.19439": {
+    "relevant": false,
+    "reason": "Focuses on rule-based tools for low-resource translation rather than advancing LLM architectures, scaling, or general capability benchmarks."
   }
 }
