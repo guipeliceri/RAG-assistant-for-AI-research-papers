@@ -1,0 +1,316 @@
+{
+  "profile": "frontier-models",
+  "profile_name": "Advances in current frontier models",
+  "profile_fingerprint": "f0f03a6fcb04",
+  "model": "openai/gpt-oss-120b",
+  "borderline": "include",
+  "threshold": null,
+  "date": "2026-11-18",
+  "generated_at": "2026-11-18T02:42:31+00:00",
+  "candidates": 29,
+  "classified": 29,
+  "errors": 3,
+  "papers": [
+    {
+      "arxiv_id": "2611.22148",
+      "title": "Long-Context Generation Is a Sampling Problem (When You Turn Up the Heat)",
+      "authors": [
+        "Allen G. Roush",
+        "Minh Nhat Nguyen",
+        "Ravid Shwartz-Ziv",
+        "Judah Goldfeder",
+        "Sanjay Basu"
+      ],
+      "url": "https://arxiv.org/abs/2611.22148",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Analyzes sampling methods for long-context generation and provides extensive benchmark results, directly addressing long-context capabilities."
+    },
+    {
+      "arxiv_id": "2611.21983",
+      "title": "Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation",
+      "authors": [
+        "Maor Farid"
+      ],
+      "url": "https://arxiv.org/abs/2611.21983",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "math.DS",
+        "nlin.CD"
+      ],
+      "reason": "It analyzes LLM behavior and limits (e.g., repetition loops, temperature scaling), providing insights relevant to benchmarking and understanding frontier models."
+    },
+    {
+      "arxiv_id": "2611.22219",
+      "title": "Fine-Grained Japanese Clinical Named Entity Recognition: A Controlled Comparison of BERT and Open-Weight Large Language Models",
+      "authors": [
+        "Feng Han",
+        "Ayako Yagahara",
+        "Kenji Hirata",
+        "Atsushi Yoshida",
+        "Kohsuke Kudo"
+      ],
+      "url": "https://arxiv.org/abs/2611.22219",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "It provides a benchmark evaluation of LLM capabilities (including fine‑tuning and token limits) on a fine‑grained Japanese clinical NER task."
+    },
+    {
+      "arxiv_id": "2611.22055",
+      "title": "Weight-Space Programming Doesn't Need Transformers",
+      "authors": [
+        "Hyunjong Ok",
+        "Jaeho Lee"
+      ],
+      "url": "https://arxiv.org/abs/2611.22055",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel non‑transformer architecture for LLM weight‑space programming and shows efficiency gains, fitting the profile's focus on new model architectures and fast inference."
+    },
+    {
+      "arxiv_id": "2611.22120",
+      "title": "What MoE Routing Controls: Causal Interventions on Expert Trajectories",
+      "authors": [
+        "Mukund Athmaram",
+        "Manoj Rao",
+        "Liang Ma"
+      ],
+      "url": "https://arxiv.org/abs/2611.22120",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Analyzes and manipulates MoE routing, directly advancing understanding of mixture-of-experts models."
+    },
+    {
+      "arxiv_id": "2611.21974",
+      "title": "Beyond Bitwidth: Deployment-Constrained Mixed-Precision Quantization for Multilingual LLM Inference on NVIDIA Blackwell",
+      "authors": [
+        "Hyojung Han"
+      ],
+      "url": "https://arxiv.org/abs/2611.21974",
+      "categories": [
+        "cs.IR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Focuses on mixed-precision quantization and deployment efficiency for large language models, matching the profile's interest in quantization and fast inference."
+    },
+    {
+      "arxiv_id": "2611.21921",
+      "title": "Latent Fact Composition under Next-Token Training",
+      "authors": [
+        "Tianyi Zhang",
+        "Feiying Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.21921",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new transformer architecture and analyzes next-token training effects on multi-hop reasoning, fitting the profile's focus on model architectures and reasoning capabilities."
+    },
+    {
+      "arxiv_id": "2611.21964",
+      "title": "Solver to System: LLM Reasoning Across Representations and Execution in Scientific Simulation",
+      "authors": [
+        "Eliza Berman",
+        "Rohan Subramanian",
+        "Shreya Jha",
+        "Lohit Jagarapu",
+        "Romain Lopez",
+        "Rajesh Ranganath"
+      ],
+      "url": "https://arxiv.org/abs/2611.21964",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark dataset to evaluate LLM reasoning and cross-representation consistency, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.21878",
+      "title": "Knowing Which, Not How Much: Language Models Order Party Positions They Cannot Place",
+      "authors": [
+        "Yousef Attia",
+        "Jarosław A. Chudziak"
+      ],
+      "url": "https://arxiv.org/abs/2611.21878",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "reason": "Introduces a new benchmark probing LLMs' ordering vs placement abilities, relevant to measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.22033",
+      "title": "Thinking Harder Doesn't Lead to Better Choices: Reasoning Effort Increases the Confidence but Not the Correctness of LLM Shopping Agents",
+      "authors": [
+        "Adi Krishnamoorthy",
+        "X. Y. Han"
+      ],
+      "url": "https://arxiv.org/abs/2611.22033",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CY",
+        "cs.HC",
+        "econ.GN"
+      ],
+      "reason": "Provides a benchmark analysis of reasoning effort, confidence, and calibration in multimodal LLM agents, directly measuring capabilities of frontier models."
+    },
+    {
+      "arxiv_id": "2611.21925",
+      "title": "DNeo: Your Parallel Draft Model Needs Better Target Feature Encoding",
+      "authors": [
+        "Jameson Sandler",
+        "Shane Bergsma",
+        "Mostafa Elhoushi",
+        "Bin Claire Zhang",
+        "Gavia Gray",
+        "Joel Hestness",
+        "Nolan Dey",
+        "Ferdinando Fioretto"
+      ],
+      "url": "https://arxiv.org/abs/2611.21925",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new efficient inference architecture (DNeo) for faster LLM generation, aligning with the profile's focus on fast inference and model efficiency."
+    },
+    {
+      "arxiv_id": "2611.22027",
+      "title": "GauntletScore: Auditable Fact-Checking That Matches the Best Published Checkers on LLM-AggreFact",
+      "authors": [
+        "Ernie Hobbs",
+        "Jim Hinson"
+      ],
+      "url": "https://arxiv.org/abs/2611.22027",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new benchmark-based evaluation method for LLM fact-checking, fitting the profile's interest in capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.22191",
+      "title": "RISA: Recoverable Sparse Attention for Block-Diffusion Language Models",
+      "authors": [
+        "Xinrui Zhong",
+        "Fanjiang Ye",
+        "Yuke Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.22191",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new sparse-attention technique to improve long-context, fast inference for large language models."
+    },
+    {
+      "arxiv_id": "2611.21852",
+      "title": "The Hidden Cost of MoE Diffusion Decoding: Profiling and Fixing the Sampler",
+      "authors": [
+        "Harshit Samrat",
+        "Ramakrishna Paramahamsa Kompella"
+      ],
+      "url": "https://arxiv.org/abs/2611.21852",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Addresses efficiency and quantization of a Mixture-of-Experts diffusion model, fitting the profile's focus on MoE architectures and fast inference."
+    },
+    {
+      "arxiv_id": "2611.22017",
+      "title": "SkillBuffBench: Measuring What Agent Skills Contribute across Harnesses, Models, Skill Access Modes and Memory",
+      "authors": [
+        "Gengyue Dong",
+        "Ye Wei",
+        "Zheng Zhu",
+        "Yidong Han",
+        "Jiale Miao",
+        "Xiaojun Jia",
+        "Guanghui Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.22017",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a benchmark to evaluate capabilities of frontier language agents, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.22009",
+      "title": "DiagTrace: An Interactive Benchmark for Clinical Decision Making",
+      "authors": [
+        "Yufan Wang",
+        "Rui Yang",
+        "Yi Lin",
+        "Chunhua Weng",
+        "Yifan Peng"
+      ],
+      "url": "https://arxiv.org/abs/2611.22009",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new benchmark to evaluate LLM capabilities, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.21946",
+      "title": "Conserved Verdicts, Drifting Commitments: Identifying Harmful Overthinking",
+      "authors": [
+        "Jianghong Zhou",
+        "Hao Rong",
+        "Chen Lin"
+      ],
+      "url": "https://arxiv.org/abs/2611.21946",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new framework and measurements for reasoning model stopping behavior, directly relevant to chain-of-thought reasoning and benchmarking."
+    },
+    {
+      "arxiv_id": "2611.22186",
+      "title": "Is 4-Bit Quantization More Than Noise to a Chat Model's Safety Behaviour? Attributing Behavioural Shifts with Matched Perturbations",
+      "authors": [
+        "Ege Kaya"
+      ],
+      "url": "https://arxiv.org/abs/2611.22186",
+      "categories": [
+        "cs.CR",
+        "cs.CL"
+      ],
+      "reason": "Analyzes 4-bit quantization effects on chat model behavior, directly addressing quantization efficiency topics."
+    },
+    {
+      "arxiv_id": "2611.21823",
+      "title": "TUSI: A Citation-Grounded Graph-Based Benchmark",
+      "authors": [
+        "Marzieh Karimi",
+        "Mehran Safayani",
+        "Alireza Basiri"
+      ],
+      "url": "https://arxiv.org/abs/2611.21823",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new benchmark for evaluating retrieval-augmented generation, fitting the profile's interest in capability-measuring benchmarks."
+    }
+  ]
+}

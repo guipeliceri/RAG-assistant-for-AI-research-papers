@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-16",
+  "generated_at": "2026-11-18T02:40:54+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 3,
+  "papers": [
+    {
+      "arxiv_id": "2611.17461",
+      "title": "Tracing Knowledge and Reasoning in LLMs",
+      "authors": [
+        "Yang Wang",
+        "Xiao Wang",
+        "Yiqi Liu",
+        "Chenghao Xiao",
+        "Eleni Vasilaki",
+        "Goran Nenadic",
+        "Chenghua Lin"
+      ],
+      "url": "https://arxiv.org/abs/2611.17461",
+      "similarity": 0.7482,
+      "summary": "The paper introduces a task‑centric framework that uses attention, activation, and representation signals to probe the internal processing of large language models during benchmark evaluation. It applies this framework to 16 LLMs across 24 diverse benchmarks, performing targeted internal‑state analyses on representative models and tasks. The study finds systematic differences in how models process knowledge‑centric versus reasoning‑centric tasks, showing that looking at internal patterns can reveal failure modes that overall task scores hide."
+    },
+    {
+      "arxiv_id": "2611.18279",
+      "title": "GT-FENG: General Theory of Factual Evaluation and Normative Grounding in Language Models",
+      "authors": [
+        "Jiayu Feng"
+      ],
+      "url": "https://arxiv.org/abs/2611.18279",
+      "similarity": 0.6868,
+      "summary": "GT‑FENG is a new framework that evaluates language‑model answers by checking them against the specific rules that apply in a given context—such as jurisdiction, date, or legal definition—and by flagging which documented rules the model’s answer matches or contradicts. It shows that when several rules give the same value, the answer alone cannot reveal which rule the model used, and that adding the state’s own records to the evaluation can cut the number of wrong answers that only match other states’ values by 68‑78 %. In tests on Medicaid income‑limit questions from two models, more than half of the remaining stable wrong answers then matched two or more documented sources, demonstrating GT‑FENG’s ability to ground factual correctness in rule‑governed domains."
+    },
+    {
+      "arxiv_id": "2611.18527",
+      "title": "WaferTetris: Efficient Freeform Mapping on Wafer-Scale Accelerators",
+      "authors": [
+        "Dayou Du",
+        "Congjie He",
+        "Andrew Boutros",
+        "Luo Mai",
+        "Vaughn Betz",
+        "Jianyi Cheng"
+      ],
+      "url": "https://arxiv.org/abs/2611.18527",
+      "similarity": 0.5842,
+      "summary": null
+    }
+  ]
+}

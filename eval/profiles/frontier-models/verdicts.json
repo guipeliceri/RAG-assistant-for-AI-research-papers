@@ -795,6 +795,18 @@
   "reason": "The paper introduces a meta‑research platform rather than a new model, architecture, scaling law, or benchmark.",
   "relevant": false
  },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.17461": {
+  "reason": "Introduces a new evaluation framework for analyzing reasoning and knowledge processing in LLMs, aligning with benchmark and reasoning interests.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.18279": {
+  "reason": "Introduces a new evaluation framework/benchmark for assessing LLMs in rule-governed contexts, fitting the profile's interest in capability benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.18527": {
+  "reason": "Focuses on hardware mapping for wafer-scale accelerators, not on model architectures, training, or model-level efficiency",
+  "relevant": false
+ },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19127": {
   "reason": "Introduces a novel transformer architecture for diffusion language models, advancing model design and efficiency.",
   "relevant": true
@@ -891,16 +903,428 @@
   "reason": "Focuses on interpretability via autoencoders, not on frontier model architectures, training, or capability benchmarks.",
   "relevant": false
  },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19509": {
+  "reason": "The paper focuses on formal semantics and proof assistants, not on frontier language model advances.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19512": {
+  "reason": "The paper focuses on Arabic speech recognition, not on large language models, their architectures, training, or related benchmarks.",
+  "relevant": false
+ },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19525": {
   "reason": "Introduces a new benchmark (ACI-Defect) to evaluate LLM-generated clinical notes, fitting the profile's interest in capability benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19560": {
+  "reason": "Introduces a new fine-tuning method for diffusion language models to improve parallel generation efficiency, aligning with frontier model architectures and fast inference.",
   "relevant": true
  },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19643": {
   "reason": "Introduces a new benchmark that evaluates LLM reasoning and ambiguity detection, fitting the profile's interest in capability-measuring benchmarks.",
   "relevant": true
  },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19698": {
+  "reason": "Proposes a new data attribution method to guide pretraining data selection, directly addressing pretraining data recipes.",
+  "relevant": true
+ },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19700": {
   "reason": "Examines test-time adaptation of LLM agents via in-context learning and reinforcement learning, directly relating to post‑training methods and capability benchmarking.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19752": {
+  "reason": "Introduces a benchmark for evaluating stale retrieval in LLM agents, fitting the profile's interest in capability benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19763": {
+  "reason": "Focuses on dataset selection and adversarial QA analysis, not on model architectures, scaling, or frontier model techniques.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19800": {
+  "reason": "Introduces a new transformer architecture and scaling/efficiency techniques for large language models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19823": {
+  "reason": "Introduces a token-efficient framework for multi-turn LLM agents, addressing inference efficiency and cost.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19848": {
+  "reason": "Provides a new analysis of transformer representation geometry and training dynamics for large language models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19858": {
+  "reason": "The paper focuses on a translation data framework rather than advancing LLM architectures, scaling, or core post‑training techniques.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19872": {
+  "reason": "The paper proposes an auditing framework for LLM-generated categories, not a model, training, scaling, or capability benchmark of frontier models.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19896": {
+  "reason": "Introduces a new speculative decoding method to speed up inference for looped language models, fitting the efficiency and fast inference focus.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.19925": {
+  "reason": "Introduces a new post‑training self‑distillation method to improve reasoning and termination behavior in language models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20003": {
+  "reason": "The paper analyzes reporting practices rather than proposing or evaluating new model architectures, training methods, or capabilities.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20044": {
+  "reason": "The paper focuses on a domain-specific hate speech dataset and detection, not on frontier model architectures, training methods, or broad capability benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20062": {
+  "reason": "It introduces a benchmark evaluating multilingual LLMs' linguistic capabilities, fitting the profile's interest in capability measurements.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20071": {
+  "reason": "Analyzes how conversation history affects reasoning accuracy and proposes a benchmark, fitting the profile's interest in long‑context reasoning and capability measurement.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20126": {
+  "reason": "The paper studies tokenizers for a low-resource language, not advances in frontier model architectures, training, or evaluation.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20140": {
+  "reason": "The paper focuses on auditing LLM use in hiring, not on model architectures, training methods, scaling, or capability benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20144": {
+  "reason": "Focuses on agent memory evaluation, not on frontier model architectures, training, scaling, or core model benchmarks",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20148": {
+  "reason": "The paper focuses on a mechanistic interpretability technique for behavior control, not on model architectures, training methods, scaling, or benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20191": {
+  "reason": "Introduces a benchmark evaluating zero-shot prompting and fine-tuned classifiers, measuring capabilities of current LLMs.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20216": {
+  "reason": "The paper proposes a language-specific tokenization method, not a frontier model architecture, scaling, or benchmark.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20305": {
+  "reason": "The paper focuses on theoretical linguistics and algebraic models of syntax, not on language model architectures, training, or evaluation.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20335": {
+  "reason": "Introduces and benchmarks new decision-model architectures for LLM agents, aligning with frontier model evaluation and capability analysis.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20384": {
+  "reason": "Introduces a new post-training quantization method for LLMs, directly addressing efficiency and inference speed.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20415": {
+  "reason": "Introduces a new post‑training augmentation method for LLMs that improves performance with minimal inference cost, fitting the profile's focus on model scaling and efficiency techniques.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20417": {
+  "reason": "Introduces a cost-aware LLM routing benchmark and method, aligning with efficiency and evaluation of frontier models",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20441": {
+  "reason": "The paper studies mechanistic interpretability of abstention, not new model architectures, training methods, scaling laws, or benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20524": {
+  "reason": "Introduces a training-free KV cache compression method that speeds up RoPE-based transformer inference, aligning with efficiency and fast inference topics.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20566": {
+  "reason": "Introduces weight-space programming to edit LLM weights and evaluates its impact, a novel post‑training technique for frontier models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20595": {
+  "reason": "Focuses on API harness enforcement for LLM agents, not on model architectures, training, or capability benchmarks",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20608": {
+  "reason": "It evaluates and benchmarks version changes of frontier LLMs, measuring their capabilities and limits.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20653": {
+  "reason": "Introduces a new evaluation protocol for multimodal LLMs, directly relevant to benchmarking state-of-the-art models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20655": {
+  "reason": "Focuses on embodied agent constraints rather than LLM architectures, training, or benchmarking of frontier language models.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20693": {
+  "reason": "Analyzes fast inference decoding strategies for frontier diffusion language models, fitting the efficiency and architecture focus.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20702": {
+  "reason": "Focuses on embedding index migration and re-encoding, not on frontier LLM architectures, training, or benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20728": {
+  "reason": "The paper focuses on a task-specific extraction system and dataset, not on advancing LLM architectures, training methods, or general capability benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20734": {
+  "reason": "Introduces a diagnostic benchmark to evaluate LLM capabilities on product advice, fitting the profile's interest in capability measurement.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20759": {
+  "reason": "Introduces a novel efficient weight-space consolidation method for LLMs, advancing model architecture and inference efficiency.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20803": {
+  "reason": "Focuses on educational assessment prediction, not on language models or related frontier model topics.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20821": {
+  "reason": "Introduces a benchmark that evaluates cultural blind spots in multimodal text-to-image models, fitting the profile's interest in capability/limit benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20844": {
+  "reason": "Introduces a new benchmark for evaluating language-model agents' trajectory efficiency, fitting the profile's interest in capability measurement benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20846": {
+  "reason": "Focuses on style attribution/ imitation using LoRA adapters, not on frontier model advances or core scaling/ architecture innovations.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20868": {
+  "reason": "The paper focuses on legal text segmentation and dataset creation, not on frontier LLM architectures, scaling, or related advancements.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20891": {
+  "reason": "The paper focuses on multi-agent self-improvement via convolution, not on LLM architectures, scaling, training, or efficiency techniques relevant to frontier models.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20924": {
+  "reason": "Introduces a new benchmark suite for evaluating state-of-the-art LLMs on Indian workflow tasks, measuring model capabilities.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.20976": {
+  "reason": "Focuses on a graph-based continual learning system for enterprise data, not on frontier LLM architectures, training, or benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21019": {
+  "reason": "Introduces a new method and benchmarks for improving multimodal LLM memory handling, fitting the multimodal model and capability measurement focus.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21095": {
+  "reason": "Introduces a new benchmark/evaluation method for coding LLM agents, fitting the profile's interest in capability measurement.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21155": {
+  "reason": "Introduces a new benchmark and analysis of LLM capabilities for edit recommendation, fitting the profile's interest in capability measurement.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21178": {
+  "reason": "The paper focuses on a domain-specific fault diagnosis system using a small language model, not on advancing LLM architectures, training, or evaluation methods.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21183": {
+  "reason": "Introduces a multimodal benchmark evaluating state-of-the-art visual language models on ambiguity resolution",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21211": {
+  "reason": "Introduces a fine-tuning approach for confidence-aware answer granularity and evaluates frontier LLMs, fitting post‑training techniques and capability benchmarking.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21232": {
+  "reason": "The paper centers on home AI system architecture and deployment, not on advancing or evaluating frontier language model techniques.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21235": {
+  "reason": "The paper studies belief manipulation and safety of LLM agents, not advances in model architectures, training, scaling, or benchmark creation.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21250": {
+  "reason": "Focuses on multi-agent belief dynamics, not on frontier LLM architectures, training, or reasoning methods relevant to the profile",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21276": {
+  "reason": "Focuses on chemoinformatics regularizer for molecule-language models, not on frontier LLM architectures, scaling, or benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21291": {
+  "reason": "Introduces a benchmark suite evaluating LLM capabilities on linguistic annotation tasks, fitting the profile's interest in capability benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21292": {
+  "reason": "Introduces a new benchmark for evaluating capabilities of large multimodal vision-language models, which aligns with the profile's interest in multimodal models and capability benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21300": {
+  "reason": "Focuses on a task-specific Thai word segmentation model, not on frontier LLM advances or large-scale model techniques.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21303": {
+  "reason": "The paper focuses on Tibetan OCR evaluation, not on large language model advances or related benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21362": {
+  "reason": "The paper focuses on psychometric network estimation from social media, not on LLM architectures, training, scaling, or benchmarking.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21384": {
+  "reason": "Introduces a new calibration method for LLMs with benchmark evaluation, fitting the post‑training and capability‑measurement interests",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21394": {
+  "reason": "The paper is a user study on multilingual code-switching, not a new model, training method, or benchmark of frontier model capabilities.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21421": {
+  "reason": "Introduces new frontier LLMs and RL-based training for program specification generation with benchmark evaluation.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21432": {
+  "reason": "Introduces a post‑training weight‑space edit technique to improve reasoning performance of a frontier LLM, evaluated on standard math benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21458": {
+  "reason": "Focuses on demographic-aware multi-task learning for annotation, not on frontier model architectures, scaling, or training techniques.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21459": {
+  "reason": "Introduces a novel weight factorization technique to improve inference speed and efficiency of multimodal large language models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21478": {
+  "reason": "Introduces a new utility-based memory retrieval method and benchmark for LLM agents, advancing evaluation of model capabilities.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21488": {
+  "reason": "The paper focuses on watermarking for vision-language agents, not on model architectures, training, scaling, or capability benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21529": {
+  "reason": "Analyzes training and reasoning capabilities of small LLMs using fine-tuning and RL, fitting the profile's focus on post‑training methods and capability benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21538": {
+  "reason": "Focuses on reward hacking and verifier design, not on frontier LLM architectures, scaling, or training methods.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21545": {
+  "reason": "Introduces a new benchmark evaluating LLM explanation capabilities, fitting the profile's interest in capability measurements.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21600": {
+  "reason": "Analyzes planning mechanisms in vision-language models, directly relevant to multimodal frontier model capabilities.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21608": {
+  "reason": "Introduces a novel architectural enhancement for language models that adds persistent per-layer latent states, directly advancing frontier model designs.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21705": {
+  "reason": "The paper focuses on interpretability of moral judgments in LMs, not on model advances, architectures, training methods, or core capability benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21804": {
+  "reason": "Focuses on bias propagation and fairness in multi-agent networks, not on model advances, architectures, training, or capability benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21808": {
+  "reason": "The paper focuses on user simulation for psychotherapy, not on LLM architectures, training, scaling, or benchmarking.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21823": {
+  "reason": "Introduces a new benchmark for evaluating retrieval-augmented generation, fitting the profile's interest in capability-measuring benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21852": {
+  "reason": "Addresses efficiency and quantization of a Mixture-of-Experts diffusion model, fitting the profile's focus on MoE architectures and fast inference.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21878": {
+  "reason": "Introduces a new benchmark probing LLMs' ordering vs placement abilities, relevant to measuring model capabilities.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21891": {
+  "reason": "Focuses on a medical coding application using LLMs rather than advancing LLM architectures, training, or benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21921": {
+  "reason": "Introduces a new transformer architecture and analyzes next-token training effects on multi-hop reasoning, fitting the profile's focus on model architectures and reasoning capabilities.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21925": {
+  "reason": "Introduces a new efficient inference architecture (DNeo) for faster LLM generation, aligning with the profile's focus on fast inference and model efficiency.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21946": {
+  "reason": "Introduces a new framework and measurements for reasoning model stopping behavior, directly relevant to chain-of-thought reasoning and benchmarking.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21964": {
+  "reason": "Introduces a benchmark dataset to evaluate LLM reasoning and cross-representation consistency, fitting the profile's interest in capability measurement.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21969": {
+  "reason": "The paper focuses on developmental conversational analysis, not on frontier language model advances or related techniques.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21974": {
+  "reason": "Focuses on mixed-precision quantization and deployment efficiency for large language models, matching the profile's interest in quantization and fast inference.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21980": {
+  "reason": "Focuses on hierarchical topic modeling, not on large language model advances or related frontier model topics.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.21983": {
+  "reason": "It analyzes LLM behavior and limits (e.g., repetition loops, temperature scaling), providing insights relevant to benchmarking and understanding frontier models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22009": {
+  "reason": "Introduces a new benchmark to evaluate LLM capabilities, fitting the profile's interest in capability measurement.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22017": {
+  "reason": "Introduces a benchmark to evaluate capabilities of frontier language agents, fitting the profile's interest in capability measurement.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22027": {
+  "reason": "Introduces a new benchmark-based evaluation method for LLM fact-checking, fitting the profile's interest in capability benchmarks.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22033": {
+  "reason": "Provides a benchmark analysis of reasoning effort, confidence, and calibration in multimodal LLM agents, directly measuring capabilities of frontier models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22039": {
+  "reason": "Focuses on a task-specific RL editing system rather than advancing LLM architectures, scaling, or frontier model techniques.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22045": {
+  "reason": "The paper centers on clinical evaluation of triage AI tools, not on model architectures, training methods, or capability benchmarks.",
+  "relevant": false
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22055": {
+  "reason": "Introduces a novel non‑transformer architecture for LLM weight‑space programming and shows efficiency gains, fitting the profile's focus on new model architectures and fast inference.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22120": {
+  "reason": "Analyzes and manipulates MoE routing, directly advancing understanding of mixture-of-experts models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22148": {
+  "reason": "Analyzes sampling methods for long-context generation and provides extensive benchmark results, directly addressing long-context capabilities.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22186": {
+  "reason": "Analyzes 4-bit quantization effects on chat model behavior, directly addressing quantization efficiency topics.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22191": {
+  "reason": "Introduces a new sparse-attention technique to improve long-context, fast inference for large language models.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.22219": {
+  "reason": "It provides a benchmark evaluation of LLM capabilities (including fine‑tuning and token limits) on a fine‑grained Japanese clinical NER task.",
   "relevant": true
  }
 }

@@ -56,6 +56,27 @@
    "reach": 5,
    "result": 4
   },
+  "openai/gpt-oss-120b:2611.17461": {
+   "appeal": 4,
+   "novelty": 4,
+   "openness": 5,
+   "reach": 4,
+   "result": 3
+  },
+  "openai/gpt-oss-120b:2611.18279": {
+   "appeal": 4,
+   "novelty": 4,
+   "openness": 5,
+   "reach": 3,
+   "result": 3
+  },
+  "openai/gpt-oss-120b:2611.18527": {
+   "appeal": 4,
+   "novelty": 4,
+   "openness": 2,
+   "reach": 3,
+   "result": 5
+  },
   "openai/gpt-oss-120b:2611.19127": {
    "appeal": 3,
    "novelty": 4,
@@ -111,6 +132,41 @@
    "openness": 1,
    "reach": 4,
    "result": 3
+  },
+  "openai/gpt-oss-120b:2611.19220": {
+   "appeal": 3,
+   "novelty": 4,
+   "openness": 2,
+   "reach": 4,
+   "result": 3
+  },
+  "openai/gpt-oss-120b:2611.19260": {
+   "appeal": 3,
+   "novelty": 3,
+   "openness": 2,
+   "reach": 3,
+   "result": 3
+  },
+  "openai/gpt-oss-120b:2611.19273": {
+   "appeal": 4,
+   "novelty": 4,
+   "openness": 5,
+   "reach": 4,
+   "result": 4
+  },
+  "openai/gpt-oss-120b:2611.19286": {
+   "appeal": 3,
+   "novelty": 3,
+   "openness": 2,
+   "reach": 3,
+   "result": 3
+  },
+  "openai/gpt-oss-120b:2611.19299": {
+   "appeal": 3,
+   "novelty": 4,
+   "openness": 2,
+   "reach": 3,
+   "result": 4
   }
  },
  "stage_b": {}

@@ -426,5 +426,13 @@
   "acf8a49d322d:2611.19439": {
     "relevant": false,
     "reason": "Focuses on rule-based tools for low-resource translation rather than advancing LLM architectures, scaling, or general capability benchmarks."
+  },
+  "acf8a49d322d:2611.17461": {
+    "relevant": true,
+    "reason": "Introduces a benchmark/analysis framework for characterizing reasoning and knowledge processing in LLMs, aligning with interest in reasoning and capability evaluation."
+  },
+  "acf8a49d322d:2611.18279": {
+    "relevant": true,
+    "reason": "Introduces a new evaluation framework and benchmark for assessing LLMs in rule-governed contexts, aligning with the profile's interest in benchmarks measuring model capabilities."
   }
 }

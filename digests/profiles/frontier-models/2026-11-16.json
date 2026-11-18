@@ -1,0 +1,45 @@
+{
+  "profile": "frontier-models",
+  "profile_name": "Advances in current frontier models",
+  "profile_fingerprint": "f0f03a6fcb04",
+  "model": "openai/gpt-oss-120b",
+  "borderline": "include",
+  "threshold": null,
+  "date": "2026-11-16",
+  "generated_at": "2026-11-18T02:49:39+00:00",
+  "candidates": 3,
+  "classified": 3,
+  "errors": 0,
+  "papers": [
+    {
+      "arxiv_id": "2611.17461",
+      "title": "Tracing Knowledge and Reasoning in LLMs",
+      "authors": [
+        "Yang Wang",
+        "Xiao Wang",
+        "Yiqi Liu",
+        "Chenghao Xiao",
+        "Eleni Vasilaki",
+        "Goran Nenadic",
+        "Chenghua Lin"
+      ],
+      "url": "https://arxiv.org/abs/2611.17461",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new evaluation framework for analyzing reasoning and knowledge processing in LLMs, aligning with benchmark and reasoning interests."
+    },
+    {
+      "arxiv_id": "2611.18279",
+      "title": "GT-FENG: General Theory of Factual Evaluation and Normative Grounding in Language Models",
+      "authors": [
+        "Jiayu Feng"
+      ],
+      "url": "https://arxiv.org/abs/2611.18279",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new evaluation framework/benchmark for assessing LLMs in rule-governed contexts, fitting the profile's interest in capability benchmarks."
+    }
+  ]
+}
