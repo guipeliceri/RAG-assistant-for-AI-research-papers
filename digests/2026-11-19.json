@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-19",
+  "generated_at": "2026-11-19T02:09:10+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 24,
+  "papers": [
+    {
+      "arxiv_id": "2611.23546",
+      "title": "Language Models Make New Research Sound Old",
+      "authors": [
+        "Guy Zyskind"
+      ],
+      "url": "https://arxiv.org/abs/2611.23546",
+      "similarity": 0.7597,
+      "summary": "The paper studies how large language models (LLMs) misrepresent the novelty of research questions, making open questions appear partially studied and overstating what related papers establish. It evaluates six frontier LLMs on 40 questions from newly accepted papers, finding that GPT‑6‑Astra correctly identifies 98 % of unstudied questions but only reports this in 8 % of ordinary answers, with reporting gaps of 30–90 percentage points across systems. By constructing fixed answers from model judgments and separate checks of cited papers, the authors raise Astra’s clear reporting of open status from 8 % to 95 % and predict reviewers’ novelty grades with a rule learned from graded examples, achieving performance comparable to Think‑Probe‑Respond without needing model weights."
+    },
+    {
+      "arxiv_id": "2611.23601",
+      "title": "FutureBench: A Renewable Framework for Evaluating Knowledge-Context Conflict in LLMs",
+      "authors": [
+        "Yi-Cheng Lai",
+        "Hen-Hsen Huang"
+      ],
+      "url": "https://arxiv.org/abs/2611.23601",
+      "similarity": 0.6961,
+      "summary": "FutureBench is a renewable framework that evaluates knowledge‑context conflict in large language models by using timestamped questions, controlled passage triplets, and no‑context probes. In experiments on 3,629 questions and six models, the Verify prompt increased false‑answer adoption on pre‑cutoff events, while passage priority without checking raised adoption on post‑cutoff events and Verify lowered it; an Adversarial‑Aware prompt restored 82.5‑98.9 % of displaced pre‑cutoff answers with less than one point change in true‑passage accuracy. The framework supports repeated evaluation on fixed cohorts and can be extended to new events as models evolve."
+    },
+    {
+      "arxiv_id": "2611.23508",
+      "title": "BOS Summary: The First Token Matters",
+      "authors": [
+        "Hui Zhu",
+        "Saleh Zare Zade",
+        "Rafi Ibn Sultan",
+        "Deng Pan",
+        "Arun Ross",
+        "Dongxiao Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.23508",
+      "similarity": 0.6929,
+      "summary": "BOS Summary is a training‑free, inference‑time trick that changes how the beginning‑of‑sequence (BOS) token attends to the rest of the input. By relaxing the causal mask only for the BOS query row at a single transformer layer during prefill, BOS can aggregate all visual and textual tokens into a context representation while every other token keeps standard causal attention, and no extra parameters or decoding overhead are added. Across multiple VLM and LLM families and eight multimodal and text‑only benchmarks, BOS Summary outperforms direct and Chain‑of‑Thought prompting and recent sink‑intervention methods on multi‑step reasoning tasks, and analysis shows it weakens BOS’s sink dominance and shifts attention toward content‑bearing prompt tokens."
+    },
+    {
+      "arxiv_id": "2611.23388",
+      "title": "QDA: Closed-Loop LLM Quantization Design with Agents",
+      "authors": [
+        "Xingyang Li",
+        "Tianlang Zhao",
+        "Song Han",
+        "Ligeng Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.23388",
+      "similarity": 0.6909,
+      "summary": "QDA is a system that lets an LLM agent automatically design post‑training quantization recipes for large language models, iteratively building and evaluating candidates. It speeds evaluation by scoring each candidate in minutes using KL divergence on unseen reasoning traces, and then validating promising ones with longer generations to catch failures such as repetition loops. Across four reasoning models, QDA improves accuracy over the strongest public recipe by 0.9, 1.4, and 2.2 percentage points on average at W4A16, W4A8, and W3A16, and on a 320‑B‑parameter MoE model GLM‑5.3‑Flash at NVFP4 W4A4 it recovers 98.3 % of the FP8 model’s accuracy versus 96.9 % for the best vendor checkpoint, all while using 64 GPU‑hours per search and adding no inference overhead."
+    },
+    {
+      "arxiv_id": "2611.23533",
+      "title": "Can LLMs Understand What They Predict? Evaluating Latent Causal Structure Inference in Financial Markets",
+      "authors": [
+        "Yixiang Zheng",
+        "Yuechen Jiang",
+        "Zhiwei Liu",
+        "Jimin Huang",
+        "Yuyan Wang",
+        "Sophia Ananiadou"
+      ],
+      "url": "https://arxiv.org/abs/2611.23533",
+      "similarity": 0.6901,
+      "summary": "The paper introduces LUCID, a benchmark that tests whether large language models can infer hidden market structures from event descriptions and past financial data. Models produce event‑induced causal graphs, which are then evaluated by reconstructing market observations. Across six open‑weight and proprietary LLMs, adding the generated graphs usually worsens reconstruction quality compared with using historical data alone, though a few metrics show improvement."
+    }
+  ]
+}

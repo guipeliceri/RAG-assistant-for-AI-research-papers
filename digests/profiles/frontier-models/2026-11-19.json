@@ -1,0 +1,329 @@
+{
+  "profile": "frontier-models",
+  "profile_name": "Advances in current frontier models",
+  "profile_fingerprint": "f0f03a6fcb04",
+  "model": "openai/gpt-oss-120b",
+  "borderline": "include",
+  "threshold": null,
+  "date": "2026-11-19",
+  "generated_at": "2026-11-19T02:10:28+00:00",
+  "candidates": 24,
+  "classified": 24,
+  "errors": 2,
+  "papers": [
+    {
+      "arxiv_id": "2611.23546",
+      "title": "Language Models Make New Research Sound Old",
+      "authors": [
+        "Guy Zyskind"
+      ],
+      "url": "https://arxiv.org/abs/2611.23546",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Analyzes and benchmarks frontier LLMs' ability to correctly report research novelty, directly measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.23388",
+      "title": "QDA: Closed-Loop LLM Quantization Design with Agents",
+      "authors": [
+        "Xingyang Li",
+        "Tianlang Zhao",
+        "Song Han",
+        "Ligeng Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.23388",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel LLM quantization system improving efficiency, directly matching the profile's focus on quantization and fast inference."
+    },
+    {
+      "arxiv_id": "2611.23750",
+      "title": "Beyond Replacement: Levenshtein Editing for Diffusion Language Models",
+      "authors": [
+        "Shuaidi Wang",
+        "Zhuocheng Gong",
+        "Xuejie Liu",
+        "Jianguo Li",
+        "Yu Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.23750",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new diffusion LM architecture and post‑training editing technique for improved generation, fitting frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.23601",
+      "title": "FutureBench: A Renewable Framework for Evaluating Knowledge-Context Conflict in LLMs",
+      "authors": [
+        "Yi-Cheng Lai",
+        "Hen-Hsen Huang"
+      ],
+      "url": "https://arxiv.org/abs/2611.23601",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a benchmark evaluating LLM knowledge-context conflict, fitting the profile's interest in capability measurement benchmarks."
+    },
+    {
+      "arxiv_id": "2611.23533",
+      "title": "Can LLMs Understand What They Predict? Evaluating Latent Causal Structure Inference in Financial Markets",
+      "authors": [
+        "Yixiang Zheng",
+        "Yuechen Jiang",
+        "Zhiwei Liu",
+        "Jimin Huang",
+        "Yuyan Wang",
+        "Sophia Ananiadou"
+      ],
+      "url": "https://arxiv.org/abs/2611.23533",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new benchmark evaluating LLMs' causal inference capabilities, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.23508",
+      "title": "BOS Summary: The First Token Matters",
+      "authors": [
+        "Hui Zhu",
+        "Saleh Zare Zade",
+        "Rafi Ibn Sultan",
+        "Deng Pan",
+        "Arun Ross",
+        "Dongxiao Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.23508",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "reason": "Introduces a novel inference-time attention modification that improves reasoning in LLMs/LVLMs, aligning with frontier model architecture and chain-of-thought research."
+    },
+    {
+      "arxiv_id": "2611.23483",
+      "title": "SpecLook: Speculating Where to Look for Fast and Reliable Agentic MLLMs",
+      "authors": [
+        "Xi Ding",
+        "Jiawei Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.23483",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "reason": "Introduces a fast, reliable framework for multimodal LLMs, addressing efficiency and benchmarking of state-of-the-art agents."
+    },
+    {
+      "arxiv_id": "2611.23673",
+      "title": "Communicative On-Policy Distillation: Distilling Black-Box Teacher Capabilities through Communication for Long-Horizon Tasks",
+      "authors": [
+        "Lirui Luo",
+        "Kelong Mao",
+        "Xinwei Yang",
+        "Rongqing Li",
+        "Luyu Chen",
+        "Kieran Wong",
+        "Yudong Guo",
+        "Xinrui Wang",
+        "Jiayin Zhu",
+        "Gu Simiu",
+        "Sulong Xu",
+        "Cong Fang"
+      ],
+      "url": "https://arxiv.org/abs/2611.23673",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel on-policy distillation technique for LLM agents, directly relevant to distillation and reinforcement learning advances."
+    },
+    {
+      "arxiv_id": "2611.23386",
+      "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
+      "authors": [
+        "Stephen Chung",
+        "Wenyu Du"
+      ],
+      "url": "https://arxiv.org/abs/2611.23386",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a more memory‑efficient architecture for large language models using shared n‑gram embeddings, aligning with scaling and efficiency interests."
+    },
+    {
+      "arxiv_id": "2611.23835",
+      "title": "NarrowSpec: Draft Hidden Width Need Not Match the Target in Speculative Decoding",
+      "authors": [
+        "Alagappan Valliappan",
+        "Ankit More",
+        "Dheevatsa Mudigere",
+        "Jatin Mitra"
+      ],
+      "url": "https://arxiv.org/abs/2611.23835",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "cs.PF"
+      ],
+      "reason": "Introduces efficiency improvements for LLM inference via narrower draft models in speculative decoding."
+    },
+    {
+      "arxiv_id": "2611.23403",
+      "title": "Tracking Representations in LLM Reasoning Traces for Iterated Games",
+      "authors": [
+        "Chaipat Tirapongprasert",
+        "Rajarshi Das",
+        "Parijat Dube"
+      ],
+      "url": "https://arxiv.org/abs/2611.23403",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.GT"
+      ],
+      "reason": "Focuses on chain-of-thought reasoning in LLMs, aligning with the profile's interest in reasoning and CoT analysis."
+    },
+    {
+      "arxiv_id": "2611.23716",
+      "title": "Learning through Discernment: when a small language model learns from user feedback on the job, and when it decays",
+      "authors": [
+        "Sirisilp Kongsilp"
+      ],
+      "url": "https://arxiv.org/abs/2611.23716",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "It investigates user‑feedback based fine‑tuning (preference optimization) for language models, which falls under post‑training techniques the profile tracks"
+    },
+    {
+      "arxiv_id": "2611.23751",
+      "title": "Thinking Fast, Anywhere: One System-1 for the Decision Points of Any Agent Workflow",
+      "authors": [
+        "Rui Li",
+        "Liyang He",
+        "Zheng Zhang",
+        "Zhenya Huang",
+        "Qi Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.23751",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a domain-general lightweight System-1 model to reduce cost and latency of LLM agents, aligning with efficiency and dual-system advances."
+    },
+    {
+      "arxiv_id": "2611.23530",
+      "title": "Dreaming Up Authors: Factual Prevalence and LLM Hallucinations in Academic Authorship Attribution",
+      "authors": [
+        "Sijia Zhong",
+        "Tamir Yirga",
+        "Yijia Ma",
+        "Thai Le",
+        "Yifan Hu"
+      ],
+      "url": "https://arxiv.org/abs/2611.23530",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "It provides a benchmark analysis of LLM hallucination behavior, measuring model limits."
+    },
+    {
+      "arxiv_id": "2611.23633",
+      "title": "Option-GRPO: Hierarchical RL Against AI Slop in Code Generation for Unseen SDKs",
+      "authors": [
+        "Prashank Kadam"
+      ],
+      "url": "https://arxiv.org/abs/2611.23633",
+      "categories": [
+        "cs.SE",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a hierarchical RL fine‑tuning method for code LLMs, a post‑training reinforcement learning technique relevant to frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.23570",
+      "title": "Safe to Omit, Worth Omitting? Keeping the Answer and Cutting Latency When an LLM Agent Skips Another's Message",
+      "authors": [
+        "Xinyang Li",
+        "Chih-Hsuan Yang",
+        "Xiaolong Ma",
+        "Anjir Ahmed Chowdhury",
+        "Vikram Vasudevan",
+        "Rajeev Thakur",
+        "Feng Yan"
+      ],
+      "url": "https://arxiv.org/abs/2611.23570",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a method to reduce inference latency in LLM agents, aligning with the profile's focus on efficiency and advanced LLM system techniques."
+    },
+    {
+      "arxiv_id": "2611.23807",
+      "title": "Sightline: Long-Window Speculative Decoding for Fast SVG Generation",
+      "authors": [
+        "Yanchao Li",
+        "Ben Gao",
+        "Jiaqing Xie",
+        "Yusu Zhang",
+        "Beilun Wang",
+        "Yanbo Wang",
+        "Xiaohua Xu",
+        "Nanqing Dong",
+        "Tianfan Fu",
+        "Zhongyu Huang"
+      ],
+      "url": "https://arxiv.org/abs/2611.23807",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a speculative decoding technique to speed up inference, fitting the profile's interest in fast inference efficiency."
+    },
+    {
+      "arxiv_id": "2611.23651",
+      "title": "Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates",
+      "authors": [
+        "Jiapeng Pei",
+        "Yuhang Yao",
+        "Sitan Liu",
+        "Hanxin Chen",
+        "Hao Li",
+        "Guogeng Li",
+        "Jiapei Liu",
+        "Ruijie Chen",
+        "Hongshan Lin",
+        "Yang Mo",
+        "Tianyu Shi",
+        "Shangding Gu"
+      ],
+      "url": "https://arxiv.org/abs/2611.23651",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark and safety evaluation method for instruction updates, relevant to post‑training safety and capability measurement of frontier models."
+    }
+  ]
+}

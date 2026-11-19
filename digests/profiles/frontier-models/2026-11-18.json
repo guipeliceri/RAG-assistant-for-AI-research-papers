@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-18",
-  "generated_at": "2026-11-18T02:42:31+00:00",
-  "candidates": 29,
-  "classified": 29,
-  "errors": 3,
+  "generated_at": "2026-11-19T02:13:30+00:00",
+  "candidates": 87,
+  "classified": 87,
+  "errors": 29,
   "papers": [
     {
       "arxiv_id": "2611.22148",
@@ -29,6 +29,24 @@
       "reason": "Analyzes sampling methods for long-context generation and provides extensive benchmark results, directly addressing long-context capabilities."
     },
     {
+      "arxiv_id": "2611.23229",
+      "title": "Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching",
+      "authors": [
+        "Giannis Daras",
+        "Marios Papachristou",
+        "Adam Klivans",
+        "Antonio Torralba",
+        "Constantinos Daskalakis"
+      ],
+      "url": "https://arxiv.org/abs/2611.23229",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new supervised fine-tuning method for LLMs, directly relevant to post‑training instruction tuning and model improvement."
+    },
+    {
       "arxiv_id": "2611.21983",
       "title": "Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation",
       "authors": [
@@ -42,6 +60,53 @@
         "nlin.CD"
       ],
       "reason": "It analyzes LLM behavior and limits (e.g., repetition loops, temperature scaling), providing insights relevant to benchmarking and understanding frontier models."
+    },
+    {
+      "arxiv_id": "2611.22511",
+      "title": "LMLineage: Content Lineage and Context Governance for LLM Agents",
+      "authors": [
+        "Wei Hou",
+        "Jingxin Geng",
+        "Xin Chen",
+        "Zheqing Jiang"
+      ],
+      "url": "https://arxiv.org/abs/2611.22511",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a system for managing and compacting long-context LLM sessions, aligning with the profile's focus on long-context handling and efficiency."
+    },
+    {
+      "arxiv_id": "2611.23158",
+      "title": "MoE--LoRA Methods for Multilingual Adaptation: A Systematic Empirical Study",
+      "authors": [
+        "Nikit Srivastava",
+        "Joel Dag",
+        "René Speck",
+        "Axel-Cyrille Ngonga Ngomo"
+      ],
+      "url": "https://arxiv.org/abs/2611.23158",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Evaluates LoRA adaptation methods for multilingual LLMs, a post‑training efficiency technique and large‑scale capability benchmark."
+    },
+    {
+      "arxiv_id": "2611.23045",
+      "title": "ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents",
+      "authors": [
+        "Yicheng Tao",
+        "Yuante Li",
+        "Zipei Fan"
+      ],
+      "url": "https://arxiv.org/abs/2611.23045",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark to evaluate LLM forecasting agents, aligning with capability measurement."
     },
     {
       "arxiv_id": "2611.22219",
@@ -59,6 +124,24 @@
         "cs.CL"
       ],
       "reason": "It provides a benchmark evaluation of LLM capabilities (including fine‑tuning and token limits) on a fine‑grained Japanese clinical NER task."
+    },
+    {
+      "arxiv_id": "2611.22708",
+      "title": "Cross-cultural Adaptation of Recipes for Low-Resource Languages: A Benchmark and Multilingual Culinary Lexicon for Hausa, Yorùbá, and Igbo",
+      "authors": [
+        "Nuhu Ibrahim",
+        "Maryam Abdulazeez",
+        "Fatsuma Jauro",
+        "Salisu Aliyu",
+        "Robert Stevens",
+        "Riza Batista-Navarro"
+      ],
+      "url": "https://arxiv.org/abs/2611.22708",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a benchmark and evaluation of multilingual LLMs, fitting the profile's interest in benchmarks measuring state-of-the-art model capabilities."
     },
     {
       "arxiv_id": "2611.22055",
@@ -105,6 +188,35 @@
       "reason": "Focuses on mixed-precision quantization and deployment efficiency for large language models, matching the profile's interest in quantization and fast inference."
     },
     {
+      "arxiv_id": "2611.22485",
+      "title": "Growing Clusters Lower the Bar: Profile Accretion in LLM-Based Incremental Entity Resolution",
+      "authors": [
+        "Huixue Han",
+        "Shangzhi Xu",
+        "Anqi Xiong",
+        "Yu-Chu Tian"
+      ],
+      "url": "https://arxiv.org/abs/2611.22485",
+      "categories": [
+        "cs.CL",
+        "cs.DB"
+      ],
+      "reason": "It analyzes LLM behavior and provides a benchmark of their limits in incremental entity resolution, fitting the profile's interest in capability measurements."
+    },
+    {
+      "arxiv_id": "2611.22935",
+      "title": "The Shared Word: Evaluating Language Models on Dutch Word Puzzles",
+      "authors": [
+        "Rik van Noord",
+        "Maurice Voors"
+      ],
+      "url": "https://arxiv.org/abs/2611.22935",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new Dutch benchmark to evaluate LLM reasoning and capabilities, fitting the profile's interest in capability benchmarks."
+    },
+    {
       "arxiv_id": "2611.21921",
       "title": "Latent Fact Composition under Next-Token Training",
       "authors": [
@@ -137,6 +249,35 @@
       "reason": "Introduces a benchmark dataset to evaluate LLM reasoning and cross-representation consistency, fitting the profile's interest in capability measurement."
     },
     {
+      "arxiv_id": "2611.22580",
+      "title": "AfriNORM: An Evaluation Benchmark for Normative Reasoning of LLMs Across African Cultures",
+      "authors": [
+        "Ahmad Samuel Gali",
+        "Tadesse Destaw Belay",
+        "Idris Abdulmumin",
+        "Seid Muhie Yimam",
+        "Shamsuddeen Hassan Muhammad"
+      ],
+      "url": "https://arxiv.org/abs/2611.22580",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark evaluating LLM capabilities in cultural normative reasoning, fitting the profile's interest in capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.22188",
+      "title": "From Imperfective Paradox to Moorean Absurdity: Single-Chain Reasoning Lock-In and Multi-Candidate Verbalization Across Aspectual and Pragmatic Ambiguity",
+      "authors": [
+        "An-Sheng Jhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.22188",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Investigates chain-of-thought prompting and multi-candidate reasoning methods on a frontier LLM, providing benchmark-like insights."
+    },
+    {
       "arxiv_id": "2611.21878",
       "title": "Knowing Which, Not How Much: Language Models Order Party Positions They Cannot Place",
       "authors": [
@@ -166,6 +307,41 @@
         "econ.GN"
       ],
       "reason": "Provides a benchmark analysis of reasoning effort, confidence, and calibration in multimodal LLM agents, directly measuring capabilities of frontier models."
+    },
+    {
+      "arxiv_id": "2611.23026",
+      "title": "TPHC: Improving Hyper-Connections with Tensor-Parallel Grouped Updates",
+      "authors": [
+        "Xinying Hu",
+        "You Wu",
+        "Haoyi Wu",
+        "Jianchao Tan",
+        "Kefeng Zhang",
+        "Yuchen Xie",
+        "Kewei Tu"
+      ],
+      "url": "https://arxiv.org/abs/2611.23026",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new transformer architecture modification (TPHC) that improves scaling and efficiency, fitting the profile's focus on frontier model architectures and performance."
+    },
+    {
+      "arxiv_id": "2611.22270",
+      "title": "Teaching Language Models to Narrow Boolean Patent Searches from Search Feedback",
+      "authors": [
+        "Seiya Kawano",
+        "Koji Marusaki",
+        "Hirofumi Nonaka",
+        "Koichiro Yoshino"
+      ],
+      "url": "https://arxiv.org/abs/2611.22270",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces preference learning and offline RL-like adaptation for LLMs, fitting post‑training optimization topics."
     },
     {
       "arxiv_id": "2611.21925",
@@ -200,6 +376,58 @@
         "cs.AI"
       ],
       "reason": "Introduces a new benchmark-based evaluation method for LLM fact-checking, fitting the profile's interest in capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.22262",
+      "title": "OfficePrism: Benchmarking Agents on Single-Domain Operations Across Enterprise Business Functions",
+      "authors": [
+        "Hanfeng Liu",
+        "Zhenyu Luo",
+        "Dongchao Zhang",
+        "Zexi Liu",
+        "Zulong Chen",
+        "Jinxin Hu",
+        "Jia Xu",
+        "Zeyi Wen"
+      ],
+      "url": "https://arxiv.org/abs/2611.22262",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "reason": "Introduces a new benchmark evaluating LLM agents on enterprise tasks, measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.22539",
+      "title": "JET: Just-Enough Exploration Tuning for Efficient Tool-Calling Agents in Repository-Level Question Answering",
+      "authors": [
+        "Yoonho Choi",
+        "Taehyeon Han",
+        "Seonghyeon Lee"
+      ],
+      "url": "https://arxiv.org/abs/2611.22539",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a fine-tuning technique to improve LLM agent efficiency, fitting post‑training advances in instruction tuning and inference cost reduction."
+    },
+    {
+      "arxiv_id": "2611.23185",
+      "title": "Polarity Composition Hypothesis: Causal Evidence from Negation in NLI",
+      "authors": [
+        "Nhi Hoai Doan",
+        "Tatsuya Hiraoka",
+        "Munachiso Samuel Nwadike",
+        "Kentaro Inui"
+      ],
+      "url": "https://arxiv.org/abs/2611.23185",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new dataset and analysis probing LLMs' handling of negation, a capability benchmark relevant to model limits."
     },
     {
       "arxiv_id": "2611.22191",
@@ -250,6 +478,24 @@
         "cs.LG"
       ],
       "reason": "Introduces a benchmark to evaluate capabilities of frontier language agents, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.23074",
+      "title": "Runtime Verification of Multiple Natural Language Criteria for Agent Governance",
+      "authors": [
+        "Silviu Pitis",
+        "Parand A. Alamdari",
+        "Jessica Tang",
+        "Toryn Q. Klassen",
+        "Sheila A. McIlraith"
+      ],
+      "url": "https://arxiv.org/abs/2611.23074",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new efficient model architecture and scaling benchmarks for multi-criterion language verification."
     },
     {
       "arxiv_id": "2611.22009",
@@ -311,6 +557,65 @@
         "cs.AI"
       ],
       "reason": "Introduces a new benchmark for evaluating retrieval-augmented generation, fitting the profile's interest in capability-measuring benchmarks."
+    },
+    {
+      "arxiv_id": "2611.22241",
+      "title": "Where Does Hindsight Enter Clinical Agent Benchmarks? An Audit of Simulators and Case Construction",
+      "authors": [
+        "Meilu Zhu",
+        "Xiaohan Li",
+        "Axiu Mao"
+      ],
+      "url": "https://arxiv.org/abs/2611.22241",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces and audits a benchmark for LLM diagnostic agents, directly measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.22353",
+      "title": "NONSENSE: Non-Semantic Strings Expose Semanticity Gaps in Dense Retrieval",
+      "authors": [
+        "Ankit Gupta"
+      ],
+      "url": "https://arxiv.org/abs/2611.22353",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "reason": "Introduces a probe that benchmarks the limits of dense retrieval models used in LLM pipelines"
+    },
+    {
+      "arxiv_id": "2611.23115",
+      "title": "Nunchi: Ears Help Eyes in Multi-Party Conversations",
+      "authors": [
+        "JunYeong Park",
+        "Shijing Wang",
+        "Seonwook Park",
+        "Michael Stengel",
+        "Shalini De Mello",
+        "Sang-Il Choi",
+        "Hyung Jin Chang"
+      ],
+      "url": "https://arxiv.org/abs/2611.23115",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces a multimodal benchmark and uses vision-language models, aligning with the profile's interest in multimodal models and capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.22835",
+      "title": "When Passing Checks Do Not Establish Completion: Evidence Interpretation in Coding Agents",
+      "authors": [
+        "Xueping Gao"
+      ],
+      "url": "https://arxiv.org/abs/2611.22835",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "reason": "It proposes an evaluation study/benchmark for coding agents, fitting the profile's interest in capability measurement."
     }
   ]
 }

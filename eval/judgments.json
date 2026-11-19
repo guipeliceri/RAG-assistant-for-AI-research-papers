@@ -434,5 +434,17 @@
   "acf8a49d322d:2611.18279": {
     "relevant": true,
     "reason": "Introduces a new evaluation framework and benchmark for assessing LLMs in rule-governed contexts, aligning with the profile's interest in benchmarks measuring model capabilities."
+  },
+  "acf8a49d322d:2611.18527": {
+    "relevant": false,
+    "reason": "Focuses on hardware mapping techniques rather than model architectures, training, or inference methods."
+  },
+  "acf8a49d322d:2611.19220": {
+    "relevant": true,
+    "reason": "Introduces a new method for selecting context subsets in LLM inference, directly addressing long-context and efficiency concerns."
+  },
+  "acf8a49d322d:2611.19151": {
+    "relevant": false,
+    "reason": "Focuses on domain-specific adaptation of an existing model rather than advancing frontier model architectures, scaling, or core efficiency techniques."
   }
 }
