@@ -446,5 +446,17 @@
   "acf8a49d322d:2611.19151": {
     "relevant": false,
     "reason": "Focuses on domain-specific adaptation of an existing model rather than advancing frontier model architectures, scaling, or core efficiency techniques."
+  },
+  "acf8a49d322d:2611.19299": {
+    "relevant": true,
+    "reason": "Introduces a novel low‑compute distillation method for LLM agents, aligning with the profile's focus on efficiency and distillation."
+  },
+  "acf8a49d322d:2611.22148": {
+    "relevant": true,
+    "reason": "Focuses on sampling methods to improve long-context generation, a key topic in the profile."
+  },
+  "acf8a49d322d:2611.22120": {
+    "relevant": true,
+    "reason": "Focuses on Mixture-of-Experts routing and behavior, directly matching MoE architecture interest."
   }
 }

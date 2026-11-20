@@ -6,11 +6,24 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-19",
-  "generated_at": "2026-11-19T02:10:28+00:00",
-  "candidates": 24,
-  "classified": 24,
-  "errors": 2,
+  "generated_at": "2026-11-20T01:59:12+00:00",
+  "candidates": 68,
+  "classified": 68,
+  "errors": 10,
   "papers": [
+    {
+      "arxiv_id": "2611.24540",
+      "title": "Do Frontier Model Ingredients Add Up? A Replicated Factorial Study of Small Language Models",
+      "authors": [
+        "Biswa Sengupta"
+      ],
+      "url": "https://arxiv.org/abs/2611.24540",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Evaluates and combines frontier model components like MoE and optimization techniques, directly relevant to model architecture and training recipes."
+    },
     {
       "arxiv_id": "2611.23546",
       "title": "Language Models Make New Research Sound Old",
@@ -23,6 +36,64 @@
         "cs.AI"
       ],
       "reason": "Analyzes and benchmarks frontier LLMs' ability to correctly report research novelty, directly measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.24654",
+      "title": "CurvDelta: Low-Curvature Delta Modeling For Surgical Learning and Unlearning",
+      "authors": [
+        "Zeguan Xiao",
+        "Zhuocheng Liang",
+        "Yun Chen",
+        "Yong Wang",
+        "Guanhua Chen",
+        "Pinyan Lu"
+      ],
+      "url": "https://arxiv.org/abs/2611.24654",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new LLM adaptation method focusing on capability preservation, relevant to post‑training techniques for frontier models."
+    },
+    {
+      "arxiv_id": "2611.24588",
+      "title": "Large Language Models or AI Agents for English to Arabic Translation? An assessment on WikiEn-Ar190",
+      "authors": [
+        "Fatima Zahra Iguenfer",
+        "Yousra Chtouki"
+      ],
+      "url": "https://arxiv.org/abs/2611.24588",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new translation benchmark and evaluates a frontier LLM, measuring its capabilities."
+    },
+    {
+      "arxiv_id": "2611.24793",
+      "title": "The Elephant in the Question: Unified Models Picture the Concepts Behind Their Answers",
+      "authors": [
+        "Tobias Braun",
+        "Marcus Rohrbach",
+        "Lorenzo Cavallaro"
+      ],
+      "url": "https://arxiv.org/abs/2611.24793",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new technique for visualizing and supervising hidden states in unified multimodal models, advancing multimodal model analysis and post‑training methods."
+    },
+    {
+      "arxiv_id": "2611.24043",
+      "title": "Compression Effects on Low-Resource Multilingual Translation",
+      "authors": [
+        "Abbas Sani"
+      ],
+      "url": "https://arxiv.org/abs/2611.24043",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Studies post-training quantization effects on multilingual models, directly addressing efficiency and compression of frontier models."
     },
     {
       "arxiv_id": "2611.23388",
@@ -91,6 +162,23 @@
       "reason": "Introduces a new benchmark evaluating LLMs' causal inference capabilities, fitting the profile's interest in capability measurement."
     },
     {
+      "arxiv_id": "2611.24001",
+      "title": "Rethinking Fixed-Horizon Latent Reasoning",
+      "authors": [
+        "Tianxiang Chen",
+        "Jingyuan Zhou",
+        "Weiming Yang",
+        "Kaidi Yang"
+      ],
+      "url": "https://arxiv.org/abs/2611.24001",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces adaptive latent chain-of-thought inference to improve reasoning accuracy and efficiency, directly relevant to reasoning and efficiency topics."
+    },
+    {
       "arxiv_id": "2611.23508",
       "title": "BOS Summary: The First Token Matters",
       "authors": [
@@ -108,6 +196,38 @@
         "cs.CV"
       ],
       "reason": "Introduces a novel inference-time attention modification that improves reasoning in LLMs/LVLMs, aligning with frontier model architecture and chain-of-thought research."
+    },
+    {
+      "arxiv_id": "2611.24567",
+      "title": "Objective-Specialized Residual Streams in Manifold-Constrained Hyper-Connections",
+      "authors": [
+        "Shantanu Agarwal",
+        "Ruchita V. Maitri",
+        "Zhiqi Huang",
+        "Vivek Datla",
+        "Alfy Samuel"
+      ],
+      "url": "https://arxiv.org/abs/2611.24567",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel transformer residual-stream architecture with objective-specialized streams, fitting the profile's focus on new model architectures."
+    },
+    {
+      "arxiv_id": "2611.24071",
+      "title": "Measuring and Charging for Retained Context in Long-Context LLM Services",
+      "authors": [
+        "Yi Lu",
+        "Qianshi Lin",
+        "Yumeng Yang",
+        "Hongxia Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.24071",
+      "categories": [
+        "cs.PF",
+        "cs.CL"
+      ],
+      "reason": "Focuses on long-context LLM usage, efficiency, and measurement, directly matching the profile interests."
     },
     {
       "arxiv_id": "2611.23483",
@@ -149,6 +269,84 @@
         "cs.CL"
       ],
       "reason": "Introduces a novel on-policy distillation technique for LLM agents, directly relevant to distillation and reinforcement learning advances."
+    },
+    {
+      "arxiv_id": "2611.24830",
+      "title": "A Foundation Model to Measure and Predict Human Behaviour",
+      "authors": [
+        "Haoran Ye",
+        "Tianrui Huo",
+        "Hangzhen Li",
+        "Xin Zhang",
+        "Guojie Song"
+      ],
+      "url": "https://arxiv.org/abs/2611.24830",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "reason": "Introduces a new foundation LLM and evaluates its capabilities, fitting the profile's interest in new model releases and benchmarks."
+    },
+    {
+      "arxiv_id": "2611.24721",
+      "title": "Induction Head Origins of SLAM-ASR Speech Recognition Models",
+      "authors": [
+        "Artem Fedorchenko",
+        "Tanel Alumäe"
+      ],
+      "url": "https://arxiv.org/abs/2611.24721",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Analyzes and leverages frozen language model mechanisms for multimodal speech recognition, fitting the profile's focus on multimodal models and internal architecture insights."
+    },
+    {
+      "arxiv_id": "2611.23832",
+      "title": "A System 1 Decision Model for Medical Multiple-Choice Questions Built on Frozen Language Models",
+      "authors": [
+        "Pavan Kumar Mantha"
+      ],
+      "url": "https://arxiv.org/abs/2611.23832",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a lightweight post-training method on frozen frontier LLMs and evaluates on a capability benchmark"
+    },
+    {
+      "arxiv_id": "2611.24650",
+      "title": "Self-Rewarded Reinforcement Learning for Better-Structured Medical Explanations in Small Language Models",
+      "authors": [
+        "Prakhar Mishra",
+        "Bhavya Yajush Awasthi",
+        "Tanuja",
+        "Nishant"
+      ],
+      "url": "https://arxiv.org/abs/2611.24650",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a reinforcement learning fine‑tuning method for language models, aligning with post‑training RL research in the profile."
+    },
+    {
+      "arxiv_id": "2611.24626",
+      "title": "Transferring an analysis of human brain organization to language models",
+      "authors": [
+        "Donghyeok Lee",
+        "Sangwon Yu",
+        "Sangkwon Park",
+        "Hye Youn Park",
+        "Munyoung Chang",
+        "Sungroh Yoon"
+      ],
+      "url": "https://arxiv.org/abs/2611.24626",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a brain-inspired weight grafting method to improve reasoning in language models, directly relating to reasoning and instruction-tuned model enhancements."
     },
     {
       "arxiv_id": "2611.23386",
@@ -197,6 +395,65 @@
       "reason": "Focuses on chain-of-thought reasoning in LLMs, aligning with the profile's interest in reasoning and CoT analysis."
     },
     {
+      "arxiv_id": "2611.24058",
+      "title": "MIRAGE: A Framework for Multi-hop Reasoning under Dynamic Knowledge Injection",
+      "authors": [
+        "Heyang Xu",
+        "HanWen Hao",
+        "Haifeng Wang",
+        "Haoyi Zhou",
+        "Jianxin Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.24058",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark and reasoning framework for LLMs, advancing multi-hop reasoning and evaluation of model capabilities."
+    },
+    {
+      "arxiv_id": "2611.24379",
+      "title": "MoE-Context: Show the Model Only What It Needs",
+      "authors": [
+        "Vedant Navale"
+      ],
+      "url": "https://arxiv.org/abs/2611.24379",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a context-selection technique to improve long-context efficiency, aligning with frontier model architecture and scaling topics."
+    },
+    {
+      "arxiv_id": "2611.24711",
+      "title": "Openhagen Worlds: Calibrated Environments for Measuring and Training Scientific Discovery Agents",
+      "authors": [
+        "Alexander Boesgaard Lorup"
+      ],
+      "url": "https://arxiv.org/abs/2611.24711",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a calibrated benchmark for measuring LLM reasoning and long-context capabilities in scientific discovery, directly relevant to model evaluation."
+    },
+    {
+      "arxiv_id": "2611.24383",
+      "title": "What Majority Labels Hide: Annotator Disagreement and Model Errors in Multi-Dialect Arabic Sexism Detection",
+      "authors": [
+        "Alaa Bazaid",
+        "Arkaitz Zubiaga"
+      ],
+      "url": "https://arxiv.org/abs/2611.24383",
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "cs.SI"
+      ],
+      "reason": "Introduces a new Arabic sexism detection benchmark and evaluates large language models on it, fitting the profile's interest in capability benchmarks."
+    },
+    {
       "arxiv_id": "2611.23716",
       "title": "Learning through Discernment: when a small language model learns from user feedback on the job, and when it decays",
       "authors": [
@@ -209,6 +466,21 @@
         "cs.CL"
       ],
       "reason": "It investigates user‑feedback based fine‑tuning (preference optimization) for language models, which falls under post‑training techniques the profile tracks"
+    },
+    {
+      "arxiv_id": "2611.24076",
+      "title": "Meaning Reaches Object Choice but Not Completion: Where Is a VLA Vulnerable to Landmark Synonyms?",
+      "authors": [
+        "Ryoichi Kurihara",
+        "Kota Sunamoto"
+      ],
+      "url": "https://arxiv.org/abs/2611.24076",
+      "categories": [
+        "cs.RO",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Analyzes robustness and intervention in a vision-language model, fitting multimodal model evaluation and benchmarking."
     },
     {
       "arxiv_id": "2611.23751",
@@ -227,6 +499,23 @@
         "cs.LG"
       ],
       "reason": "Introduces a domain-general lightweight System-1 model to reduce cost and latency of LLM agents, aligning with efficiency and dual-system advances."
+    },
+    {
+      "arxiv_id": "2611.24000",
+      "title": "A Mechanistic Analysis of In-Context Learning and Out-of-Context Hallucination",
+      "authors": [
+        "Tianxiang Chen",
+        "Jingyuan Zhou",
+        "Guoyao Yang",
+        "Kaidi Yang"
+      ],
+      "url": "https://arxiv.org/abs/2611.24000",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Analyzes in-context learning mechanisms and hallucination, directly addressing capabilities and limits of frontier LLMs."
     },
     {
       "arxiv_id": "2611.23530",
@@ -278,6 +567,25 @@
       "reason": "Introduces a method to reduce inference latency in LLM agents, aligning with the profile's focus on efficiency and advanced LLM system techniques."
     },
     {
+      "arxiv_id": "2611.24301",
+      "title": "LoopCache: Accelerating Long-Context Self-Speculative Decoding for Looped Transformers",
+      "authors": [
+        "Zizhuo Fu",
+        "Haochen Huang",
+        "Shengxuan Qiu",
+        "Linye Wei",
+        "Ziyu Tang",
+        "Runsheng Wang",
+        "Meng Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.24301",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a fast inference technique for long-context Looped Transformers, aligning with efficiency and long-context advances."
+    },
+    {
       "arxiv_id": "2611.23807",
       "title": "Sightline: Long-Window Speculative Decoding for Fast SVG Generation",
       "authors": [
@@ -324,6 +632,26 @@
         "cs.CL"
       ],
       "reason": "Introduces a benchmark and safety evaluation method for instruction updates, relevant to post‑training safety and capability measurement of frontier models."
+    },
+    {
+      "arxiv_id": "2611.24888",
+      "title": "Who are you? The Personal Imitation Game",
+      "authors": [
+        "Muhammad Rizky Wellyanto",
+        "Hajara-Yasmin Isa",
+        "Kexin Xue",
+        "Vishal Ravichandran",
+        "Wenpeng Lu",
+        "Jerry O. Talton",
+        "Ranjitha Kumar"
+      ],
+      "url": "https://arxiv.org/abs/2611.24888",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark evaluating LLMs' ability to imitate specific individuals, measuring model capabilities."
     }
   ]
 }

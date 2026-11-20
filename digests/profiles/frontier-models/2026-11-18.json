@@ -6,11 +6,34 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-18",
-  "generated_at": "2026-11-19T02:13:30+00:00",
+  "generated_at": "2026-11-20T02:00:43+00:00",
   "candidates": 87,
   "classified": 87,
-  "errors": 29,
+  "errors": 12,
   "papers": [
+    {
+      "arxiv_id": "2611.23357",
+      "title": "A Survey on RLOps for Large Language Models",
+      "authors": [
+        "Lingzhe Zhang",
+        "Tong Jia",
+        "Chiming Duan",
+        "Minghua He",
+        "Leyi Pan",
+        "Kening Zheng",
+        "Zhaoyang Liu",
+        "Bolin Ding",
+        "Philip S. Yu",
+        "Ying Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.23357",
+      "categories": [
+        "cs.SE",
+        "cs.CL",
+        "cs.CR"
+      ],
+      "reason": "Provides an analysis of RL-based training methods for LLMs, aligning with the profile's interest in reinforcement learning for reasoning and post‑training techniques."
+    },
     {
       "arxiv_id": "2611.22148",
       "title": "Long-Context Generation Is a Sampling Problem (When You Turn Up the Heat)",
@@ -47,6 +70,26 @@
       "reason": "Introduces a new supervised fine-tuning method for LLMs, directly relevant to post‑training instruction tuning and model improvement."
     },
     {
+      "arxiv_id": "2611.22308",
+      "title": "VRLLM: Turning LLMs into Powerful Tabular Classifiers",
+      "authors": [
+        "Yingtong Dou",
+        "Shubham Jain",
+        "Junpeng Wang",
+        "Hadi Abdullah",
+        "Vineeth Rakesh Mohan",
+        "Yuzhong Chen",
+        "Liang Wang",
+        "Yiwei Cai"
+      ],
+      "url": "https://arxiv.org/abs/2611.22308",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "It benchmarks and analyzes frontier LLM capabilities on large-scale tabular classification, fitting the profile's interest in capability measurements."
+    },
+    {
       "arxiv_id": "2611.21983",
       "title": "Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation",
       "authors": [
@@ -78,20 +121,21 @@
       "reason": "Introduces a system for managing and compacting long-context LLM sessions, aligning with the profile's focus on long-context handling and efficiency."
     },
     {
-      "arxiv_id": "2611.23158",
-      "title": "MoE--LoRA Methods for Multilingual Adaptation: A Systematic Empirical Study",
+      "arxiv_id": "2611.23197",
+      "title": "Structure--Residual Inductive Biases for Language Model Pretraining",
       "authors": [
-        "Nikit Srivastava",
-        "Joel Dag",
-        "René Speck",
-        "Axel-Cyrille Ngonga Ngomo"
+        "Hai Huang",
+        "Bartosz Żuk",
+        "Rassul Magauin",
+        "Jiaxin Huang",
+        "Xue Liu"
       ],
-      "url": "https://arxiv.org/abs/2611.23158",
+      "url": "https://arxiv.org/abs/2611.23197",
       "categories": [
         "cs.CL",
-        "cs.LG"
+        "cs.AI"
       ],
-      "reason": "Evaluates LoRA adaptation methods for multilingual LLMs, a post‑training efficiency technique and large‑scale capability benchmark."
+      "reason": "Introduces new architectural inductive biases to improve language model pretraining, fitting the profile's focus on model architectures and pretraining advances."
     },
     {
       "arxiv_id": "2611.23045",
@@ -142,6 +186,36 @@
         "cs.AI"
       ],
       "reason": "Introduces a benchmark and evaluation of multilingual LLMs, fitting the profile's interest in benchmarks measuring state-of-the-art model capabilities."
+    },
+    {
+      "arxiv_id": "2611.23158",
+      "title": "MoE--LoRA Methods for Multilingual Adaptation: A Systematic Empirical Study",
+      "authors": [
+        "Nikit Srivastava",
+        "Joel Dag",
+        "René Speck",
+        "Axel-Cyrille Ngonga Ngomo"
+      ],
+      "url": "https://arxiv.org/abs/2611.23158",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Evaluates LoRA adaptation methods for multilingual LLMs, a post‑training efficiency technique and large‑scale capability benchmark."
+    },
+    {
+      "arxiv_id": "2611.22949",
+      "title": "Can Decision Models Replace LLMs in Real-World Contact Center Classification and Judging Tasks?",
+      "authors": [
+        "Md Tahmid Rahman Laskar",
+        "Xue-Yong Fu",
+        "Shashi Bhushan TN"
+      ],
+      "url": "https://arxiv.org/abs/2611.22949",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Provides a benchmark comparing LLM performance and limits on real-world classification tasks."
     },
     {
       "arxiv_id": "2611.22055",
@@ -215,6 +289,22 @@
         "cs.CL"
       ],
       "reason": "Introduces a new Dutch benchmark to evaluate LLM reasoning and capabilities, fitting the profile's interest in capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.22766",
+      "title": "StitchRAG: Constructing Compact and Evidence-Preserving Contexts for RAG with Diffusion-Based Stitching",
+      "authors": [
+        "Minsang Kim",
+        "Junpyo Lim",
+        "Heeje Cho",
+        "Seungjun Baek"
+      ],
+      "url": "https://arxiv.org/abs/2611.22766",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a technique to compress and efficiently construct RAG contexts, directly addressing long-context efficiency."
     },
     {
       "arxiv_id": "2611.21921",
@@ -460,6 +550,22 @@
       "reason": "Addresses efficiency and quantization of a Mixture-of-Experts diffusion model, fitting the profile's focus on MoE architectures and fast inference."
     },
     {
+      "arxiv_id": "2611.22778",
+      "title": "A Full-Ledger Counterfactual Audit of Adaptive Reasoning",
+      "authors": [
+        "Xiaopeng Chu",
+        "Wenzheng Kong",
+        "Wei Liu",
+        "Wenyi Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.22778",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Focuses on adaptive reasoning and compute allocation for LLMs, directly relevant to reasoning, efficiency, and evaluation of frontier models."
+    },
+    {
       "arxiv_id": "2611.22017",
       "title": "SkillBuffBench: Measuring What Agent Skills Contribute across Harnesses, Models, Skill Access Modes and Memory",
       "authors": [
@@ -496,6 +602,19 @@
         "cs.LG"
       ],
       "reason": "Introduces a new efficient model architecture and scaling benchmarks for multi-criterion language verification."
+    },
+    {
+      "arxiv_id": "2611.22619",
+      "title": "Understanding Cross-Modal Inconsistency through Representation Subspaces in Omni Models",
+      "authors": [
+        "Seonghyeon Cho",
+        "Chanjun Park"
+      ],
+      "url": "https://arxiv.org/abs/2611.22619",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Analyzes cross-modal inconsistency in omni (multimodal) models, advancing understanding of frontier multimodal architectures."
     },
     {
       "arxiv_id": "2611.22009",
@@ -584,6 +703,22 @@
         "cs.CL"
       ],
       "reason": "Introduces a probe that benchmarks the limits of dense retrieval models used in LLM pipelines"
+    },
+    {
+      "arxiv_id": "2611.23155",
+      "title": "TextSphere: Efficient Text-to-Image Generation via Shared Hyperspherical Alignment and Uniformity",
+      "authors": [
+        "Yixia Zhang",
+        "Girish A. Koushik",
+        "Xilu Wang",
+        "Wenwu Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.23155",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces an efficient multimodal text-to-image model focusing on fast inference, aligning with the profile's interest in multimodal and efficiency advances."
     },
     {
       "arxiv_id": "2611.23115",

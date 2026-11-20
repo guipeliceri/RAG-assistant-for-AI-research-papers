@@ -24,7 +24,7 @@
     "answered": 15,
     "invalid_rate": 0.067,
     "invalid_questions": [
-      "How are RAG systems being evaluated?"
+      "Which papers use knowledge graphs together with retrieval?"
     ]
   },
   "calibration": {
