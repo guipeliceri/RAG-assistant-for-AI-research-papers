@@ -458,5 +458,13 @@
   "acf8a49d322d:2611.22120": {
     "relevant": true,
     "reason": "Focuses on Mixture-of-Experts routing and behavior, directly matching MoE architecture interest."
+  },
+  "acf8a49d322d:2611.21983": {
+    "relevant": false,
+    "reason": "The paper provides a theoretical dynamical-systems analysis of transformers, not new model architectures, training methods, or benchmarks aligned with the profile."
+  },
+  "acf8a49d322d:2611.22219": {
+    "relevant": false,
+    "reason": "The paper focuses on a domain-specific NER task rather than advancing or benchmarking frontier LLM architectures or capabilities."
   }
 }

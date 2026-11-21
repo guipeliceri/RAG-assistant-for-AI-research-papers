@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-19",
-  "generated_at": "2026-11-20T01:59:12+00:00",
-  "candidates": 68,
-  "classified": 68,
-  "errors": 10,
+  "generated_at": "2026-11-21T01:58:20+00:00",
+  "candidates": 70,
+  "classified": 70,
+  "errors": 4,
   "papers": [
     {
       "arxiv_id": "2611.24540",
@@ -36,6 +36,34 @@
         "cs.AI"
       ],
       "reason": "Analyzes and benchmarks frontier LLMs' ability to correctly report research novelty, directly measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.24844",
+      "title": "General progress substitutes for specific training data in language models",
+      "authors": [
+        "Mark Marosi",
+        "Peter Antal"
+      ],
+      "url": "https://arxiv.org/abs/2611.24844",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Analyzes how scaling and general training progress affect data requirements and capability emergence, directly relevant to frontier model data and scaling studies."
+    },
+    {
+      "arxiv_id": "2611.24636",
+      "title": "Clover-35B-A3B-Preview Technical Report",
+      "authors": [
+        "DiffuSpace Technical Team"
+      ],
+      "url": "https://arxiv.org/abs/2611.24636",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new mixture-of-experts language model with novel architecture and benchmark results."
     },
     {
       "arxiv_id": "2611.24654",
@@ -179,6 +207,26 @@
       "reason": "Introduces adaptive latent chain-of-thought inference to improve reasoning accuracy and efficiency, directly relevant to reasoning and efficiency topics."
     },
     {
+      "arxiv_id": "2611.25003",
+      "title": "A Model of Diverse Sampling from Language Models",
+      "authors": [
+        "Manuel Prada-Corral",
+        "Yahya Emara",
+        "Timothy J. O'Donnell",
+        "Ryan Cotterell",
+        "Tim Vieira"
+      ],
+      "url": "https://arxiv.org/abs/2611.25003",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.FL",
+        "stat.ML"
+      ],
+      "reason": "Introduces a new inference-time sampling method to improve diversity and evaluates it on LLM benchmarks, aligning with the profile's focus on capabilities and limits of state-of-the-art models."
+    },
+    {
       "arxiv_id": "2611.23508",
       "title": "BOS Summary: The First Token Matters",
       "authors": [
@@ -196,6 +244,23 @@
         "cs.CV"
       ],
       "reason": "Introduces a novel inference-time attention modification that improves reasoning in LLMs/LVLMs, aligning with frontier model architecture and chain-of-thought research."
+    },
+    {
+      "arxiv_id": "2611.24809",
+      "title": "On-Policy Morphing into Hybrid Attention Models",
+      "authors": [
+        "Disen Lan",
+        "Xuanda Wang",
+        "Jianbin Zheng",
+        "Huafeng Kuang",
+        "Wei Tang",
+        "Yu Cheng"
+      ],
+      "url": "https://arxiv.org/abs/2611.24809",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new hybrid attention architecture and efficient on‑policy layer selection, aligning with frontier model architecture and efficiency topics."
     },
     {
       "arxiv_id": "2611.24567",
@@ -302,6 +367,22 @@
       "reason": "Analyzes and leverages frozen language model mechanisms for multimodal speech recognition, fitting the profile's focus on multimodal models and internal architecture insights."
     },
     {
+      "arxiv_id": "2611.24699",
+      "title": "When Does Continual Pre-Training Help? A Controlled Study of Dialectal Adaptation for Québec French",
+      "authors": [
+        "Eeham Khan",
+        "Richard Khoury",
+        "Leila Kosseim"
+      ],
+      "url": "https://arxiv.org/abs/2611.24699",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Studies the effects of continual pre‑training for dialect adaptation, a post‑training recipe relevant to frontier model scaling and evaluation."
+    },
+    {
       "arxiv_id": "2611.23832",
       "title": "A System 1 Decision Model for Medical Multiple-Choice Questions Built on Frozen Language Models",
       "authors": [
@@ -315,20 +396,18 @@
       "reason": "Introduces a lightweight post-training method on frozen frontier LLMs and evaluates on a capability benchmark"
     },
     {
-      "arxiv_id": "2611.24650",
-      "title": "Self-Rewarded Reinforcement Learning for Better-Structured Medical Explanations in Small Language Models",
+      "arxiv_id": "2611.24598",
+      "title": "Chain-of-Thought Hidden States Reveal Task-Solving Directions for Direct Answers",
       "authors": [
-        "Prakhar Mishra",
-        "Bhavya Yajush Awasthi",
-        "Tanuja",
-        "Nishant"
+        "Houman Mehrafarin",
+        "Ioannis Konstas"
       ],
-      "url": "https://arxiv.org/abs/2611.24650",
+      "url": "https://arxiv.org/abs/2611.24598",
       "categories": [
-        "cs.AI",
-        "cs.CL"
+        "cs.CL",
+        "cs.AI"
       ],
-      "reason": "Introduces a reinforcement learning fine‑tuning method for language models, aligning with post‑training RL research in the profile."
+      "reason": "Introduces a new method to improve chain-of-thought reasoning by manipulating hidden states, directly advancing reasoning techniques for frontier LLMs."
     },
     {
       "arxiv_id": "2611.24626",
@@ -349,17 +428,20 @@
       "reason": "Introduces a brain-inspired weight grafting method to improve reasoning in language models, directly relating to reasoning and instruction-tuned model enhancements."
     },
     {
-      "arxiv_id": "2611.23386",
-      "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
+      "arxiv_id": "2611.24650",
+      "title": "Self-Rewarded Reinforcement Learning for Better-Structured Medical Explanations in Small Language Models",
       "authors": [
-        "Stephen Chung",
-        "Wenyu Du"
+        "Prakhar Mishra",
+        "Bhavya Yajush Awasthi",
+        "Tanuja",
+        "Nishant"
       ],
-      "url": "https://arxiv.org/abs/2611.23386",
+      "url": "https://arxiv.org/abs/2611.24650",
       "categories": [
+        "cs.AI",
         "cs.CL"
       ],
-      "reason": "Introduces a more memory‑efficient architecture for large language models using shared n‑gram embeddings, aligning with scaling and efficiency interests."
+      "reason": "Introduces a reinforcement learning fine‑tuning method for language models, aligning with post‑training RL research in the profile."
     },
     {
       "arxiv_id": "2611.23835",
@@ -377,6 +459,19 @@
         "cs.PF"
       ],
       "reason": "Introduces efficiency improvements for LLM inference via narrower draft models in speculative decoding."
+    },
+    {
+      "arxiv_id": "2611.23386",
+      "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
+      "authors": [
+        "Stephen Chung",
+        "Wenyu Du"
+      ],
+      "url": "https://arxiv.org/abs/2611.23386",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a more memory‑efficient architecture for large language models using shared n‑gram embeddings, aligning with scaling and efficiency interests."
     },
     {
       "arxiv_id": "2611.23403",

@@ -1,0 +1,921 @@
+{
+  "profile": "frontier-models",
+  "profile_name": "Advances in current frontier models",
+  "profile_fingerprint": "f0f03a6fcb04",
+  "model": "openai/gpt-oss-120b",
+  "borderline": "include",
+  "threshold": null,
+  "date": "2026-11-20",
+  "generated_at": "2026-11-21T01:57:42+00:00",
+  "candidates": 84,
+  "classified": 84,
+  "errors": 26,
+  "papers": [
+    {
+      "arxiv_id": "2611.26358",
+      "title": "Beam Model Technical Report",
+      "authors": [
+        "Reflection Team",
+        "Adam Abdulhamid",
+        "Osama Abuelsorour",
+        "Yasmin Alameddine",
+        "Carlo Alfano",
+        "Duarte Alves",
+        "Brandon Amos",
+        "Selvaraj Anandaraj",
+        "Arseni Anisimovich",
+        "George Antoniadis",
+        "Ioannis Antonoglou",
+        "Sheila Babayan",
+        "Neeraj Bahl",
+        "Märt Bakler",
+        "Vidhisha Balachandran",
+        "Cameron Banks",
+        "Thibaut Barroyer",
+        "Navroop Bath",
+        "Irwan Bello",
+        "Jeremy Berman",
+        "Fernanda Bernaldo",
+        "Mrityunjay Bhadauria",
+        "Sanyam Bhutani",
+        "Tolga Bolukbasi",
+        "Anudhyan Boral",
+        "Joseph Brennan",
+        "Ethan Brooks",
+        "Sam Buchanan",
+        "Anton Bulyenov",
+        "John Cai",
+        "Catherine Cang",
+        "Eason Chan",
+        "Elijah Chanakira",
+        "Nathan Chandrasekaran",
+        "Hao Chen",
+        "Hong-You Chen",
+        "Jeffrey Chen",
+        "Saurav Chhatrapati",
+        "Ting-Rui Chiang",
+        "Brian Tiger Chow",
+        "Aakanksha Chowdhery",
+        "Timothy Chung",
+        "Rob Claire",
+        "John D. Co-Reyes",
+        "Anthony Conte",
+        "Eduardo Coronado-Montoya",
+        "Julien Crozon",
+        "Drew Csillag",
+        "Joe Cummings",
+        "Jeff Da",
+        "Samira Daruki",
+        "Tim Dawson",
+        "Charlie Deck",
+        "Arash Delijani",
+        "Ousmane Dia",
+        "Randy Dodgen",
+        "Ryan Douglas",
+        "Omar El-Kishky",
+        "Ben Ellis",
+        "Gamaleldin Elsayed",
+        "Simon Fan",
+        "Patrick Fernandes",
+        "Gabriel Ferns",
+        "Nick Fram",
+        "Ankush Garg",
+        "Florent Gbelidji",
+        "Iaroslav Geraskin",
+        "Behrooz Ghorbani",
+        "Ivan Glushkov",
+        "Neil Gollapudi",
+        "Scott Goodfriend",
+        "Yoni Gozlan",
+        "Christopher Grimm",
+        "Suriya Gunasekar",
+        "Shruti Gupta",
+        "Joel Gustafson",
+        "Emre Guven",
+        "Jon Hackmann",
+        "Jeremy Hadidjojo",
+        "Jess Hamrick",
+        "Ethan Hellman",
+        "Joscha Hoche",
+        "Spurthi Amba Hombaiah",
+        "Uzair Honda",
+        "Zijian Hu",
+        "Dzmitry Huba",
+        "Nancy Hung",
+        "Vladimir Ivanov",
+        "Shomik Jain",
+        "Mojan Javaheripi",
+        "Kevin Martin Jose",
+        "Aymen Kallala",
+        "Amog Kamsetty",
+        "Min Hyung Kang",
+        "Steven Kapturowski",
+        "Ramtin Keramati",
+        "Samuel Kessler",
+        "Sabina Kim",
+        "Seonghyeon Kim",
+        "Ivan Komarov",
+        "Agni Kumar",
+        "Thanard Kurutach",
+        "Jessica Landon",
+        "James Larochelle",
+        "Michael Laskin",
+        "Jonathan Lee",
+        "Jonathan Leung",
+        "Chenyu Li",
+        "Haoran Li",
+        "Rongzhao Li",
+        "Michelle Light",
+        "Boyan Lin",
+        "Hai Lin",
+        "Xiayue Charles Lin",
+        "Michael Linden",
+        "Ollie Liu",
+        "Wei Liu",
+        "Zichang Liu",
+        "Brian Lui",
+        "Amr Mahdi",
+        "Raunak Manjani",
+        "Kobe Martin",
+        "Lucas Maystre",
+        "Francis McCann",
+        "Brendan McLaughlin",
+        "Isabel Mehta",
+        "Alishah Momin",
+        "Gerard Moreno-Torres Bertran",
+        "Adriana Murga",
+        "Swarnashree Mysore Sathyendra",
+        "Ashley Nagaki",
+        "Vishal Nandavanam",
+        "Swaroop Nath",
+        "Jake Nations",
+        "Angus Ng",
+        "Thien Nguyen",
+        "Tyler Nichols",
+        "Anaelia Ovalle",
+        "James Pelly",
+        "Michelle Pieszko",
+        "Sashank Pisupati",
+        "Oleksandr Polozov",
+        "Piyush Prasad",
+        "Drew Proud",
+        "Salman Quazi",
+        "Asfandyar Qureshi",
+        "Marko Radmilac",
+        "Mohit Raghavendra",
+        "Vikash Rai",
+        "Ralph Recto",
+        "Anurag Reddy",
+        "Aksel Reedi",
+        "Abby Reider",
+        "David Renardy",
+        "Matthias Reso",
+        "Pierre Roux",
+        "David Rubinstein",
+        "Paul Ruh",
+        "Ildar Safarov",
+        "Himanshu Sahni",
+        "Adrian Samatan",
+        "Simon Sandrew",
+        "Adriel Saporta",
+        "Rohan Savargaonkar",
+        "Vlad Savinov",
+        "Nick Schank",
+        "Jonathon Schwartz",
+        "Tim Seah",
+        "Ahmad Sharif",
+        "Miriam Shlimovich",
+        "Hamid Shojanazeri",
+        "Yusuf Sindi",
+        "Teak Sittipunt",
+        "Kurt Smith",
+        "Nicolas Sonnerat",
+        "Joe Spisak",
+        "Raunak Srivastava",
+        "Richard Steigerwald",
+        "Adam Stein",
+        "Stu Stewart",
+        "Arnaud Stiegler",
+        "Jingtong Su",
+        "Alicia Sun",
+        "Zoey Sun",
+        "Jakub Sygnowski",
+        "Douglas Teixeira",
+        "Chetan Tekur",
+        "Zachary Tellman",
+        "Helen Thatcher",
+        "Romal Thoppilan",
+        "Anil Tolwani",
+        "Konstantin Topaloglou-Mundy",
+        "Dmitry Ulyumdzhiev",
+        "Meet Vadakkanchery",
+        "Christopher Vanderschuere",
+        "Balaji Varadarajan",
+        "Rohan Varma",
+        "Balaji Veeramani",
+        "Andreas Verdelis",
+        "Risto Vuorio",
+        "Tom Walshe",
+        "Allen Wang",
+        "Ewen Wang",
+        "Taiyi Wang",
+        "Zach Wentz",
+        "Peter Wiese",
+        "Travis Wilson",
+        "Jason Winters",
+        "Sam Wiseman",
+        "Arvin Wu",
+        "Jin Wu",
+        "Kai Wu",
+        "Kenneth Xu",
+        "Mira Yadav",
+        "Xianjun Yang",
+        "Yao-Yuan Yang",
+        "Xiaolan You",
+        "Renault Young",
+        "Christina Yu",
+        "Biao Zhang",
+        "Gavin Zhang",
+        "Mingrui Zhang",
+        "Shenao Zhang",
+        "Jiesi Zhao",
+        "Mengjun Zhao",
+        "Xingchen Zhao",
+        "Mike Zhou",
+        "Tong Zhou",
+        "Zhenpeng Zhou",
+        "Tina Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.26358",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new large MoE model with scaling, long context, RL training, and efficiency techniques."
+    },
+    {
+      "arxiv_id": "2611.26073",
+      "title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
+      "authors": [
+        "Nagham Omar",
+        "Rotem Dror",
+        "Almog Gueta",
+        "Avigdor Gal",
+        "Roi Reichart",
+        "Nitay Calderon"
+      ],
+      "url": "https://arxiv.org/abs/2611.26073",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new benchmark/test for evaluating LLMs as annotators, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.25588",
+      "title": "Rubric Semantics or Numerical Priors? Auditing Scale-Direction Bias in LLM Judges",
+      "authors": [
+        "Chanwoo Kim",
+        "Doyun Kim",
+        "Minsoo Song",
+        "Sihyeon Lee",
+        "Chanjun Park"
+      ],
+      "url": "https://arxiv.org/abs/2611.25588",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark probe to assess LLM judges, aligning with the profile's interest in benchmarks measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.25289",
+      "title": "LLMs Are Already Confidence-Aware Zero-Shot Classifiers",
+      "authors": [
+        "Owen Cook",
+        "Xingyi Song"
+      ],
+      "url": "https://arxiv.org/abs/2611.25289",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Evaluates and benchmarks zero-shot classification and confidence calibration of frontier LLMs, measuring their capabilities."
+    },
+    {
+      "arxiv_id": "2611.25314",
+      "title": "Enhancing Understanding of Language Models with Varied Explanations",
+      "authors": [
+        "Jingyi Sun"
+      ],
+      "url": "https://arxiv.org/abs/2611.25314",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces evaluation frameworks and explanation techniques for chain‑of‑thought reasoning, aligning with the profile’s interest in reasoning and benchmarks."
+    },
+    {
+      "arxiv_id": "2611.26509",
+      "title": "GLiDE: A Fast, Calibrated Decision Model Distilled from Reasoning Teachers",
+      "authors": [
+        "Sahibzada Allahyar",
+        "Julia White",
+        "Dhruv Atreja",
+        "George Hurn-Maloney",
+        "Urchade Zaratiana"
+      ],
+      "url": "https://arxiv.org/abs/2611.26509",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a distilled decision model that leverages reasoning teachers, focusing on fast inference and post‑training efficiency, which aligns with frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.26275",
+      "title": "dLoop: Looped Diffusion Language Models via Recurrent Latent Refinement",
+      "authors": [
+        "Handa Li",
+        "Pengxiang Li",
+        "Mingyu Cao",
+        "Xilu Wang",
+        "Li Shen",
+        "Da Li",
+        "Lu Yin"
+      ],
+      "url": "https://arxiv.org/abs/2611.26275",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new architecture and efficiency technique for diffusion language models, aligning with frontier model advances and fast inference."
+    },
+    {
+      "arxiv_id": "2611.25446",
+      "title": "PAIR-MED: Policy-reward Alternation for Iterative Refinement in Multilingual Medical Reasoning",
+      "authors": [
+        "Fan Gao",
+        "Xiaohang Xu",
+        "Lang Huang",
+        "Nan Lu",
+        "Irene Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.25446",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a reinforcement learning framework for improving multilingual reasoning in LLMs, directly relevant to post‑training RL for reasoning and benchmark evaluation."
+    },
+    {
+      "arxiv_id": "2611.26613",
+      "title": "AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control",
+      "authors": [
+        "Yiyang Du",
+        "Yuxuan Kuang",
+        "Qitao Zhao",
+        "Yixuan Wang",
+        "Zhanqiu Guo",
+        "Yi Xu",
+        "Xin Li",
+        "Wenbin He",
+        "Liu Ren",
+        "Chenyan Xiong"
+      ],
+      "url": "https://arxiv.org/abs/2611.26613",
+      "categories": [
+        "cs.RO",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "reason": "Introduces a benchmark and analysis framework for evaluating frontier multimodal language agents' robot control capabilities."
+    },
+    {
+      "arxiv_id": "2611.26075",
+      "title": "Understanding MoE Decisions Beyond Gradients",
+      "authors": [
+        "Zhen Xu",
+        "Zitao Zhang",
+        "Kevin Zhao",
+        "Xuefeng Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.26075",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new analysis method for mixture-of-experts models, directly addressing MoE architecture."
+    },
+    {
+      "arxiv_id": "2611.25818",
+      "title": "Anchor and Check: Deterministic Cross-Prompt, Cross-Model Reconciliation for Auditable LLM Decisions",
+      "authors": [
+        "Sivakameswara Reddy Chejarla"
+      ],
+      "url": "https://arxiv.org/abs/2611.25818",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new evaluation method/benchmark for auditing LLM decisions, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.25643",
+      "title": "TRAC: Efficient Diffusion Language Models for Machine Translation via Length-Aware Decoding",
+      "authors": [
+        "Tianyuan Li",
+        "Xihan Yang",
+        "Chenglong Wang",
+        "Yuzhang Wu",
+        "Jingbo Zhu",
+        "Tong Xiao"
+      ],
+      "url": "https://arxiv.org/abs/2611.25643",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces an efficient decoding technique for diffusion language models, advancing fast inference for large models."
+    },
+    {
+      "arxiv_id": "2611.26199",
+      "title": "Learning to Think with Images Faithfully via Adaptive Data Selection",
+      "authors": [
+        "Yu Zhao",
+        "Jiaxin Zhang",
+        "Rohit Saxena",
+        "Fazl Barez",
+        "Pasquale Minervini",
+        "Yiwen Guo"
+      ],
+      "url": "https://arxiv.org/abs/2611.26199",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new training-data selection method to improve reasoning faithfulness in multimodal vision-language models and reports benchmark gains."
+    },
+    {
+      "arxiv_id": "2611.26282",
+      "title": "What If Chain-of-Thought Is Not Enough?",
+      "authors": [
+        "Marc Jansen"
+      ],
+      "url": "https://arxiv.org/abs/2611.26282",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new structured reasoning fine-tuning method as an alternative to Chain-of-Thought, directly relevant to reasoning advances in LLMs."
+    },
+    {
+      "arxiv_id": "2611.25211",
+      "title": "Learning to Read Events for Exact State Tracking with Frozen Language Models",
+      "authors": [
+        "Jeonghoon Lee"
+      ],
+      "url": "https://arxiv.org/abs/2611.25211",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Evaluates and benchmarks state-tracking capabilities of large frozen language models, relevant to frontier model performance and reasoning."
+    },
+    {
+      "arxiv_id": "2611.25071",
+      "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
+      "authors": [
+        "Meenakshi Rajpurohit",
+        "Anna Phan",
+        "Ravikumar Komandur Narayanan",
+        "Gunanidhi Ramakrishnan",
+        "Nathan Howland"
+      ],
+      "url": "https://arxiv.org/abs/2611.25071",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.MA"
+      ],
+      "reason": "Introduces a benchmark and evaluates frontier LLMs' tool use and reasoning, measuring their capabilities and limits."
+    },
+    {
+      "arxiv_id": "2611.25135",
+      "title": "Calibrated Decision Rewards: Training Language Models with a Judge That Knows How Sure It Is",
+      "authors": [
+        "Rudransh Agnihotri",
+        "Manasvi Kapoor"
+      ],
+      "url": "https://arxiv.org/abs/2611.25135",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a calibrated reward model for RL fine‑tuning LLMs, improving reasoning performance on a benchmark."
+    },
+    {
+      "arxiv_id": "2611.26248",
+      "title": "TwinLab-Bench: Evaluating AI Scientists in Agentic Twins of Real Labs",
+      "authors": [
+        "Yang Wan",
+        "Linchao Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.26248",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a benchmark that evaluates frontier AI model capabilities in scientific experiment design."
+    },
+    {
+      "arxiv_id": "2611.26510",
+      "title": "AutoMaster: Autonomous Post-Training by Making the Same Model a Better Teacher",
+      "authors": [
+        "Guoxin Chen",
+        "Shuang Sun",
+        "Fanzhe Meng",
+        "Xinyu Tang",
+        "Ruihua Song",
+        "Wayne Xin Zhao"
+      ],
+      "url": "https://arxiv.org/abs/2611.26510",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel autonomous post‑training fine‑tuning method for LLMs, directly aligning with the profile's focus on post‑training techniques."
+    },
+    {
+      "arxiv_id": "2611.25433",
+      "title": "RoCoKV: Accelerating LLM Inference Serving through Uncertainty and Redundancy Aware KV Cache Compression",
+      "authors": [
+        "Payman Behnam",
+        "Elaheh Sobhani",
+        "Saad Amin",
+        "Yahya Hassan",
+        "Daniyal Khan",
+        "Biswadeep Chakraborty",
+        "Tanish Patwa",
+        "Souvik Kundu",
+        "Alexey Tumanov"
+      ],
+      "url": "https://arxiv.org/abs/2611.25433",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a KV cache compression method to speed up inference for large reasoning models, aligning with efficiency and long-context advances."
+    },
+    {
+      "arxiv_id": "2611.25361",
+      "title": "Incorporating argumentation frameworks for LLM decision-making: Task-specific design and evaluation",
+      "authors": [
+        "Bochen Han",
+        "Anshu Xiong",
+        "Mingyang Ma"
+      ],
+      "url": "https://arxiv.org/abs/2611.25361",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a novel argumentation-based reasoning approach for LLM decision-making, aligning with the profile's focus on reasoning and evaluation of frontier models."
+    },
+    {
+      "arxiv_id": "2611.26059",
+      "title": "Complete-SVD: A Functional Norm Approach to Low-Rank LLM Compression",
+      "authors": [
+        "Alper Kalle",
+        "Theo Rudkiewicz",
+        "Mohamed-Oumar Ouerfelli",
+        "Mohamed Tamaazousti"
+      ],
+      "url": "https://arxiv.org/abs/2611.26059",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel post‑training low‑rank compression technique for LLMs, directly addressing efficiency and model optimization."
+    },
+    {
+      "arxiv_id": "2611.25813",
+      "title": "Efficient and Robust Drafting with Multi-Token Prediction",
+      "authors": [
+        "Filippo Galgani",
+        "Ziwei Ji",
+        "Omri Homburger",
+        "Ganesh Jawahar",
+        "Michelle Ramanovich",
+        "Ivan Korotkov",
+        "Luciano Martins",
+        "Utku Evci",
+        "Edouard Yvinec",
+        "Pooja Consul",
+        "Vivek Kumar",
+        "Tal Schuster"
+      ],
+      "url": "https://arxiv.org/abs/2611.25813",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new efficient multi-token drafting architecture for faster LLM inference, aligning with the profile's focus on efficiency and model architectures."
+    },
+    {
+      "arxiv_id": "2611.25853",
+      "title": "TableRoute: Capability-Aware Routing for Scalable Table Question Answering",
+      "authors": [
+        "Yuxiang Wang",
+        "Junhao Gan",
+        "Jianzhong Qi"
+      ],
+      "url": "https://arxiv.org/abs/2611.25853",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a capability-aware routing method for LLMs to handle long-context table QA efficiently, aligning with scaling, inference efficiency, and benchmark evaluation interests."
+    },
+    {
+      "arxiv_id": "2611.25916",
+      "title": "Many Solutions, One Answer: Search Order Shapes the Default Solutions of Language Models",
+      "authors": [
+        "Qinhan Hou",
+        "Jing Tang"
+      ],
+      "url": "https://arxiv.org/abs/2611.25916",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Analyzes how prompting/search order affects LLM reasoning and solution diversity, a capability benchmark relevant to frontier model behavior."
+    },
+    {
+      "arxiv_id": "2611.25703",
+      "title": "From Geographic Memory to Spatial Generalization in Large Language Models",
+      "authors": [
+        "Chen Chu",
+        "Zhaonan Wang",
+        "Cyrus Shahabi",
+        "Hengcai Zhang",
+        "Feng Lu"
+      ],
+      "url": "https://arxiv.org/abs/2611.25703",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Introduces spatial token architecture and new benchmarks to assess LLM geographic generalization, fitting frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.25123",
+      "title": "Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents",
+      "authors": [
+        "Ziyan Yang",
+        "Taiwei Shi",
+        "Jieyu Zhao"
+      ],
+      "url": "https://arxiv.org/abs/2611.25123",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a lossless, index-free memory mechanism to extend long-context handling for LLM agents, directly addressing long-context efficiency and scaling."
+    },
+    {
+      "arxiv_id": "2611.26084",
+      "title": "RL Can Only Reinforce What It Sees Succeed",
+      "authors": [
+        "Ruben Sanchez-Corcuera",
+        "Unai Zulaika",
+        "Aritz Bilbao-Jayo",
+        "Miguel Fernandez-de-Retana"
+      ],
+      "url": "https://arxiv.org/abs/2611.26084",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Analyzes reinforcement learning on language models, directly relevant to RLHF and post‑training RL research."
+    },
+    {
+      "arxiv_id": "2611.25898",
+      "title": "Verifiable Logic in Medical LLMs: A Critical Review of Agentic Clinical Reasoning Optimization and Neuro-Symbolic Grounding",
+      "authors": [
+        "Youssef ElNahas",
+        "Adel Ammar",
+        "Soumaya Chaffar",
+        "Wadii Boulila"
+      ],
+      "url": "https://arxiv.org/abs/2611.25898",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY",
+        "cs.LG"
+      ],
+      "reason": "It analyzes and proposes frameworks for reasoning verification and neuro‑symbolic grounding in LLMs, directly touching on reasoning, benchmarking, and post‑training supervision topics the profile cares about."
+    },
+    {
+      "arxiv_id": "2611.26077",
+      "title": "Same Judgement, Different Scores: Numerical Scoring Topology in LLM-as-a-Judge Evaluation",
+      "authors": [
+        "Doyun Kim",
+        "Chanwoo Kim",
+        "Jiwoo Kum",
+        "Minsoo Song",
+        "Chanjun Park"
+      ],
+      "url": "https://arxiv.org/abs/2611.26077",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "It studies how scoring design impacts LLM evaluation, a benchmark of model capabilities."
+    },
+    {
+      "arxiv_id": "2611.25521",
+      "title": "DRVEXO-4B-Unified: Design and Evaluation of a Modular Speech-Vision System",
+      "authors": [
+        "Zeyuan Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.25521",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new 4B multimodal language model with architectural and efficiency details, plus benchmark evaluations."
+    },
+    {
+      "arxiv_id": "2611.25780",
+      "title": "RouteVerify: Routing Interventions for Step-Level Verification in Mixture-of-Experts Models",
+      "authors": [
+        "Yucheng Du",
+        "Ryan A. Rossi",
+        "Xiyang Hu"
+      ],
+      "url": "https://arxiv.org/abs/2611.25780",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Analyzes routing mechanisms in Mixture-of-Experts models, directly relevant to MoE architecture research."
+    },
+    {
+      "arxiv_id": "2611.26427",
+      "title": "MemFolder: Structure-Guided Memory Folding for Efficient Agent Memory Management",
+      "authors": [
+        "Xuyang Liu",
+        "Chenwen Lu",
+        "Junxi Wang",
+        "Siyu Ren",
+        "Xinying Lin",
+        "Siteng Huang",
+        "Hongli Sun",
+        "Linfeng Zhang",
+        "Honggang Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.26427",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "reason": "Focuses on reducing context length and retrieval overhead, directly relevant to long-context efficiency and multimodal agent performance."
+    },
+    {
+      "arxiv_id": "2611.25167",
+      "title": "Game-Theoretic Data Allocation for Expert Specialization and Routing",
+      "authors": [
+        "Mark Lovett",
+        "Denis Lim",
+        "Soroush Vosoughi"
+      ],
+      "url": "https://arxiv.org/abs/2611.25167",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "reason": "Introduces a novel mixture-of-experts routing framework, directly relevant to MoE architectures and benchmarking."
+    },
+    {
+      "arxiv_id": "2611.25745",
+      "title": "Verification Behavior Across Five Qwen2.5-Instruct Checkpoints",
+      "authors": [
+        "YaJie Yin"
+      ],
+      "url": "https://arxiv.org/abs/2611.25745",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Provides a benchmark evaluation of instruction-following and verification behavior in frontier language models"
+    },
+    {
+      "arxiv_id": "2611.25191",
+      "title": "Blind Spots Travel, Knowledge Stays Home: What RL Inherits from an LLM Judge",
+      "authors": [
+        "Liang Yue",
+        "Eric A. Vance"
+      ],
+      "url": "https://arxiv.org/abs/2611.25191",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Analyzes RL training of LLMs using LLM judges, directly relevant to RLHF and reward modeling."
+    },
+    {
+      "arxiv_id": "2611.25357",
+      "title": "Pro$^2$ Agent: Scientific Problem Probing for Autonomous AI R&D",
+      "authors": [
+        "Yixiong Chen",
+        "Liqian Peng",
+        "Tian Tan",
+        "Ziqian Lin",
+        "Blake Jianhang Chen",
+        "Chao Zhao",
+        "Yaojie Liu",
+        "Alec Go",
+        "Alan Yuille"
+      ],
+      "url": "https://arxiv.org/abs/2611.25357",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Presents a new LLM agent framework and evaluates it on frontier AI research benchmarks, aligning with the profile's focus on model capabilities and benchmarking."
+    },
+    {
+      "arxiv_id": "2611.25653",
+      "title": "ColorRef: Calibrating Verbal Feedback for Color Revision",
+      "authors": [
+        "Pablo Loyola",
+        "Andres Hoyos-Idrobo",
+        "Edison Marrese-Taylor",
+        "Colin Rowat",
+        "Alfredo Solano"
+      ],
+      "url": "https://arxiv.org/abs/2611.25653",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "It studies LLM instruction-following and calibrates verbal feedback, fitting the profile's interest in post‑training tuning and capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.25407",
+      "title": "ChronoDossier: Long-Form Personas as Temporal Memory Representations",
+      "authors": [
+        "Noah Sturgill",
+        "Jinho D. Choi"
+      ],
+      "url": "https://arxiv.org/abs/2611.25407",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark for long-context memory retrieval in LLMs, fitting the profile's interest in capability benchmarks and long context."
+    },
+    {
+      "arxiv_id": "2611.26336",
+      "title": "One Framework to Diagnose Them All: A Stratified Benchmark for Bengali LLM Hallucination",
+      "authors": [
+        "Asif Shahriyar Sushmit",
+        "Shefayat E Shams Adib",
+        "Abdullah Al Jubaer Gem",
+        "Ahmed Shafin Ruhan",
+        "MD. Nazmuddoha Ansary",
+        "Biplab Kumar Sarkar",
+        "Syed Rifat Raiyan",
+        "Ajwad Abrar",
+        "Abdullah Bin Hasan",
+        "Adib Sakhawat",
+        "M. Sakeef Hossain",
+        "Ahmed Alfey Sani",
+        "Arefin Mizan",
+        "Sourab Chakma",
+        "Quazi Adibur Rahman Adib",
+        "Wassie Haque",
+        "Sanjay Kumar Sen",
+        "Saad Tahmid",
+        "Mohammad Mamun Or Rashid"
+      ],
+      "url": "https://arxiv.org/abs/2611.26336",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new benchmark to evaluate LLM hallucination, fitting capability measurement of frontier models"
+    },
+    {
+      "arxiv_id": "2611.25960",
+      "title": "When Sounds Turn Heads: Recovering Event Timing That Audio LLMs Fail to Say",
+      "authors": [
+        "Jongbhin Woo",
+        "Jaewook Jeong",
+        "Joon Son Chung"
+      ],
+      "url": "https://arxiv.org/abs/2611.25960",
+      "categories": [
+        "cs.SD",
+        "cs.CL"
+      ],
+      "reason": "Introduces a decoding technique to improve temporal outputs of multimodal audio LLMs, aligning with frontier model advances."
+    }
+  ]
+}

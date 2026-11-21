@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-18",
-  "generated_at": "2026-11-20T02:00:43+00:00",
+  "generated_at": "2026-11-21T01:58:57+00:00",
   "candidates": 87,
   "classified": 87,
-  "errors": 12,
+  "errors": 5,
   "papers": [
     {
       "arxiv_id": "2611.23357",
@@ -218,6 +218,21 @@
       "reason": "Provides a benchmark comparing LLM performance and limits on real-world classification tasks."
     },
     {
+      "arxiv_id": "2611.23127",
+      "title": "The Illusion of Grounding: Do Vision-Language Models Weigh Retrieved Text and Images Like an Ideal Observer?",
+      "authors": [
+        "Basavaraj R M",
+        "Harshal Chandel"
+      ],
+      "url": "https://arxiv.org/abs/2611.23127",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "reason": "Introduces a new benchmark evaluating multimodal model grounding and modality weighting, fitting the profile's interest in multimodal models and capability measurement."
+    },
+    {
       "arxiv_id": "2611.22055",
       "title": "Weight-Space Programming Doesn't Need Transformers",
       "authors": [
@@ -246,6 +261,19 @@
         "cs.LG"
       ],
       "reason": "Analyzes and manipulates MoE routing, directly advancing understanding of mixture-of-experts models."
+    },
+    {
+      "arxiv_id": "2611.22514",
+      "title": "MM-ReportBench: A Comprehensive Benchmark for Multimodal Report Generation from Tables",
+      "authors": [
+        "Teng Lin",
+        "Nan Tang"
+      ],
+      "url": "https://arxiv.org/abs/2611.22514",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a multimodal benchmark evaluating state-of-the-art vision-language models, fitting the profile's focus on multimodal models and capability benchmarks."
     },
     {
       "arxiv_id": "2611.21974",
@@ -535,6 +563,23 @@
       "reason": "Introduces a new sparse-attention technique to improve long-context, fast inference for large language models."
     },
     {
+      "arxiv_id": "2611.22541",
+      "title": "From Perception to Simulation: Unveiling and Empowering Mental Spatial Dynamics in MLLMs",
+      "authors": [
+        "Jiachun Li",
+        "Zhuoran Jin",
+        "Kang Liu",
+        "Jun Zhao"
+      ],
+      "url": "https://arxiv.org/abs/2611.22541",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark and improves multimodal LLM spatial reasoning, fitting the frontier model and capability measurement focus."
+    },
+    {
       "arxiv_id": "2611.21852",
       "title": "The Hidden Cost of MoE Diffusion Decoding: Profiling and Fixing the Sampler",
       "authors": [
@@ -615,6 +660,24 @@
         "cs.CL"
       ],
       "reason": "Analyzes cross-modal inconsistency in omni (multimodal) models, advancing understanding of frontier multimodal architectures."
+    },
+    {
+      "arxiv_id": "2611.22227",
+      "title": "SOTA or Luck? The Winner's Curse in LLM Leaderboards",
+      "authors": [
+        "Sikun Xu",
+        "Raphael Thomadsen",
+        "Dennis J. Zhang",
+        "Heng Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.22227",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "reason": "Introduces new statistical methods to improve LLM benchmark evaluation, directly relevant to measuring capabilities of frontier models."
     },
     {
       "arxiv_id": "2611.22009",
