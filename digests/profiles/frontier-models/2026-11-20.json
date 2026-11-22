@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-20",
-  "generated_at": "2026-11-21T01:57:42+00:00",
+  "generated_at": "2026-11-22T00:48:39+00:00",
   "candidates": 84,
   "classified": 84,
-  "errors": 26,
+  "errors": 3,
   "papers": [
     {
       "arxiv_id": "2611.26358",
@@ -254,6 +254,29 @@
       "reason": "Introduces a new large MoE model with scaling, long context, RL training, and efficiency techniques."
     },
     {
+      "arxiv_id": "2611.26216",
+      "title": "Frontier models need only one text to unmask its human or AI author",
+      "authors": [
+        "Atrey Desai",
+        "Deniz Böloni-Turgut",
+        "Ty Brassington",
+        "Minjoon Choi",
+        "Jenna Russell",
+        "Rishanth Rajendhran",
+        "Bradley Emi",
+        "Hila Gonen",
+        "Hal Daumé",
+        "John Wieting",
+        "Marzena Karpinska",
+        "Mohit Iyyer"
+      ],
+      "url": "https://arxiv.org/abs/2611.26216",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new zero-shot benchmark evaluating frontier model capabilities for authorship attribution."
+    },
+    {
       "arxiv_id": "2611.26073",
       "title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
       "authors": [
@@ -332,6 +355,36 @@
       "reason": "Introduces a distilled decision model that leverages reasoning teachers, focusing on fast inference and post‑training efficiency, which aligns with frontier model advances."
     },
     {
+      "arxiv_id": "2611.26584",
+      "title": "Represented but misread: Post-training changes how language models read out what they represent",
+      "authors": [
+        "Jochen Laubrock"
+      ],
+      "url": "https://arxiv.org/abs/2611.26584",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Investigates how post‑training fine‑tuning alters model read‑out behavior, directly addressing post‑training effects on LLMs."
+    },
+    {
+      "arxiv_id": "2611.25735",
+      "title": "PosteriorBench: Evaluating Behavior Posterior Sampling in Language Models",
+      "authors": [
+        "Zhiyang Xun",
+        "Daniel D. Johnson",
+        "Sarah Schwettmann",
+        "Neil Chowdhury"
+      ],
+      "url": "https://arxiv.org/abs/2611.25735",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark for evaluating sampling methods and model behavior, aligning with capability measurement."
+    },
+    {
       "arxiv_id": "2611.26275",
       "title": "dLoop: Looped Diffusion Language Models via Recurrent Latent Refinement",
       "authors": [
@@ -403,6 +456,20 @@
         "cs.LG"
       ],
       "reason": "Introduces a new analysis method for mixture-of-experts models, directly addressing MoE architecture."
+    },
+    {
+      "arxiv_id": "2611.25808",
+      "title": "Language models represent more about emphasis than they can tell you",
+      "authors": [
+        "Aarne Talman",
+        "Stergios Chatzikyriakidis"
+      ],
+      "url": "https://arxiv.org/abs/2611.25808",
+      "categories": [
+        "cs.CL",
+        "cs.SD"
+      ],
+      "reason": "It assesses LLMs' capability to predict prosodic emphasis, providing a benchmark of model limits."
     },
     {
       "arxiv_id": "2611.25818",
@@ -499,6 +566,20 @@
       "reason": "Introduces a benchmark and evaluates frontier LLMs' tool use and reasoning, measuring their capabilities and limits."
     },
     {
+      "arxiv_id": "2611.25459",
+      "title": "PILAPS: A Bilingual Benchmark for Evaluating Pragmatic Inference across Phenomena and Settings",
+      "authors": [
+        "Jiani Cao",
+        "Anna Korhonen",
+        "Chen Cecilia Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.25459",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a bilingual benchmark evaluating LLM capabilities, fitting the profile's interest in benchmarks measuring state-of-the-art model performance."
+    },
+    {
       "arxiv_id": "2611.25135",
       "title": "Calibrated Decision Rewards: Training Language Models with a Judge That Knows How Sure It Is",
       "authors": [
@@ -511,6 +592,25 @@
         "cs.CL"
       ],
       "reason": "Introduces a calibrated reward model for RL fine‑tuning LLMs, improving reasoning performance on a benchmark."
+    },
+    {
+      "arxiv_id": "2611.25895",
+      "title": "One Schedule Does Not Fit All: Adaptive Inference Schedules for Diffusion Language Models",
+      "authors": [
+        "Rabimba Karanjai",
+        "Linsey Pang",
+        "Hemanth Hegadehalli Madhavarao",
+        "Richard Williamson",
+        "Uma Kona",
+        "Prakhar Mehrotra"
+      ],
+      "url": "https://arxiv.org/abs/2611.25895",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces an adaptive inference schedule to improve fast inference efficiency for diffusion language models, aligning with the profile's focus on efficiency and frontier model techniques."
     },
     {
       "arxiv_id": "2611.26248",
@@ -565,6 +665,49 @@
       "reason": "Introduces a KV cache compression method to speed up inference for large reasoning models, aligning with efficiency and long-context advances."
     },
     {
+      "arxiv_id": "2611.25976",
+      "title": "Energy estimates of open-weight large language models across stated food weights: a dose-response evaluation",
+      "authors": [
+        "Donato Riccio",
+        "Fabrizio Maturo",
+        "Iulia Brezeanu"
+      ],
+      "url": "https://arxiv.org/abs/2611.25976",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "It evaluates and benchmarks LLM scaling behavior on a specific task, measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.25582",
+      "title": "AutoRAGBench: A Benchmark for LLM Agents Automating RAG System Development",
+      "authors": [
+        "Hang Zhang",
+        "Yuzhi Pan",
+        "Ziyao Zhong",
+        "Chaokun Wang",
+        "Shuo Cao",
+        "Zeyu Huang",
+        "Yue Xue",
+        "Fang Niu",
+        "Bofan Xie",
+        "Guanchen Ge",
+        "Zecheng Li",
+        "Leqi Zheng",
+        "Ziyang Liu",
+        "Wei Wang",
+        "Miao Gu"
+      ],
+      "url": "https://arxiv.org/abs/2611.25582",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "reason": "Introduces a new benchmark evaluating LLM agents' capabilities, fitting the profile's interest in capability benchmarks for frontier models."
+    },
+    {
       "arxiv_id": "2611.25361",
       "title": "Incorporating argumentation frameworks for LLM decision-making: Task-specific design and evaluation",
       "authors": [
@@ -578,6 +721,24 @@
         "cs.AI"
       ],
       "reason": "Introduces a novel argumentation-based reasoning approach for LLM decision-making, aligning with the profile's focus on reasoning and evaluation of frontier models."
+    },
+    {
+      "arxiv_id": "2611.25763",
+      "title": "Closing Performance Gap for Diffusion Language Models under Low Inference Budgets",
+      "authors": [
+        "Hao Wu",
+        "Sipeng Chen",
+        "Jingwen Fu",
+        "Yuwang Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.25763",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "reason": "Introduces a diffusion LM architecture and inference-efficient technique for improving generation quality under low budgets."
     },
     {
       "arxiv_id": "2611.26059",
@@ -665,6 +826,34 @@
       "reason": "Introduces spatial token architecture and new benchmarks to assess LLM geographic generalization, fitting frontier model advances."
     },
     {
+      "arxiv_id": "2611.25539",
+      "title": "COVERAGE-TRACE: Source-Side Counterfactual Tracing for Detecting Omissions in LLM Summaries",
+      "authors": [
+        "Ali Karkehabadi",
+        "Jamshid Hassanpour",
+        "Rafael E. Banchs"
+      ],
+      "url": "https://arxiv.org/abs/2611.25539",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark method for evaluating LLM summarization omissions, measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.25606",
+      "title": "Generative News Recommendation Reproduces Popularity: A Memorization-Based Analysis",
+      "authors": [
+        "Shotaro Ishihara"
+      ],
+      "url": "https://arxiv.org/abs/2611.25606",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "reason": "Analyzes instruction-tuned LLM behavior (memorization) relevant to model limits and bias"
+    },
+    {
       "arxiv_id": "2611.25123",
       "title": "Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents",
       "authors": [
@@ -694,6 +883,21 @@
         "cs.CL"
       ],
       "reason": "Analyzes reinforcement learning on language models, directly relevant to RLHF and post‑training RL research."
+    },
+    {
+      "arxiv_id": "2611.26363",
+      "title": "HiSA: Sparsifying the Hidden Dimension of RoPE Attention in LLMs",
+      "authors": [
+        "Ambroise Borbely",
+        "Mathieu Salzmann",
+        "Olivier Verscheure"
+      ],
+      "url": "https://arxiv.org/abs/2611.26363",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel sparse attention method that improves LLM efficiency and architecture."
     },
     {
       "arxiv_id": "2611.25898",
@@ -795,6 +999,21 @@
       "reason": "Introduces a novel mixture-of-experts routing framework, directly relevant to MoE architectures and benchmarking."
     },
     {
+      "arxiv_id": "2611.26069",
+      "title": "SheetAlign: Grounded Interaction and Stage-Isolated Learning for Spreadsheet Agents",
+      "authors": [
+        "Yuxiang Wang",
+        "Junhao Gan",
+        "Jianzhong Qi"
+      ],
+      "url": "https://arxiv.org/abs/2611.26069",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "reason": "Introduces a new benchmark and grounded interaction framework for evaluating and improving LLM capabilities on spreadsheet tasks."
+    },
+    {
       "arxiv_id": "2611.25745",
       "title": "Verification Behavior Across Five Qwen2.5-Instruct Checkpoints",
       "authors": [
@@ -805,6 +1024,20 @@
         "cs.CL"
       ],
       "reason": "Provides a benchmark evaluation of instruction-following and verification behavior in frontier language models"
+    },
+    {
+      "arxiv_id": "2611.26009",
+      "title": "Evaluating safeguarding in multi-turn conversations with AI assistants",
+      "authors": [
+        "Charlotte Peart",
+        "Franziska Sofia Hafner",
+        "Luc Rocher"
+      ],
+      "url": "https://arxiv.org/abs/2611.26009",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark evaluating safety capabilities of frontier LLMs in multi-turn conversations"
     },
     {
       "arxiv_id": "2611.25191",
@@ -820,6 +1053,35 @@
         "cs.LG"
       ],
       "reason": "Analyzes RL training of LLMs using LLM judges, directly relevant to RLHF and reward modeling."
+    },
+    {
+      "arxiv_id": "2611.25814",
+      "title": "What Does Anti-Hallucination Training Buy? Saying Less, Cheap Pruning, and the Rest",
+      "authors": [
+        "Lingkai Bu",
+        "Qian Gao"
+      ],
+      "url": "https://arxiv.org/abs/2611.25814",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Analyzes preference (DPO) training for multimodal vision-language models and evaluates hallucination benchmarks, fitting the profile's focus on post‑training methods and model capability measurement."
+    },
+    {
+      "arxiv_id": "2611.25717",
+      "title": "VR-SparseQuant: Accurate FP4 Quantization with 2:4 Sparsity on Vera Rubin",
+      "authors": [
+        "Samir Khaki",
+        "Wei-Chen Wang",
+        "Song Han",
+        "Ryan Hanrui Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.25717",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new FP4 quantization method with sparsity to improve efficiency and accuracy of large language models."
     },
     {
       "arxiv_id": "2611.25357",
@@ -857,6 +1119,21 @@
         "cs.CL"
       ],
       "reason": "It studies LLM instruction-following and calibrates verbal feedback, fitting the profile's interest in post‑training tuning and capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.25682",
+      "title": "FoodReact-AR: Learning Audience Reactions that Zero-Shot LLMs Miss in Arabic Food-Insecurity Discourse",
+      "authors": [
+        "Wajdi Zaghouani",
+        "Mabrouka Bessghaier",
+        "Salma Azouzi",
+        "Shimaa Amer Ibrahim"
+      ],
+      "url": "https://arxiv.org/abs/2611.25682",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new evaluation protocol and dataset to benchmark zero-shot LLM performance on audience reaction prediction"
     },
     {
       "arxiv_id": "2611.25407",

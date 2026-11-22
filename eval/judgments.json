@@ -466,5 +466,17 @@
   "acf8a49d322d:2611.22219": {
     "relevant": false,
     "reason": "The paper focuses on a domain-specific NER task rather than advancing or benchmarking frontier LLM architectures or capabilities."
+  },
+  "acf8a49d322d:2611.22161": {
+    "relevant": true,
+    "reason": "Focuses on RL post-training of a large model and benchmark improvements, matching the profile's interest in RL fine-tuning and evaluation of frontier models."
+  },
+  "acf8a49d322d:2611.23546": {
+    "relevant": false,
+    "reason": "The paper analyzes LLMs' reporting behavior rather than advancing model architectures, training methods, or capability benchmarks."
+  },
+  "acf8a49d322d:2611.23601": {
+    "relevant": true,
+    "reason": "Introduces a new benchmark for evaluating LLM knowledge-context conflict, aligning with interest in capability measurement."
   }
 }

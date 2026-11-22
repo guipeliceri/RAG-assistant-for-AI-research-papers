@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-19",
-  "generated_at": "2026-11-21T01:58:20+00:00",
+  "generated_at": "2026-11-22T00:48:51+00:00",
   "candidates": 70,
   "classified": 70,
-  "errors": 4,
+  "errors": 2,
   "papers": [
     {
       "arxiv_id": "2611.24540",
@@ -188,6 +188,36 @@
         "cs.LG"
       ],
       "reason": "Introduces a new benchmark evaluating LLMs' causal inference capabilities, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.24651",
+      "title": "Piccolo: Co-Evolving Decision Models and Data through Recursive Self-Improvement",
+      "authors": [
+        "Zhenqing Ling",
+        "Qirui Jiao",
+        "Daoyuan Chen",
+        "Cheng Chen",
+        "Xinji Mai",
+        "Haowen Gao",
+        "Zhuo Zhang",
+        "Xuchen Pan",
+        "Mengsu Ding",
+        "Jiaji Deng",
+        "Yuexiang Xie",
+        "Xiaoming Qin",
+        "Weirui Kuang",
+        "Zhaoyang Liu",
+        "Yaliang Li",
+        "Bolin Ding",
+        "Jingren Zhou"
+      ],
+      "url": "https://arxiv.org/abs/2611.24651",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "reason": "Introduces new multimodal decision models, data co‑evolution recipes, and benchmarks, fitting frontier model advances."
     },
     {
       "arxiv_id": "2611.24001",

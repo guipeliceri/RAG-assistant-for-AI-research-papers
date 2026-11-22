@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-18",
-  "generated_at": "2026-11-21T01:58:57+00:00",
+  "generated_at": "2026-11-22T00:49:05+00:00",
   "candidates": 87,
   "classified": 87,
-  "errors": 5,
+  "errors": 3,
   "papers": [
     {
       "arxiv_id": "2611.23357",
@@ -462,6 +462,23 @@
       "reason": "Introduces preference learning and offline RL-like adaptation for LLMs, fitting post‑training optimization topics."
     },
     {
+      "arxiv_id": "2611.22382",
+      "title": "RICoT: Recurrent Interleaved Chain-of-Thought for Page Stream Segmentation",
+      "authors": [
+        "Prashant Khatri",
+        "Bhavana Malagavalli",
+        "Saiful Haq",
+        "Niyati Chhaya"
+      ],
+      "url": "https://arxiv.org/abs/2611.22382",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "reason": "Introduces a novel chain-of-thought prompting framework and benchmark for evaluating LLM reasoning on page stream segmentation."
+    },
+    {
       "arxiv_id": "2611.21925",
       "title": "DNeo: Your Parallel Draft Model Needs Better Target Feature Encoding",
       "authors": [
@@ -724,6 +741,20 @@
         "cs.CL"
       ],
       "reason": "Analyzes 4-bit quantization effects on chat model behavior, directly addressing quantization efficiency topics."
+    },
+    {
+      "arxiv_id": "2611.23035",
+      "title": "Storing the Gemma 4 K=V Cache Once: Exact Global-KV Memory Savings in a Paged Serving Engine with Unchanged Attention Kernels",
+      "authors": [
+        "Kushagra Bainsla"
+      ],
+      "url": "https://arxiv.org/abs/2611.23035",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.DC"
+      ],
+      "reason": "Introduces a KV cache memory optimization that speeds up inference for a large language model, fitting the efficiency and long-context focus."
     },
     {
       "arxiv_id": "2611.21823",
