@@ -1,0 +1,11 @@
+{
+ "as_of": "2026-11-23",
+ "calibrated": false,
+ "complete": false,
+ "generated_at": "2026-11-23T01:17:53+00:00",
+ "model": "openai/gpt-oss-120b",
+ "outside_probability": null,
+ "papers": 0,
+ "shortlist": [],
+ "week": "2026-11-23"
+}

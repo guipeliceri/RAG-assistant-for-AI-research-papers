@@ -1879,6 +1879,10 @@
   "reason": "Introduces a novel transformer residual-stream architecture with objective-specialized streams, fitting the profile's focus on new model architectures.",
   "relevant": true
  },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.24576": {
+  "reason": "Introduces a new inference architecture and speedup technique for large language models, fitting the efficiency and architecture interests.",
+  "relevant": true
+ },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.24588": {
   "reason": "Introduces a new translation benchmark and evaluates a frontier LLM, measuring its capabilities.",
   "relevant": true
@@ -1913,6 +1917,10 @@
  },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.24711": {
   "reason": "Introduces a calibrated benchmark for measuring LLM reasoning and long-context capabilities in scientific discovery, directly relevant to model evaluation.",
+  "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.24719": {
+  "reason": "Introduces a lightweight LM with reasoning distillation for efficient multimodal autonomous driving, aligning with efficiency and multimodal model advances.",
   "relevant": true
  },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.24721": {
@@ -2215,6 +2223,10 @@
   "reason": "Analyzes reinforcement learning on language models, directly relevant to RLHF and post‑training RL research.",
   "relevant": true
  },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.26145": {
+  "reason": "The paper focuses on a domain-specific agricultural forecasting model rather than advancing frontier model architectures, training methods, or benchmarks.",
+  "relevant": false
+ },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.26199": {
   "reason": "Introduces a new training-data selection method to improve reasoning faithfulness in multimodal vision-language models and reports benchmark gains.",
   "relevant": true
@@ -2238,6 +2250,10 @@
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.26282": {
   "reason": "Introduces a new structured reasoning fine-tuning method as an alternative to Chain-of-Thought, directly relevant to reasoning advances in LLMs.",
   "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.26286": {
+  "reason": "The paper studies peer review homogenization and LLM-generated text detection, not advances in model architectures, training, or capabilities.",
+  "relevant": false
  },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.26294": {
   "reason": "Focuses on autonomous driving perception/planning, not on frontier language or multimodal models of interest.",
@@ -2266,6 +2282,10 @@
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.26427": {
   "reason": "Focuses on reducing context length and retrieval overhead, directly relevant to long-context efficiency and multimodal agent performance.",
   "relevant": true
+ },
+ "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.26492": {
+  "reason": "It's an application of an existing LLM to medical error detection, not a new model, architecture, scaling insight, or benchmark of frontier models.",
+  "relevant": false
  },
  "f0f03a6fcb04:include:openai/gpt-oss-120b:2611.26509": {
   "reason": "Introduces a distilled decision model that leverages reasoning teachers, focusing on fast inference and post‑training efficiency, which aligns with frontier model advances.",

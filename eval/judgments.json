@@ -478,5 +478,37 @@
   "acf8a49d322d:2611.23601": {
     "relevant": true,
     "reason": "Introduces a new benchmark for evaluating LLM knowledge-context conflict, aligning with interest in capability measurement."
+  },
+  "acf8a49d322d:2611.23508": {
+    "relevant": true,
+    "reason": "Introduces a novel inference-time technique for LLM/LVLM reasoning that aligns with multimodal and chain-of-thought topics in the profile"
+  },
+  "acf8a49d322d:2611.23388": {
+    "relevant": true,
+    "reason": "Focuses on LLM post-training quantization and efficient serving, matching the efficiency and quantization interests."
+  },
+  "acf8a49d322d:2611.23533": {
+    "relevant": true,
+    "reason": "Introduces a benchmark evaluating LLMs' causal inference capabilities, fitting the profile's interest in capability benchmarks."
+  },
+  "acf8a49d322d:2611.26216": {
+    "relevant": true,
+    "reason": "Introduces a new capability benchmark for frontier models by evaluating their authorship attribution performance."
+  },
+  "acf8a49d322d:2611.26358": {
+    "relevant": true,
+    "reason": "Introduces a new large MoE model with scaling, long context, RL training, and efficiency techniques, matching the profile topics."
+  },
+  "acf8a49d322d:2611.26509": {
+    "relevant": true,
+    "reason": "Introduces a distilled decision model that leverages reasoning teachers, focusing on efficient inference and post‑training techniques."
+  },
+  "acf8a49d322d:2611.26317": {
+    "relevant": false,
+    "reason": "Focuses on speech extraction using semantic models, not on LLM architectures or training methods."
+  },
+  "acf8a49d322d:2611.25808": {
+    "relevant": true,
+    "reason": "It probes LLMs on a prosody benchmark, assessing their capabilities and limits, which matches the profile's interest in capability benchmarks."
   }
 }

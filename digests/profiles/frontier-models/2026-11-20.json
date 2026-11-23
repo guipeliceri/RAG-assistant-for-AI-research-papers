@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-20",
-  "generated_at": "2026-11-22T00:48:39+00:00",
+  "generated_at": "2026-11-23T01:17:09+00:00",
   "candidates": 84,
   "classified": 84,
-  "errors": 3,
+  "errors": 0,
   "papers": [
     {
       "arxiv_id": "2611.26358",

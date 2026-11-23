@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-19",
-  "generated_at": "2026-11-22T00:48:51+00:00",
+  "generated_at": "2026-11-23T01:17:16+00:00",
   "candidates": 70,
   "classified": 70,
-  "errors": 2,
+  "errors": 0,
   "papers": [
     {
       "arxiv_id": "2611.24540",
@@ -156,6 +156,21 @@
         "cs.AI"
       ],
       "reason": "Introduces a new diffusion LM architecture and post‑training editing technique for improved generation, fitting frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.24576",
+      "title": "Late Entry in Looped Language Models",
+      "authors": [
+        "Ziqi Jin",
+        "Jiaxi Li",
+        "Weiwen Xu",
+        "Aixin Sun"
+      ],
+      "url": "https://arxiv.org/abs/2611.24576",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new inference architecture and speedup technique for large language models, fitting the efficiency and architecture interests."
     },
     {
       "arxiv_id": "2611.23601",
@@ -472,6 +487,31 @@
         "cs.CL"
       ],
       "reason": "Introduces a reinforcement learning fine‑tuning method for language models, aligning with post‑training RL research in the profile."
+    },
+    {
+      "arxiv_id": "2611.24719",
+      "title": "DRIFT: Detachable Reasoning for Runtime-Flexible and Efficient End-to-End Driving",
+      "authors": [
+        "Emad Aghajanzadeh",
+        "Bethany Anne Wong",
+        "Leonhard Kunze",
+        "Moritz Thoma",
+        "Maximilian Forstenhäusler",
+        "Nael Fasfous",
+        "Manoj Rohit Vemparala",
+        "Pierpaolo Mori",
+        "Christos Anagnostopoulos",
+        "Daniel Mueller-Gritschneder",
+        "Ulf Schlichtmann"
+      ],
+      "url": "https://arxiv.org/abs/2611.24719",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "reason": "Introduces a lightweight LM with reasoning distillation for efficient multimodal autonomous driving, aligning with efficiency and multimodal model advances."
     },
     {
       "arxiv_id": "2611.23835",
