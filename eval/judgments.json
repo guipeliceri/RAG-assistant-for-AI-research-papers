@@ -510,5 +510,17 @@
   "acf8a49d322d:2611.25808": {
     "relevant": true,
     "reason": "It probes LLMs on a prosody benchmark, assessing their capabilities and limits, which matches the profile's interest in capability benchmarks."
+  },
+  "acf8a49d322d:2611.29303": {
+    "relevant": false,
+    "reason": "It's a historical survey of past LLM work, not a new method, system, benchmark, or analysis directly advancing frontier model topics."
+  },
+  "acf8a49d322d:2611.29034": {
+    "relevant": false,
+    "reason": "Focuses on safety risk assessment pipeline, not on model architectures, training, or capability benchmarks."
+  },
+  "acf8a49d322d:2611.28669": {
+    "relevant": true,
+    "reason": "Focuses on LLM reasoning failures and evaluates post-training methods like RL and fine-tuning, fitting the profile's interest in model capabilities and post-training techniques."
   }
 }

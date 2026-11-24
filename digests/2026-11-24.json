@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24T05:04:25+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 91,
+  "papers": [
+    {
+      "arxiv_id": "2611.29303",
+      "title": "From Vanishing Gradients to Recursive Self-Improvement: Evaluating the Most Influential Papers in Large Language Model Evolution (1997-2026)",
+      "authors": [
+        "Saadh Jawwadh"
+      ],
+      "url": "https://arxiv.org/abs/2611.29303",
+      "similarity": 0.7206,
+      "summary": "This review surveys 22 landmark papers on large language models from 1997 to 2026, arranging them chronologically and thematically to trace key innovations such as LSTM gates, Word2Vec embeddings, Transformer attention, and the scaling trade‑off highlighted by Chinchilla. It concludes by summarizing the current AI landscape (2024‑2026), noting emerging issues like adversarial jailbreaks, recursive model collapse, and closed‑loop self‑improvement systems (AIDE²)."
+    },
+    {
+      "arxiv_id": "2611.29034",
+      "title": "LITMUS - Literature Informed Testbed for Mapping Usecases and Synthesizing Risk-Cards",
+      "authors": [
+        "Seshu Tirupathi",
+        "Elizabeth M. Daly",
+        "Radu Marinescu",
+        "Javier Carnerero Cano",
+        "Yannis Belkhiter"
+      ],
+      "url": "https://arxiv.org/abs/2611.29034",
+      "similarity": 0.7163,
+      "summary": "The paper presents a structured pipeline that, given a specific AI use‑case, automatically generates a tailored dataset and a risk card that links identified hazards to that use‑case. The pipeline uses traceable evidence from peer‑reviewed literature to substantiate each risk‑use‑case relationship, extending prior claim‑verification methods to the domain of risk relevance. In evaluation on the MIT Risk Taxonomy with 320 benchmark samples, the approach achieved a 0.91 F1‑score, demonstrating its effectiveness in producing evidence‑based risk assessments for LLM deployments."
+    },
+    {
+      "arxiv_id": "2611.28669",
+      "title": "Physical regime changes expose formula misuse in large language models",
+      "authors": [
+        "Maohao Ran",
+        "Yanting Zhang",
+        "Chendong Ma",
+        "Jun Song"
+      ],
+      "url": "https://arxiv.org/abs/2611.28669",
+      "similarity": 0.7149,
+      "summary": "The paper studies how large language models (LLMs) incorrectly apply scientific formulas when the problem lies in a different physical regime, a mistake that makes the output look plausible but is physically wrong. By running controlled experiments on 72 physical mechanisms, the authors show that frontier LLMs can lose 13–57 percentage points in accuracy, and that reinforcement learning with verifiable rewards lets a 9‑billion‑parameter Qwen3.5 model match a 284‑billion‑parameter DeepSeek V4 Flash on regime‑dependent tasks, though its gains are limited by the formulas it already contains. Combining supervised fine‑tuning on a few worked examples with reinforcement learning boosts accuracy by 61 percentage points, and distilling knowledge from a teacher that supplies the correct formula raises accuracy from 0 % to 71 %."
+    },
+    {
+      "arxiv_id": "2611.29635",
+      "title": "Diversity in Unity, Theory in Practice: Hierarchical Multitask Benchmarks for Chinese Minority Languages",
+      "authors": [
+        "Yijie Li",
+        "Xi Cao",
+        "Yuan Sun",
+        "Quulgan Minggad",
+        "Abdulla Ablikim",
+        "JiaQingCaiWang"
+      ],
+      "url": "https://arxiv.org/abs/2611.29635",
+      "similarity": 0.7083,
+      "summary": "The paper introduces CMiLBench, a hierarchical multitask benchmark that evaluates large language models on three Chinese minority languages—Tibetan, Mongolian, and Uyghur—across 24,663 instances, 5 difficulty levels, and 17 tasks covering foundational ability, cultural specificity, and safety alignment. The benchmark is built by adapting existing datasets, constructing minority‑specific knowledge, and translating high‑resource benchmarks, and it is used to assess 14 state‑of‑the‑art commercial and open‑source LLMs with a hybrid scoring framework that combines automatic metrics and LLM‑as‑a‑Judge. The experiments reveal a gap between the models’ theoretical capabilities and their practical utility on these low‑resource languages."
+    },
+    {
+      "arxiv_id": "2611.28833",
+      "title": "Self-WSP: Can Language Models Improve Themselves Through Weight-Space Programming?",
+      "authors": [
+        "Guoming Ling",
+        "Shanshan Zhong",
+        "Kaixuan Zhang",
+        "Zhongzhan Huang"
+      ],
+      "url": "https://arxiv.org/abs/2611.28833",
+      "similarity": 0.6972,
+      "summary": "The paper explores whether a language model can improve itself by editing its own weights through weight‑space programming (WSP). Using Qwen3.5‑0.8B, the model reads its own weights, proposes edits, and then runs with the edited weights as both solver and editor, achieving large accuracy gains on GSM8K (from 11.8 % to 62.2 %) and MATH500 (from 7.0 % to 32.2 %) even when only 16 parameters are changed, and repeated self‑editing can keep improving performance. However, the edits lack interpretability, the model shows little understanding of its changes, and random‑search WSP sometimes performs comparably, indicating that further research is needed to realize recursive self‑improvement."
+    }
+  ]
+}
