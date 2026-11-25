@@ -1,0 +1,115 @@
+{
+  "date": "2026-11-23",
+  "generated_at": "2026-11-25T03:53:19+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 7,
+  "papers": [
+    {
+      "arxiv_id": "2611.26841",
+      "title": "Weight-Space Programming Writes In-Context Learning and Matches Fine-Tuning in Language Models",
+      "authors": [
+        "Konstantinos Skianis",
+        "Aristidis Likas"
+      ],
+      "url": "https://arxiv.org/abs/2611.26841",
+      "similarity": 0.7162,
+      "summary": "This paper investigates how a frontier language model can edit the weights of a weaker model using only example prompts, without gradient descent. Experiments on six tasks, four frontier editors, and three families of weaker language models show that the editors measure the shift caused by examples in the residual stream and write it into sparse MLP units, enabling the weaker model to match the accuracy of in‑context learning and fine‑tuning on the same examples while leaving perplexity unchanged, though it performs worse when wording changes. The strongest editor can also generate its own examples and achieves nearly the same performance on unseen items as when labels are provided."
+    },
+    {
+      "arxiv_id": "2611.26835",
+      "title": "Non-Expanding Gated Continued Fraction Architecture for Feedforward Layers in Language Models",
+      "authors": [
+        "Amit Dhurandhar",
+        "Vijil Chenthamarakshan",
+        "Karthikeyan Natesan Ramamurthy",
+        "Dennis Wei",
+        "Rahul Nair"
+      ],
+      "url": "https://arxiv.org/abs/2611.26835",
+      "similarity": 0.7007,
+      "summary": "The paper introduces a new non‑expanding gated continued‑fraction component that can replace the usual feed‑forward layers in language models, and it rewrites the division non‑linearity using logarithms and exponentials. By integrating this component into models such as GPT‑2, Llama‑3, Mamba‑2 and Llama‑MoE, the authors show that it matches or outperforms earlier continued‑fraction designs while delivering higher throughput. The log‑exp re‑implementation also stabilises training of deeper CoFrGeNets, eliminating the need for the incremental training scheme used in prior work."
+    },
+    {
+      "arxiv_id": "2611.27376",
+      "title": "Composable Soft-Prompt Distillation of RL Experts: Toward Continual Post-Training",
+      "authors": [
+        "Zhen Zhang",
+        "Changyi Yang",
+        "Xuehai He",
+        "Chengzhi Liu",
+        "Yutong Yin",
+        "Ziyue Liu",
+        "Zhuoran Yin",
+        "Yangmin Li",
+        "Zhihan Liu",
+        "Jisen Li",
+        "Mingyu Jin",
+        "Chuhan Li",
+        "Zhaotian Weng",
+        "Ruoyu He",
+        "Wenyao Gao",
+        "Jiaxin Deng",
+        "Chenwei Wu",
+        "Hui Shen",
+        "Wenhao Chai",
+        "Chenyang Zhao",
+        "Zhuofan Ying",
+        "Kieran Liu",
+        "Andrew Chen",
+        "Pony Ma",
+        "Zhaoran Wang",
+        "Alkesh Patel",
+        "Zhe Gan",
+        "Xin Eric Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.27376",
+      "similarity": 0.6865,
+      "summary": "The paper introduces Composable Soft‑Prompt Distillation (CSPD) to consolidate reinforcement‑learning experts without retraining the entire model. CSPD freezes the pre‑RL backbone, distills each expert into a single soft prompt, and composes multiple experts by concatenating their prompts, avoiding joint training. The method recovers at least 90 % of each teacher’s gain in 22 of 23 settings, matches MOPD’s performance (67.83 vs. 67.79), generalizes best across six held‑out benchmarks, and adds only 1.5 % overhead while achieving 2.40× the speed of rank‑4 LoRA."
+    },
+    {
+      "arxiv_id": "2611.27521",
+      "title": "PaMuk-Bench: A Parallel Multilingual Multitask Benchmark for Vision-Language Tasks",
+      "authors": [
+        "Silviu-Florin Gheorghe",
+        "Radu-Stefan Popa",
+        "Adriana Valentina Costache",
+        "Adrian-Gabriel Chifu",
+        "Alessia Amelio",
+        "Paul Irofti",
+        "Anders Skaarup Johansen",
+        "Lallouani Bouchakour",
+        "Mohamed Lichouri",
+        "Khaled Lounnas",
+        "Neelu Madan",
+        "Yashvir Malik",
+        "Radu Tudor Ionescu"
+      ],
+      "url": "https://arxiv.org/abs/2611.27521",
+      "similarity": 0.6797,
+      "summary": "The paper introduces PaMuk‑Bench, a parallel multilingual multitask benchmark for vision‑language tasks that contains more than 10,000 English prompts translated into Arabic, Danish, French, Hindi, Italian, and Romanian, along with corresponding generated and retrieved images. It supports evaluation across tasks such as text‑to‑image generation, image captioning, content‑based image retrieval, and difficulty estimation for generation and retrieval. Experiments show that zero‑shot English and multilingual pre‑trained VLMs perform consistently worse than fine‑tuned models, indicating that PaMuk‑Bench can help narrow the language gap for various VLM architectures."
+    },
+    {
+      "arxiv_id": "2611.27673",
+      "title": "Hy-MT3: More Accurate, Robust and Practical Multilingual Translation Models in the Wild",
+      "authors": [
+        "Mao Zheng",
+        "Zheng Li",
+        "Fangxu Liu",
+        "Tao Chen",
+        "Bingxin Qu",
+        "Bo Lv",
+        "Mingrui Sun",
+        "Hongyu Li",
+        "Hong Huang",
+        "Jinlong Song",
+        "Decheng Wu",
+        "Guanghua Yu"
+      ],
+      "url": "https://arxiv.org/abs/2611.27673",
+      "similarity": 0.6761,
+      "summary": null
+    }
+  ]
+}

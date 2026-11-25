@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-25",
+  "generated_at": "2026-11-25T03:53:15+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 54,
+  "papers": [
+    {
+      "arxiv_id": "2611.32012",
+      "title": "Marketing-Bench: Evaluating Frontier Models and Agents on Real-World Marketing Capabilities",
+      "authors": [
+        "Sumanth Balaji",
+        "Siddharth Gupta",
+        "Ameet Deshpande",
+        "Vishvak Murahari",
+        "Karthik Narasimhan"
+      ],
+      "url": "https://arxiv.org/abs/2611.32012",
+      "similarity": 0.7316,
+      "summary": "The paper introduces Marketing‑Bench, an open‑source benchmark that pairs discriminative tasks (detecting brand anomalies) with generative tasks (remediation) and evaluates five key pillars of brand content: factuality, consistency, coherence, structure, and brand voice. It tests frontier AI models and finds that the average model corrects only about half of the introduced issues (53.1 %), while the best model, GPT‑6 Astra, reaches 74.8 %; a marketing expert corrects nearly all of them. These results show that marketing capabilities of current models are still far from mature."
+    },
+    {
+      "arxiv_id": "2611.32064",
+      "title": "Fix How It Acts, Not How It Thinks: Surgical Fine-Tuning of Frontier LLMs",
+      "authors": [
+        "Sandeep Singh Sandha",
+        "Prann Bansal",
+        "Arvind Sundararajan"
+      ],
+      "url": "https://arxiv.org/abs/2611.32064",
+      "similarity": 0.7082,
+      "summary": "The paper tackles the problem that tiny surgical updates to large language models are largely lost when the models are merged into quantized checkpoints. It introduces merge‑aware fine‑tuning, which rounds the combined base and adapter weights to the release format at every training step so the loss is computed on the exact numerics that will be served. Applied to Nemotron‑3.5, this method improves agentic coding performance by up to 8.4 points on Terminal‑Bench 2.1 in both BF16 and NVFP4 releases."
+    },
+    {
+      "arxiv_id": "2611.31496",
+      "title": "Reading Between the Layers: Where Representation Quality Lives, and What Geometry Reveals",
+      "authors": [
+        "Arnesh Batra",
+        "Aniket Khandelwal",
+        "Arush Gumber",
+        "Krish Thukral",
+        "Kushagra Agrawal",
+        "Dev Sharma"
+      ],
+      "url": "https://arxiv.org/abs/2611.31496",
+      "similarity": 0.7066,
+      "summary": "The paper investigates where the best representations reside in pretrained text models, examining 25 models across four architectures and four pretraining strategies on 13 different tasks. It proposes the Stable Geometry Index (SGI), a label‑free selector that combines power‑law fit quality, effective‑rank capacity, spectral stability, and a weak depth prior to choose the optimal layer. SGI improves over the last‑layer baseline, raising Hit@3 from 0.39 to 0.52, recovering 40 % of the gap to the oracle, and shows that power‑law fit quality is a stronger predictor of layer quality than the exponent’s proximity to one."
+    },
+    {
+      "arxiv_id": "2611.31999",
+      "title": "Grounding Language Models in Revealed Audience Behavior",
+      "authors": [
+        "Jiwoo Jung",
+        "Daecheol An"
+      ],
+      "url": "https://arxiv.org/abs/2611.31999",
+      "similarity": 0.7051,
+      "summary": "The paper studies how well language models can predict real audience actions by fine‑tuning them on actual click, like, or watch data instead of just asking them to guess. It shows that an 8B model prompted to answer questions is correct about half the time, while the same model grounded on click records is correct 86.5% of the time, and that a smaller 0.6B grounded model beats every prompted model tested. Grounding helps most for behaviors where the text contains the signal (e.g., short‑video likes, +20 points on 200 videos) but offers little advantage for watch time, and encoding clicks as counts or shares makes no detectable difference."
+    },
+    {
+      "arxiv_id": "2611.31931",
+      "title": "Scoring What Matters: Exact Feedback Reduction for Language Model Comparison",
+      "authors": [
+        "Hui Zhang",
+        "Haoda Yue",
+        "Bicheng Deng",
+        "Yuanchao Zhu",
+        "Jun He",
+        "Rui Qian"
+      ],
+      "url": "https://arxiv.org/abs/2611.31931",
+      "similarity": 0.7041,
+      "summary": "The paper introduces Contrast‑Aware Feedback Acquisition (CAFA), a sampler‑agnostic method that identifies exactly which scoring queries are needed to compute a requested linear report, grouping identical inputs and aggregating their coefficients so that redundant queries beyond ordinary caching are removed while still producing the full result. For a fixed response bank and an otherwise unrestricted scalar scorer, the authors prove the necessary and sufficient query sets for exact recovery of sample means, and optionally covariances. In experiments, CAFA cuts the number of scoring inputs by 55.8 % and 90.1 % for Qwen2.5‑1.5B‑Instruct and SmolLM2‑1.7B‑Instruct, and reduces generation‑plus‑feedback cost by 46.1–51.3 % on three GRPO trajectories at RMS MCSE ≤ 0.04, while all 504 evaluated report cells match the fully scored results to numerical precision."
+    }
+  ]
+}

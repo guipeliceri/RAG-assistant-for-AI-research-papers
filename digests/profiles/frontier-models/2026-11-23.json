@@ -1,0 +1,112 @@
+{
+  "profile": "frontier-models",
+  "profile_name": "Advances in current frontier models",
+  "profile_fingerprint": "f0f03a6fcb04",
+  "model": "openai/gpt-oss-120b",
+  "borderline": "include",
+  "threshold": null,
+  "date": "2026-11-23",
+  "generated_at": "2026-11-25T04:02:21+00:00",
+  "candidates": 7,
+  "classified": 7,
+  "errors": 3,
+  "papers": [
+    {
+      "arxiv_id": "2611.26841",
+      "title": "Weight-Space Programming Writes In-Context Learning and Matches Fine-Tuning in Language Models",
+      "authors": [
+        "Konstantinos Skianis",
+        "Aristidis Likas"
+      ],
+      "url": "https://arxiv.org/abs/2611.26841",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel weight-editing method for frontier language models that matches in-context learning and fine-tuning."
+    },
+    {
+      "arxiv_id": "2611.27376",
+      "title": "Composable Soft-Prompt Distillation of RL Experts: Toward Continual Post-Training",
+      "authors": [
+        "Zhen Zhang",
+        "Changyi Yang",
+        "Xuehai He",
+        "Chengzhi Liu",
+        "Yutong Yin",
+        "Ziyue Liu",
+        "Zhuoran Yin",
+        "Yangmin Li",
+        "Zhihan Liu",
+        "Jisen Li",
+        "Mingyu Jin",
+        "Chuhan Li",
+        "Zhaotian Weng",
+        "Ruoyu He",
+        "Wenyao Gao",
+        "Jiaxin Deng",
+        "Chenwei Wu",
+        "Hui Shen",
+        "Wenhao Chai",
+        "Chenyang Zhao",
+        "Zhuofan Ying",
+        "Kieran Liu",
+        "Andrew Chen",
+        "Pony Ma",
+        "Zhaoran Wang",
+        "Alkesh Patel",
+        "Zhe Gan",
+        "Xin Eric Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.27376",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a continual RL post‑training distillation method using soft prompts, directly aligning with post‑training and efficiency topics."
+    },
+    {
+      "arxiv_id": "2611.27521",
+      "title": "PaMuk-Bench: A Parallel Multilingual Multitask Benchmark for Vision-Language Tasks",
+      "authors": [
+        "Silviu-Florin Gheorghe",
+        "Radu-Stefan Popa",
+        "Adriana Valentina Costache",
+        "Adrian-Gabriel Chifu",
+        "Alessia Amelio",
+        "Paul Irofti",
+        "Anders Skaarup Johansen",
+        "Lallouani Bouchakour",
+        "Mohamed Lichouri",
+        "Khaled Lounnas",
+        "Neelu Madan",
+        "Yashvir Malik",
+        "Radu Tudor Ionescu"
+      ],
+      "url": "https://arxiv.org/abs/2611.27521",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a multilingual multimodal benchmark to evaluate vision-language model capabilities, aligning with the profile's interest in multimodal models and capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.27444",
+      "title": "Silent Arbitration: How Large Language Models Resolve Co-Authoritative Conflicting Instructions",
+      "authors": [
+        "Sihyeon Lee",
+        "Jiwoo Kum",
+        "Jihun Song",
+        "Kyojun Choo",
+        "Chanwoo Kim",
+        "Chanjun Park"
+      ],
+      "url": "https://arxiv.org/abs/2611.27444",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark analyzing how LLMs handle conflicting instructions, relevant to instruction-following capabilities."
+    }
+  ]
+}

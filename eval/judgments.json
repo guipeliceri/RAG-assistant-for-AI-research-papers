@@ -522,5 +522,25 @@
   "acf8a49d322d:2611.28669": {
     "relevant": true,
     "reason": "Focuses on LLM reasoning failures and evaluates post-training methods like RL and fine-tuning, fitting the profile's interest in model capabilities and post-training techniques."
+  },
+  "acf8a49d322d:2611.26841": {
+    "relevant": true,
+    "reason": "Introduces a novel frontier technique for LLM weight editing that matches in-context learning and fine-tuning, directly advancing model capabilities."
+  },
+  "acf8a49d322d:2611.26835": {
+    "relevant": true,
+    "reason": "Introduces a novel feedforward architecture for language models, directly aligning with interests in model architectures and efficiency."
+  },
+  "acf8a49d322d:2611.27376": {
+    "relevant": true,
+    "reason": "Focuses on RL post-training and soft-prompt distillation, directly matching the profile's post-training and distillation topics"
+  },
+  "acf8a49d322d:2611.27521": {
+    "relevant": true,
+    "reason": "Introduces a multilingual multimodal benchmark, aligning with interest in multimodal models and capability benchmarks."
+  },
+  "acf8a49d322d:2611.27673": {
+    "relevant": true,
+    "reason": "Introduces a large MoE multilingual model, scaling details, instruction tuning, and a new evaluation benchmark, all aligning with frontier model advances."
   }
 }

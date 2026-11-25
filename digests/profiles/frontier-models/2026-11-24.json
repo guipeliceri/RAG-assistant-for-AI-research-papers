@@ -6,11 +6,29 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-24",
-  "generated_at": "2026-11-24T05:09:15+00:00",
-  "candidates": 91,
-  "classified": 91,
-  "errors": 28,
+  "generated_at": "2026-11-25T04:02:00+00:00",
+  "candidates": 172,
+  "classified": 172,
+  "errors": 42,
   "papers": [
+    {
+      "arxiv_id": "2611.30141",
+      "title": "Reading the Tea Leaves, Again: Can Large Language Models Predict Language Model Training Runs?",
+      "authors": [
+        "Xinran Zhao",
+        "Xiang Li",
+        "Tong Chen",
+        "Jinchuan Tian",
+        "Zichun Yu",
+        "Tongshuang Wu"
+      ],
+      "url": "https://arxiv.org/abs/2611.30141",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a benchmark evaluating LLMs' ability to predict training dynamics, fitting the profile's interest in capability measurement."
+    },
     {
       "arxiv_id": "2611.28669",
       "title": "Physical regime changes expose formula misuse in large language models",
@@ -26,6 +44,28 @@
         "cs.CL"
       ],
       "reason": "Analyzes LLM capability limits and uses RL fine-tuning and distillation to improve reasoning, fitting the profile's focus on post-training and benchmarks."
+    },
+    {
+      "arxiv_id": "2611.30627",
+      "title": "From Rewarding What Models Say to How They Think: Attention Process Reward Model for LLM Reinforcement Learning",
+      "authors": [
+        "Kairong Han",
+        "Nuanqiao Shan",
+        "Ziyu Zhao",
+        "Xinpeng Dong",
+        "Zijing Hu",
+        "Dian Jin",
+        "Leyan Deng",
+        "Junjian Ye",
+        "Lujia Pan",
+        "Fei Wu",
+        "Kun Kuang"
+      ],
+      "url": "https://arxiv.org/abs/2611.30627",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel internal-reasoning reward model for RL fine‑tuning of LLMs, aligning with RLHF and reinforcement learning for reasoning topics."
     },
     {
       "arxiv_id": "2611.29635",
@@ -45,6 +85,18 @@
       "reason": "Introduces a new benchmark to evaluate LLM capabilities on low-resource Chinese minority languages."
     },
     {
+      "arxiv_id": "2611.30623",
+      "title": "Does the Mixer Matter ? Paired-Seed Ablations of Tiny Bilingual Language Models",
+      "authors": [
+        "Ayoub Kirouane"
+      ],
+      "url": "https://arxiv.org/abs/2611.30623",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "The paper studies architecture choices, including mixture-of-experts and attention variants, directly relevant to frontier model architectures."
+    },
+    {
       "arxiv_id": "2611.28833",
       "title": "Self-WSP: Can Language Models Improve Themselves Through Weight-Space Programming?",
       "authors": [
@@ -58,6 +110,75 @@
         "cs.CL"
       ],
       "reason": "Introduces a novel self‑weight editing technique for LLMs, advancing model improvement methods."
+    },
+    {
+      "arxiv_id": "2611.30507",
+      "title": "When Does Continual Pre-Training Help? An Empirical Study of Decoupled Knowledge and Generation Trajectories in Clinical LLMs",
+      "authors": [
+        "Niclas Doll",
+        "Jasper Schulze Buschhoff",
+        "Shalaka Satheesh",
+        "Héctor Allende-Cid",
+        "Katrin Klug"
+      ],
+      "url": "https://arxiv.org/abs/2611.30507",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Analyzes continual pre‑training and preference optimization across model sizes, directly addressing frontier model scaling and adaptation techniques."
+    },
+    {
+      "arxiv_id": "2611.29843",
+      "title": "The Temporal Residual: Fast and Effective Retrofitting of Latent Feedback into Pretrained Language Models",
+      "authors": [
+        "Ziyang Cai",
+        "Xingyu Zhu",
+        "Sanjeev Arora"
+      ],
+      "url": "https://arxiv.org/abs/2611.29843",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new transformer architecture modification and retrofitting method that improves reasoning and benchmark performance."
+    },
+    {
+      "arxiv_id": "2611.29014",
+      "title": "Population-Based Post-Training for Large Language Models",
+      "authors": [
+        "Yixuan Even Xu",
+        "Aleksei Petrenko",
+        "Raja Giryes",
+        "Jackson Hamburger",
+        "Kevin Chen",
+        "Fei Fang",
+        "J. Zico Kolter",
+        "Philipp Krähenbühl"
+      ],
+      "url": "https://arxiv.org/abs/2611.29014",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new post-training RL method for LLMs, aligning with the profile's focus on post-training techniques."
+    },
+    {
+      "arxiv_id": "2611.30639",
+      "title": "Uncovering the Tells: Efficient Black-Box Audits for LLM Data Contamination",
+      "authors": [
+        "Dominik Bernard Lau",
+        "Filip Pawlicki",
+        "Jan Dubiński",
+        "Sebastian Cygert"
+      ],
+      "url": "https://arxiv.org/abs/2611.30639",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new black-box auditing benchmark for detecting data contamination in LLMs, measuring model limits."
     },
     {
       "arxiv_id": "2611.28612",
@@ -91,6 +212,58 @@
       "reason": "Introduces a new benchmark evaluating LLM reasoning and planning capabilities, fitting the profile's interest in capability measurement."
     },
     {
+      "arxiv_id": "2611.30965",
+      "title": "Beyond Self-Consistency: Recursive Self-Improvement at Test Time",
+      "authors": [
+        "Jianyu Wu",
+        "Yizhou Wang",
+        "Encheng Su",
+        "Jinouwen Zhang",
+        "Pengze Li",
+        "Lintao Wang",
+        "Chen Tang",
+        "Aoran Wang",
+        "Wanli Ouyang",
+        "Shixiang Tang"
+      ],
+      "url": "https://arxiv.org/abs/2611.30965",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new test-time self-improvement and distillation method for LLMs, aligning with post‑training and reasoning advances."
+    },
+    {
+      "arxiv_id": "2611.30934",
+      "title": "LimeTree: Linear-Memory Graph Neural Networks over Tree-Graphs for Resource-Efficient Language Modeling and Context Extrapolation",
+      "authors": [
+        "Elisabeth Fink"
+      ],
+      "url": "https://arxiv.org/abs/2611.30934",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new efficient architecture for language modeling with long-context capabilities, aligning with frontier model advances and efficiency topics."
+    },
+    {
+      "arxiv_id": "2611.29981",
+      "title": "Language models seek help despite guaranteed score losses in question answering",
+      "authors": [
+        "Jiahao You",
+        "Ziye Jia",
+        "Chao Dong",
+        "Fuhui Zhou",
+        "Qihui Wu"
+      ],
+      "url": "https://arxiv.org/abs/2611.29981",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark analyzing LLM decision‑making and help‑seeking behavior, measuring capabilities and limits of current models."
+    },
+    {
       "arxiv_id": "2611.29775",
       "title": "ComplexIF: A Challenging Multi-Turn, Multi-Constraint Instruction-Following Benchmark",
       "authors": [
@@ -109,6 +282,23 @@
       "reason": "Introduces a new benchmark to evaluate instruction-following capabilities of frontier LLMs."
     },
     {
+      "arxiv_id": "2611.30034",
+      "title": "STUN-Bench: Truly Unseen Tools for Evaluating Shared Tool Experience",
+      "authors": [
+        "Abhijit Chakraborty",
+        "Ni Trieu",
+        "Vivek Gupta"
+      ],
+      "url": "https://arxiv.org/abs/2611.30034",
+      "categories": [
+        "cs.SE",
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new benchmark (STUN-Bench) measuring LLM tool-use capabilities on unseen tools."
+    },
+    {
       "arxiv_id": "2611.29400",
       "title": "HGDNA: Overlapping k-mer Tokenization for Efficient Autoregressive Genomic Language Models",
       "authors": [
@@ -122,6 +312,51 @@
         "cs.AI"
       ],
       "reason": "Introduces a new tokenization scheme and hybrid linear‑attention architecture for efficient autoregressive language modeling, aligning with frontier model architecture and efficiency topics."
+    },
+    {
+      "arxiv_id": "2611.30406",
+      "title": "TAP: Policy Interfaces for Diffusion Language Models",
+      "authors": [
+        "Preeti",
+        "Ankita Kushwaha",
+        "Kiran Ravish",
+        "Pawan Kumar"
+      ],
+      "url": "https://arxiv.org/abs/2611.30406",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new diffusion LM architecture with policy interfaces, fitting the frontier model and architecture focus"
+    },
+    {
+      "arxiv_id": "2611.30675",
+      "title": "Empirical Margin Sensitivity: An Interventional Neuron-Level Probe of Post-Trained Medical LLMs",
+      "authors": [
+        "Aniruddh Shreyas",
+        "Aarnav Kembhavi",
+        "Minal Moharir"
+      ],
+      "url": "https://arxiv.org/abs/2611.30675",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Analyzes post‑trained medical LLMs and their benchmark performance, fitting the profile's focus on post‑training and capability measurement."
+    },
+    {
+      "arxiv_id": "2611.30587",
+      "title": "Quantizing Diffusion LLMs under Parallel Decoding: Commitment Risk and the Parallelism Tax",
+      "authors": [
+        "Huan Xu",
+        "Maosen Zhao",
+        "Pengtao Chen",
+        "Tao Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.30587",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Focuses on post‑training quantization and efficiency of large language models, which matches the profile's interest in quantization and fast inference."
     },
     {
       "arxiv_id": "2611.28719",
@@ -148,6 +383,20 @@
         "cs.CL"
       ],
       "reason": "Introduces a novel model composition and compilation technique for efficient inference, aligning with frontier model architecture and efficiency topics."
+    },
+    {
+      "arxiv_id": "2611.31113",
+      "title": "Attention Temperature Confounds Zero-Shot Context Extension",
+      "authors": [
+        "Ruben Navasardyan"
+      ],
+      "url": "https://arxiv.org/abs/2611.31113",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Analyzes attention temperature effects on zero-shot long-context extension, a benchmark-relevant issue for frontier transformer models."
     },
     {
       "arxiv_id": "2611.29127",
@@ -184,6 +433,57 @@
       "reason": "Introduces a new benchmark for evaluating and comparing capabilities of research-report-generating language models."
     },
     {
+      "arxiv_id": "2611.29936",
+      "title": "SAEPO: Sparse-Autoencoder-Guided Credit Assignment for Policy Optimization",
+      "authors": [
+        "Yusong Zhao",
+        "Zihao Zhao",
+        "Zirui Zhang",
+        "Tunyu Zhang",
+        "Ziyan Wang",
+        "Yi Wang",
+        "Chengzhi Mao",
+        "Hao Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.29936",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a reinforcement learning method for improving LLM reasoning, fitting the post‑training RL for reasoning focus."
+    },
+    {
+      "arxiv_id": "2611.29513",
+      "title": "Recursive Self-Editing: LLMs Program Their Own Weight Edits for Self-Improvement",
+      "authors": [
+        "Linghua Zhang",
+        "Yunhe Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.29513",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel self-editing weight update method for LLMs, advancing post‑training model improvement techniques."
+    },
+    {
+      "arxiv_id": "2611.31139",
+      "title": "Deneb-Vritra: Descriptions, Edges and Names Examined by Blocking Via Restoring Token Representations and Attention",
+      "authors": [
+        "Mohammed Nayeem Khan",
+        "Akhil P",
+        "Shahina Shaik"
+      ],
+      "url": "https://arxiv.org/abs/2611.31139",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a synthetic benchmark probing model behavior and limits, fitting the profile's interest in capability measurement."
+    },
+    {
       "arxiv_id": "2611.29066",
       "title": "RES: Accelerating Diffusion Language Models with Rolling Entropy Sampling",
       "authors": [
@@ -202,6 +502,59 @@
       "reason": "Introduces a new sampling method to speed up diffusion language model inference, aligning with efficiency and architecture interests."
     },
     {
+      "arxiv_id": "2611.29909",
+      "title": "Training-Free Interventions for Hallucination in Large Language Models",
+      "authors": [
+        "Can Huang"
+      ],
+      "url": "https://arxiv.org/abs/2611.29909",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Focuses on inference-time post-training interventions and evaluation of LLM factual correctness, aligning with frontier model capabilities and post-training methods."
+    },
+    {
+      "arxiv_id": "2611.30727",
+      "title": "CocoonBench: Can Multilingual Search Agents Escape Language Information Cocoons?",
+      "authors": [
+        "Hongchuan Zeng",
+        "Bowen Liu",
+        "Changjiang Gao",
+        "Senyu Han",
+        "Zhipei Xu",
+        "Peisong Wang",
+        "Xinbing Liang",
+        "Yuhan Li",
+        "Nuo Chen",
+        "Blaze Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.30727",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new benchmark evaluating multilingual LLM search capabilities, fitting the profile's interest in capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.30533",
+      "title": "CyberDualEval: Measuring Dual-Use Cyber Risks in Frontier Language Models",
+      "authors": [
+        "Magnus Saebo",
+        "Francesco Piccoli",
+        "Maxwell Watson",
+        "Pranjali Thakur",
+        "Yangruibo Ding",
+        "Zhuo Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.30533",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark evaluating capabilities and limits of frontier language models"
+    },
+    {
       "arxiv_id": "2611.28745",
       "title": "Multimodal LLMs Know the Game but Assume the Real World",
       "authors": [
@@ -217,6 +570,51 @@
         "cs.CV"
       ],
       "reason": "Introduces a multimodal LLM benchmark evaluating model reasoning and capability limits, fitting the profile's focus on multimodal models and capability measurement."
+    },
+    {
+      "arxiv_id": "2611.30202",
+      "title": "VADE: A Verifiable Agent Data Engine from Professional Sources",
+      "authors": [
+        "Xiangchao Chen",
+        "Zhiheng Lyu",
+        "Kai Zhang",
+        "Xueguang Ma",
+        "Ping Nie",
+        "Wenhu Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.30202",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "reason": "Introduces a new data engine and benchmark tasks for training and evaluating language agents in professional domains, aligning with the profile's focus on supervision, evaluation, and benchmarks for frontier models."
+    },
+    {
+      "arxiv_id": "2611.29120",
+      "title": "When Can a Rewiring Control Test LLM Weight Readers? C2 and an Eligibility Protocol",
+      "authors": [
+        "Vaishak Girish Kumar",
+        "Sanika Vilas Najan"
+      ],
+      "url": "https://arxiv.org/abs/2611.29120",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new control/benchmark to evaluate LLMs' ability to read network weights, measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.29852",
+      "title": "GlobalHRBench: Does Changing the Question Language Change the Legal Answer?",
+      "authors": [
+        "Yuding Wang",
+        "Yuhang Yao"
+      ],
+      "url": "https://arxiv.org/abs/2611.29852",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a multilingual legal QA benchmark that evaluates and measures capabilities of frontier LLMs."
     },
     {
       "arxiv_id": "2611.28665",
@@ -248,6 +646,55 @@
       "reason": "Introduces a post‑training self‑distillation method to improve retrieval‑augmented LLM performance and benchmarks positional robustness."
     },
     {
+      "arxiv_id": "2611.29954",
+      "title": "Yggdrasil: Tree-Routed Recurrent Experts for State Tracking and Fast CPU Inference",
+      "authors": [
+        "Cosmo Santoni"
+      ],
+      "url": "https://arxiv.org/abs/2611.29954",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new expert-based recurrent architecture focused on efficient CPU inference and state tracking, fitting the profile's interest in novel architectures and fast inference."
+    },
+    {
+      "arxiv_id": "2611.31015",
+      "title": "Can Latent Reasoning Drive LLM Outputs Without a Trace?",
+      "authors": [
+        "Tomer Ashuach",
+        "Zorik Gekhman",
+        "Avi Caciularu",
+        "Ori Ram",
+        "Jonathan Herzig"
+      ],
+      "url": "https://arxiv.org/abs/2611.31015",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Investigates deeper latent reasoning and chain-of-thought in LLMs, directly relevant to reasoning advances."
+    },
+    {
+      "arxiv_id": "2611.30094",
+      "title": "Character Information in Language Models: A Prompt-Independent Word Store and a Late, Question-Driven Signal That Grows With Scale",
+      "authors": [
+        "Pratyush Acharya",
+        "Nuraj Rimal",
+        "Apar Baral",
+        "Habish Dhakal",
+        "Piyush Mohan Bhattarai"
+      ],
+      "url": "https://arxiv.org/abs/2611.30094",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "The paper studies how character‑level knowledge scales across LLMs, providing measurements of model capabilities that align with the profile’s focus on benchmarks and scaling analyses."
+    },
+    {
       "arxiv_id": "2611.29155",
       "title": "ContextFact: Remembering Facts in Context for Long-Term Conversational Agents",
       "authors": [
@@ -263,6 +710,63 @@
         "cs.AI"
       ],
       "reason": "Introduces a memory system to improve long-context handling and evaluation for LLM-based conversational agents"
+    },
+    {
+      "arxiv_id": "2611.30207",
+      "title": "What Makes Good Data for Training Coding Agents? A Systematic Study on SWE-Gym",
+      "authors": [
+        "Yikai Zhang",
+        "Mai Xu",
+        "Yunbei Zhang",
+        "Qirui Jin",
+        "Kenan Li",
+        "Yuwen Jia",
+        "Jinwei Yao",
+        "Xiangyu Zhang",
+        "Jielun Tan",
+        "Jin Pan",
+        "Zijian Jin",
+        "Xiao Sun"
+      ],
+      "url": "https://arxiv.org/abs/2611.30207",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "reason": "Addresses RL training data quality for coding agents and releases a benchmark, fitting the profile's interest in post‑training RL methods and capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.31021",
+      "title": "Parsing Visual Latents for Multimodal Spatial Reasoning",
+      "authors": [
+        "Zhuoying Yang",
+        "Yichen Guo",
+        "Kathy Jia",
+        "Zichang Su",
+        "Ayesha Kashif",
+        "Nange Hai",
+        "Jeffrey Ming Han Li",
+        "Zhewen He",
+        "Silvio Kempf",
+        "Ni Jiachen",
+        "Junjie Yang",
+        "Muhammad Hamza",
+        "Zakaria El Ouahidi",
+        "Gabriel Azpitarte",
+        "Manling Li",
+        "Yi Fang",
+        "Shuhong Liu",
+        "Mengyu Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.31021",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a framework to improve multimodal vision-language models' spatial reasoning, matching the profile's focus on multimodal models and reasoning capabilities."
     },
     {
       "arxiv_id": "2611.28854",
@@ -283,6 +787,20 @@
         "cs.CL"
       ],
       "reason": "Introduces a benchmark evaluating LLMs' ability to simulate social effects, measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.28929",
+      "title": "Definition-Guided In-Context Learning for Zero-Shot Spoken Language Understanding",
+      "authors": [
+        "Neeraj Agrawala",
+        "Sriram Ganapathy"
+      ],
+      "url": "https://arxiv.org/abs/2611.28929",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a multimodal instruction-tuning method for zero-shot speech understanding, aligning with frontier model advances."
     },
     {
       "arxiv_id": "2611.29664",
@@ -316,6 +834,55 @@
         "cs.CL"
       ],
       "reason": "Investigates internal confidence and backtracking in chain-of-thought reasoning, directly relevant to reasoning and CoT research."
+    },
+    {
+      "arxiv_id": "2611.30361",
+      "title": "LeanReviewBench: Semantic Alignment Review in Mathematical Lean Projects",
+      "authors": [
+        "Ruichen Qiu",
+        "Hao Shen",
+        "Lihong Zhi",
+        "Xiao-Shan Gao"
+      ],
+      "url": "https://arxiv.org/abs/2611.30361",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "reason": "Introduces a benchmark evaluating LLMs on semantic alignment, fitting the profile's interest in capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.29628",
+      "title": "Explainable Emotion and Mental Health Reasoning in Large Language Models Using Theories of Emotion",
+      "authors": [
+        "Tadesse Destaw Bela",
+        "Iqra Ameer",
+        "Helena Gómez Adorno",
+        "Alexander Gelbukh",
+        "Eusebio Ricardez Vázquez",
+        "Olga Kolesnikova",
+        "Grigori Sidorov",
+        "Seid Muhie Yimam"
+      ],
+      "url": "https://arxiv.org/abs/2611.29628",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new chain-of-thought prompting method for LLM reasoning on emotion tasks, aligning with the profile's interest in reasoning and CoT techniques."
+    },
+    {
+      "arxiv_id": "2611.30334",
+      "title": "When Does Reasoning Help Entity Disambiguation? Small LLMs In-Domain and Under Shift",
+      "authors": [
+        "Samy Haffoudhi",
+        "Fabian M Suchanek",
+        "Nils Holzenberger"
+      ],
+      "url": "https://arxiv.org/abs/2611.30334",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Analyzes reasoning-based LLMs and RL/distillation methods for entity disambiguation, directly addressing reasoning and post‑training techniques."
     },
     {
       "arxiv_id": "2611.29393",
@@ -387,6 +954,30 @@
       "reason": "Analyzes LLM-based Text-to-SQL errors and introduces a benchmark to assess and improve frontier model performance."
     },
     {
+      "arxiv_id": "2611.31350",
+      "title": "GHC:Expanding Residual Interfaces in Hyper-Connections",
+      "authors": [
+        "Tianyu Li",
+        "Hongtao Zhang",
+        "Dongchen Han",
+        "Jingshu Liu",
+        "Bojun Wang",
+        "Chen Jiang",
+        "Yulong Huang",
+        "Wei Chen",
+        "Tianyu He",
+        "Xiangyu Zhang",
+        "Gao Huang"
+      ],
+      "url": "https://arxiv.org/abs/2611.31350",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new architectural variant for transformers/MoE models improving residual connections and training efficiency."
+    },
+    {
       "arxiv_id": "2611.29651",
       "title": "Which Loopholes Get Found? Predicting Reward Hacking of LLM Judges Before RL Training",
       "authors": [
@@ -403,6 +994,39 @@
       "reason": "Analyzes reward hacking and RL training dynamics of LLMs, directly relevant to RLHF and post‑training safety research."
     },
     {
+      "arxiv_id": "2611.30819",
+      "title": "Ask Again: Answer-List Instability in Generative Engines",
+      "authors": [
+        "Björn Busch-Geertsema",
+        "David Antony Selby",
+        "Sebastian Vollmer"
+      ],
+      "url": "https://arxiv.org/abs/2611.30819",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark measuring output stability of generative models, fitting the profile's interest in capability/limit evaluation."
+    },
+    {
+      "arxiv_id": "2611.31198",
+      "title": "ToolSmith: An Automatic Tool-Generation Framework for Multimodal Search Agents",
+      "authors": [
+        "Rui Sun",
+        "Junhua Huang",
+        "Luca Zancato",
+        "Md Mofijul Islam",
+        "Kai-Wei Chang"
+      ],
+      "url": "https://arxiv.org/abs/2611.31198",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "reason": "Introduces a new framework for multimodal search agents and evaluates it on several benchmarks, aligning with the profile's interest in multimodal models and capability measurement."
+    },
+    {
       "arxiv_id": "2611.28860",
       "title": "Thakaa at StanceEval-2026: Inference-Time Target Grounding for Arabic Stance Detection",
       "authors": [
@@ -415,6 +1039,35 @@
         "cs.CL"
       ],
       "reason": "Introduces and evaluates a new benchmark (StanceEval-2026) for LLM performance, fitting the profile's interest in capability-measuring benchmarks."
+    },
+    {
+      "arxiv_id": "2611.31185",
+      "title": "CO-GRAFT: Attributing Reinforcement Learning Gains in Search Agents via Role-Level Policy Grafting",
+      "authors": [
+        "Ramraj Chandradevan",
+        "Sayontan Ghosh",
+        "Vinoth Selvendran"
+      ],
+      "url": "https://arxiv.org/abs/2611.31185",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Analyzes reinforcement learning improvements in LLM search agents, directly relevant to RL-based post‑training of frontier models."
+    },
+    {
+      "arxiv_id": "2611.29242",
+      "title": "Edit-Induced Dependency Mismatch: Propagation Omissions, Recovery, and Evaluation Blind Spots in Coding Agents",
+      "authors": [
+        "Fei Ding"
+      ],
+      "url": "https://arxiv.org/abs/2611.29242",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "reason": "Analyzes and proposes evaluation improvements for coding agents, directly relating to benchmarking model capabilities."
     },
     {
       "arxiv_id": "2611.29697",
@@ -475,6 +1128,24 @@
         "cs.CL"
       ],
       "reason": "Introduces a new architecture and training method to give multimodal LLMs spatial reasoning capabilities, fitting frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.29354",
+      "title": "Endpoint-Conditioned Process Value: What an Endpoint-Blind Process Score Adds Once Terminal Status and Cost Are Known",
+      "authors": [
+        "Chris D Yan",
+        "Ken Wang",
+        "MarkX Qian",
+        "Jin Jiang",
+        "Albus Wu",
+        "Wenhao Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.29354",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "reason": "Introduces a new benchmark/evaluation protocol for LLMs that measures process metrics and model capabilities."
     },
     {
       "arxiv_id": "2611.28576",
@@ -634,6 +1305,42 @@
       "reason": "Introduces a new benchmark and evaluation pipeline for measuring LLM performance on collaborative grounding, fitting the profile's interest in capability benchmarks."
     },
     {
+      "arxiv_id": "2611.29062",
+      "title": "HyperHarness: Learning to Generate Personalized Agent Harnesses from User Histories",
+      "authors": [
+        "Zhaoxuan Tan",
+        "Jiachen Zhao",
+        "Jingbo Yang",
+        "Zheyuan Liu",
+        "Chuhan Wang",
+        "Pei Zhou",
+        "Mengting Wan",
+        "Meng Jiang"
+      ],
+      "url": "https://arxiv.org/abs/2611.29062",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new method for personalized LLM agent harness generation, touching on post‑training adaptation and long‑context efficiency."
+    },
+    {
+      "arxiv_id": "2611.31068",
+      "title": "UMAMI: A Multimodal Benchmark Dataset for Evidence-Grounded Dietary Decisions",
+      "authors": [
+        "Safal Thapaliya",
+        "Jiatan Huang",
+        "Debapriya Chatterjee",
+        "Yanfang Ye",
+        "Chuxu Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.31068",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces a multimodal benchmark dataset for evaluating multimodal models, aligning with the profile's interest in multimodal benchmarks."
+    },
+    {
       "arxiv_id": "2611.28947",
       "title": "Don't Sleep, Keep Watch: Proactive Perception for Computer-Use Agents",
       "authors": [
@@ -687,6 +1394,56 @@
       "reason": "Introduces a new benchmark for evaluating model editing and faithfulness, which aligns with measuring capabilities of frontier models."
     },
     {
+      "arxiv_id": "2611.31112",
+      "title": "Look Back, Draft Ahead: Corrective Prefix Attention for Parallel Speculative Decoding",
+      "authors": [
+        "Mohammad Mahdi Moradi",
+        "Ali Pourranjbar",
+        "Zongzuo Wang",
+        "Mingming Zhu",
+        "Ben Feng",
+        "Boxing Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.31112",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new efficient speculative decoding method to speed up LLM inference, aligning with the profile's focus on fast inference techniques."
+    },
+    {
+      "arxiv_id": "2611.30702",
+      "title": "Lowering the Bar for Everyone: Hidden Validation-Seeking Goals in Empathetic RL",
+      "authors": [
+        "Xinche Zhang",
+        "Shanghong Xie",
+        "Zhiyuan Ma",
+        "Jinhao Li",
+        "Sen Song"
+      ],
+      "url": "https://arxiv.org/abs/2611.30702",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "The paper investigates RL fine‑tuning of LLMs and introduces analysis/benchmarks of empathetic RL behavior, directly relating to RLHF and capability evaluation."
+    },
+    {
+      "arxiv_id": "2611.28997",
+      "title": "Elicitation format changes zero-shot classification accuracy in a medical vision-language model: a two-center evaluation on colorectal histopathology",
+      "authors": [
+        "Anay Sinhal",
+        "Amit Sinhal",
+        "Arpana Sinhal"
+      ],
+      "url": "https://arxiv.org/abs/2611.28997",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Analyzes prompting effects on a multimodal frontier model, relevant to instruction tuning and capability benchmarking"
+    },
+    {
       "arxiv_id": "2611.28589",
       "title": "CLOSE: A Calibrated Label-free Online Self-Evaluating Verifier for Object Hallucination in Vision-Language Models",
       "authors": [
@@ -701,6 +1458,22 @@
       "reason": "Introduces a calibrated self-evaluating verifier for vision-language models, advancing multimodal model evaluation and capability measurement."
     },
     {
+      "arxiv_id": "2611.30190",
+      "title": "Same Executions, Different Gaps: Judgment Rules in Web-Agent Evaluation",
+      "authors": [
+        "Zelong Wang",
+        "Weiyue Li",
+        "Fei Xue",
+        "Junru Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.30190",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new evaluation methodology for web agents, a benchmark relevant to measuring model capabilities."
+    },
+    {
       "arxiv_id": "2611.29193",
       "title": "Direct Feedback Policy Optimization for AI Coding Agents",
       "authors": [
@@ -713,6 +1486,24 @@
         "cs.CL"
       ],
       "reason": "Introduces a new reinforcement learning method for training AI coding agents, fitting the profile's interest in RL-based post‑training techniques for frontier models."
+    },
+    {
+      "arxiv_id": "2611.30280",
+      "title": "Evaluating Persona Consistency in LLM User Simulators Without External Reference Annotations",
+      "authors": [
+        "Anping Zhang",
+        "Yang Tan",
+        "Yipeng Liu",
+        "Clive Bai",
+        "Blaze Chen",
+        "Yang Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.30280",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new evaluation benchmark for LLM persona consistency, fitting the profile's interest in capability measurement."
     }
   ]
 }
