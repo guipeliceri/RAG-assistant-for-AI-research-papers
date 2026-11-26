@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-26",
+  "generated_at": "2026-11-26T03:17:59+00:00",
+  "summary_model": "openai/gpt-oss-20b",
+  "profile_id": "acf8a49d322d",
+  "profile_name": "Advances in current frontier models",
+  "candidates": 66,
+  "papers": [
+    {
+      "arxiv_id": "2611.33307",
+      "title": "Lost in Translation, Not in Confidence: Benchmarking and Calibrating Multilingual Decision Models",
+      "authors": [
+        "Mingzhe Du",
+        "Thong Thanh Nguyen",
+        "Nguyen Tran Cong Duy",
+        "See-Kiong Ng",
+        "Luu Anh Tuan"
+      ],
+      "url": "https://arxiv.org/abs/2611.33307",
+      "similarity": 0.7473,
+      "summary": "The paper benchmarks 25 multilingual decision models on 17 tasks across 14 languages, comparing each language to English on parallel items. It finds that every model loses accuracy in every language, from about 2 points in high‑resource languages to 8 points in Tamil, while confidence drops only about half as much (a 95 % English threshold yields 90 % in Tamil). The loss depends on language and base model rather than leaderboard rank, and even extensive fine‑tuning or additional data does not close the gaps; moreover, LLM‑translated test sets understate the true performance gap."
+    },
+    {
+      "arxiv_id": "2611.33789",
+      "title": "Multimodal Safety Evaluation of Vision-Language Models in Japanese",
+      "authors": [
+        "Su Myat Noe",
+        "Hisami Suzuki",
+        "Kouta Nakayama",
+        "Naoaki Okazaki"
+      ],
+      "url": "https://arxiv.org/abs/2611.33789",
+      "similarity": 0.7119,
+      "summary": "The paper extends the Multimodal Safety Test Suite to Japanese by adding 320 translated and post‑edited cases with reference answers and 82 culturally localized images, and introduces a new evaluation framework that expands safety categories to a 5‑point scale and separates image recognition from safety judgment. Using this framework, the authors evaluate five modern Japanese VLMs and find large differences in safety readiness, and show that LLM‑as‑a‑Judge models agree better with human safety judgments when given reference answers, though they still miss many unsafe responses."
+    },
+    {
+      "arxiv_id": "2611.33302",
+      "title": "Two Timescales of Forgetting in Fine-tuning of Language Models: Fast Behavioral Suppression and Slow Representational Drift",
+      "authors": [
+        "Yilin Luo",
+        "Jin Hwa Lee",
+        "Andrew M. Saxe",
+        "Antonio Sclocchi"
+      ],
+      "url": "https://arxiv.org/abs/2611.33302",
+      "similarity": 0.706,
+      "summary": "The paper studies how fine‑tuning a transformer on a subset of rules from a controlled context‑free grammar changes its internal representations. By pretraining on the Random Hierarchy Model and then fine‑tuning to delete certain generative rules, the authors find that the model’s ability to generate those rules is suppressed quickly, while the corresponding latent representations remain intact for a long time and only drift away slowly. These results, replicated in a natural‑language setting, suggest that fine‑tuning causes a separation of timescales between behavioral forgetting and representational drift."
+    },
+    {
+      "arxiv_id": "2611.33625",
+      "title": "State Space Attention: Learning Context-Dependent Memory Retention",
+      "authors": [
+        "Ege Çakar",
+        "Cengiz Pehlevan"
+      ],
+      "url": "https://arxiv.org/abs/2611.33625",
+      "similarity": 0.704,
+      "summary": "The paper introduces State Space Attention (SSA), a method that learns which past representations to keep in a bounded memory and reads them with standard attention. SSA trains a scorer to rescore chunks against new context, can shift from soft to hard retention, and uses a recovery technique to generate supervised samples. On retrieval, variable‑tracking, multi‑hop reasoning, and language‑modeling benchmarks, SSA matches or is within a few points of full attention on most tasks, far outperforms a Transformer with the same readable budget on every long‑context retrieval task, and matches or outperforms one with about four times that budget while keeping inference memory constant."
+    },
+    {
+      "arxiv_id": "2611.33394",
+      "title": "Confidence scores for gated automation of large language models",
+      "authors": [
+        "Luiz G. A. Alves",
+        "Aaron Vermeersch"
+      ],
+      "url": "https://arxiv.org/abs/2611.33394",
+      "similarity": 0.6981,
+      "summary": "The paper trains a linear confidence‑score head on the final‑layer hidden state of a frozen 2‑billion‑parameter LLM to predict whether the model’s answer is correct, letting the system automatically accept confident responses and route uncertain ones for human review. Compared to several baselines and text‑only metamodels, this head outperforms all alternatives on a dataset that is about 98 % SQuAD and the remainder TruthfulQA, automating the largest share of decisions while keeping high accuracy. The authors note that prompted confidence scores can be well calibrated yet lack the resolution needed for thresholding, and that the head’s transferability to unseen datasets is modest but still the most robust approach."
+    }
+  ]
+}

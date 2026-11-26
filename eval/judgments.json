@@ -542,5 +542,17 @@
   "acf8a49d322d:2611.27673": {
     "relevant": true,
     "reason": "Introduces a large MoE multilingual model, scaling details, instruction tuning, and a new evaluation benchmark, all aligning with frontier model advances."
+  },
+  "acf8a49d322d:2611.29635": {
+    "relevant": true,
+    "reason": "Introduces a new benchmark to evaluate LLM capabilities on low-resource languages, aligning with interest in capability measurement benchmarks."
+  },
+  "acf8a49d322d:2611.28833": {
+    "relevant": true,
+    "reason": "Introduces a novel post‑training method (self weight‑space programming) for improving LLMs, aligning with frontier model advances."
+  },
+  "acf8a49d322d:2611.32012": {
+    "relevant": true,
+    "reason": "Introduces a benchmark evaluating frontier AI model capabilities, matching the profile's interest in capability benchmarks."
   }
 }

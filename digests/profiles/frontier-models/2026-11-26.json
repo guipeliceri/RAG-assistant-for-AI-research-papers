@@ -1,0 +1,453 @@
+{
+  "profile": "frontier-models",
+  "profile_name": "Advances in current frontier models",
+  "profile_fingerprint": "f0f03a6fcb04",
+  "model": "openai/gpt-oss-120b",
+  "borderline": "include",
+  "threshold": null,
+  "date": "2026-11-26",
+  "generated_at": "2026-11-26T03:21:24+00:00",
+  "candidates": 66,
+  "classified": 66,
+  "errors": 21,
+  "papers": [
+    {
+      "arxiv_id": "2611.33307",
+      "title": "Lost in Translation, Not in Confidence: Benchmarking and Calibrating Multilingual Decision Models",
+      "authors": [
+        "Mingzhe Du",
+        "Thong Thanh Nguyen",
+        "Nguyen Tran Cong Duy",
+        "See-Kiong Ng",
+        "Luu Anh Tuan"
+      ],
+      "url": "https://arxiv.org/abs/2611.33307",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a multilingual benchmark evaluating decision model performance and calibration across languages"
+    },
+    {
+      "arxiv_id": "2611.33302",
+      "title": "Two Timescales of Forgetting in Fine-tuning of Language Models: Fast Behavioral Suppression and Slow Representational Drift",
+      "authors": [
+        "Yilin Luo",
+        "Jin Hwa Lee",
+        "Andrew M. Saxe",
+        "Antonio Sclocchi"
+      ],
+      "url": "https://arxiv.org/abs/2611.33302",
+      "categories": [
+        "cs.LG",
+        "cond-mat.dis-nn",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "reason": "Analyzes fine-tuning dynamics and representation drift in language models, directly relevant to post‑training and model behavior topics."
+    },
+    {
+      "arxiv_id": "2611.33789",
+      "title": "Multimodal Safety Evaluation of Vision-Language Models in Japanese",
+      "authors": [
+        "Su Myat Noe",
+        "Hisami Suzuki",
+        "Kouta Nakayama",
+        "Naoaki Okazaki"
+      ],
+      "url": "https://arxiv.org/abs/2611.33789",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a multimodal safety benchmark for vision-language models, aligning with the profile's focus on multimodal models and capability evaluation."
+    },
+    {
+      "arxiv_id": "2611.33339",
+      "title": "Temporal Weight Surgery: Repairing Video Grounding with LLM Editors",
+      "authors": [
+        "Ali Asgarov",
+        "Chris Thomas"
+      ],
+      "url": "https://arxiv.org/abs/2611.33339",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel LLM‑based weight editing method for multimodal video‑language models, advancing post‑training techniques and multimodal model capabilities."
+    },
+    {
+      "arxiv_id": "2611.33499",
+      "title": "Evaluating Large Language Models on conversational African American English: Feature classification and next-turn generation",
+      "authors": [
+        "Romeo De Timmerman",
+        "Thomas Demeester",
+        "Els Lefever"
+      ],
+      "url": "https://arxiv.org/abs/2611.33499",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark evaluating LLM capabilities on dialectal variation, fitting the profile's interest in capability measurements."
+    },
+    {
+      "arxiv_id": "2611.33962",
+      "title": "DLaR: Dynamic Stochasticity Control for Latent Reasoning in Large Language Models",
+      "authors": [
+        "Xiaocheng Luo",
+        "Peng Xu",
+        "Zaifu Zhan",
+        "Xiangyu Duan"
+      ],
+      "url": "https://arxiv.org/abs/2611.33962",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a reinforcement learning based method to improve latent reasoning in LLMs, aligning with post‑training reasoning advances."
+    },
+    {
+      "arxiv_id": "2611.34015",
+      "title": "Residual Cross-Model Narrative Convergence under Shared Prompts: Auditing Prompt Controls and Narrative Measurement",
+      "authors": [
+        "Mehdy Sedaghat Payam"
+      ],
+      "url": "https://arxiv.org/abs/2611.34015",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a benchmark measuring cross‑model output similarity, fitting the profile's interest in capability/limit evaluations."
+    },
+    {
+      "arxiv_id": "2611.33468",
+      "title": "Learning from Recurrence: Internalizing Depth-Induced Preferences in Looped Language Models",
+      "authors": [
+        "Hui Chen",
+        "Joshua Elsdon",
+        "Can Goksen"
+      ],
+      "url": "https://arxiv.org/abs/2611.33468",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a novel recurrent architecture and training method to boost reasoning performance, fitting frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.33692",
+      "title": "Rethinking Sequential Locate-Then-Edit: Optimality and Stability",
+      "authors": [
+        "Bingqing Liu",
+        "Wei Liu",
+        "Zhiying Deng",
+        "Jun Wang",
+        "Yuhua Li",
+        "Ruixuan Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.33692",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a novel, stable sequential model‑editing method for large language models, a post‑training technique relevant to frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.33452",
+      "title": "HumblePRM: Improving VLM Abstention in Ambiguous Situations through Process Reward Modeling",
+      "authors": [
+        "Saket Reddy",
+        "Ke Yang",
+        "ChengXiang Zhai"
+      ],
+      "url": "https://arxiv.org/abs/2611.33452",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new reward-modeling technique for multimodal (VLM) calibration, aligning with post‑training and multimodal model advances."
+    },
+    {
+      "arxiv_id": "2611.34092",
+      "title": "Improving Tail-Augmented Speculative Drafting with Hidden State Mixing and Gradient Detach",
+      "authors": [
+        "Yaniv Galron",
+        "Rabeeh Karimi Mahabadi",
+        "Maor Ashkenazi",
+        "Roger Waleffe",
+        "Talor Abramovich",
+        "Tiyasa Mitra",
+        "Yoav Miron",
+        "Dor Tsur",
+        "Sanjeev Satheesh",
+        "Jimmy Zhang",
+        "Jiaji Huang",
+        "Yonatan Geifman",
+        "Mostofa Patwary",
+        "Mohammad Shoeybi",
+        "Bita Rouhani",
+        "Ran Zilberstein"
+      ],
+      "url": "https://arxiv.org/abs/2611.34092",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces training methods to improve speculative decoding, a fast inference technique for large language models."
+    },
+    {
+      "arxiv_id": "2611.33314",
+      "title": "Building a Unified Inline Code Editing Model for GitHub Copilot",
+      "authors": [
+        "Microsoft CodeAI Team",
+        "Microsoft VS Code Team",
+        "Julia Gong",
+        "Benjamin Liggett",
+        "Shengjie Ma",
+        "Ulugbek Abdullaev",
+        "Zhehui Liao",
+        "Benjamin Steenhoek",
+        "Gaurav Mittal",
+        "Fuhui Fang",
+        "Satarupa Guha",
+        "Hang Zhao",
+        "Anand Mooga",
+        "Cheng Long",
+        "Benjamin Simmonds",
+        "Soojin Choi",
+        "Luciana Abud",
+        "Nathan Halstead",
+        "Alexandru Dima",
+        "Yu Hu",
+        "Elsie Nallipogu"
+      ],
+      "url": "https://arxiv.org/abs/2611.33314",
+      "categories": [
+        "cs.SE",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new unified LLM for code editing with novel training and reward methods, fitting frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.33428",
+      "title": "When the Knowledge Runs Out: A Part-Level Pilot Evaluation of How Language Models Handle Partially Covered Questions",
+      "authors": [
+        "Vahid Mohammadi"
+      ],
+      "url": "https://arxiv.org/abs/2611.33428",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new benchmark evaluating LLM faithfulness and handling of partial context, measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.33303",
+      "title": "Certify What You Plant: Shortcut-Free Proof Depth in Logical Reasoning Data",
+      "authors": [
+        "Baptiste Juran",
+        "Dimitri Kachler",
+        "Damien Sileo"
+      ],
+      "url": "https://arxiv.org/abs/2611.33303",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LO"
+      ],
+      "reason": "Introduces certified reasoning datasets and benchmarks for evaluating LLM logical reasoning capabilities."
+    },
+    {
+      "arxiv_id": "2611.33823",
+      "title": "Pitfalls of Dependency-Ready Decoding for Masked Diffusion Language Models",
+      "authors": [
+        "Lina Berrayana",
+        "Christopher Malon",
+        "Yoichi Ishibashi",
+        "Taichi Aida",
+        "Masafumi Oyamada"
+      ],
+      "url": "https://arxiv.org/abs/2611.33823",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "The paper studies a novel language model architecture (masked diffusion) and its decoding strategies, fitting the profile's focus on frontier model advances and inference efficiency."
+    },
+    {
+      "arxiv_id": "2611.33896",
+      "title": "Looped Models are Fast Multi-Token Predictors",
+      "authors": [
+        "Ayhan Suleymanzade",
+        "Sean McLeish",
+        "Sehoon Kim",
+        "Jinwoo Kim",
+        "Antoine Bosselut"
+      ],
+      "url": "https://arxiv.org/abs/2611.33896",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces a fast inference decoding technique for large language models, aligning with efficiency and decoding advances."
+    },
+    {
+      "arxiv_id": "2611.34024",
+      "title": "JHealthBench-L: Clinician-Reviewed Localization of HealthBench for Rubric-Based Medical LLM Evaluation in Japan",
+      "authors": [
+        "Shohei Hisada",
+        "Keisuke Orimo",
+        "Kenji Igarashi",
+        "Kota Sato",
+        "Masahiro Kazama",
+        "Mitsuhisa Ota",
+        "Shoko Wakamiya",
+        "Eiji Aramaki"
+      ],
+      "url": "https://arxiv.org/abs/2611.34024",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new localized benchmark for evaluating health LLMs, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.34250",
+      "title": "MedSkill-E$^{2}$: Evaluating and Evolving Skills for Medical Agents",
+      "authors": [
+        "Jingjing Hua",
+        "Shaocong Wei",
+        "Jianghan Shen",
+        "Junzhi Ning",
+        "Min Cen",
+        "Cheng Tang",
+        "Ziyan Huang",
+        "Jiepeng Li",
+        "Fengshuo Liu",
+        "Kangkun Mao",
+        "Mouxiao Bian",
+        "Yirong Chen",
+        "Ming Hu",
+        "Jiyao Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.34250",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark and skill-evolution method to assess and improve LLM agent capabilities, aligning with model evaluation and post-training techniques."
+    },
+    {
+      "arxiv_id": "2611.33409",
+      "title": "A Semantics-First Approach to Multimodal Video Captioning with Frozen Encoders and Stabilized Reinforcement Learning",
+      "authors": [
+        "Albert Chiwara",
+        "Erhan Guven"
+      ],
+      "url": "https://arxiv.org/abs/2611.33409",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new multimodal LLM architecture with reinforcement learning fine‑tuning for video captioning, fitting the profile's focus on frontier multimodal models and post‑training methods."
+    },
+    {
+      "arxiv_id": "2611.33943",
+      "title": "What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench",
+      "authors": [
+        "Haozhe Zhang",
+        "Zhen Long"
+      ],
+      "url": "https://arxiv.org/abs/2611.33943",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "reason": "Analyzes a benchmark measuring coding agent capabilities, fitting the profile's interest in capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.34042",
+      "title": "Too Smart for Its Own Good? Cognitive Fidelity and Competence Leakage in LLM Simulations of Young Learners",
+      "authors": [
+        "Zhen Xu",
+        "Beata Beigman Klebanov",
+        "Jamie N. Mikeska"
+      ],
+      "url": "https://arxiv.org/abs/2611.34042",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces evaluation protocols that benchmark LLM capability limits in multi-turn simulations, aligning with the profile's interest in measuring model capabilities."
+    },
+    {
+      "arxiv_id": "2611.33588",
+      "title": "SEEL: Towards End-to-End 3D Sign Generation with Language Models",
+      "authors": [
+        "Ronglai Zuo",
+        "Fei Ni",
+        "Junpeng Jing",
+        "Rolandos Alexandros Potamias",
+        "Jiankang Deng",
+        "Stefanos Zafeiriou"
+      ],
+      "url": "https://arxiv.org/abs/2611.33588",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces a multimodal language model framework for end-to-end 3D sign generation, aligning tokenization and generation."
+    },
+    {
+      "arxiv_id": "2611.33388",
+      "title": "Measuring and Predicting Image-Token Repair Boundaries in Vision-Language Models",
+      "authors": [
+        "Vishal Bhutani",
+        "Prasang Gupta",
+        "Sumanth Chundru",
+        "Kevin Paul"
+      ],
+      "url": "https://arxiv.org/abs/2611.33388",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Analyzes and benchmarks capability limits of multimodal vision-language models, fitting the profile's focus on multimodal models and capability measurement."
+    },
+    {
+      "arxiv_id": "2611.33402",
+      "title": "Partial Routing: Trace-Tuned Delegation for Resource-Efficient Agentic Workflows",
+      "authors": [
+        "Siddharth Arya",
+        "Kshitij Jain"
+      ],
+      "url": "https://arxiv.org/abs/2611.33402",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a method for cost‑efficient model routing and delegation, aligning with the profile's focus on efficiency and inference cost reductions."
+    },
+    {
+      "arxiv_id": "2611.33510",
+      "title": "LogToPersona: New Benchmark and Efficient Persona Prediction through Semantic Log Filtering",
+      "authors": [
+        "Ahmed Alajrami",
+        "Ondrej Bohdal",
+        "Seokwoo Song",
+        "Taegeon Um",
+        "Peyman Hosseini",
+        "Savas Ozkan",
+        "Mete Ozay",
+        "Taha Ceritli"
+      ],
+      "url": "https://arxiv.org/abs/2611.33510",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new benchmark and efficient inference method for evaluating LLMs on persona prediction, fitting the profile's interest in benchmarks and fast inference."
+    }
+  ]
+}
