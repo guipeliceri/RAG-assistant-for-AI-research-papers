@@ -554,5 +554,17 @@
   "acf8a49d322d:2611.32012": {
     "relevant": true,
     "reason": "Introduces a benchmark evaluating frontier AI model capabilities, matching the profile's interest in capability benchmarks."
+  },
+  "acf8a49d322d:2611.32064": {
+    "relevant": true,
+    "reason": "Focuses on fine-tuning and quantization techniques for frontier LLMs, directly aligning with post‑training and efficiency topics in the profile."
+  },
+  "acf8a49d322d:2611.31496": {
+    "relevant": true,
+    "reason": "Introduces a label-free benchmark (SGI) for assessing representation quality across layers of pretrained models, fitting the profile's interest in benchmarks measuring model capabilities."
+  },
+  "acf8a49d322d:2611.31999": {
+    "relevant": false,
+    "reason": "The paper focuses on applying and fine‑tuning LLMs for audience behavior prediction, not on advancing model architectures, scaling, or core frontier model techniques."
   }
 }

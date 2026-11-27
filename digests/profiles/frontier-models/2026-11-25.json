@@ -6,11 +6,25 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-25",
-  "generated_at": "2026-11-26T03:24:53+00:00",
+  "generated_at": "2026-11-27T03:27:01+00:00",
   "candidates": 107,
   "classified": 107,
-  "errors": 27,
+  "errors": 12,
   "papers": [
+    {
+      "arxiv_id": "2611.33031",
+      "title": "Can a Frontier LLM Repair a Quantized Network by Tool-Free Weight-Space Programming?",
+      "authors": [
+        "Steffen Urban"
+      ],
+      "url": "https://arxiv.org/abs/2611.33031",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Evaluates frontier LLMs on quantization, linking model reasoning with efficiency and capability benchmarking."
+    },
     {
       "arxiv_id": "2611.32064",
       "title": "Fix How It Acts, Not How It Thinks: Surgical Fine-Tuning of Frontier LLMs",
@@ -136,6 +150,21 @@
       "reason": "Introduces a method to improve sample-efficient in-context learning for transformer models, directly aligning with frontier model advances."
     },
     {
+      "arxiv_id": "2611.32918",
+      "title": "InstructReplay: Replaying Assistant Turns to Preserve General Behavior During Factual Fine-Tuning",
+      "authors": [
+        "Xiaofeng Shi",
+        "Qian Kou",
+        "Hua Zhou"
+      ],
+      "url": "https://arxiv.org/abs/2611.32918",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Addresses instruction fine-tuning and methods to preserve general capabilities, fitting post‑training and benchmark analysis topics."
+    },
+    {
       "arxiv_id": "2611.31999",
       "title": "Grounding Language Models in Revealed Audience Behavior",
       "authors": [
@@ -223,6 +252,25 @@
       "reason": "Introduces a new method for supervising generative reward models, advancing preference optimization and RLHF techniques."
     },
     {
+      "arxiv_id": "2611.32539",
+      "title": "Avalon-M1: Reinforcement Learning from Collective Rewards",
+      "authors": [
+        "Iliyan Zarov",
+        "Henry Course",
+        "Anthony Hartshorn",
+        "Ran Achiron",
+        "Louis Roche",
+        "Akshit Sinha",
+        "Chengxi Taylor",
+        "Ross Taylor"
+      ],
+      "url": "https://arxiv.org/abs/2611.32539",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a novel reinforcement learning training method for LLMs and evaluates its impact on model performance and latency benchmarks"
+    },
+    {
       "arxiv_id": "2611.32472",
       "title": "STAR: Counterfactual Dual-World Rollouts and Spatial Target Adaptive Reconstruction for Visual On-Policy Distillation",
       "authors": [
@@ -238,6 +286,41 @@
         "cs.CL"
       ],
       "reason": "Introduces a new visual on-policy distillation method for multimodal models, advancing training techniques for frontier vision-language systems."
+    },
+    {
+      "arxiv_id": "2611.32183",
+      "title": "ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks",
+      "authors": [
+        "Jiawei Gu",
+        "Linjie Li",
+        "Yiming Liu",
+        "Yunzhuo Hao",
+        "Huichen Wang",
+        "Guanzheng Chen",
+        "Zhichao Peng",
+        "Luxin Xu",
+        "Xinyu Zhang",
+        "Li Luo",
+        "Disen Lan",
+        "Zican Hu",
+        "Mingyang Song",
+        "David Valente",
+        "Alex Jinpeng Wang",
+        "Yafu Li",
+        "Ganqu Cui",
+        "Zhengyuan Yang",
+        "Qizhe Xie",
+        "Yejin Choi",
+        "Ranjay Krishna",
+        "Yu Cheng"
+      ],
+      "url": "https://arxiv.org/abs/2611.32183",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new training recipe for multimodal reasoning with instruction tuning, directly relevant to frontier model advances."
     },
     {
       "arxiv_id": "2611.31495",
@@ -312,6 +395,25 @@
         "cs.CL"
       ],
       "reason": "Introduces a utility-focused memory system for LLM agents and evaluates it on long-context and capability benchmarks, aligning with the profile's interest in long context and model capability measurements."
+    },
+    {
+      "arxiv_id": "2611.32423",
+      "title": "Factorized Context Attention: From Emulated to Native Grid Probing",
+      "authors": [
+        "Mohamed Eltahir",
+        "Manar Eyad",
+        "Yara Alzahrani",
+        "Fatimah Albesher",
+        "Duaa M. Tahir",
+        "Tanveer Hussain",
+        "Naeemullah Khan"
+      ],
+      "url": "https://arxiv.org/abs/2611.32423",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces a new block-sparse attention architecture for extending context length and improving inference efficiency in long-text and multimodal models."
     },
     {
       "arxiv_id": "2611.32416",
@@ -501,6 +603,20 @@
       "reason": "Introduces a benchmark evaluating LLM uncertainty quantification, fitting the profile's interest in new LLM evaluation methods"
     },
     {
+      "arxiv_id": "2611.33148",
+      "title": "CoT-Proxy: Cross-Format Transfer for Distilling Long-Horizon Policies",
+      "authors": [
+        "Dawid J. Kopiczko",
+        "Tijmen Blankevoort",
+        "Yuki M. Asano"
+      ],
+      "url": "https://arxiv.org/abs/2611.33148",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a new distillation method leveraging chain-of-thought proxies to improve reasoning and benchmark performance of frontier LLMs."
+    },
+    {
       "arxiv_id": "2611.32525",
       "title": "What If Chinese Were Latinized? A Counterfactual Study of Input Representation, Tokenization, and Language Modeling",
       "authors": [
@@ -526,6 +642,20 @@
         "cs.LO"
       ],
       "reason": "Introduces a new benchmark and evaluation method for LLM reasoning/translation fidelity, fitting the profile's interest in capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.32982",
+      "title": "When Repair Accuracy Misleads: Training a VLM on Its Own Failures",
+      "authors": [
+        "Ang Qi",
+        "Yue Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.32982",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces a failure-driven fine-tuning method and benchmark analysis for vision-language models, fitting the multimodal and post‑training focus."
     },
     {
       "arxiv_id": "2611.31397",
@@ -710,6 +840,65 @@
       "reason": "Introduces a multimodal VLM benchmark and fine-tuned models, fitting the profile's focus on multimodal models and capability benchmarks."
     },
     {
+      "arxiv_id": "2611.32734",
+      "title": "ASCENT: A Benchmark for Evaluating and Advancing Stepwise Diagnostic Reasoning in Large Language Models on Common Clinical Scenarios",
+      "authors": [
+        "Yera Choi",
+        "Yeong Hwa Kim",
+        "Jaedeok Lee",
+        "Taekang Kim",
+        "Sangdoo Yun",
+        "Seong-Eun Moon"
+      ],
+      "url": "https://arxiv.org/abs/2611.32734",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a new benchmark evaluating stepwise reasoning in LLMs and reports fine‑tuning results, fitting the profile's focus on reasoning benchmarks for frontier models."
+    },
+    {
+      "arxiv_id": "2611.32660",
+      "title": "Bathys: Advancing Deep Search Agents",
+      "authors": [
+        "Zixuan Chen",
+        "Shengyou Yuan",
+        "Nang Yuan",
+        "Ming Ma",
+        "Zelin Xiao",
+        "Lin Zhou",
+        "Siyuan Luo",
+        "Jiaqi Su",
+        "Chengrui Wu",
+        "Tiankuo Yao",
+        "Nairong Zheng",
+        "Cong Pang",
+        "Jiapeng Luo"
+      ],
+      "url": "https://arxiv.org/abs/2611.32660",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces new LLM-based search agents with post‑training RL and benchmarks, fitting frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.33050",
+      "title": "Worth the Wait? How Response Time and Streaming Shape Judgments of Generative AI Answers and Chatbot Engagement",
+      "authors": [
+        "Zihan Chen",
+        "Di Zhu",
+        "Lei Nico Zheng"
+      ],
+      "url": "https://arxiv.org/abs/2611.33050",
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "econ.GN"
+      ],
+      "reason": "It investigates how response latency and streaming affect preference judgments, directly impacting evaluation benchmarks for LLMs."
+    },
+    {
       "arxiv_id": "2611.32807",
       "title": "From Grammar Deltas to Token Masks: Incremental Constrained Decoding under Runtime Grammar Evolution",
       "authors": [
@@ -761,6 +950,20 @@
         "cs.IR"
       ],
       "reason": "Provides a benchmark of attribute recall on frontier LLMs and a repair method, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.31790",
+      "title": "Byte Patches versus BPE at Matched Data: A Matched-Twin Comparison at 350M Parameters",
+      "authors": [
+        "Asadullah Maliyawala",
+        "Andrej Lisal"
+      ],
+      "url": "https://arxiv.org/abs/2611.31790",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "It studies tokenizer choices, a key part of pretraining data and recipe decisions."
     },
     {
       "arxiv_id": "2611.33135",
