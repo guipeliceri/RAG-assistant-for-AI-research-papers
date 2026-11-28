@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-26",
-  "generated_at": "2026-11-27T03:25:37+00:00",
+  "generated_at": "2026-11-28T03:01:16+00:00",
   "candidates": 104,
   "classified": 104,
-  "errors": 19,
+  "errors": 1,
   "papers": [
     {
       "arxiv_id": "2611.33307",
@@ -26,6 +26,54 @@
         "cs.CL"
       ],
       "reason": "Introduces a multilingual benchmark evaluating decision model performance and calibration across languages"
+    },
+    {
+      "arxiv_id": "2611.34529",
+      "title": "AliceAI-Foundation-80B-A3B-Base",
+      "authors": [
+        "Nikolay Skachkov",
+        "Ekaterina Redina",
+        "Maksim Konoplev",
+        "Evgenii Uskov",
+        "Veronika Zykova",
+        "Ivan Tsarikov",
+        "Artemii Zakharov",
+        "Mariia Godunova",
+        "Dmitrii Lunin",
+        "Maria Nikiforova",
+        "Valerii Levanov",
+        "Anton Kalsin",
+        "Daniil Panteleev",
+        "Alexey Gerasev",
+        "Ilia Kopytin",
+        "Yermek Kapushev",
+        "Egor Liakhov",
+        "Irina Lialikova",
+        "Tatiana Taekina",
+        "Anastasia Volotova",
+        "Assol Kubaeva",
+        "Kirill Alekseev",
+        "Pavel Otlivanchik",
+        "Mukhammadfirdavs Kosimov",
+        "Vladislav Negodin",
+        "Ivan Vinogradov",
+        "Anton Andriushchenko",
+        "Maksim Nikitin",
+        "Daniil Sukhoi",
+        "Alexander Mazitov",
+        "Maksim Abraham",
+        "Philip Zmushko",
+        "Maksim Ignatov",
+        "Ivan Sapozhkov",
+        "Timofey Byzov",
+        "Edgar Shmavonian"
+      ],
+      "url": "https://arxiv.org/abs/2611.34529",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new MoE LLM with architecture, scaling, data, and benchmark analysis relevant to frontier model advances."
     },
     {
       "arxiv_id": "2611.33302",
@@ -258,6 +306,23 @@
         "cs.CL"
       ],
       "reason": "Introduces a novel LLM‑based weight editing method for multimodal video‑language models, advancing post‑training techniques and multimodal model capabilities."
+    },
+    {
+      "arxiv_id": "2611.34831",
+      "title": "Repairing the Trustworthiness of Distilled Language Models",
+      "authors": [
+        "Kumar Shubham",
+        "Devendra Vyas",
+        "Vidushi Agarwal",
+        "Jayin Khanna",
+        "Prathosh AP"
+      ],
+      "url": "https://arxiv.org/abs/2611.34831",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a post‑training repair method for distilled models, directly addressing efficiency (distillation) and preference optimization topics."
     },
     {
       "arxiv_id": "2611.34331",
@@ -683,6 +748,28 @@
       "reason": "The paper studies a novel language model architecture (masked diffusion) and its decoding strategies, fitting the profile's focus on frontier model advances and inference efficiency."
     },
     {
+      "arxiv_id": "2611.34398",
+      "title": "When Skills Fail to Compose: Compatibility and Retention in Language Models",
+      "authors": [
+        "Yan Lin",
+        "Zhongliang Guo",
+        "Jingyu Sun",
+        "Qiyan Zhao",
+        "Ruihong Zeng",
+        "Ying Chen",
+        "Zhengtao Yao",
+        "Yan Wen",
+        "Kunyu Peng",
+        "Yuxia Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.34398",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a benchmark evaluating skill composition and compatibility in frozen language models, measuring capabilities and limits."
+    },
+    {
       "arxiv_id": "2611.33896",
       "title": "Looped Models are Fast Multi-Token Predictors",
       "authors": [
@@ -733,6 +820,21 @@
       "reason": "Introduces a new multimodal architecture component for vision-language models, aligning with the profile's focus on multimodal model advances and benchmarks."
     },
     {
+      "arxiv_id": "2611.34303",
+      "title": "IRTIQA: Evolving in English, Evaluated in Urdu -- Does Agent Self-Evolution Transfer from English to Urdu and Code-Switched Input?",
+      "authors": [
+        "Abdullah Hashmat",
+        "Danish Javed",
+        "Usman Naseem",
+        "Agha Ali Raza"
+      ],
+      "url": "https://arxiv.org/abs/2611.34303",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Examines RL-based self-evolution of LLM agents and introduces a multilingual benchmark, fitting post‑training and capability evaluation topics."
+    },
+    {
       "arxiv_id": "2611.34923",
       "title": "Mixture-of-Loops Transformer",
       "authors": [
@@ -774,6 +876,33 @@
         "cs.AI"
       ],
       "reason": "Introduces self-evolving LLM pipeline with RL fine-tuning, scaling methods, and efficiency gains, matching frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.34756",
+      "title": "Collect for Coverage, Replay with Evidence: Adaptive and Efficient On-Policy Distillation for Long-Horizon Agents",
+      "authors": [
+        "Haowen Hou",
+        "Gen Li",
+        "Ruilin Li",
+        "Yicheng Liu",
+        "Zhen Huang",
+        "Shuai Dong",
+        "Congcong Wang",
+        "Kaiwen Tuo",
+        "Hongrui Wu",
+        "Zelin Peng",
+        "Kanghui Tian",
+        "Ji Zhao",
+        "Dianyi Wang",
+        "Jiaqi Wang"
+      ],
+      "url": "https://arxiv.org/abs/2611.34756",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "reason": "Introduces a new on-policy distillation method improving efficiency for long-horizon models, aligning with the profile's focus on distillation and fast inference."
     },
     {
       "arxiv_id": "2611.34250",
@@ -824,6 +953,30 @@
         "cs.CL"
       ],
       "reason": "Introduces a new efficient long-context decoding method improving inference speed for sparse LLMs"
+    },
+    {
+      "arxiv_id": "2611.34680",
+      "title": "Neural Rendering Compiler: Generative Video Models as Programmable Renderers",
+      "authors": [
+        "Yuxia Zhu",
+        "Xinglong Xu",
+        "Hao Liang",
+        "Linzhuang Sun",
+        "Caijun Jia",
+        "Qifeng Cai",
+        "Jincen Luo",
+        "Lei Li",
+        "Alden Cai",
+        "Asher Qin",
+        "Wentao Zhang",
+        "Cheng Tan"
+      ],
+      "url": "https://arxiv.org/abs/2611.34680",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark and methods for assessing and improving controllability of multimodal generative video models, fitting the multimodal and capability measurement focus."
     },
     {
       "arxiv_id": "2611.33409",
@@ -933,6 +1086,20 @@
       "reason": "Introduces a multimodal language model framework for end-to-end 3D sign generation, aligning tokenization and generation."
     },
     {
+      "arxiv_id": "2611.34427",
+      "title": "Mitigating Hallucinations in Medical Question Answering on ESC Cardiology Guidelines: Evaluation and Retrieval Optimization",
+      "authors": [
+        "Ilkin Masimov",
+        "Rufana Baghirli",
+        "Muhammad Rashid"
+      ],
+      "url": "https://arxiv.org/abs/2611.34427",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a domain-specific benchmark and analysis of LLM hallucination mitigation, measuring model capabilities and limits."
+    },
+    {
       "arxiv_id": "2611.33388",
       "title": "Measuring and Predicting Image-Token Repair Boundaries in Vision-Language Models",
       "authors": [
@@ -986,6 +1153,74 @@
         "econ.GN"
       ],
       "reason": "It benchmarks reasoning performance of small LLMs, directly analyzing capabilities and limits of frontier models."
+    },
+    {
+      "arxiv_id": "2611.34341",
+      "title": "Learning from Unreliable Operator References: Claim-Level Rewards for Customer Support Agents",
+      "authors": [
+        "Dmitrii Stoianov",
+        "Olga Tsymboi",
+        "Danil Taranets",
+        "Daniil Strizhakov",
+        "Ilya Buryak",
+        "Almaz Dautov",
+        "Dmitry Fatnev",
+        "Arthur Babkin",
+        "Aleksandr Fida",
+        "Daniil Dryabin",
+        "Maksim Shilenko",
+        "Nikita Surnachev",
+        "Anatolii Potapov"
+      ],
+      "url": "https://arxiv.org/abs/2611.34341",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a claim-level reward model and RL fine-tuning to improve factual precision, fitting post‑training and RL for reasoning topics."
+    },
+    {
+      "arxiv_id": "2611.34690",
+      "title": "PoVi: Agentic Poetry-to-Video Generation with Knowledge Grounding and Figurative Understanding",
+      "authors": [
+        "Yuxia Zhu",
+        "Shiying Zhang",
+        "Lingzhuang Sun",
+        "Song Yang",
+        "Siheng Wu",
+        "Xinglong Xu",
+        "Sizhe Qiu",
+        "Hao Liang",
+        "Cheng Tan",
+        "Asher Qin",
+        "Wentao Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.34690",
+      "categories": [
+        "cs.CL"
+      ],
+      "reason": "Introduces a multimodal benchmark for knowledge‑grounded, long‑horizon generation, aligning with the profile's focus on multimodal models and capability benchmarks."
+    },
+    {
+      "arxiv_id": "2611.34920",
+      "title": "$μ$-Bench: Benchmarking Multi-User Task Completion in Shared Interaction Voice Agents",
+      "authors": [
+        "Qihao Lin",
+        "Guanxu Chen",
+        "Shuhang Zheng",
+        "Xiaoya Lu",
+        "Jingyi Yang",
+        "Terumi Chiba",
+        "Wenyi Yu",
+        "Chao Zhang",
+        "Zhuan Shi",
+        "Jing Shao"
+      ],
+      "url": "https://arxiv.org/abs/2611.34920",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "reason": "Introduces a benchmark that measures multi-user voice agent capabilities, fitting the profile's interest in capability benchmarks for frontier models."
     },
     {
       "arxiv_id": "2611.34402",

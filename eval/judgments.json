@@ -566,5 +566,9 @@
   "acf8a49d322d:2611.31999": {
     "relevant": false,
     "reason": "The paper focuses on applying and fine‑tuning LLMs for audience behavior prediction, not on advancing model architectures, scaling, or core frontier model techniques."
+  },
+  "acf8a49d322d:2611.31931": {
+    "relevant": true,
+    "reason": "Introduces a method to efficiently evaluate and compare language model checkpoints, aligning with benchmark and efficiency interests."
   }
 }

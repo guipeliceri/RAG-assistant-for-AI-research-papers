@@ -6,10 +6,10 @@
   "borderline": "include",
   "threshold": null,
   "date": "2026-11-25",
-  "generated_at": "2026-11-27T03:27:01+00:00",
+  "generated_at": "2026-11-28T03:01:51+00:00",
   "candidates": 107,
   "classified": 107,
-  "errors": 12,
+  "errors": 7,
   "papers": [
     {
       "arxiv_id": "2611.33031",
@@ -74,6 +74,19 @@
         "cs.CL"
       ],
       "reason": "Introduces new evaluation metrics and a benchmark for multimodal LLM capabilities, fitting the profile's focus on multimodal models and capability measurement."
+    },
+    {
+      "arxiv_id": "2611.33133",
+      "title": "A Bias in Disguise: Tiny Gradient Edits Stop a Small Language Model's Thinking Loops and Complement a Frontier Model's Weight Edit",
+      "authors": [
+        "Hussamuddin Syed"
+      ],
+      "url": "https://arxiv.org/abs/2611.33133",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Introduces post‑training weight/gradient edits to improve reasoning performance on a benchmark, aligning with frontier model advances and evaluation."
     },
     {
       "arxiv_id": "2611.32991",
@@ -148,6 +161,19 @@
         "cs.CL"
       ],
       "reason": "Introduces a method to improve sample-efficient in-context learning for transformer models, directly aligning with frontier model advances."
+    },
+    {
+      "arxiv_id": "2611.32782",
+      "title": "Measuring Layer-wise Intrinsic Dimensionality of FFNs in LLMs via PCA",
+      "authors": [
+        "Daehee Kim"
+      ],
+      "url": "https://arxiv.org/abs/2611.32782",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "reason": "Analyzes LLM layer capacity and proposes a pruning/width allocation method improving distillation efficiency, fitting the profile's focus on model architecture and efficiency."
     },
     {
       "arxiv_id": "2611.32918",
@@ -446,6 +472,25 @@
         "cs.AI"
       ],
       "reason": "Introduces a capability benchmark evaluating LLMs' ability to read, write, and repair policy network weights, directly measuring model limits."
+    },
+    {
+      "arxiv_id": "2611.31990",
+      "title": "How Much Dependency Can a Marginal Rule See? Total Correlation in Diffusion LM Parallel Decoding",
+      "authors": [
+        "Dovud Asadov",
+        "Rustambek Urokov",
+        "Qobiljon Toshnazarov",
+        "Abduaziz Kayumov",
+        "Mardon Hazratov",
+        "Husanboy Mansuraliyev"
+      ],
+      "url": "https://arxiv.org/abs/2611.31990",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "reason": "Analyzes parallel decoding efficiency and measures dependency loss in large diffusion language models, fitting the profile's focus on model architectures, fast inference, and capability benchmarks."
     },
     {
       "arxiv_id": "2611.32143",
@@ -950,6 +995,19 @@
         "cs.IR"
       ],
       "reason": "Provides a benchmark of attribute recall on frontier LLMs and a repair method, fitting the profile's interest in capability measurement."
+    },
+    {
+      "arxiv_id": "2611.33012",
+      "title": "Can LLM Judges Catch Unsafe Clinical Actions? A Fault-Injection Study",
+      "authors": [
+        "Neda Ghafouri"
+      ],
+      "url": "https://arxiv.org/abs/2611.33012",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "reason": "Introduces a benchmark evaluating LLM judges, measuring capabilities and limits of current models"
     },
     {
       "arxiv_id": "2611.31790",
